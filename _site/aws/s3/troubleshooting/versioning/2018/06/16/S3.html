@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>S3 - How to restore an entire folders version | DevOps Services</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="S3 - How to restore an entire folders version" />
+<meta name="author" content="Garland Kan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files." />
+<meta property="og:description" content="This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files." />
+<link rel="canonical" href="http://localhost:4000/aws/s3/troubleshooting/versioning/2018/06/16/S3.html" />
+<meta property="og:url" content="http://localhost:4000/aws/s3/troubleshooting/versioning/2018/06/16/S3.html" />
+<meta property="og:site_name" content="DevOps Services" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-16T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files.","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"http://localhost:4000/aws/s3/troubleshooting/versioning/2018/06/16/S3.html","headline":"S3 - How to restore an entire folders version","dateModified":"2018-06-16T00:00:00-07:00","datePublished":"2018-06-16T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws/s3/troubleshooting/versioning/2018/06/16/S3.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <div class="section"><a class="site-title" rel="author" href="/">DevOps Services</a><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog">Blog</a><a class="page-link" href="/contact">Contact</a></div>
+        </nav></div>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-wrap">
+    <div class="post-container">
+      <header class="post-header">
+        <h1 class="post-title p-name" itemprop="name headline">S3 - How to restore an entire folders version</h1>
+        <div class="meta-wrap">
+          <p class="post-keywords">Aws | S3 | Troubleshooting | Versioning</p>
+          <time class="dt-published" datetime="2018-06-16T00:00:00-07:00" itemprop="datePublished">Jun 16, 2018
+          </time>
+<!---->
+        </div>
+      </header>
+
+      <div class="post-content e-content" itemprop="articleBody">
+        <p>This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files.</p>
+
+<p> </p>
+
+<p>You must have had <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html">versioning</a> enabled on your S3 bucket.</p>
+
+<p> </p>
+
+<p>The problem is that the AWS CLI or console (GUI) does not help you restore an entire bucket or a folder’s version. You have to restore each object individually. This is a pain and error prone.</p>
+
+<p> </p>
+
+<p>There is a tool called <a href="https://github.com/madisoft/s3-pit-restore">s3-pit-restore</a> that helps you out with automating restoring. It will read all of the files and download the version of the file you want to your local computer. At that point, you can upload it back to S3 or use it in another way.</p>
+
+<p> </p>
+
+<p>You will first have to <a href="https://github.com/madisoft/s3-pit-restore#installing">install</a> that project per their documentation.</p>
+
+<p> </p>
+
+<p>Then there are various options for restore. The restore is more of it downloading that version’s file onto your local computer instead of reverting what is in S3. That confused me a bit when I first used this tool. So from now on, I am going to say download the version instead of restoring the version.</p>
+
+<p> </p>
+
+<p>You first have to get the version that you want by going into the console and select a file/object. You will see a bunch of dates. These are the versions. You will have to convert them to a number format.</p>
+
+<p> </p>
+
+<p><img src="/assets/images/s3-version.png" alt="" /></p>
+
+<p> </p>
+
+<p>As an example, you can run this to download all of the buckets object from a particular time:</p>
+
+<p> </p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">s3</span><span class="o">-</span><span class="n">pit</span><span class="o">-</span><span class="n">restore</span> <span class="o">-</span><span class="n">b</span> <span class="n">my</span><span class="o">-</span><span class="n">bucket</span> <span class="o">-</span><span class="n">d</span> <span class="n">my</span><span class="o">-</span><span class="n">restored</span><span class="o">-</span><span class="n">bucket</span> <span class="o">-</span><span class="n">t</span> <span class="s2">"06-17-2016 23:59:50 +2"</span></code></pre></figure>
+
+<p> </p>
+
+<ul>
+  <li>-b is the bucket name.</li>
+  <li>-d is the local directory where it will download the files to</li>
+  <li>-t is the time stamp of the version you want</li>
+</ul>
+
+<p> </p>
+
+<p>You can also just downlowd a sub folder of a bucket:</p>
+
+<p> </p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">s3</span><span class="o">-</span><span class="n">pit</span><span class="o">-</span><span class="n">restore</span> <span class="o">-</span><span class="n">b</span> <span class="n">my</span><span class="o">-</span><span class="n">bucket</span> <span class="o">-</span><span class="n">d</span> <span class="n">my</span><span class="o">-</span><span class="n">restored</span><span class="o">-</span><span class="n">subfolder</span> <span class="o">-</span><span class="nb">p</span> <span class="n">mysubfolder</span> <span class="o">-</span><span class="n">t</span> <span class="s2">"06-17-2016 23:59:50 +2"</span></code></pre></figure>
+
+<p> </p>
+
+<p>Same command as above with one additional flag:</p>
+
+<p> </p>
+
+<ul>
+  <li>-d is the sub folder that you want only</li>
+</ul>
+
+
+      </div><a class="u-url" href="/aws/s3/troubleshooting/versioning/2018/06/16/S3.html" hidden></a>
+    </div>
+    
+    <!-- Pagination links -->
+    <div class="pagination">
+      
+        <a href="/aws/kubernetes/2018/06/15/kubernetes-dns-troubleshooting.html" class="previous">< Previous</a>
+      
+      <a class="view-all" href="/blog">View All</a>
+      
+        <a href="/aws/kubernetes/kops/2018/06/16/kops-cluster-templating.html" class="next">Next > </a>
+      
+    </div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <p class="footer-heading">© 2018 DevOps Services</p>
+
+    
+
+  </div>
+
+</footer>
+</body>
+
+</html>

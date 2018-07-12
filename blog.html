@@ -1,0 +1,36 @@
+---
+layout: default
+title: Blog
+permalink: /blog
+---
+
+<div class="blog page"> 
+  <div class="section">
+    {%- if site.posts.size > 0 -%}
+      <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
+      <div>
+        <ul class="post-list">
+          {%- for post in site.posts -%}
+          <li>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <span class="post-meta post-date black">{{ post.date | date: date_format }}</span>
+            <h3 class="post-title">
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            <p class="black left post-excerpt">{{ post.excerpt | strip_html | truncatewords:200 }}</p>
+            <p class="read-more">
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                read more
+              </a>
+            </p>
+            <p class="post-keywords">{{ post.keywords | replace: " ", " | " }}</p>
+          </li>
+          {%- endfor -%}
+          </ul>
+      </div>
+          <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
+    {%- endif -%}
+  </div>
+</div>
