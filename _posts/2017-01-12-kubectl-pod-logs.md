@@ -3,6 +3,7 @@ layout: post
 title: "Kubectl Pod logs"
 categories: Aws Kubernetes Logs
 keywords: Aws Kubernetes Logs
+author: Garland Kan
 
 ---
 

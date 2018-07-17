@@ -19,6 +19,7 @@ permalink: /blog
                 {{ post.title | escape }}
               </a>
             </h3>
+            <p class="post-author">{{ post.author }}</p>
             <p class="black left post-excerpt">{{ post.excerpt | strip_html | truncatewords:200 }}</p>
             <p class="read-more">
               <a class="post-link" href="{{ post.url | relative_url }}">

@@ -3,6 +3,7 @@ layout: post
 title: "Kubernetes DNS Troubleshooting"
 categories: Aws Kubernetes
 keywords: Aws Kubernetes
+author: Garland Kan
 
 ---
 

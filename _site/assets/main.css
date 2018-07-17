@@ -1212,6 +1212,11 @@ img {
 a.post-link:hover {
   color: rgba(50, 108, 229, 0.8); }
 
+.post-author {
+  font-size: 18px;
+  color: #9B9B9B;
+  margin-top: 24px; }
+
 .post-excerpt {
   font-family: "Lora", serif;
   font-size: 18px;
@@ -1285,24 +1290,26 @@ a.post-link:hover {
   display: flex;
   justify-content: space-between;
   padding: 24px 0; }
+  .meta-wrap .post-author {
+    margin-top: 0; }
   @media screen and (max-width: 800px) {
     .meta-wrap {
       display: block; } }
   @media screen and (max-width: 600px) {
     .meta-wrap {
       padding: 0; } }
-  .meta-wrap .post-keywords {
-    margin-bottom: 0;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px; }
-    @media screen and (max-width: 800px) {
-      .meta-wrap .post-keywords {
-        padding: 12px 0; } }
   .meta-wrap time {
-    font-size: 20px; }
+    font-size: 18px; }
 
 .post-content {
   padding-top: 48px; }
+  .post-content .post-keywords {
+    margin-bottom: 0;
+    margin-top: 60px;
+    padding-top: 24px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    border-top: 1px solid #99B6F2; }
   @media screen and (max-width: 600px) {
     .post-content {
       padding-top: 24px; } }

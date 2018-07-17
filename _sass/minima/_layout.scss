@@ -1333,6 +1333,12 @@ a.post-link:hover {
   color: $blue-hover;
 }
 
+.post-author {
+  font-size: 18px;
+  color: #9B9B9B;
+  margin-top: 24px;
+}
+
 .post-excerpt {
   font-family: $serif-font-family;
   font-size: 18px;
@@ -1414,7 +1420,9 @@ a.post-link:hover {
   display: flex;
   justify-content: space-between;
   padding: 24px 0;
-
+  .post-author {
+    margin-top: 0;
+  }
   @media screen and (max-width: 800px) {
     display: block;
   }
@@ -1423,21 +1431,25 @@ a.post-link:hover {
     padding: 0;
   }
 
-  .post-keywords {
-    margin-bottom: 0;
-    font-family: $base-font-family;
-    font-size: 20px;
-    @media screen and (max-width: 800px) {
-      padding: 12px 0;
-    }
-  }
   time {
-     font-size: 20px;
+     font-size: 18px;
   }
 }
 
 .post-content {
   padding-top: 48px;
+  
+  .post-keywords {
+    margin-bottom: 0;
+    margin-top: 60px;
+    padding-top: 24px;
+    font-family: $base-font-family;
+    font-size: 18px;
+    border-top: 1px solid $light-blue;
+    // @media screen and (max-width: 800px) {
+    //   padding: 12px 0;
+    // }
+  }
   @media screen and (max-width: 600px) {
     padding-top: 24px
   }

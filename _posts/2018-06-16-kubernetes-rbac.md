@@ -3,6 +3,7 @@ layout: post
 title: "Kubernetes RBAC - giving permissions for logging and port-forwarding"
 categories: Kubernetes Rbac Security
 keywords: Kubernetes Rbac Security
+author: Garland Kan
 
 ---
 

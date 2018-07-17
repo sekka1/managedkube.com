@@ -3,6 +3,7 @@ layout: post
 title: "Kops Cluster Templating"
 categories: Aws Kubernetes Kops
 keywords: Aws Kubernetes Kops
+author: Garland Kan
 
 ---
 

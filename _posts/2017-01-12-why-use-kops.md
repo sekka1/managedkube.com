@@ -3,6 +3,7 @@ layout: post
 title: "Why use Kops"
 categories: Aws Kubernetes Kops
 keywords: Aws Kubernetes Kops
+author: Garland Kan
 
 ---
 
