@@ -3,6 +3,8 @@ layout: post
 title: How I Use Kops
 categories: AWS kubernetes kops
 keywords: AWS kubernetes kops
+author: Garland Kan
+
 ---
 
 In a previous blog, I talked about [why I used `kops`]() and in this blog, I will   <----------
