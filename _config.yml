@@ -53,8 +53,6 @@ minima:
 # Build settings
 theme: minima
 
-baseurl: http://www.devops.bot
-
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
