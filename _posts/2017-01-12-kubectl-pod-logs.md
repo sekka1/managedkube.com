@@ -25,9 +25,9 @@ This will tail and follow the pod’s logs
 
 &nbsp;
 
-{% highlight ruby %}
+```
 kubectl -f <pod_name>
-{% endhighlight %}
+```
 
 &nbsp;
 
@@ -39,9 +39,9 @@ When a pod has been running for a while, the logs can be very long. You probably
 
 &nbsp;
 
-{% highlight ruby %}
+```
 kubectl --tail=10 <pod_name>
-{% endhighlight %}
+```
 
 &nbsp;
 
@@ -53,6 +53,6 @@ You can combine the follow and last x number of lines options
 
 &nbsp;
 
-{% highlight ruby %}
+```
 kubectl -f --tail=10 <pod_name>
-{% endhighlight %}
+```

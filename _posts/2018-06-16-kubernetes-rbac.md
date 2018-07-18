@@ -31,7 +31,7 @@ So I added this to his role:
 
 &nbsp;
 
-{% highlight ruby %}
+```
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
@@ -43,7 +43,7 @@ rules:
   resources: ["pods", "pods/log", pods/portforward]
   verbs: ["get", "list", "create"]
 
-{% endhighlight %}
+```
 
 &nbsp;
 

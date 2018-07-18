@@ -18,7 +18,15 @@
 <script type="application/ld+json">
 {"description":"I am really liking Kubernetes RBAC. It is “fairly” simple to use and so powerful.","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"http://localhost:4000/kubernetes/rbac/security/2018/06/16/kubernetes-rbac.html","headline":"Kubernetes RBAC - giving permissions for logging and port-forwarding","dateModified":"2018-06-16T00:00:00-07:00","datePublished":"2018-06-16T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/kubernetes/rbac/security/2018/06/16/kubernetes-rbac.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
+	$(document).ready(function(){
+		$('label[for="nav-trigger"]').click(function() {
+			$('body').toggleClass('nav-open');
+		})
+		});
+  </script>
+</head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper">
@@ -74,16 +82,18 @@
 
 <p> </p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">---</span>
-<span class="ss">kind: </span><span class="no">Role</span>
-<span class="ss">apiVersion: </span><span class="n">rbac</span><span class="p">.</span><span class="nf">authorization</span><span class="p">.</span><span class="nf">k8s</span><span class="p">.</span><span class="nf">io</span><span class="o">/</span><span class="n">v1</span>
-<span class="ss">metadata:
-  namespace: </span><span class="n">gawkbox</span><span class="o">-</span><span class="n">spinnaker</span>
-  <span class="ss">name: </span><span class="n">kube</span><span class="o">-</span><span class="n">saas</span><span class="ss">:list</span><span class="o">-</span><span class="n">and</span><span class="o">-</span><span class="n">logs</span>
-<span class="ss">rules:
-</span><span class="o">-</span> <span class="ss">apiGroups: </span><span class="p">[</span><span class="s2">""</span><span class="p">]</span>
-  <span class="ss">resources: </span><span class="p">[</span><span class="s2">"pods"</span><span class="p">,</span> <span class="s2">"pods/log"</span><span class="p">,</span> <span class="n">pods</span><span class="o">/</span><span class="n">portforward</span><span class="p">]</span>
-  <span class="ss">verbs: </span><span class="p">[</span><span class="s2">"get"</span><span class="p">,</span> <span class="s2">"list"</span><span class="p">,</span> <span class="s2">"create"</span><span class="p">]</span></code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: gawkbox-spinnaker
+  name: kube-saas:list-and-logs
+rules:
+- apiGroups: [""]
+  resources: ["pods", "pods/log", pods/portforward]
+  verbs: ["get", "list", "create"]
+
+</code></pre></div></div>
 
 <p> </p>
 

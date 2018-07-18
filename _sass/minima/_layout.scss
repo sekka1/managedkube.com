@@ -1,6 +1,12 @@
 /**
  * Site header
  */
+
+@media screen and (max-width: 600px) {
+  body.nav-open {
+    overflow: hidden;
+  }
+}
 .site-header {
   z-index: 999;
   position: relative;
@@ -100,7 +106,7 @@
       top: 52px;
       width: 100vw;
       height: 300px;
-      background-color: rgba(255,255,255,.9);
+      background-color: #fff;
     }
 
     .page-link, .page-linkactive {
@@ -514,7 +520,7 @@ img {
   padding: 16px;
   font-size: 18px;
   color: $text-color;
-  min-height: 160px;
+  min-height: 200px;
   margin-bottom: 18px;
   &:focus, &:active {
     outline-width: 0;
@@ -647,9 +653,9 @@ align-items: center;
 }  
 
 .reason_text_left {
-  margin-left: 24px;
+  padding-left: 24px;
   @media screen and (max-width: 600px) {
-    margin-left: 0;
+    padding-left: 0;
   }
 }
 
@@ -1292,8 +1298,11 @@ p.di_text_left {
     border-left: 80px solid $blue;
     margin-bottom: 60px;
     background-color: white;
-    padding: 48px 60px;
+    padding: 48px 60px 24px;
     position: relative;
+    .post-keywords {
+      margin-bottom: 0;
+    }
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -1301,15 +1310,16 @@ p.di_text_left {
       border-left: 2px solid $blue;
       border-top: 60px solid $blue;
       padding: 48px 24px;
+      .meta-wrap {
+        padding: 24px 0;
+      }
     }
   }
 }
 
 .post-date {
-  font-family: $serif-font-family;
+  // font-family: $serif-font-family;
   font-size: 18px;
-  float: right;
-  margin-bottom: 80px;
   @media screen and (max-width: 720px) {
     font-size: 16px;
   }
@@ -1343,6 +1353,7 @@ a.post-link:hover {
   font-family: $serif-font-family;
   font-size: 18px;
   padding: 24px 0;
+  border-top: 1px solid #99B6F2;
   @media screen and (max-width: 720px) {
     font-size: 16px;
   }

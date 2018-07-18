@@ -8,15 +8,23 @@
 <meta property="og:title" content="Blog" />
 <meta name="author" content="Garland Kan" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta name="description" content="Kubernetes/Docker consulting &amp; infrastructure SaaS product" />
+<meta property="og:description" content="Kubernetes/Docker consulting &amp; infrastructure SaaS product" />
 <link rel="canonical" href="http://localhost:4000/blog" />
 <meta property="og:url" content="http://localhost:4000/blog" />
 <meta property="og:site_name" content="DevOps Services" />
 <script type="application/ld+json">
-{"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","author":{"@type":"Person","name":"Garland Kan"},"@type":"WebPage","url":"http://localhost:4000/blog","headline":"Blog","@context":"http://schema.org"}</script>
+{"description":"Kubernetes/Docker consulting &amp; infrastructure SaaS product","author":{"@type":"Person","name":"Garland Kan"},"@type":"WebPage","url":"http://localhost:4000/blog","headline":"Blog","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
+	$(document).ready(function(){
+		$('label[for="nav-trigger"]').click(function() {
+			$('body').toggleClass('nav-open');
+		})
+		});
+  </script>
+</head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper">
@@ -39,13 +47,15 @@
         <div class="blog page"> 
   <div class="section"><!-- <h2 class="post-list-heading">Posts</h2> -->
       <div>
-        <ul class="post-list"><li><span class="post-meta post-date black">Jul 7, 2018</span>
+        <ul class="post-list"><li>
             <h3 class="post-title">
               <a class="post-link" href="/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html">
                 How I Use Kops
               </a>
             </h3>
-            <p class="post-author"></p>
+            <div class="meta-wrap">
+              <p class="post-author">Garland Kan</p><span class="post-meta post-date black">Jul 7, 2018</span>
+            </div>
             <p class="black left post-excerpt">In a previous blog, I talked about why I used kops and in this blog, I will   &lt;———-
 talk about how I use kops.
 
@@ -56,13 +66,15 @@ talk about how I use kops.
               </a>
             </p>
             <p class="post-keywords">AWS | kubernetes | kops</p>
-          </li><li><span class="post-meta post-date black">Jun 28, 2018</span>
+          </li><li>
             <h3 class="post-title">
               <a class="post-link" href="/docker/container/tools/utilities/2018/06/28/docker-container-toolbox.html">
                 Docker Container Toolbox
               </a>
             </h3>
-            <p class="post-author">Garland Kan</p>
+            <div class="meta-wrap">
+              <p class="post-author">Garland Kan</p><span class="post-meta post-date black">Jun 28, 2018</span>
+            </div>
             <p class="black left post-excerpt">Docker is useful in many different ways. One way that I use containers is to use them like a toolbox. Mostly the toolbox contains just a binary that I need or a few that are useful together.
 
 </p>
@@ -72,13 +84,15 @@ talk about how I use kops.
               </a>
             </p>
             <p class="post-keywords">Docker | Container | Tools | Utilities</p>
-          </li><li><span class="post-meta post-date black">Jun 16, 2018</span>
+          </li><li>
             <h3 class="post-title">
               <a class="post-link" href="/kubernetes/rbac/security/2018/06/16/kubernetes-rbac.html">
                 Kubernetes RBAC - giving permissions for logging and port-forwarding
               </a>
             </h3>
-            <p class="post-author">Garland Kan</p>
+            <div class="meta-wrap">
+              <p class="post-author">Garland Kan</p><span class="post-meta post-date black">Jun 16, 2018</span>
+            </div>
             <p class="black left post-excerpt">I am really liking Kubernetes RBAC. It is “fairly” simple to use and so powerful.
 
 </p>
@@ -88,13 +102,15 @@ talk about how I use kops.
               </a>
             </p>
             <p class="post-keywords">Kubernetes | Rbac | Security</p>
-          </li><li><span class="post-meta post-date black">Jun 16, 2018</span>
+          </li><li>
             <h3 class="post-title">
               <a class="post-link" href="/aws/kubernetes/kops/2018/06/16/kops-cluster-templating.html">
                 Kops Cluster Templating
               </a>
             </h3>
-            <p class="post-author">Garland Kan</p>
+            <div class="meta-wrap">
+              <p class="post-author">Garland Kan</p><span class="post-meta post-date black">Jun 16, 2018</span>
+            </div>
             <p class="black left post-excerpt">If you havent heard of the tool Kops for create Kubernetes clusters, you should check it out right now! It is a great tool to create and manage the lifecycle of a Kubernetes cluster.
 
 </p>
@@ -104,13 +120,15 @@ talk about how I use kops.
               </a>
             </p>
             <p class="post-keywords">Aws | Kubernetes | Kops</p>
-          </li><li><span class="post-meta post-date black">Jun 16, 2018</span>
+          </li><li>
             <h3 class="post-title">
               <a class="post-link" href="/aws/s3/troubleshooting/versioning/2018/06/16/S3.html">
                 S3 - How to restore an entire folders version
               </a>
             </h3>
-            <p class="post-author">Garland Kan</p>
+            <div class="meta-wrap">
+              <p class="post-author">Garland Kan</p><span class="post-meta post-date black">Jun 16, 2018</span>
+            </div>
             <p class="black left post-excerpt">This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files.
 
 </p>
@@ -120,13 +138,15 @@ talk about how I use kops.
               </a>
             </p>
             <p class="post-keywords">Aws | S3 | Troubleshooting | Versioning</p>
-          </li><li><span class="post-meta post-date black">Jun 15, 2018</span>
+          </li><li>
             <h3 class="post-title">
               <a class="post-link" href="/aws/kubernetes/2018/06/15/kubernetes-dns-troubleshooting.html">
                 Kubernetes DNS Troubleshooting
               </a>
             </h3>
-            <p class="post-author">Garland Kan</p>
+            <div class="meta-wrap">
+              <p class="post-author">Garland Kan</p><span class="post-meta post-date black">Jun 15, 2018</span>
+            </div>
             <p class="black left post-excerpt">On a new cluster we saw the following logs from an application we launched:
 
 </p>
@@ -136,13 +156,15 @@ talk about how I use kops.
               </a>
             </p>
             <p class="post-keywords">Aws | Kubernetes</p>
-          </li><li><span class="post-meta post-date black">Jan 12, 2017</span>
+          </li><li>
             <h3 class="post-title">
               <a class="post-link" href="/aws/kubernetes/kops/2017/01/12/why-use-kops.html">
                 Why use Kops
               </a>
             </h3>
-            <p class="post-author">Garland Kan</p>
+            <div class="meta-wrap">
+              <p class="post-author">Garland Kan</p><span class="post-meta post-date black">Jan 12, 2017</span>
+            </div>
             <p class="black left post-excerpt">Why Use Kops to create your Kubernetes cluster
 
 </p>
@@ -152,13 +174,15 @@ talk about how I use kops.
               </a>
             </p>
             <p class="post-keywords">Aws | Kubernetes | Kops</p>
-          </li><li><span class="post-meta post-date black">Jan 12, 2017</span>
+          </li><li>
             <h3 class="post-title">
               <a class="post-link" href="/aws/kubernetes/logs/2017/01/12/kubectl-pod-logs.html">
                 Kubectl Pod logs
               </a>
             </h3>
-            <p class="post-author">Garland Kan</p>
+            <div class="meta-wrap">
+              <p class="post-author">Garland Kan</p><span class="post-meta post-date black">Jan 12, 2017</span>
+            </div>
             <p class="black left post-excerpt">There are a few useful options when getting logs from your Kubernetes pods:
 
 </p>
@@ -168,13 +192,15 @@ talk about how I use kops.
               </a>
             </p>
             <p class="post-keywords">Aws | Kubernetes | Logs</p>
-          </li><li><span class="post-meta post-date black">Jan 12, 2017</span>
+          </li><li>
             <h3 class="post-title">
               <a class="post-link" href="/aws/waf/security/2017/01/12/aws-waf.html">
                 AWS WAF
               </a>
             </h3>
-            <p class="post-author">Garland Kan</p>
+            <div class="meta-wrap">
+              <p class="post-author">Garland Kan</p><span class="post-meta post-date black">Jan 12, 2017</span>
+            </div>
             <p class="black left post-excerpt">The AWS WAF (Web application firewall) protects your web servers from malicious attacks from the internet and provides DDoS protection at a very low cost compared to all other available solutions. With so many automated bots looking to exploit vulnerabilities, you can be hacked even if you’re not targeted. Once a bot scan has found you susceptible to a certain vulnerability, it will extract as much information as possible. In today’s world, you must take active steps to protect yourself before something bad happens.
 
 </p>
@@ -186,7 +212,16 @@ talk about how I use kops.
             <p class="post-keywords">Aws | Waf | Security</p>
           </li></ul>
       </div>
-          <!-- <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> --></div>
+          <!-- <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> --><!--     <div class="pagination">
+      
+        <span class="previous"><< Previous</span>
+      
+      <span class="page_number ">Page:  of </span>
+      
+        <span class="next ">Next >></span>
+      
+    </div> -->
+  </div>
 </div>
       </div>
     </main><footer class="site-footer h-card">

@@ -2,9 +2,7 @@ title: DevOps Services
 author: Garland Kan
 email: garlandk@gmail.com
 description: > # this means to ignore newlines until "twitter_username:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Kubernetes/Docker consulting & infrastructure SaaS product
 
 # social links
 # twitter_username: jekyllrb
@@ -33,7 +31,7 @@ defaults:
       image: true
 
 
-google_analytics: UA-NNNNNNNN-N
+google_analytics: UA-47059180-2
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
@@ -51,9 +49,15 @@ header_pages:
 - blog.html
 - contact.html
 
+paginate: 3
+paginate_path: "/blog/page:num/"
+
 # Build settings
 theme: minima
 
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+ # - jekyll-paginate
+ # - jekyll-sitemap
+ # - jekyll/figure

@@ -18,7 +18,15 @@
 <script type="application/ld+json">
 {"description":"On a new cluster we saw the following logs from an application we launched:","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"http://localhost:4000/aws/kubernetes/2018/06/15/kubernetes-dns-troubleshooting.html","headline":"Kubernetes DNS Troubleshooting","dateModified":"2018-06-15T00:00:00-07:00","datePublished":"2018-06-15T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws/kubernetes/2018/06/15/kubernetes-dns-troubleshooting.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
+	$(document).ready(function(){
+		$('label[for="nav-trigger"]').click(function() {
+			$('body').toggleClass('nav-open');
+		})
+		});
+  </script>
+</head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper">
@@ -56,15 +64,16 @@
 
 <p> </p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">2018</span><span class="o">/</span><span class="mo">06</span><span class="o">/</span><span class="mi">15</span> <span class="mi">20</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mf">43.840</span> <span class="no">WARN</span>  <span class="p">[</span><span class="n">grpc</span><span class="o">-</span><span class="n">default</span><span class="o">-</span><span class="n">executor</span><span class="o">-</span><span class="mi">8</span><span class="p">]</span> <span class="p">[</span><span class="no">ManagedChannelImpl</span><span class="p">]</span> <span class="p">[</span><span class="no">ManagedChannelImpl</span><span class="vg">$NameResolverListenerImpl</span><span class="p">:</span><span class="mi">942</span><span class="p">]</span> <span class="p">[</span><span class="n">io</span><span class="p">.</span><span class="nf">grpc</span><span class="p">.</span><span class="nf">internal</span><span class="o">.</span><span class="no">ManagedChannelImpl</span><span class="o">-</span><span class="mi">17247</span><span class="p">]</span> <span class="no">Failed</span> <span class="n">to</span> <span class="n">resolve</span> <span class="nb">name</span><span class="p">.</span> <span class="nf">status</span><span class="o">=</span><span class="no">Status</span><span class="p">{</span><span class="n">code</span><span class="o">=</span><span class="no">UNAVAILABLE</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="no">Unable</span> <span class="n">to</span> <span class="n">resolve</span> <span class="n">host</span> <span class="n">pubsub</span><span class="p">.</span><span class="nf">googleapis</span><span class="p">.</span><span class="nf">com</span><span class="p">,</span> <span class="n">cause</span><span class="o">=</span><span class="n">java</span><span class="p">.</span><span class="nf">net</span><span class="o">.</span><span class="no">UnknownHostException</span><span class="p">:</span> <span class="n">pubsub</span><span class="p">.</span><span class="nf">googleapis</span><span class="p">.</span><span class="nf">com</span>
-	<span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="nf">net</span><span class="o">.</span><span class="no">InetAddress</span><span class="p">.</span><span class="nf">getAllByName0</span><span class="p">(</span><span class="no">InetAddress</span><span class="p">.</span><span class="nf">java</span><span class="p">:</span><span class="mi">1280</span><span class="p">)</span>
-	<span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="nf">net</span><span class="o">.</span><span class="no">InetAddress</span><span class="p">.</span><span class="nf">getAllByName</span><span class="p">(</span><span class="no">InetAddress</span><span class="p">.</span><span class="nf">java</span><span class="p">:</span><span class="mi">1192</span><span class="p">)</span>
-	<span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="nf">net</span><span class="o">.</span><span class="no">InetAddress</span><span class="p">.</span><span class="nf">getAllByName</span><span class="p">(</span><span class="no">InetAddress</span><span class="p">.</span><span class="nf">java</span><span class="p">:</span><span class="mi">1126</span><span class="p">)</span>
-	<span class="n">at</span> <span class="n">io</span><span class="p">.</span><span class="nf">grpc</span><span class="p">.</span><span class="nf">internal</span><span class="o">.</span><span class="no">DnsNameResolver</span><span class="vg">$JdkResolver</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="no">DnsNameResolver</span><span class="p">.</span><span class="nf">java</span><span class="p">:</span><span class="mi">358</span><span class="p">)</span>
-	<span class="n">at</span> <span class="n">io</span><span class="p">.</span><span class="nf">grpc</span><span class="p">.</span><span class="nf">internal</span><span class="o">.</span><span class="no">DnsNameResolver</span><span class="vg">$1</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="no">DnsNameResolver</span><span class="p">.</span><span class="nf">java</span><span class="p">:</span><span class="mi">172</span><span class="p">)</span>
-	<span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="nf">util</span><span class="p">.</span><span class="nf">concurrent</span><span class="o">.</span><span class="no">ThreadPoolExecutor</span><span class="p">.</span><span class="nf">runWorker</span><span class="p">(</span><span class="no">ThreadPoolExecutor</span><span class="p">.</span><span class="nf">java</span><span class="p">:</span><span class="mi">1142</span><span class="p">)</span>
-	<span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="nf">util</span><span class="p">.</span><span class="nf">concurrent</span><span class="o">.</span><span class="no">ThreadPoolExecutor</span><span class="vg">$Worker</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="no">ThreadPoolExecutor</span><span class="p">.</span><span class="nf">java</span><span class="p">:</span><span class="mi">617</span><span class="p">)</span>
-	<span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="nf">lang</span><span class="o">.</span><span class="no">Thread</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="no">Thread</span><span class="p">.</span><span class="nf">java</span><span class="p">:</span><span class="mi">745</span><span class="p">)</span></code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2018/06/15 20:20:43.840 WARN  [grpc-default-executor-8] [ManagedChannelImpl] [ManagedChannelImpl$NameResolverListenerImpl:942] [io.grpc.internal.ManagedChannelImpl-17247] Failed to resolve name. status=Status{code=UNAVAILABLE, description=Unable to resolve host pubsub.googleapis.com, cause=java.net.UnknownHostException: pubsub.googleapis.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at io.grpc.internal.DnsNameResolver$JdkResolver.resolve(DnsNameResolver.java:358)
+	at io.grpc.internal.DnsNameResolver$1.run(DnsNameResolver.java:172)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</code></pre></div></div>
 
 <p> </p>
 
@@ -76,8 +85,9 @@
 
 <p> </p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">root</span><span class="vi">@ingress</span><span class="o">-</span><span class="n">controller</span><span class="o">-</span><span class="n">external</span><span class="o">-</span><span class="mi">7</span><span class="n">bc9767f69</span><span class="o">-</span><span class="mi">7</span><span class="n">qxfb</span><span class="ss">:/</span><span class="c1"># ping google.com</span>
-<span class="ss">ping: </span><span class="n">unknown</span> <span class="n">host</span></code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@ingress-controller-external-7bc9767f69-7qxfb:/# ping google.com
+ping: unknown host
+</code></pre></div></div>
 
 <p> </p>
 
@@ -85,10 +95,11 @@
 
 <p> </p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">root</span><span class="vi">@ingress</span><span class="o">-</span><span class="n">controller</span><span class="o">-</span><span class="n">external</span><span class="o">-</span><span class="mi">7</span><span class="n">bc9767f69</span><span class="o">-</span><span class="mi">7</span><span class="n">qxfb</span><span class="ss">:/</span><span class="c1"># ping 8.8.8.8</span>
-<span class="no">PING</span> <span class="mf">8.8</span><span class="o">.</span><span class="mf">8.8</span> <span class="p">(</span><span class="mf">8.8</span><span class="o">.</span><span class="mf">8.8</span><span class="p">):</span> <span class="mi">56</span> <span class="n">data</span> <span class="n">bytes</span>
-<span class="mi">64</span> <span class="n">bytes</span> <span class="n">from</span> <span class="mf">8.8</span><span class="o">.</span><span class="mf">8.8</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">0</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">51</span> <span class="n">time</span><span class="o">=</span><span class="mf">0.941</span> <span class="n">ms</span>
-<span class="mi">64</span> <span class="n">bytes</span> <span class="n">from</span> <span class="mf">8.8</span><span class="o">.</span><span class="mf">8.8</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">1</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">51</span> <span class="n">time</span><span class="o">=</span><span class="mf">0.346</span> <span class="n">ms</span></code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@ingress-controller-external-7bc9767f69-7qxfb:/# ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: icmp_seq=0 ttl=51 time=0.941 ms
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=51 time=0.346 ms
+</code></pre></div></div>
 
 <p> </p>
 
@@ -104,9 +115,10 @@
 
 <p> </p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">kube</span><span class="o">-</span><span class="n">dns</span><span class="o">-</span><span class="mi">785</span><span class="n">f949785</span><span class="o">-</span><span class="mi">5</span><span class="n">slck</span>                                        <span class="mi">0</span><span class="o">/</span><span class="mi">4</span>       <span class="no">Pending</span>            <span class="mi">0</span>          <span class="mi">23</span><span class="n">h</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>
-<span class="n">kube</span><span class="o">-</span><span class="n">dns</span><span class="o">-</span><span class="mi">785</span><span class="n">f949785</span><span class="o">-</span><span class="n">w7str</span>                                        <span class="mi">0</span><span class="o">/</span><span class="mi">4</span>       <span class="no">Pending</span>            <span class="mi">0</span>          <span class="mi">23</span><span class="n">h</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>
-<span class="n">kube</span><span class="o">-</span><span class="n">dns</span><span class="o">-</span><span class="n">autoscaler</span><span class="o">-</span><span class="mi">69</span><span class="n">c5cbdcdd</span><span class="o">-</span><span class="n">krfn9</span>                             <span class="mi">0</span><span class="o">/</span><span class="mi">1</span>       <span class="no">Pending</span>            <span class="mi">0</span>          <span class="mi">23</span><span class="n">h</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span></code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kube-dns-785f949785-5slck                                        0/4       Pending            0          23h       &lt;none&gt;       &lt;none&gt;
+kube-dns-785f949785-w7str                                        0/4       Pending            0          23h       &lt;none&gt;       &lt;none&gt;
+kube-dns-autoscaler-69c5cbdcdd-krfn9                             0/1       Pending            0          23h       &lt;none&gt;       &lt;none&gt;
+</code></pre></div></div>
 
 <p> </p>
 

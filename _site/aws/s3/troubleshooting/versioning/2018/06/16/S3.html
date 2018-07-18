@@ -18,7 +18,15 @@
 <script type="application/ld+json">
 {"description":"This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files.","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"http://localhost:4000/aws/s3/troubleshooting/versioning/2018/06/16/S3.html","headline":"S3 - How to restore an entire folders version","dateModified":"2018-06-16T00:00:00-07:00","datePublished":"2018-06-16T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws/s3/troubleshooting/versioning/2018/06/16/S3.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /></head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
+	$(document).ready(function(){
+		$('label[for="nav-trigger"]').click(function() {
+			$('body').toggleClass('nav-open');
+		})
+		});
+  </script>
+</head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper">
@@ -88,7 +96,8 @@
 
 <p> </p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">s3</span><span class="o">-</span><span class="n">pit</span><span class="o">-</span><span class="n">restore</span> <span class="o">-</span><span class="n">b</span> <span class="n">my</span><span class="o">-</span><span class="n">bucket</span> <span class="o">-</span><span class="n">d</span> <span class="n">my</span><span class="o">-</span><span class="n">restored</span><span class="o">-</span><span class="n">bucket</span> <span class="o">-</span><span class="n">t</span> <span class="s2">"06-17-2016 23:59:50 +2"</span></code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s3-pit-restore -b my-bucket -d my-restored-bucket -t "06-17-2016 23:59:50 +2"
+</code></pre></div></div>
 
 <p> </p>
 
@@ -104,7 +113,8 @@
 
 <p> </p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">s3</span><span class="o">-</span><span class="n">pit</span><span class="o">-</span><span class="n">restore</span> <span class="o">-</span><span class="n">b</span> <span class="n">my</span><span class="o">-</span><span class="n">bucket</span> <span class="o">-</span><span class="n">d</span> <span class="n">my</span><span class="o">-</span><span class="n">restored</span><span class="o">-</span><span class="n">subfolder</span> <span class="o">-</span><span class="nb">p</span> <span class="n">mysubfolder</span> <span class="o">-</span><span class="n">t</span> <span class="s2">"06-17-2016 23:59:50 +2"</span></code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s3-pit-restore -b my-bucket -d my-restored-subfolder -p mysubfolder -t "06-17-2016 23:59:50 +2"
+</code></pre></div></div>
 
 <p> </p>
 

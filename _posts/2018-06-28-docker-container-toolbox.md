@@ -27,14 +27,14 @@ On a machine, if I need to use the `aws-cli` I would run this:
 
 &nbsp;
 
-{% highlight ruby %}
+``` 
 docker run \
 --env AWS_ACCESS_KEY_ID=<<YOUR_ACCESS_KEY>> \
 --env AWS_SECRET_ACCESS_KEY=<<YOUR_SECRET_ACCESS>> \
 --env AWS_DEFAULT_REGION=us-east-1 \
 garland/aws-cli:1.15.47 \
 aws ec2 describe-instances --instance-ids i-90949d7a
-{% endhighlight %}
+```	
 
 &nbsp;
 
@@ -50,14 +50,14 @@ Another use for this container is to upload items to S3 from a server. The serve
 
 &nbsp;
 
-{% highlight ruby %}
+``` 
 docker run \
 --env AWS_ACCESS_KEY_ID=<<YOUR_ACCESS_KEY>> \
 --env AWS_SECRET_ACCESS_KEY=<<YOUR_SECRET_ACCESS>> \
 -v $PWD:/data \
 garland/aws-cli:1.15.47 \
 aws s3 sync . s3://mybucket
-{% endhighlight %}
+```
 
 
 [amazon-web-services]: https://aws.amazon.com
