@@ -655,17 +655,25 @@ justify-content: space-between;
 
 .reason_text_left {
   padding-left: 24px;
-  // max-width: 720px;
+  max-width: calc(100vw - 280px);
+  @media screen and (max-width: 720px) {
+    max-width: calc(100vw - 240px);
+  }
   @media screen and (max-width: 600px) {
     padding-left: 0;
+    max-width: 100%;
   }
 }
 
 .reason_text_right {
   padding-right: 24px;
-  // max-width: 720px;
+  max-width: calc(100vw - 280px);
+  @media screen and (max-width: 720px) {
+    max-width: calc(100vw - 240px);
+  }
   @media screen and (max-width: 600px) {
     padding-right: 0;
+    max-width: 100%;
   }
 }
 

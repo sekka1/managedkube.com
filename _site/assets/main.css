@@ -670,16 +670,26 @@ img {
       margin-bottom: 24px; } }
 
 .reason_text_left {
-  padding-left: 24px; }
+  padding-left: 24px;
+  max-width: calc(100vw - 280px); }
+  @media screen and (max-width: 720px) {
+    .reason_text_left {
+      max-width: calc(100vw - 240px); } }
   @media screen and (max-width: 600px) {
     .reason_text_left {
-      padding-left: 0; } }
+      padding-left: 0;
+      max-width: 100%; } }
 
 .reason_text_right {
-  padding-right: 24px; }
+  padding-right: 24px;
+  max-width: calc(100vw - 280px); }
+  @media screen and (max-width: 720px) {
+    .reason_text_right {
+      max-width: calc(100vw - 240px); } }
   @media screen and (max-width: 600px) {
     .reason_text_right {
-      padding-right: 0; } }
+      padding-right: 0;
+      max-width: 100%; } }
 
 .we-do-it-all .header {
   margin-bottom: 24px; }
