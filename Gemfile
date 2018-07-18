@@ -4,4 +4,4 @@ source "https://rubygems.org"
 gemspec
 
 gem 'github-pages'
-# gem 'jekyll-paginate-v2'
+gem 'jekyll-paginate-v2'
