@@ -230,9 +230,8 @@ pre {
     .site-nav .page-link:not(:last-child) {
       margin-right: 30px; }
   .site-nav .page-linkactive {
-    font-size: 18px; }
-    .site-nav .page-linkactive:hover {
-      color: #326CE5; }
+    font-size: 18px;
+    color: #326CE5; }
     .site-nav .page-linkactive:not(:last-child) {
       margin-right: 30px; }
   @media screen and (max-width: 1000px) {
@@ -1350,17 +1349,17 @@ a.post-link:hover {
   display: flex;
   justify-content: space-between;
   padding-top: 60px; }
-  .pagination a, .pagination .no-next, .pagination .no-previous {
-    font-size: 20px;
+  .pagination a, .pagination .no-next, .pagination .no-previous, .pagination .page_number {
+    font-size: 18px;
     color: #4A4A4A;
     width: 97px;
     transition: color .2s ease; }
-    .pagination a.view-all, .pagination .no-next.view-all, .pagination .no-previous.view-all {
+    .pagination a.view-all, .pagination .no-next.view-all, .pagination .no-previous.view-all, .pagination .page_number.view-all {
       text-align: center; }
-    .pagination a.next, .pagination .no-next.next, .pagination .no-previous.next {
+    .pagination a.next, .pagination .no-next.next, .pagination .no-previous.next, .pagination .page_number.next {
       text-align: right; }
-    .pagination a:hover, .pagination .no-next:hover, .pagination .no-previous:hover {
-      color: #326CE5; }
+  .pagination a:hover {
+    color: #326CE5; }
 
 /**
  * Syntax highlighting styles

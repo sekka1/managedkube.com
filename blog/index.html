@@ -1,16 +1,16 @@
 ---
 layout: default
 title: Blog
-permalink: /blog
+
+pagination:
+  enabled: true
 ---
 
 <div class="blog page"> 
   <div class="section">
-    {%- if site.posts.size > 0 -%}
-      <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
-      <div>
+       <div>
         <ul class="post-list">
-          {%- for post in site.posts -%}
+          {% for post in paginator.posts %}
           <li>
             <h3 class="post-title">
               <a class="post-link" href="{{ post.url | relative_url }}">
@@ -19,7 +19,7 @@ permalink: /blog
             </h3>
             <div class="meta-wrap">
               <p class="post-author">{{ post.author }}</p>
-              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              {%- assign date_format = paginator.minima.date_format | default: "%b %-d, %Y" -%}
               <span class="post-meta post-date black">{{ post.date | date: date_format }}</span>
             </div>
             <p class="black left post-excerpt">{{ post.excerpt | strip_html | truncatewords:200 }}</p>
@@ -33,21 +33,21 @@ permalink: /blog
           {%- endfor -%}
           </ul>
       </div>
-          <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
-    {%- endif -%}
 
-<!--     <div class="pagination">
+    <!-- {%- if paginator.posts.size > 1 -%} -->
+    <div class="pagination">
       {% if paginator.previous_page %}
         <a href="{{ paginator.previous_page_path }}" class="previous"><< Previous</a>
       {% else %}
-        <span class="previous"><< Previous</span>
+        <span class="previous no-previous">  </span>
       {% endif %}
-      <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
       {% if paginator.next_page %}
         <a href="{{ paginator.next_page_path }}" class="next">Next >></a>
       {% else %}
-        <span class="next ">Next >></span>
+        <span class="next no-next">  </span>
       {% endif %}
-    </div> -->
+    </div>
+    <!-- {%- endif -%} -->
   </div>
 </div>

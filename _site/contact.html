@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Contact | DevOps Services</title>
-<meta name="generator" content="Jekyll v3.8.3" />
+<meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="Contact" />
 <meta name="author" content="Garland Kan" />
 <meta property="og:locale" content="en_US" />
@@ -18,11 +18,16 @@
 <!-- End Jekyll SEO tag -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
-	$(document).ready(function(){
-		$('label[for="nav-trigger"]').click(function() {
-			$('body').toggleClass('nav-open');
-		})
-		});
+  	$(document).ready(function(){
+
+  		$('label[for="nav-trigger"]').click(function() {
+  			$('body').toggleClass('nav-open');
+  		})
+      var pathName = window.location.pathname;
+      // alert('[href= "'" + pathName + "'"]');
+      $('.page-link').removeClass('page-linkactive');
+      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
+  	});
   </script>
 </head>
 <body><header class="site-header" role="banner">
@@ -38,7 +43,8 @@
             </span>
           </label>
 
-          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog">Blog</a><a class="page-linkactive" href="/contact">Contact</a></div>
+          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/contact">Contact</a></div>
+
         </nav></div>
   </div>
 </header>

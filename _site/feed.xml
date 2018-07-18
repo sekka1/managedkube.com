@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-18T02:32:16-07:00</updated><id>http://localhost:4000/</id><title type="html">DevOps Services</title><subtitle>Kubernetes/Docker consulting &amp; infrastructure SaaS product
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-18T14:13:36-07:00</updated><id>http://localhost:4000/</id><title type="html">DevOps Services</title><subtitle>Kubernetes/Docker consulting &amp; infrastructure SaaS product
 </subtitle><author><name>Garland Kan</name></author><entry><title type="html">How I Use Kops</title><link href="http://localhost:4000/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html" rel="alternate" type="text/html" title="How I Use Kops" /><published>2018-07-07T00:00:00-07:00</published><updated>2018-07-07T00:00:00-07:00</updated><id>http://localhost:4000/aws/kubernetes/kops/2018/07/07/how-i-use-kops</id><content type="html" xml:base="http://localhost:4000/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html">&lt;p&gt;In a previous blog, I talked about &lt;a href=&quot;&quot;&gt;why I used &lt;code class=&quot;highlighter-rouge&quot;&gt;kops&lt;/code&gt;&lt;/a&gt; and in this blog, I will   &amp;lt;———-
 talk about how I use &lt;code class=&quot;highlighter-rouge&quot;&gt;kops&lt;/code&gt;.&lt;/p&gt;
 
@@ -563,7 +563,8 @@ aws s3 sync . s3://mybucket
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;ss&quot;&gt;error: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upgrading&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;connection: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pods&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;selenium-node-firefox-debug-mtw7r&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;forbidden: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;User&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;john&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cannot&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pods&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;portforward&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;app1&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;error upgrading connection&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pods &quot;selenium-node-firefox-debug-mtw7r&quot; is forbidden&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;User &quot;john&quot; cannot create pods/portforward in the namespace &quot;app1&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
 
@@ -579,16 +580,16 @@ aws s3 sync . s3://mybucket
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
-kind: Role
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  namespace: gawkbox-spinnaker
-  name: kube-saas:list-and-logs
-rules:
-- apiGroups: [&quot;&quot;]
-  resources: [&quot;pods&quot;, &quot;pods/log&quot;, pods/portforward]
-  verbs: [&quot;get&quot;, &quot;list&quot;, &quot;create&quot;]
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;na&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Role&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rbac.authorization.k8s.io/v1&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;namespace&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gawkbox-spinnaker&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kube-saas:list-and-logs&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;rules&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;apiGroups&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;resources&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;pods&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;pods/log&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;pods/portforward&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;verbs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;get&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;list&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;create&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -679,15 +680,15 @@ How would you version control this. This most likely means you want to manage/ma
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2018/06/15 20:20:43.840 WARN  [grpc-default-executor-8] [ManagedChannelImpl] [ManagedChannelImpl$NameResolverListenerImpl:942] [io.grpc.internal.ManagedChannelImpl-17247] Failed to resolve name. status=Status{code=UNAVAILABLE, description=Unable to resolve host pubsub.googleapis.com, cause=java.net.UnknownHostException: pubsub.googleapis.com
-	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
-	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
-	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
-	at io.grpc.internal.DnsNameResolver$JdkResolver.resolve(DnsNameResolver.java:358)
-	at io.grpc.internal.DnsNameResolver$1.run(DnsNameResolver.java:172)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;2018/06/15 20:20:43.840 WARN  [grpc-default-executor-8] [ManagedChannelImpl] [ManagedChannelImpl$NameResolverListenerImpl:942] [io.grpc.internal.ManagedChannelImpl-17247] Failed to resolve name. status=Status{code=UNAVAILABLE, description=Unable to resolve host pubsub.googleapis.com, cause=java.net.UnknownHostException&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pubsub.googleapis.com&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;at java.net.InetAddress.getAllByName0(InetAddress.java:1280)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;at java.net.InetAddress.getAllByName(InetAddress.java:1192)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;at java.net.InetAddress.getAllByName(InetAddress.java:1126)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;at io.grpc.internal.DnsNameResolver$JdkResolver.resolve(DnsNameResolver.java:358)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;at io.grpc.internal.DnsNameResolver$1.run(DnsNameResolver.java:172)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;at java.lang.Thread.run(Thread.java:745)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
@@ -710,10 +711,10 @@ ping: unknown host
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ingress-controller-external-7bc9767f69-7qxfb:/# ping 8.8.8.8
-PING 8.8.8.8 (8.8.8.8): 56 data bytes
-64 bytes from 8.8.8.8: icmp_seq=0 ttl=51 time=0.941 ms
-64 bytes from 8.8.8.8: icmp_seq=1 ttl=51 time=0.346 ms
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;root@ingress-controller-external-7bc9767f69-7qxfb:/# ping 8.8.8.8&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;PING 8.8.8.8 (8.8.8.8)&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;56 data bytes&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;64 bytes from 8.8.8.8&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;icmp_seq=0 ttl=51 time=0.941 ms&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;64 bytes from 8.8.8.8&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;icmp_seq=1 ttl=51 time=0.346 ms&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
@@ -730,9 +731,9 @@ PING 8.8.8.8 (8.8.8.8): 56 data bytes
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kube-dns-785f949785-5slck                                        0/4       Pending            0          23h       &amp;lt;none&amp;gt;       &amp;lt;none&amp;gt;
-kube-dns-785f949785-w7str                                        0/4       Pending            0          23h       &amp;lt;none&amp;gt;       &amp;lt;none&amp;gt;
-kube-dns-autoscaler-69c5cbdcdd-krfn9                             0/1       Pending            0          23h       &amp;lt;none&amp;gt;       &amp;lt;none&amp;gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;kube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;785&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f949785&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;slck&lt;/span&gt;                                        &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;       &lt;span class=&quot;no&quot;&gt;Pending&lt;/span&gt;            &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;kube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;785&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f949785&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w7str&lt;/span&gt;                                        &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;       &lt;span class=&quot;no&quot;&gt;Pending&lt;/span&gt;            &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;kube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoscaler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;69&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c5cbdcdd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;krfn9&lt;/span&gt;                             &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;       &lt;span class=&quot;no&quot;&gt;Pending&lt;/span&gt;            &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
@@ -821,7 +822,7 @@ kube-dns-autoscaler-69c5cbdcdd-krfn9                             0/1       Pendi
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl -f &amp;lt;pod_name&amp;gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;kubectl -f &amp;lt;pod_name&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
@@ -834,7 +835,7 @@ kube-dns-autoscaler-69c5cbdcdd-krfn9                             0/1       Pendi
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl --tail=10 &amp;lt;pod_name&amp;gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;kubectl --tail=10 &amp;lt;pod_name&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
@@ -847,7 +848,7 @@ kube-dns-autoscaler-69c5cbdcdd-krfn9                             0/1       Pendi
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kubectl -f --tail=10 &amp;lt;pod_name&amp;gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;kubectl -f --tail=10 &amp;lt;pod_name&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Garland Kan</name></author><summary type="html">There are a few useful options when getting logs from your Kubernetes pods:</summary></entry><entry><title type="html">AWS WAF</title><link href="http://localhost:4000/aws/waf/security/2017/01/12/aws-waf.html" rel="alternate" type="text/html" title="AWS WAF" /><published>2017-01-12T00:00:00-08:00</published><updated>2017-01-12T00:00:00-08:00</updated><id>http://localhost:4000/aws/waf/security/2017/01/12/aws-waf</id><content type="html" xml:base="http://localhost:4000/aws/waf/security/2017/01/12/aws-waf.html">&lt;p&gt;The &lt;a href=&quot;https://aws.amazon.com/waf/&quot;&gt;AWS WAF&lt;/a&gt; (Web application firewall) protects your web servers from malicious attacks from the internet and provides DDoS protection at a very low cost compared to all other available solutions. With so many automated bots looking to exploit vulnerabilities, you can be hacked even if you’re not targeted. Once a bot scan has found you susceptible to a certain vulnerability, it will extract as much information as possible. In today’s world, you must take active steps to protect yourself before something bad happens.&lt;/p&gt;
 
 &lt;p&gt; &lt;/p&gt;

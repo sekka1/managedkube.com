@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Kubernetes DNS Troubleshooting | DevOps Services</title>
-<meta name="generator" content="Jekyll v3.8.3" />
+<meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="Kubernetes DNS Troubleshooting" />
 <meta name="author" content="Garland Kan" />
 <meta property="og:locale" content="en_US" />
@@ -20,11 +20,16 @@
 <!-- End Jekyll SEO tag -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
-	$(document).ready(function(){
-		$('label[for="nav-trigger"]').click(function() {
-			$('body').toggleClass('nav-open');
-		})
-		});
+  	$(document).ready(function(){
+
+  		$('label[for="nav-trigger"]').click(function() {
+  			$('body').toggleClass('nav-open');
+  		})
+      var pathName = window.location.pathname;
+      // alert('[href= "'" + pathName + "'"]');
+      $('.page-link').removeClass('page-linkactive');
+      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
+  	});
   </script>
 </head>
 <body><header class="site-header" role="banner">
@@ -40,7 +45,8 @@
             </span>
           </label>
 
-          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog">Blog</a><a class="page-link" href="/contact">Contact</a></div>
+          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/contact">Contact</a></div>
+
         </nav></div>
   </div>
 </header>
@@ -64,15 +70,15 @@
 
 <p> </p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2018/06/15 20:20:43.840 WARN  [grpc-default-executor-8] [ManagedChannelImpl] [ManagedChannelImpl$NameResolverListenerImpl:942] [io.grpc.internal.ManagedChannelImpl-17247] Failed to resolve name. status=Status{code=UNAVAILABLE, description=Unable to resolve host pubsub.googleapis.com, cause=java.net.UnknownHostException: pubsub.googleapis.com
-	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
-	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
-	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
-	at io.grpc.internal.DnsNameResolver$JdkResolver.resolve(DnsNameResolver.java:358)
-	at io.grpc.internal.DnsNameResolver$1.run(DnsNameResolver.java:172)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">2018/06/15 20:20:43.840 WARN  [grpc-default-executor-8] [ManagedChannelImpl] [ManagedChannelImpl$NameResolverListenerImpl:942] [io.grpc.internal.ManagedChannelImpl-17247] Failed to resolve name. status=Status{code=UNAVAILABLE, description=Unable to resolve host pubsub.googleapis.com, cause=java.net.UnknownHostException</span><span class="pi">:</span> <span class="s">pubsub.googleapis.com</span>
+<span class="err">	</span><span class="s">at java.net.InetAddress.getAllByName0(InetAddress.java:1280)</span>
+<span class="err">	</span><span class="s">at java.net.InetAddress.getAllByName(InetAddress.java:1192)</span>
+<span class="err">	</span><span class="s">at java.net.InetAddress.getAllByName(InetAddress.java:1126)</span>
+<span class="err">	</span><span class="s">at io.grpc.internal.DnsNameResolver$JdkResolver.resolve(DnsNameResolver.java:358)</span>
+<span class="err">	</span><span class="s">at io.grpc.internal.DnsNameResolver$1.run(DnsNameResolver.java:172)</span>
+<span class="err">	</span><span class="s">at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)</span>
+<span class="err">	</span><span class="s">at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)</span>
+<span class="err">	</span><span class="s">at java.lang.Thread.run(Thread.java:745)</span>
 </code></pre></div></div>
 
 <p> </p>
@@ -95,10 +101,10 @@ ping: unknown host
 
 <p> </p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@ingress-controller-external-7bc9767f69-7qxfb:/# ping 8.8.8.8
-PING 8.8.8.8 (8.8.8.8): 56 data bytes
-64 bytes from 8.8.8.8: icmp_seq=0 ttl=51 time=0.941 ms
-64 bytes from 8.8.8.8: icmp_seq=1 ttl=51 time=0.346 ms
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">root@ingress-controller-external-7bc9767f69-7qxfb:/# ping 8.8.8.8</span>
+<span class="s">PING 8.8.8.8 (8.8.8.8)</span><span class="pi">:</span> <span class="s">56 data bytes</span>
+<span class="s">64 bytes from 8.8.8.8</span><span class="pi">:</span> <span class="s">icmp_seq=0 ttl=51 time=0.941 ms</span>
+<span class="s">64 bytes from 8.8.8.8</span><span class="pi">:</span> <span class="s">icmp_seq=1 ttl=51 time=0.346 ms</span>
 </code></pre></div></div>
 
 <p> </p>
@@ -115,9 +121,9 @@ PING 8.8.8.8 (8.8.8.8): 56 data bytes
 
 <p> </p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kube-dns-785f949785-5slck                                        0/4       Pending            0          23h       &lt;none&gt;       &lt;none&gt;
-kube-dns-785f949785-w7str                                        0/4       Pending            0          23h       &lt;none&gt;       &lt;none&gt;
-kube-dns-autoscaler-69c5cbdcdd-krfn9                             0/1       Pending            0          23h       &lt;none&gt;       &lt;none&gt;
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">kube</span><span class="o">-</span><span class="n">dns</span><span class="o">-</span><span class="mi">785</span><span class="n">f949785</span><span class="o">-</span><span class="mi">5</span><span class="n">slck</span>                                        <span class="mi">0</span><span class="o">/</span><span class="mi">4</span>       <span class="no">Pending</span>            <span class="mi">0</span>          <span class="mi">23</span><span class="n">h</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>
+<span class="n">kube</span><span class="o">-</span><span class="n">dns</span><span class="o">-</span><span class="mi">785</span><span class="n">f949785</span><span class="o">-</span><span class="n">w7str</span>                                        <span class="mi">0</span><span class="o">/</span><span class="mi">4</span>       <span class="no">Pending</span>            <span class="mi">0</span>          <span class="mi">23</span><span class="n">h</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>
+<span class="n">kube</span><span class="o">-</span><span class="n">dns</span><span class="o">-</span><span class="n">autoscaler</span><span class="o">-</span><span class="mi">69</span><span class="n">c5cbdcdd</span><span class="o">-</span><span class="n">krfn9</span>                             <span class="mi">0</span><span class="o">/</span><span class="mi">1</span>       <span class="no">Pending</span>            <span class="mi">0</span>          <span class="mi">23</span><span class="n">h</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>       <span class="o">&lt;</span><span class="n">none</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
 <p> </p>

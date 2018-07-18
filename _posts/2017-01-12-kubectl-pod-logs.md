@@ -25,7 +25,7 @@ This will tail and follow the pod’s logs
 
 &nbsp;
 
-```
+``` yaml
 kubectl -f <pod_name>
 ```
 
@@ -39,7 +39,7 @@ When a pod has been running for a while, the logs can be very long. You probably
 
 &nbsp;
 
-```
+``` yaml
 kubectl --tail=10 <pod_name>
 ```
 
@@ -53,6 +53,6 @@ You can combine the follow and last x number of lines options
 
 &nbsp;
 
-```
+``` yaml
 kubectl -f --tail=10 <pod_name>
 ```

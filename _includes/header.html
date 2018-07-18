@@ -17,14 +17,8 @@
             </span>
           </label>
 
-          <div class="trigger">
-            {%- for path in page_paths -%}
-              {%- assign my_page = site.pages | where: "path", path | first -%}
-              {%- if my_page.title -%}
-              <a class="page-link {%- if my_page.url == page.url -%}active{%- endif -%}" href="{{ my_page.url | relative_url }}">{{ my_page.title | newline_to_br | escape }}</a>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
+          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/contact">Contact</a></div>
+
         </nav>
       {%- endif -%}
     </div>

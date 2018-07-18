@@ -10,10 +10,15 @@
     {%- include google-analytics.html -%}
   {%- endif -%}
   <script type="text/javascript">
-	$(document).ready(function(){
-		$('label[for="nav-trigger"]').click(function() {
-			$('body').toggleClass('nav-open');
-		})
-		});
+  	$(document).ready(function(){
+
+  		$('label[for="nav-trigger"]').click(function() {
+  			$('body').toggleClass('nav-open');
+  		})
+      var pathName = window.location.pathname;
+      // alert('[href= "'" + pathName + "'"]');
+      $('.page-link').removeClass('page-linkactive');
+      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
+  	});
   </script>
 </head>

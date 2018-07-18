@@ -55,9 +55,9 @@
 
   .page-linkactive {
     font-size: 18px;
-    &:hover {
       color: $blue;
-    }
+    // &:hover {
+    // }
     &:not(:last-child) {
       margin-right: 30px;
     }
@@ -1502,8 +1502,8 @@ a.post-link:hover {
   display: flex;
   justify-content: space-between;
   padding-top: 60px;
-  a, .no-next, .no-previous {
-    font-size: 20px;
+  a, .no-next, .no-previous, .page_number {
+    font-size: 18px;
     color: $text-color;
     width: 97px;
     &.view-all {
@@ -1513,9 +1513,9 @@ a.post-link:hover {
       text-align: right;
     }
     transition: color .2s ease; 
-    &:hover {
-      color: $blue;
-    }
+  }
+  a:hover {
+    color: $blue;
   }
 }
 // /**

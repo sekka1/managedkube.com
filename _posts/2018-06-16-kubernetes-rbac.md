@@ -13,9 +13,9 @@ For example, a user said I can’t port forward to a port and pasted me the erro
 
 &nbsp;
 
-{% highlight ruby %}
+``` yaml
 error: error upgrading connection: pods "selenium-node-firefox-debug-mtw7r" is forbidden: User "john" cannot create pods/portforward in the namespace "app1"
-{% endhighlight %}
+``` 
 
 &nbsp;
 
@@ -31,8 +31,8 @@ So I added this to his role:
 
 &nbsp;
 
-```
----
+``` yaml
+
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:

@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Kubernetes RBAC - giving permissions for logging and port-forwarding | DevOps Services</title>
-<meta name="generator" content="Jekyll v3.8.3" />
+<meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="Kubernetes RBAC - giving permissions for logging and port-forwarding" />
 <meta name="author" content="Garland Kan" />
 <meta property="og:locale" content="en_US" />
@@ -20,11 +20,16 @@
 <!-- End Jekyll SEO tag -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
-	$(document).ready(function(){
-		$('label[for="nav-trigger"]').click(function() {
-			$('body').toggleClass('nav-open');
-		})
-		});
+  	$(document).ready(function(){
+
+  		$('label[for="nav-trigger"]').click(function() {
+  			$('body').toggleClass('nav-open');
+  		})
+      var pathName = window.location.pathname;
+      // alert('[href= "'" + pathName + "'"]');
+      $('.page-link').removeClass('page-linkactive');
+      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
+  	});
   </script>
 </head>
 <body><header class="site-header" role="banner">
@@ -40,7 +45,8 @@
             </span>
           </label>
 
-          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog">Blog</a><a class="page-link" href="/contact">Contact</a></div>
+          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/contact">Contact</a></div>
+
         </nav></div>
   </div>
 </header>
@@ -66,7 +72,8 @@
 
 <p> </p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">error: </span><span class="n">error</span> <span class="n">upgrading</span> <span class="ss">connection: </span><span class="n">pods</span> <span class="s2">"selenium-node-firefox-debug-mtw7r"</span> <span class="n">is</span> <span class="ss">forbidden: </span><span class="no">User</span> <span class="s2">"john"</span> <span class="n">cannot</span> <span class="n">create</span> <span class="n">pods</span><span class="o">/</span><span class="n">portforward</span> <span class="k">in</span> <span class="n">the</span> <span class="n">namespace</span> <span class="s2">"app1"</span></code></pre></figure>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">error</span><span class="pi">:</span> <span class="na">error upgrading connection</span><span class="pi">:</span> <span class="s">pods "selenium-node-firefox-debug-mtw7r" is forbidden</span><span class="pi">:</span> <span class="s">User "john" cannot create pods/portforward in the namespace "app1"</span>
+</code></pre></div></div>
 
 <p> </p>
 
@@ -82,16 +89,16 @@
 
 <p> </p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-kind: Role
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  namespace: gawkbox-spinnaker
-  name: kube-saas:list-and-logs
-rules:
-- apiGroups: [""]
-  resources: ["pods", "pods/log", pods/portforward]
-  verbs: ["get", "list", "create"]
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Role</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">rbac.authorization.k8s.io/v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">gawkbox-spinnaker</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">kube-saas:list-and-logs</span>
+<span class="na">rules</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">apiGroups</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">"</span><span class="pi">]</span>
+  <span class="na">resources</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">pods"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">pods/log"</span><span class="pi">,</span> <span class="nv">pods/portforward</span><span class="pi">]</span>
+  <span class="na">verbs</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">get"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">list"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">create"</span><span class="pi">]</span>
 
 </code></pre></div></div>
 
