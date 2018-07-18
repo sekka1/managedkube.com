@@ -676,10 +676,11 @@ img {
       padding-left: 0; } }
 
 .reason_text_right {
-  margin-right: 24px; }
+  padding-right: 24px;
+  max-width: 770px; }
   @media screen and (max-width: 600px) {
     .reason_text_right {
-      margin-right: 0; } }
+      padding-right: 0; } }
 
 .we-do-it-all .header {
   margin-bottom: 24px; }

@@ -661,9 +661,10 @@ align-items: center;
 }
 
 .reason_text_right {
-  margin-right: 24px;
+  padding-right: 24px;
+  max-width: 770px;
   @media screen and (max-width: 600px) {
-    margin-right: 0;
+    padding-right: 0;
   }
 }
 
