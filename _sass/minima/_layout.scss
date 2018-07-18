@@ -655,16 +655,20 @@ align-items: center;
 .reason_text_left {
   padding-left: 24px;
   max-width: 770px;
+  float: right;
   @media screen and (max-width: 600px) {
     padding-left: 0;
+    float: none;
   }
 }
 
 .reason_text_right {
   padding-right: 24px;
   max-width: 770px;
+  float: left;
   @media screen and (max-width: 600px) {
     padding-right: 0;
+    float: none;
   }
 }
 
