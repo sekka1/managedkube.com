@@ -670,15 +670,13 @@ img {
       margin-bottom: 24px; } }
 
 .reason_text_left {
-  padding-left: 24px;
-  max-width: 720px; }
+  padding-left: 24px; }
   @media screen and (max-width: 600px) {
     .reason_text_left {
       padding-left: 0; } }
 
 .reason_text_right {
-  padding-right: 24px;
-  max-width: 720px; }
+  padding-right: 24px; }
   @media screen and (max-width: 600px) {
     .reason_text_right {
       padding-right: 0; } }
