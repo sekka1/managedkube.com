@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-18T14:13:36-07:00</updated><id>http://localhost:4000/</id><title type="html">DevOps Services</title><subtitle>Kubernetes/Docker consulting &amp; infrastructure SaaS product
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-18T14:24:06-07:00</updated><id>http://localhost:4000/</id><title type="html">DevOps Services</title><subtitle>Kubernetes/Docker consulting &amp; infrastructure SaaS product
 </subtitle><author><name>Garland Kan</name></author><entry><title type="html">How I Use Kops</title><link href="http://localhost:4000/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html" rel="alternate" type="text/html" title="How I Use Kops" /><published>2018-07-07T00:00:00-07:00</published><updated>2018-07-07T00:00:00-07:00</updated><id>http://localhost:4000/aws/kubernetes/kops/2018/07/07/how-i-use-kops</id><content type="html" xml:base="http://localhost:4000/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html">&lt;p&gt;In a previous blog, I talked about &lt;a href=&quot;&quot;&gt;why I used &lt;code class=&quot;highlighter-rouge&quot;&gt;kops&lt;/code&gt;&lt;/a&gt; and in this blog, I will   &amp;lt;———-
 talk about how I use &lt;code class=&quot;highlighter-rouge&quot;&gt;kops&lt;/code&gt;.&lt;/p&gt;
 
@@ -529,12 +529,12 @@ Most of everything I run nowadays are in containers and most of the systems has 
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run \
---env AWS_ACCESS_KEY_ID=&amp;lt;&amp;lt;YOUR_ACCESS_KEY&amp;gt;&amp;gt; \
---env AWS_SECRET_ACCESS_KEY=&amp;lt;&amp;lt;YOUR_SECRET_ACCESS&amp;gt;&amp;gt; \
---env AWS_DEFAULT_REGION=us-east-1 \
-garland/aws-cli:1.15.47 \
-aws ec2 describe-instances --instance-ids i-90949d7a
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;docker run \&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;--env AWS_ACCESS_KEY_ID=&amp;lt;&amp;lt;YOUR_ACCESS_KEY&amp;gt;&amp;gt; \&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;--env AWS_SECRET_ACCESS_KEY=&amp;lt;&amp;lt;YOUR_SECRET_ACCESS&amp;gt;&amp;gt; \&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;--env AWS_DEFAULT_REGION=us-east-1 \&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;garland/aws-cli:1.15.47 \&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;aws ec2 describe-instances --instance-ids i-90949d7a&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
@@ -551,12 +551,12 @@ aws ec2 describe-instances --instance-ids i-90949d7a
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run \
---env AWS_ACCESS_KEY_ID=&amp;lt;&amp;lt;YOUR_ACCESS_KEY&amp;gt;&amp;gt; \
---env AWS_SECRET_ACCESS_KEY=&amp;lt;&amp;lt;YOUR_SECRET_ACCESS&amp;gt;&amp;gt; \
--v $PWD:/data \
-garland/aws-cli:1.15.47 \
-aws s3 sync . s3://mybucket
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;docker run \&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;--env AWS_ACCESS_KEY_ID=&amp;lt;&amp;lt;YOUR_ACCESS_KEY&amp;gt;&amp;gt; \&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;--env AWS_SECRET_ACCESS_KEY=&amp;lt;&amp;lt;YOUR_SECRET_ACCESS&amp;gt;&amp;gt; \&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;-v $PWD:/data \&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;garland/aws-cli:1.15.47 \&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;aws s3 sync . s3://mybucket&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Garland Kan</name></author><summary type="html">Docker is useful in many different ways. One way that I use containers is to use them like a toolbox. Mostly the toolbox contains just a binary that I need or a few that are useful together.</summary></entry><entry><title type="html">Kubernetes RBAC - giving permissions for logging and port-forwarding</title><link href="http://localhost:4000/kubernetes/rbac/security/2018/06/16/kubernetes-rbac.html" rel="alternate" type="text/html" title="Kubernetes RBAC - giving permissions for logging and port-forwarding" /><published>2018-06-16T00:00:00-07:00</published><updated>2018-06-16T00:00:00-07:00</updated><id>http://localhost:4000/kubernetes/rbac/security/2018/06/16/kubernetes-rbac</id><content type="html" xml:base="http://localhost:4000/kubernetes/rbac/security/2018/06/16/kubernetes-rbac.html">&lt;p&gt;I am really liking Kubernetes &lt;a href=&quot;https://kubernetes.io/docs/reference/access-authn-authz/rbac/&quot;&gt;RBAC&lt;/a&gt;. It is “fairly” simple to use and so powerful.&lt;/p&gt;
 
 &lt;p&gt;For example, a user said I can’t port forward to a port and pasted me the error:&lt;/p&gt;
@@ -648,7 +648,7 @@ How would you version control this. This most likely means you want to manage/ma
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;s3-pit-restore -b my-bucket -d my-restored-bucket -t &quot;06-17-2016 23:59:50 +2&quot;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;s3-pit-restore -b my-bucket -d my-restored-bucket -t &quot;06-17-2016 23:59:50 +2&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
@@ -665,7 +665,7 @@ How would you version control this. This most likely means you want to manage/ma
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;s3-pit-restore -b my-bucket -d my-restored-subfolder -p mysubfolder -t &quot;06-17-2016 23:59:50 +2&quot;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;s3-pit-restore -b my-bucket -d my-restored-subfolder -p mysubfolder -t &quot;06-17-2016 23:59:50 +2&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;
@@ -731,9 +731,9 @@ ping: unknown host
 
 &lt;p&gt; &lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;kube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;785&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f949785&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;slck&lt;/span&gt;                                        &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;       &lt;span class=&quot;no&quot;&gt;Pending&lt;/span&gt;            &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;kube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;785&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f949785&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;w7str&lt;/span&gt;                                        &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;       &lt;span class=&quot;no&quot;&gt;Pending&lt;/span&gt;            &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;kube&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoscaler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;69&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c5cbdcdd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;krfn9&lt;/span&gt;                             &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;       &lt;span class=&quot;no&quot;&gt;Pending&lt;/span&gt;            &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;          &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;kube-dns-785f949785-5slck                                        0/4       Pending            0          23h       &amp;lt;none&amp;gt;       &amp;lt;none&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;kube-dns-785f949785-w7str                                        0/4       Pending            0          23h       &amp;lt;none&amp;gt;       &amp;lt;none&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;kube-dns-autoscaler-69c5cbdcdd-krfn9                             0/1       Pending            0          23h       &amp;lt;none&amp;gt;       &amp;lt;none&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt; &lt;/p&gt;

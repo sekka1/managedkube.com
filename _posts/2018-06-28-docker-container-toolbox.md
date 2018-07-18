@@ -27,7 +27,7 @@ On a machine, if I need to use the `aws-cli` I would run this:
 
 &nbsp;
 
-``` 
+``` yaml
 docker run \
 --env AWS_ACCESS_KEY_ID=<<YOUR_ACCESS_KEY>> \
 --env AWS_SECRET_ACCESS_KEY=<<YOUR_SECRET_ACCESS>> \
@@ -50,7 +50,7 @@ Another use for this container is to upload items to S3 from a server. The serve
 
 &nbsp;
 
-``` 
+``` yaml
 docker run \
 --env AWS_ACCESS_KEY_ID=<<YOUR_ACCESS_KEY>> \
 --env AWS_SECRET_ACCESS_KEY=<<YOUR_SECRET_ACCESS>> \

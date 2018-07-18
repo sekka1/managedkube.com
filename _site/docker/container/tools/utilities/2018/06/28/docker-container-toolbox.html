@@ -83,12 +83,12 @@ Most of everything I run nowadays are in containers and most of the systems has 
 
 <p> </p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run \
---env AWS_ACCESS_KEY_ID=&lt;&lt;YOUR_ACCESS_KEY&gt;&gt; \
---env AWS_SECRET_ACCESS_KEY=&lt;&lt;YOUR_SECRET_ACCESS&gt;&gt; \
---env AWS_DEFAULT_REGION=us-east-1 \
-garland/aws-cli:1.15.47 \
-aws ec2 describe-instances --instance-ids i-90949d7a
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">docker run \</span>
+<span class="s">--env AWS_ACCESS_KEY_ID=&lt;&lt;YOUR_ACCESS_KEY&gt;&gt; \</span>
+<span class="s">--env AWS_SECRET_ACCESS_KEY=&lt;&lt;YOUR_SECRET_ACCESS&gt;&gt; \</span>
+<span class="s">--env AWS_DEFAULT_REGION=us-east-1 \</span>
+<span class="s">garland/aws-cli:1.15.47 \</span>
+<span class="s">aws ec2 describe-instances --instance-ids i-90949d7a</span>
 </code></pre></div></div>
 
 <p> </p>
@@ -105,12 +105,12 @@ aws ec2 describe-instances --instance-ids i-90949d7a
 
 <p> </p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run \
---env AWS_ACCESS_KEY_ID=&lt;&lt;YOUR_ACCESS_KEY&gt;&gt; \
---env AWS_SECRET_ACCESS_KEY=&lt;&lt;YOUR_SECRET_ACCESS&gt;&gt; \
--v $PWD:/data \
-garland/aws-cli:1.15.47 \
-aws s3 sync . s3://mybucket
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">docker run \</span>
+<span class="s">--env AWS_ACCESS_KEY_ID=&lt;&lt;YOUR_ACCESS_KEY&gt;&gt; \</span>
+<span class="s">--env AWS_SECRET_ACCESS_KEY=&lt;&lt;YOUR_SECRET_ACCESS&gt;&gt; \</span>
+<span class="s">-v $PWD:/data \</span>
+<span class="s">garland/aws-cli:1.15.47 \</span>
+<span class="s">aws s3 sync . s3://mybucket</span>
 </code></pre></div></div>
 
 

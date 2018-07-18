@@ -65,7 +65,7 @@ Then I looked at the `kube-systems` namespace to see what the DNS were doing:
 
 &nbsp;
 
-``` ruby
+``` yaml
 kube-dns-785f949785-5slck                                        0/4       Pending            0          23h       <none>       <none>
 kube-dns-785f949785-w7str                                        0/4       Pending            0          23h       <none>       <none>
 kube-dns-autoscaler-69c5cbdcdd-krfn9                             0/1       Pending            0          23h       <none>       <none>
