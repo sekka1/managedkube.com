@@ -670,21 +670,17 @@ img {
 
 .reason_text_left {
   padding-left: 24px;
-  max-width: 770px;
-  float: right; }
+  max-width: 720px; }
   @media screen and (max-width: 600px) {
     .reason_text_left {
-      padding-left: 0;
-      float: none; } }
+      padding-left: 0; } }
 
 .reason_text_right {
   padding-right: 24px;
-  max-width: 770px;
-  float: left; }
+  max-width: 720px; }
   @media screen and (max-width: 600px) {
     .reason_text_right {
-      padding-right: 0;
-      float: none; } }
+      padding-right: 0; } }
 
 .we-do-it-all .header {
   margin-bottom: 24px; }
