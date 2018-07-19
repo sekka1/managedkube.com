@@ -10,7 +10,7 @@ pagination:
   <div class="section">
        <div>
         <ul class="post-list">
-          {% for post in paginator.posts %}
+          {% for post in site.posts %}
           <li>
             <h3 class="post-title">
               <a class="post-link" href="{{ post.url | relative_url }}">
@@ -19,7 +19,7 @@ pagination:
             </h3>
             <div class="meta-wrap">
               <p class="post-author">{{ post.author }}</p>
-              {%- assign date_format = paginator.minima.date_format | default: "%b %-d, %Y" -%}
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
               <span class="post-meta post-date black">{{ post.date | date: date_format }}</span>
             </div>
             <p class="black left post-excerpt">{{ post.excerpt | strip_html | truncatewords:200 }}</p>
@@ -35,7 +35,7 @@ pagination:
       </div>
 
     <!-- {%- if paginator.posts.size > 1 -%} -->
-    <div class="pagination">
+   <!--  <div class="pagination">
       {% if paginator.previous_page %}
         <a href="{{ paginator.previous_page_path }}" class="previous"><< Previous</a>
       {% else %}
@@ -47,7 +47,7 @@ pagination:
       {% else %}
         <span class="next no-next">  </span>
       {% endif %}
-    </div>
+    </div> -->
     <!-- {%- endif -%} -->
   </div>
 </div>
