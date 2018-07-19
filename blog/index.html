@@ -9,7 +9,6 @@ pagination:
 <div class="blog page"> 
   <div class="section">
        <div>
-        <h1>foo</h1>
         <ul class="post-list">
           {% for post in paginator.posts %}
           <li>
@@ -36,7 +35,7 @@ pagination:
       </div>
 
     <!-- {%- if paginator.posts.size > 1 -%} -->
-   <!--  <div class="pagination">
+    <div class="pagination">
       {% if paginator.previous_page %}
         <a href="{{ paginator.previous_page_path }}" class="previous"><< Previous</a>
       {% else %}
@@ -48,7 +47,7 @@ pagination:
       {% else %}
         <span class="next no-next">  </span>
       {% endif %}
-    </div> -->
+    </div>
     <!-- {%- endif -%} -->
   </div>
 </div>
