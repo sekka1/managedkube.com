@@ -1,0 +1,53 @@
+---
+layout: default
+title: Blog
+
+pagination:
+  enabled: true
+---
+
+<div class="blog page"> 
+  <div class="section">
+       <div>
+        <ul class="post-list">
+          {% for post in site.posts %}
+          <li>
+            <h3 class="post-title">
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            <div class="meta-wrap">
+              <p class="post-author">{{ post.author }}</p>
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              <span class="post-meta post-date black">{{ post.date | date: date_format }}</span>
+            </div>
+            <p class="black left post-excerpt">{{ post.excerpt | strip_html | truncatewords:200 }}</p>
+            <p class="read-more">
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                read more
+              </a>
+            </p>
+            <p class="post-keywords">{{ post.keywords | replace: " ", " | " }}</p>
+          </li>
+          {%- endfor -%}
+          </ul>
+      </div>
+
+    <!-- {%- if paginator.posts.size > 1 -%} -->
+   <!--  <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="previous"><< Previous</a>
+      {% else %}
+        <span class="previous no-previous">  </span>
+      {% endif %}
+      <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">Next >></a>
+      {% else %}
+        <span class="next no-next">  </span>
+      {% endif %}
+    </div> -->
+    <!-- {%- endif -%} -->
+  </div>
+</div>

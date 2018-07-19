@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Lora|Roboto');
+
+// Define defaults for each variable.
+
+$base-font-family: 'Roboto', sans-serif;
+$serif-font-family: 'Lora', serif;
+
+$base-font-weight: 400;
+$base-font-size: 22px;
+$base-tablet-font-size:  $base-font-size * 0.9;
+$base-mobile-font-size: $base-font-size * 0.8;
+
+$header-font-size: 40px;
+$header-font-weight: 700;
+$header-tablet-font-size: $header-font-size * .75;
+$header-mobile-font-size: $header-font-size * .6;
+
+$banner-font-size: 48px;
+$banner-mobile-font-size: $header-font-size * .75;
+
+$text-color: #4A4A4A;
+$white: #fff;
+$blue: #326CE5;
+$light-blue: #99B6F2;
+$light-blue-bg: #F5F8FE;
+$blue-hover: rgba(50, 108, 229, .8);
+$text-color-hover: rgba(50, 108, 229, .8);
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    800px !default;
+
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// Import partials.
+@import
+  "minima/base",
+  "minima/layout",
+  "minima/syntax-highlighting"
+;

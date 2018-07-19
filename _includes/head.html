@@ -1,0 +1,24 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+  <script type="text/javascript">
+  	$(document).ready(function(){
+
+  		$('label[for="nav-trigger"]').click(function() {
+  			$('body').toggleClass('nav-open');
+  		})
+      var pathName = window.location.pathname;
+      // alert('[href= "'" + pathName + "'"]');
+      $('.page-link').removeClass('page-linkactive');
+      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
+  	});
+  </script>
+</head>
