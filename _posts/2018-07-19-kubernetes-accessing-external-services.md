@@ -14,7 +14,8 @@ not the fully URL of the name that AWS assigns to it.
 
 You can add an external service mapping a hostname or by an IP
 
-## Mapping by a hostname (CNAME)
+### Mapping by a hostname (CNAME)
+
 You want your application to use the hostname `mysql` which will redirect it to
 `mysql–instance1.123456789012.us-east-1.rds.amazonaws.com`.  We can have Kubernetes
 set this CNAME.
@@ -36,7 +37,8 @@ Now, if you go to your pod, you can look up `mysql` and see that it points to
 dig mysql
 ```
 
-## Mapping a hostname to an IP
+### Mapping a hostname to an IP
+
 You want your application to use the hostname `mysql` which will redirect to an
 IP address.  We can have Kubernetes set this up for us:
 
