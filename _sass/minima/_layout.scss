@@ -651,7 +651,7 @@ justify-content: space-between;
   margin: auto;
   margin-bottom: 24px;
 }
-}  
+}
 
 .reason_text_left {
   padding-left: 24px;
@@ -768,7 +768,7 @@ justify-content: space-between;
 }
 
 /**
- * clients we've worked with 
+ * clients we've worked with
  */
 
 .bulk-clients-list {
@@ -853,13 +853,13 @@ justify-content: space-between;
 
 .content_img-wrapper {
   @media screen and (max-width: 1000px) {
-    max-width: 280px; 
+    max-width: 280px;
     svg {
       width: 280px;
     }
   }
   @media screen and (max-width: 720px) {
-    max-width: 200px; 
+    max-width: 200px;
     svg {
       width: 200px;
     }
@@ -1156,7 +1156,7 @@ justify-content: space-between;
     }
  }
 
-.di_content { 
+.di_content {
   padding: 0 60px;
   margin-bottom: 24px;
   display: flex;
@@ -1169,7 +1169,7 @@ justify-content: space-between;
   }
 }
 
-.di_content-reverse { 
+.di_content-reverse {
   padding: 0 60px;
   margin-bottom: 24px;
   display: flex;
@@ -1196,7 +1196,7 @@ justify-content: space-between;
     margin: auto;
     margin-bottom: 24px;
   }
-}  
+}
 
 .alerting .di_img-wrapper {
   @media screen and (max-width: 770px) {
@@ -1393,13 +1393,13 @@ a.post-link:hover {
   background-color: $light-blue-bg;
 
   .post-title {
-    font-size: 42px; 
+    font-size: 42px;
     @media screen and (max-width: 720px) {
       font-size: $header-tablet-font-size
-    } 
+    }
     @media screen and (max-width: 600px) {
       font-size: $header-mobile-font-size
-    } 
+    }
   }
 }
 
@@ -1460,7 +1460,9 @@ a.post-link:hover {
 
 .post-content {
   padding-top: 48px;
-  
+  padding-bottom: 48px;
+  margin-bottom: 24px;
+
   .post-keywords {
     margin-bottom: 0;
     margin-top: 60px;
@@ -1474,6 +1476,8 @@ a.post-link:hover {
   }
   @media screen and (max-width: 600px) {
     padding-top: 24px
+    padding-bottom: 24px
+    margin-bottom: 20px;
   }
   li {
     margin-left: 24px;
@@ -1512,7 +1516,7 @@ a.post-link:hover {
     &.next {
       text-align: right;
     }
-    transition: color .2s ease; 
+    transition: color .2s ease;
   }
   a:hover {
     color: $blue;
