@@ -12,9 +12,9 @@ For example, you have an external database like an AWS RDS (MySQL) hosted by Ama
 In your application you simply want to refer to this database by the name `mysql` and
 not the fully URL of the name that AWS assigns to it.
 
-You can add an external service mapping a hostname or by an IP
+You can add an external service mapping a hostname or by an IP  
 
-### Mapping by a hostname (CNAME)
+### Mapping by a hostname (CNAME)  
 
 You want your application to use the hostname `mysql` which will redirect it to
 `mysql–instance1.123456789012.us-east-1.rds.amazonaws.com`.  We can have Kubernetes
@@ -35,12 +35,12 @@ Now, if you go to your pod, you can look up `mysql` and see that it points to
 
 ```bash
 dig mysql
-```
+```  
 
-### Mapping a hostname to an IP
+### Mapping a hostname to an IP  
 
 You want your application to use the hostname `mysql` which will redirect to an
-IP address.  We can have Kubernetes set this up for us:
+IP address.  We can have Kubernetes set this up for us:  
 
 ```yaml
 ---
@@ -72,7 +72,7 @@ subsets:
         port: 3306
         name: "mysql"
 
-```
+```  
 
 In your pod, you can check the connectivity.  This will map the hostname `mysql`
 to the IP address `1.1.1.1`.
