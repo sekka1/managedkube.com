@@ -11,25 +11,20 @@ I am really liking Kubernetes [RBAC][rbac]. It is “fairly” simple to use and
 
 For example, a user said I can’t port forward to a port and pasted me the error:
 
-&nbsp;
 
 ``` yaml
 error: error upgrading connection: pods "selenium-node-firefox-debug-mtw7r" is forbidden: User "john" cannot create pods/portforward in the namespace "app1"
 ``` 
 
-&nbsp;
 
 This basically told me all that I need. It states the user cannot perform the action `create` on the resource `pods/portforward`.
 
-&nbsp;
 
 I do think the “action” (create) and the “resource” (pods/portforward) should be highlighted somehow in the error message to make it even clearer.
 
-&nbsp;
 
 So I added this to his role:
 
-&nbsp;
 
 ``` yaml
 
@@ -45,7 +40,6 @@ rules:
 
 ```
 
-&nbsp;
 
 This solved the problem. I love it when the error tells me exactly what it is and it is so easy to express this in the role.
 

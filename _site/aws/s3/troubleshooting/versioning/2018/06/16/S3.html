@@ -10,14 +10,16 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files." />
 <meta property="og:description" content="This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files." />
+<link rel="canonical" href="http://localhost:4000/aws/s3/troubleshooting/versioning/2018/06/16/S3.html" />
+<meta property="og:url" content="http://localhost:4000/aws/s3/troubleshooting/versioning/2018/06/16/S3.html" />
 <meta property="og:site_name" content="DevOps Services" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-06-16T00:00:00-07:00" />
 <script type="application/ld+json">
-{"description":"This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files.","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"/aws/s3/troubleshooting/versioning/2018/06/16/S3.html","headline":"S3 - How to restore an entire folders version","dateModified":"2018-06-16T00:00:00-07:00","datePublished":"2018-06-16T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"/aws/s3/troubleshooting/versioning/2018/06/16/S3.html"},"@context":"http://schema.org"}</script>
+{"description":"This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files.","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"http://localhost:4000/aws/s3/troubleshooting/versioning/2018/06/16/S3.html","headline":"S3 - How to restore an entire folders version","dateModified":"2018-06-16T00:00:00-07:00","datePublished":"2018-06-16T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws/s3/troubleshooting/versioning/2018/06/16/S3.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="DevOps Services" /><script type="text/javascript">
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
   	$(document).ready(function(){
 
   		$('label[for="nav-trigger"]').click(function() {
@@ -66,44 +68,24 @@
       <div class="post-content e-content" itemprop="articleBody">
         <p>This tutorial explains how to use a tool that will help you to restore an entire S3 folder’s files.</p>
 
-<p> </p>
-
 <p>You must have had <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html">versioning</a> enabled on your S3 bucket.</p>
-
-<p> </p>
 
 <p>The problem is that the AWS CLI or console (GUI) does not help you restore an entire bucket or a folder’s version. You have to restore each object individually. This is a pain and error prone.</p>
 
-<p> </p>
-
 <p>There is a tool called <a href="https://github.com/madisoft/s3-pit-restore">s3-pit-restore</a> that helps you out with automating restoring. It will read all of the files and download the version of the file you want to your local computer. At that point, you can upload it back to S3 or use it in another way.</p>
-
-<p> </p>
 
 <p>You will first have to <a href="https://github.com/madisoft/s3-pit-restore#installing">install</a> that project per their documentation.</p>
 
-<p> </p>
-
 <p>Then there are various options for restore. The restore is more of it downloading that version’s file onto your local computer instead of reverting what is in S3. That confused me a bit when I first used this tool. So from now on, I am going to say download the version instead of restoring the version.</p>
-
-<p> </p>
 
 <p>You first have to get the version that you want by going into the console and select a file/object. You will see a bunch of dates. These are the versions. You will have to convert them to a number format.</p>
 
-<p> </p>
-
 <p><img src="/assets/images/s3-version.png" alt="" /></p>
-
-<p> </p>
 
 <p>As an example, you can run this to download all of the buckets object from a particular time:</p>
 
-<p> </p>
-
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">s3-pit-restore -b my-bucket -d my-restored-bucket -t "06-17-2016 23:59:50 +2"</span>
 </code></pre></div></div>
-
-<p> </p>
 
 <ul>
   <li>-b is the bucket name.</li>
@@ -111,20 +93,12 @@
   <li>-t is the time stamp of the version you want</li>
 </ul>
 
-<p> </p>
-
 <p>You can also just downlowd a sub folder of a bucket:</p>
-
-<p> </p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">s3-pit-restore -b my-bucket -d my-restored-subfolder -p mysubfolder -t "06-17-2016 23:59:50 +2"</span>
 </code></pre></div></div>
 
-<p> </p>
-
 <p>Same command as above with one additional flag:</p>
-
-<p> </p>
 
 <ul>
   <li>-d is the sub folder that you want only</li>

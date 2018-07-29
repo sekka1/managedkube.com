@@ -1269,6 +1269,12 @@ a.post-link:hover {
       .post .post-title {
         font-size: 24px; } }
 
+.post-content > * {
+  margin-bottom: 24px; }
+  @media screen and (max-width: 600px) {
+    .post-content > * {
+      margin-bottom: 20px; } }
+
 .post-wrap {
   max-width: 1080px;
   width: 100%;

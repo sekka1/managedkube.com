@@ -10,14 +10,16 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="The AWS WAF (Web application firewall) protects your web servers from malicious attacks from the internet and provides DDoS protection at a very low cost compared to all other available solutions. With so many automated bots looking to exploit vulnerabilities, you can be hacked even if you’re not targeted. Once a bot scan has found you susceptible to a certain vulnerability, it will extract as much information as possible. In today’s world, you must take active steps to protect yourself before something bad happens." />
 <meta property="og:description" content="The AWS WAF (Web application firewall) protects your web servers from malicious attacks from the internet and provides DDoS protection at a very low cost compared to all other available solutions. With so many automated bots looking to exploit vulnerabilities, you can be hacked even if you’re not targeted. Once a bot scan has found you susceptible to a certain vulnerability, it will extract as much information as possible. In today’s world, you must take active steps to protect yourself before something bad happens." />
+<link rel="canonical" href="http://localhost:4000/aws/waf/security/2017/01/12/aws-waf.html" />
+<meta property="og:url" content="http://localhost:4000/aws/waf/security/2017/01/12/aws-waf.html" />
 <meta property="og:site_name" content="DevOps Services" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-01-12T00:00:00-08:00" />
 <script type="application/ld+json">
-{"description":"The AWS WAF (Web application firewall) protects your web servers from malicious attacks from the internet and provides DDoS protection at a very low cost compared to all other available solutions. With so many automated bots looking to exploit vulnerabilities, you can be hacked even if you’re not targeted. Once a bot scan has found you susceptible to a certain vulnerability, it will extract as much information as possible. In today’s world, you must take active steps to protect yourself before something bad happens.","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"/aws/waf/security/2017/01/12/aws-waf.html","headline":"AWS WAF","dateModified":"2017-01-12T00:00:00-08:00","datePublished":"2017-01-12T00:00:00-08:00","mainEntityOfPage":{"@type":"WebPage","@id":"/aws/waf/security/2017/01/12/aws-waf.html"},"@context":"http://schema.org"}</script>
+{"description":"The AWS WAF (Web application firewall) protects your web servers from malicious attacks from the internet and provides DDoS protection at a very low cost compared to all other available solutions. With so many automated bots looking to exploit vulnerabilities, you can be hacked even if you’re not targeted. Once a bot scan has found you susceptible to a certain vulnerability, it will extract as much information as possible. In today’s world, you must take active steps to protect yourself before something bad happens.","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"http://localhost:4000/aws/waf/security/2017/01/12/aws-waf.html","headline":"AWS WAF","dateModified":"2017-01-12T00:00:00-08:00","datePublished":"2017-01-12T00:00:00-08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws/waf/security/2017/01/12/aws-waf.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="DevOps Services" /><script type="text/javascript">
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
   	$(document).ready(function(){
 
   		$('label[for="nav-trigger"]').click(function() {
@@ -66,23 +68,13 @@
       <div class="post-content e-content" itemprop="articleBody">
         <p>The <a href="https://aws.amazon.com/waf/">AWS WAF</a> (Web application firewall) protects your web servers from malicious attacks from the internet and provides DDoS protection at a very low cost compared to all other available solutions. With so many automated bots looking to exploit vulnerabilities, you can be hacked even if you’re not targeted. Once a bot scan has found you susceptible to a certain vulnerability, it will extract as much information as possible. In today’s world, you must take active steps to protect yourself before something bad happens.</p>
 
-<p> </p>
-
 <p>Typically, you fully open up your web application to the internet. For example, in most cases you allow any request going to port 80 or 443 to go directly to the web server, without any filtering, and leave it up to the web server on whether or not to respond. This is like not locking your front door because you like your neighbors. We all lock our doors because we don’t want strangers rifling through our drawers, so why would we let anyone come to our web servers and send it any request they like?</p>
-
-<p> </p>
 
 <p>You know that you shouldn’t, but security is really hard to implement and maintain.</p>
 
-<p> </p>
-
 <p>AWS WAF can make security highly automatable. Everything can be configured and updated with an API so that it can be integrated into your development and test workflows. However, as usual, AWS provides us with some but not all of the building blocks you need to operationalize this process.</p>
 
-<p> </p>
-
 <p>AWS WAF provides a few layers of security that we can take advantage of:</p>
-
-<p> </p>
 
 <ul>
   <li>General and known vulnerabilities (<a href="https://www.owasp.org/index.php/Top_10-2017_Top_10">OWASP</a>)</li>
@@ -90,15 +82,9 @@
   <li>Custom filtering to allow only what your application needs (HTTP Methods, URLs, post data, etc)</li>
 </ul>
 
-<p> </p>
-
 <p>Using the AWS WAF solution without being a security expert starts you down the right path - you’ve locked your doors but not your windows. It provides you protection with default rules, but those rules have not been updated since it was created in June 2017. Vulnerabilities are constantly changing and you should update these rules to defend against these new threats.</p>
 
-<p> </p>
-
 <p>Now, let’s think about your specific application. You should create rules to detect and limit traffic to your application to further reduce the attack surface:</p>
-
-<p> </p>
 
 <ul>
   <li>Endpoint path URLs</li>
@@ -107,15 +93,9 @@
   <li>Type of PUT/POST data that you want</li>
 </ul>
 
-<p> </p>
-
 <p>By providing the appropriate amount of access for your web application, you reduce the risk of unknown vulnerabilities. Limiting unnecessary access means less availability for someone to exploit your application with. Don’t leave your window open to the world.</p>
 
-<p> </p>
-
 <p>This requires you to add the WAF into your software development life cycle (SDLC). By adding the WAF into your development and test processes, you can treat these rules as part of your software. The AWS WAF can be created via the <a href="https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html">AWS API</a> and can be fully integrated into a CI/CD workflow. When your web application changes, you should always reassess your security and update it as necessary. During the end to end tests, the updated WAF rules can be applied by automation and tested to ensure everything still works as designed before hitting production. This will also allow your security team to easily contribute and assess your application security. They can make changes and test those changes in their own sandbox area without affecting other developers or live systems.</p>
-
-<p> </p>
 
 <p>Good security practice involves layers and defense in depth that are being constantly updated to keep it current and customized to your application. Security must be one of your main software features, something that is continually improved and updated to fit your needs.</p>
 

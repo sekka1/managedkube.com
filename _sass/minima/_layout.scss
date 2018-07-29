@@ -1403,6 +1403,13 @@ a.post-link:hover {
   }
 }
 
+.post-content > * {
+  margin-bottom: 24px;
+  @media screen and (max-width: 600px) {
+    margin-bottom: 20px;
+  }
+}
+
 .post-wrap {
   max-width: 1080px;
   width: 100%;
