@@ -12,7 +12,7 @@ I am really liking Kubernetes [RBAC][rbac]. It is “fairly” simple to use and
 For example, a user said I can’t port forward to a port and pasted me the error:
 
 
-``` yaml
+```yaml
 error: error upgrading connection: pods "selenium-node-firefox-debug-mtw7r" is forbidden: User "john" cannot create pods/portforward in the namespace "app1"
 ``` 
 
@@ -26,7 +26,7 @@ I do think the “action” (create) and the “resource” (pods/portforward) s
 So I added this to his role:
 
 
-``` yaml
+```yaml
 
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1

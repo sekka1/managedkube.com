@@ -23,7 +23,7 @@ I have a repository of different tools that are public and in [Docker Hub][docke
 On a machine, if I need to use the `aws-cli` I would run this:
 
 
-``` yaml
+```yaml
 docker run \
 --env AWS_ACCESS_KEY_ID=<<YOUR_ACCESS_KEY>> \
 --env AWS_SECRET_ACCESS_KEY=<<YOUR_SECRET_ACCESS>> \
@@ -42,7 +42,7 @@ This is even useful locally when I am testing something out. For example, the `a
 Another use for this container is to upload items to S3 from a server. The server would usually not have `aws-cli` installed but it does have Docker. With this command you can upload anything to your S3 buckets:
 
 
-``` yaml
+```yaml
 docker run \
 --env AWS_ACCESS_KEY_ID=<<YOUR_ACCESS_KEY>> \
 --env AWS_SECRET_ACCESS_KEY=<<YOUR_SECRET_ACCESS>> \

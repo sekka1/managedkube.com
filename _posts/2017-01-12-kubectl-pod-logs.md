@@ -17,7 +17,7 @@ There are a few useful options when getting logs from your Kubernetes pods:
 
 This will tail and follow the pod’s logs
 
-``` yaml
+```yaml
 kubectl -f <pod_name>
 ```
 
@@ -25,7 +25,7 @@ kubectl -f <pod_name>
 
 When a pod has been running for a while, the logs can be very long. You probably only want to see the last few lines.
 
-``` yaml
+```yaml
 kubectl --tail=10 <pod_name>
 ```
 
@@ -33,6 +33,6 @@ kubectl --tail=10 <pod_name>
 
 You can combine the follow and last x number of lines options
 
-``` yaml
+```yaml
 kubectl -f --tail=10 <pod_name>
 ```
