@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Various kubectl Usage | DevOps Services</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Various kubectl Usage" />
+<meta name="author" content="Garland Kan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Download the latest kubectl version here: https://kubernetes.io/docs/tasks/tools/install-kubectl/" />
+<meta property="og:description" content="Download the latest kubectl version here: https://kubernetes.io/docs/tasks/tools/install-kubectl/" />
+<link rel="canonical" href="http://localhost:4000/kubernetes/kubectl/logs/2018/07/10/various-kubectl-usage.html" />
+<meta property="og:url" content="http://localhost:4000/kubernetes/kubectl/logs/2018/07/10/various-kubectl-usage.html" />
+<meta property="og:site_name" content="DevOps Services" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-10T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"Download the latest kubectl version here: https://kubernetes.io/docs/tasks/tools/install-kubectl/","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"http://localhost:4000/kubernetes/kubectl/logs/2018/07/10/various-kubectl-usage.html","headline":"Various kubectl Usage","dateModified":"2018-07-10T00:00:00-07:00","datePublished":"2018-07-10T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/kubernetes/kubectl/logs/2018/07/10/various-kubectl-usage.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
+  	$(document).ready(function(){
+
+  		$('label[for="nav-trigger"]').click(function() {
+  			$('body').toggleClass('nav-open');
+  		})
+      var pathName = window.location.pathname;
+      // alert('[href= "'" + pathName + "'"]');
+      $('.page-link').removeClass('page-linkactive');
+      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
+  	});
+  </script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <div class="section"><a class="site-title" rel="author" href="/">DevOps Services</a><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/contact">Contact</a></div>
+
+        </nav></div>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-wrap">
+    <div class="post-container">
+      <header class="post-header">
+        <h1 class="post-title p-name" itemprop="name headline">Various kubectl Usage</h1>
+        <div class="meta-wrap">
+          <p class="post-author"></p>
+          <time class="dt-published" datetime="2018-07-10T00:00:00-07:00" itemprop="datePublished">Jul 10, 2018
+          </time>
+<!---->
+        </div>
+      </header>
+
+      <div class="post-content e-content" itemprop="articleBody">
+        <p>Download the latest <code class="highlighter-rouge">kubectl</code> version here:  https://kubernetes.io/docs/tasks/tools/install-kubectl/</p>
+
+<h2 id="get-a-kube-config-file">Get a kube config file</h2>
+<p>The kube config file is your authentication with the cluster.  It has information
+about the credentials to use and where the Kubernetes cluster is located.</p>
+
+<p>Ask your local friendly administrator for this.</p>
+
+<p>Once you have this file, place it in your local path: <code class="highlighter-rouge">~/.kube/config</code></p>
+
+<h2 id="test-accessing-the-cluster">Test accessing the cluster</h2>
+
+<p>Run this command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods
+</code></pre></div></div>
+
+<h2 id="viewing-pods">Viewing pods</h2>
+<p>This will list the pods</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods
+</code></pre></div></div>
+
+<p>Viewing pods in another namespace.  Namespaces are semi isolated areas in the cluster.
+We are using one “namespace” for each tenent.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl --namespace devops get pods
+</code></pre></div></div>
+
+<h2 id="getting-logs">Getting logs</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get logs &lt;pod name from get pods&gt;
+</code></pre></div></div>
+
+<h2 id="get-a-shell-in-a-container">Get a shell in a container</h2>
+
+<p>This will start a bash shell in the container</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl exec -it &lt;pod name from get pods&gt; bash
+</code></pre></div></div>
+
+<p>Now you can do anything like install a mysql client</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@tomcat-7b9788b887-vfnnm:/usr/local/tomcat# apt-get update &amp;&amp; apt-get install -y mysql-client
+</code></pre></div></div>
+
+<p>All of our MySQL RDS has a CNAME and inside of these containers it is simply referred to as: <code class="highlighter-rouge">mysql</code>
+This will resolve to the local namespace’s RDS instance.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -h mysql -u root -p
+</code></pre></div></div>
+
+<p>That will connect you in.</p>
+
+<h2 id="port-forwarding-from-your-local-to-the-cluster">Port forwarding from your local to the cluster</h2>
+<p>doc: https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>port-forward &lt;pod name from get pods&gt; 8080:8080
+</code></pre></div></div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>kubectl port-forward $(kubectl get pod -o=name -lcomponent=…</td>
+      <td>awk -F/ ‘{print $2}’</td>
+      <td>head -1) PORT</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Being able to port forward to a service is coming: https://github.com/kubernetes/kubernetes/pull/59809</p>
+
+<!--         <p class="post-keywords">kubernetes | kubectl | logs</p>
+ -->  
+          <p class="post-keywords">kubernetes | kubectl | logs</p>
+      </div><a class="u-url" href="/kubernetes/kubectl/logs/2018/07/10/various-kubectl-usage.html" hidden></a>
+    </div>
+    
+    <!-- Pagination links -->
+    <div class="pagination">
+      
+        <a href="/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html" class="previous">< Previous</a>
+      
+      <a class="view-all" href="/blog">View All</a>
+      
+        <a href="/docker/aws/tools/troubleshooting/2018/07/12/docker-container-toolbox.html" class="next">Next > </a>
+      
+    </div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <p class="footer-heading">© 2018 DevOps Services</p>
+
+    
+
+  </div>
+
+</footer>
+</body>
+
+</html>

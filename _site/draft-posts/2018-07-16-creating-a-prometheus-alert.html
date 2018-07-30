@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Creating a Prometheus Alert | DevOps Services</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Creating a Prometheus Alert" />
+<meta name="author" content="Garland Kan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Kubernetes/Docker consulting &amp; infrastructure SaaS product" />
+<meta property="og:description" content="Kubernetes/Docker consulting &amp; infrastructure SaaS product" />
+<link rel="canonical" href="http://localhost:4000/draft-posts/2018-07-16-creating-a-prometheus-alert.html" />
+<meta property="og:url" content="http://localhost:4000/draft-posts/2018-07-16-creating-a-prometheus-alert.html" />
+<meta property="og:site_name" content="DevOps Services" />
+<script type="application/ld+json">
+{"description":"Kubernetes/Docker consulting &amp; infrastructure SaaS product","author":{"@type":"Person","name":"Garland Kan"},"@type":"WebPage","url":"http://localhost:4000/draft-posts/2018-07-16-creating-a-prometheus-alert.html","headline":"Creating a Prometheus Alert","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
+  	$(document).ready(function(){
+
+  		$('label[for="nav-trigger"]').click(function() {
+  			$('body').toggleClass('nav-open');
+  		})
+      var pathName = window.location.pathname;
+      // alert('[href= "'" + pathName + "'"]');
+      $('.page-link').removeClass('page-linkactive');
+      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
+  	});
+  </script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <div class="section"><a class="site-title" rel="author" href="/">DevOps Services</a><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/contact">Contact</a></div>
+
+        </nav></div>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-wrap">
+    <div class="post-container">
+      <header class="post-header">
+        <h1 class="post-title p-name" itemprop="name headline">Creating a Prometheus Alert</h1>
+        <div class="meta-wrap">
+          <p class="post-author"></p>
+          <time class="dt-published" datetime="" itemprop="datePublished">
+          </time>
+<!---->
+        </div>
+      </header>
+
+      <div class="post-content e-content" itemprop="articleBody">
+        <p>1) Go to prometheus graph</p>
+
+<p>2) Select a metric</p>
+
+<p>3) Now go to the graph view</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(picture)
+</code></pre></div></div>
+
+<p>This is showing you what will alert.  If there are any lines over whatever
+  time period you have set, these will alarm</p>
+
+<p>Now, tighten the query rules so that it only shows you items in the graph
+  when you really want it to notify you.</p>
+
+<h2 id="my-alert-is-too-chatty">My alert is too chatty</h2>
+
+<p>1) Go to the <code class="highlighter-rouge">alert</code> menu</p>
+
+<p>2) Expand the alarm that is too chatty</p>
+
+<p>3) Click on the <code class="highlighter-rouge">expr</code>.  This is the query that is used to alarm.</p>
+
+<p>4) Click on the graph view</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(show picture)
+</code></pre></div></div>
+
+<p>5) Edit the expression so that it reduces what you dont need</p>
+
+<!--         <p class="post-keywords">kubernetes | prometheus | alert</p>
+ -->  
+          <p class="post-keywords">kubernetes | prometheus | alert</p>
+      </div><a class="u-url" href="/draft-posts/2018-07-16-creating-a-prometheus-alert.html" hidden></a>
+    </div>
+    
+    <!-- Pagination links -->
+    <div class="pagination">
+      
+        <span class="no-previous"> </span>
+      
+      <a class="view-all" href="/blog">View All</a>
+      
+        <span class="no-next"> </span>
+      
+    </div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <p class="footer-heading">© 2018 DevOps Services</p>
+
+    
+
+  </div>
+
+</footer>
+</body>
+
+</html>

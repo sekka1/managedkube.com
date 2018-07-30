@@ -3,6 +3,7 @@ author: Garland Kan
 email: garlandk@gmail.com
 description: > # this means to ignore newlines until "twitter_username:"
   Kubernetes/Docker consulting & infrastructure SaaS product
+
 highlighter: rouge
 
 # social links

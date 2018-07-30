@@ -1,82 +1,24 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>How I Use Kops | DevOps Services</title>
-<meta name="generator" content="Jekyll v3.7.3" />
-<meta property="og:title" content="How I Use Kops" />
-<meta name="author" content="Garland Kan" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="In a previous blog, I talked about why I used kops and in this blog, I will &lt;———- talk about how I use kops." />
-<meta property="og:description" content="In a previous blog, I talked about why I used kops and in this blog, I will &lt;———- talk about how I use kops." />
-<link rel="canonical" href="http://localhost:4000/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html" />
-<meta property="og:url" content="http://localhost:4000/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html" />
-<meta property="og:site_name" content="DevOps Services" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-07-07T00:00:00-07:00" />
-<script type="application/ld+json">
-{"description":"In a previous blog, I talked about why I used kops and in this blog, I will &lt;———- talk about how I use kops.","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"http://localhost:4000/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html","headline":"How I Use Kops","dateModified":"2018-07-07T00:00:00-07:00","datePublished":"2018-07-07T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html"},"@context":"http://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DevOps Services" /><script type="text/javascript">
-  	$(document).ready(function(){
+---
+layout: post
+title: How I Use Kops
+categories: AWS kubernetes kops
+keywords: AWS kubernetes kops
+author: Garland Kan
 
-  		$('label[for="nav-trigger"]').click(function() {
-  			$('body').toggleClass('nav-open');
-  		})
-      var pathName = window.location.pathname;
-      // alert('[href= "'" + pathName + "'"]');
-      $('.page-link').removeClass('page-linkactive');
-      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
-  	});
-  </script>
-</head>
-<body><header class="site-header" role="banner">
+---
 
-  <div class="wrapper">
-    <div class="section"><a class="site-title" rel="author" href="/">DevOps Services</a><nav class="site-nav">
-          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-          <label for="nav-trigger">
-            <span class="menu-icon">
-              <svg viewBox="0 0 18 15" width="18px" height="15px">
-                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-              </svg>
-            </span>
-          </label>
+In a previous blog, I talked about [why I used `kops`]() and in this blog, I will   <----------
+talk about how I use `kops`.
 
-          <div class="trigger"><a class="page-link" href="/devops-consulting">DevOps Consulting</a><a class="page-link" href="/managed-kube">Managed Kube</a><a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/contact">Contact</a></div>
-
-        </nav></div>
-  </div>
-</header>
-<main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-wrap">
-    <div class="post-container">
-      <header class="post-header">
-        <h1 class="post-title p-name" itemprop="name headline">How I Use Kops</h1>
-        <div class="meta-wrap">
-          <p class="post-author">Garland Kan</p>
-          <time class="dt-published" datetime="2018-07-07T00:00:00-07:00" itemprop="datePublished">Jul 7, 2018
-          </time>
-<!--• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Garland Kan</span></span>-->
-        </div>
-      </header>
-
-      <div class="post-content e-content" itemprop="articleBody">
-        <p>In a previous blog, I talked about <a href="">why I used <code class="highlighter-rouge">kops</code></a> and in this blog, I will   &lt;———-
-talk about how I use <code class="highlighter-rouge">kops</code>.</p>
-
-<p>I always create my clusters by providing <code class="highlighter-rouge">kops</code> a yaml file describing the cluster
+I always create my clusters by providing `kops` a yaml file describing the cluster
 that I want.  Here is an example cluster configuration file.  You can also find
-the source link <a href="">here</a>.                                           &lt;—————————–</p>
+the source link [here]().                                           <-----------------------------
 
-<p>This file is then checked into the source code management so that we can keep
-track of changes.</p>
+This file is then checked into the source code management so that we can keep
+track of changes.
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#
+``` 
+#
 # Kops cli: 1.9.0
 #
 apiVersion: kops/v1alpha2
@@ -530,91 +472,56 @@ spec:
   role: Node
   subnets:
   - worker-zone-f
-</code></pre></div></div>
+```
 
-<p>Most of this is boiler plate configurations.  It will create 3 master nodes in
+Most of this is boiler plate configurations.  It will create 3 master nodes in
 3 different AWS availability zones.  AWS NAT Gateways for all of the zones.  The
 Kubernetes nodes are in all availability zones (us-east-1 zones a to f) and using
 spot instances.  There are tags on the nodes for using the Cluster Autoscaler so
-that it can scale an instance group down to zero if it is not needed.</p>
+that it can scale an instance group down to zero if it is not needed.
 
-<h3 id="setting-up-the-dns">Setting up the DNS</h3>
-<p>Make sure that you have the DNS setup correctly in AWS Route53.</p>
+### Setting up the DNS
+Make sure that you have the DNS setup correctly in AWS Route53.
 
-<link to="" the="" kops="" route53="" setup="" />
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         &lt;-----------------------------------------------
-</code></pre></div></div>
+<link to the kops route53 setup>             <-----------------------------------------------
 
-<p>The easiest way is to name your cluster after the domain name you have setup.</p>
+The easiest way is to name your cluster after the domain name you have setup.
 
-<h3 id="creating-a-cluster">Creating a cluster</h3>
-<p>Set the cluster name:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export NAME=prod-us-east-1.devops.bot
-</code></pre></div></div>
+### Creating a cluster
+Set the cluster name:
+```
+export NAME=prod-us-east-1.devops.bot
+```
 
-<p>Create the cluster</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kops create -f ${NAME}.yaml
+Create the cluster
+```
+kops create -f ${NAME}.yaml
 kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
 kops update cluster ${NAME} --yes
-</code></pre></div></div>
+```
 
-<h3 id="updating-the-cluster">Updating the cluster</h3>
-<p>We are always going to use the <code class="highlighter-rouge">--cluster</code> flag so that we know specifically which
-cluster our command will apply to.</p>
+### Updating the cluster
+We are always going to use the `--cluster` flag so that we know specifically which
+cluster our command will apply to.
 
-<p>Apply changes and check to make sure it is doing what you intended it to update</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kops --cluster ${NAME} replace -f ${NAME}.yaml
+Apply changes and check to make sure it is doing what you intended it to update
+```
+kops --cluster ${NAME} replace -f ${NAME}.yaml
 kops --cluster ${NAME} update cluster
-</code></pre></div></div>
+```
 
-<p>Execute the changes:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kops --cluster ${NAME} rolling-update cluster --yes
-</code></pre></div></div>
+Execute the changes:
+```
+kops --cluster ${NAME} rolling-update cluster --yes
+```
 
-<p>Check on which nodes needs to be updated.  This will give you a list of nodes
-that requires to be rolled or updated.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kops --name ${NAME} rolling-update cluster
-</code></pre></div></div>
+Check on which nodes needs to be updated.  This will give you a list of nodes
+that requires to be rolled or updated.
+```
+kops --name ${NAME} rolling-update cluster
+```
 
-<p>Can target a specific node group one at a time.  For example, if you are updating
+Can target a specific node group one at a time.  For example, if you are updating
 the masters and want to do one at a time.
 ```
-kops –name ${NAME} rolling-update cluster –instance-group master-us-east-1a –yes</p>
-
-<!--         <p class="post-keywords">AWS | kubernetes | kops</p>
- -->  
-          <p class="post-keywords">AWS | kubernetes | kops</p>
-      </div><a class="u-url" href="/aws/kubernetes/kops/2018/07/07/how-i-use-kops.html" hidden></a>
-    </div>
-    
-    <!-- Pagination links -->
-    <div class="pagination">
-      
-        <a href="/kubernetes/kops/2018/07/02/kops-templating.html" class="previous">< Previous</a>
-      
-      <a class="view-all" href="/blog">View All</a>
-      
-        <a href="/kubernetes/kubectl/logs/2018/07/10/various-kubectl-usage.html" class="next">Next > </a>
-      
-    </div>
-
-  </div>
-
-</article>
-
-      </div>
-    </main><footer class="site-footer h-card">
-  <data class="u-url" href="/"></data>
-
-  <div class="wrapper">
-
-    <p class="footer-heading">© 2018 DevOps Services</p>
-
-    
-
-  </div>
-
-</footer>
-</body>
-
-</html>
+kops --name ${NAME} rolling-update cluster --instance-group master-us-east-1a --yes
