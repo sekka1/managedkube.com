@@ -21,10 +21,10 @@ I have a repository of different tools that are public and in [Docker Hub][docke
 On a machine, if I need to use the `aws-cli` I would run this:
 
 
-```yaml
+```bash
 docker run \
---env AWS_ACCESS_KEY_ID=<<YOUR_ACCESS_KEY>> \
---env AWS_SECRET_ACCESS_KEY=<<YOUR_SECRET_ACCESS>> \
+--env AWS_ACCESS_KEY_ID=${YOUR_ACCESS_KEY{} \
+--env AWS_SECRET_ACCESS_KEY=${YOUR_SECRET_ACCESS} \
 --env AWS_DEFAULT_REGION=us-east-1 \
 garland/aws-cli:1.15.47 \
 aws ec2 describe-instances --instance-ids i-90949d7a
@@ -39,10 +39,10 @@ This is even useful locally when I am testing something out. For example, the `a
 Another use for this container is to upload items to S3 from a server. The server would usually not have `aws-cli` installed but it does have Docker. With this command you can upload anything to your S3 buckets:
 
 
-```yaml
+```bash
 docker run \
---env AWS_ACCESS_KEY_ID=<<YOUR_ACCESS_KEY>> \
---env AWS_SECRET_ACCESS_KEY=<<YOUR_SECRET_ACCESS>> \
+--env AWS_ACCESS_KEY_ID=${YOUR_ACCESS_KEY} \
+--env AWS_SECRET_ACCESS_KEY=${YOUR_SECRET_ACCESS} \
 -v $PWD:/data \
 garland/aws-cli:1.15.47 \
 aws s3 sync . s3://mybucket
