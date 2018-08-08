@@ -4,8 +4,7 @@ title: Docker Container Toolbox
 categories: docker aws tools troubleshooting
 keywords: docker aws tools troubleshooting
 ---
-![Docker Toolbox]("https://managedkube.com/assets/blog/images/Cover-DockerToolbox.png")
-
+![Docker Toolbox]({{ "/assets/blog/images/Cover-DockerToolbox.png" | absolute_url }})
 
 Docker is useful in many different ways. One way that I use containers is to use them like a toolbox. Mostly the toolbox contains just a binary that I need or a few that are useful together.
 
