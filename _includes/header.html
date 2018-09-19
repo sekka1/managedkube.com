@@ -5,7 +5,7 @@
       {%- assign default_paths = site.pages | map: "path" -%}
       {%- assign page_paths = site.header_pages | default: default_paths -%}
       <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-        <img src="/assets/images/ManagedKube-Logo.jpg">
+        <img src="/assets/images/ManagedKube-Logo.png">
       </a>
 
       {%- if page_paths -%}
@@ -20,9 +20,10 @@
           </label>
 
           <div class="trigger">
-            <a class="page-link" href="/managed-kube">ManagedKube</a>
+            <a class="page-link" href="/managed-kube">Platform</a>
             <a class="page-link" href="/devops-consulting">DevOps Consulting</a>
-            <a class="page-link" href="/devops-infrastructure">DevOps Infrastructure</a><a class="page-link" href="/blog/">Blog</a>
+            <a class="page-link" href="/kubernetes-cost-attribution">Kubernetes Cost Attribution</a>
+            <a class="page-link" href="/blog/">Blog</a>
             <a class="page-link" href="/contact">Contact</a></div>
 
         </nav>
