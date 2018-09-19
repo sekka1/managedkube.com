@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Kubernetes Cron Jobs | ManagedKube</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Kubernetes Cron Jobs" />
+<meta name="author" content="Garland Kan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Sometime you just have to run a cronjob that does something and sometime you have to run a cronjob that restarts a service. Yeah, unfortunately this is a thing." />
+<meta property="og:description" content="Sometime you just have to run a cronjob that does something and sometime you have to run a cronjob that restarts a service. Yeah, unfortunately this is a thing." />
+<link rel="canonical" href="http://localhost:4000/kubernetes/cron/job/2018/08/31/kubernetes-running-cronjob.html" />
+<meta property="og:url" content="http://localhost:4000/kubernetes/cron/job/2018/08/31/kubernetes-running-cronjob.html" />
+<meta property="og:site_name" content="ManagedKube" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-31T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"Sometime you just have to run a cronjob that does something and sometime you have to run a cronjob that restarts a service. Yeah, unfortunately this is a thing.","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"http://localhost:4000/kubernetes/cron/job/2018/08/31/kubernetes-running-cronjob.html","headline":"Kubernetes Cron Jobs","dateModified":"2018-08-31T00:00:00-07:00","datePublished":"2018-08-31T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/kubernetes/cron/job/2018/08/31/kubernetes-running-cronjob.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ManagedKube" /><script type="text/javascript">
+  	$(document).ready(function(){
+
+  		$('label[for="nav-trigger"]').click(function() {
+  			$('body').toggleClass('nav-open');
+  		})
+      var pathName = window.location.pathname;
+      // alert('[href= "'" + pathName + "'"]');
+      $('.page-link').removeClass('page-linkactive');
+      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
+  	});
+  </script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <div class="section"><a class="site-title" rel="author" href="/">
+        <img src="/assets/images/ManagedKube-Logo.png">
+      </a><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+            <a class="page-link" href="/managed-kube">Platform</a>
+            <a class="page-link" href="/devops-consulting">DevOps Consulting</a>
+            <a class="page-link" href="/kubernetes-cost-attribution">Kubernetes Cost Attribution</a>
+            <a class="page-link" href="/blog/">Blog</a>
+            <a class="page-link" href="/contact">Contact</a></div>
+
+        </nav></div>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-wrap">
+    <div class="post-container">
+      <header class="post-header">
+        <h1 class="post-title p-name" itemprop="name headline">Kubernetes Cron Jobs</h1>
+        <div class="meta-wrap">
+          <p class="post-author"></p>
+          <time class="dt-published" datetime="2018-08-31T00:00:00-07:00" itemprop="datePublished">Aug 31, 2018
+          </time>
+<!---->
+        </div>
+      </header>
+
+      <div class="post-content e-content" itemprop="articleBody">
+        <p>Sometime you just have to run a cronjob that does something and sometime you have
+to run a cronjob that restarts a service.  Yeah, unfortunately this is a thing.</p>
+
+<p>For example, someone asked me if there is a way we can restart Redis every 24 hours.</p>
+
+<p>I asked the normal questions, like are there any way we can just fix the problem?
+The answer was we are going to use another library that wont need this but that is
+coming soon…so that sounds like a reasonable answer.</p>
+
+<p>Alright…this was my solution.</p>
+
+<p>I am going to make a Kubernetes cron job that will <code class="highlighter-rouge">patch</code> the <code class="highlighter-rouge">deployement</code> updating
+the pod’s label.  The effect this would have is that all of the pods in this deployment
+would start to roll per the <code class="highlighter-rouge">rolling-update</code> parameters for this deployment.  Which
+works out nicely because the <code class="highlighter-rouge">rolling-updates</code> are safe and there will be no outage
+to this service.</p>
+
+<p>Here are the yaml configurations:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Role</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">rbac.authorization.k8s.io/v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">my-namespace</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">redis-restart</span>
+<span class="na">rules</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">apiGroups</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">extensions</span>
+  <span class="pi">-</span> <span class="s">apps</span>
+  <span class="na">resources</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">deployments</span>
+  <span class="pi">-</span> <span class="s">replicasets</span>
+  <span class="na">verbs</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">patch'</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">get'</span>
+
+<span class="nn">---</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">RoleBinding</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">rbac.authorization.k8s.io/v1beta1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">redis-restart</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">my-namespace</span>
+<span class="na">subjects</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">kind</span><span class="pi">:</span> <span class="s">ServiceAccount</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">sa-redis-restart</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">my-namespace</span>
+<span class="na">roleRef</span><span class="pi">:</span>
+  <span class="na">kind</span><span class="pi">:</span> <span class="s">Role</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">redis-restart</span>
+  <span class="na">apiGroup</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">ServiceAccount</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">sa-redis-restart</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">my-namespace</span>
+
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">batch/v1beta1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">CronJob</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">restart-redis</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">my-namespace</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">schedule</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">*/24</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+  <span class="na">jobTemplate</span><span class="pi">:</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">template</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span>
+          <span class="na">serviceAccountName</span><span class="pi">:</span> <span class="s">sa-redis-restart</span>
+          <span class="na">containers</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">kubectl</span>
+            <span class="na">image</span><span class="pi">:</span> <span class="s">garland/kubectl:1.10.4</span>
+            <span class="na">command</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">/bin/sh</span>
+            <span class="pi">-</span> <span class="s">-c</span>
+            <span class="pi">-</span> <span class="s">kubectl patch deployment decision-server -p '{"spec":{"template":{"metadata":{"labels":{"restarted-by":"'${POD_NAME}'"}}}}}'</span>
+            <span class="na">env</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">POD_NAME</span>
+                <span class="na">valueFrom</span><span class="pi">:</span>
+                  <span class="na">fieldRef</span><span class="pi">:</span>
+                    <span class="na">fieldPath</span><span class="pi">:</span> <span class="s">metadata.name</span>
+          <span class="na">restartPolicy</span><span class="pi">:</span> <span class="s">OnFailure</span>
+</code></pre></div></div>
+
+<p>Of course you are using RBAC in your Kubernetes cluster…right?</p>
+
+<p>The first 3 configs are for setting up the permissions: <code class="highlighter-rouge">Role</code>, <code class="highlighter-rouge">RoleBinding</code>, <code class="highlighter-rouge">ServiceAccount</code></p>
+
+<p>There is a schedule for the cron schedule: <code class="highlighter-rouge">schedule: "0 */24 * * *"</code>.  This is standard
+cron syntax.</p>
+
+<p>It setups a role with permissions only to patch a deployment in the <code class="highlighter-rouge">namespace</code> named: <code class="highlighter-rouge">my-namespace</code>.</p>
+
+<p>The fourth yaml config is where the <code class="highlighter-rouge">CronJob</code> is defined.  As you can see it is fairly
+simple.</p>
+
+<p>It uses the <code class="highlighter-rouge">serviceAccountName</code> created above it.</p>
+
+<p>The image (<code class="highlighter-rouge">garland/kubectl:1.10.4</code>) is a set of images that I maintain to help with
+these sort of tasks (https://github.com/sekka1/containers).  It is a small image with
+only one binary installed in it to perform distinct tasks (such as this one).</p>
+
+<p>Since we have to change something in the labels to induce a <code class="highlighter-rouge">rolling-update</code> for the
+<code class="highlighter-rouge">deployment</code>, we are updating the label with the pod’s name that is performing this
+patch.  These pod names are guaranteeded to be unique.</p>
+
+<p>There we have it.  A simple cron job with limited permissions to perform a task.</p>
+
+<!--         <p class="post-keywords">kubernetes | cron | job</p>
+ -->  
+          <p class="post-keywords">kubernetes | cron | job</p>
+      </div><a class="u-url" href="/kubernetes/cron/job/2018/08/31/kubernetes-running-cronjob.html" hidden></a>
+    </div>
+    
+    <!-- Pagination links -->
+    <div class="pagination">
+      
+        <a href="/aws/cli/ec2/2018/08/16/aws-cli-find-and-terminate-instance.html" class="previous">< Previous</a>
+      
+      <a class="view-all" href="/blog">View All</a>
+      
+        <a href="/kubernetes/rbac/port/forward/2018/09/01/kubernetes-rbac-port-forward.html" class="next">Next > </a>
+      
+    </div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <p class="footer-heading">© 2018 ManagedKube</p>
+
+    
+
+  </div>
+
+</footer>
+</body>
+
+</html>

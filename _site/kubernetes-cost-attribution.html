@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Kubernetes Cost Attribution | ManagedKube</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Kubernetes Cost Attribution" />
+<meta name="author" content="Garland Kan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Kubernetes/Docker consulting &amp; infrastructure SaaS product" />
+<meta property="og:description" content="Kubernetes/Docker consulting &amp; infrastructure SaaS product" />
+<link rel="canonical" href="http://localhost:4000/kubernetes-cost-attribution" />
+<meta property="og:url" content="http://localhost:4000/kubernetes-cost-attribution" />
+<meta property="og:site_name" content="ManagedKube" />
+<script type="application/ld+json">
+{"description":"Kubernetes/Docker consulting &amp; infrastructure SaaS product","author":{"@type":"Person","name":"Garland Kan"},"@type":"WebPage","url":"http://localhost:4000/kubernetes-cost-attribution","headline":"Kubernetes Cost Attribution","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ManagedKube" /><script type="text/javascript">
+  	$(document).ready(function(){
+
+  		$('label[for="nav-trigger"]').click(function() {
+  			$('body').toggleClass('nav-open');
+  		})
+      var pathName = window.location.pathname;
+      // alert('[href= "'" + pathName + "'"]');
+      $('.page-link').removeClass('page-linkactive');
+      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
+  	});
+  </script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <div class="section"><a class="site-title" rel="author" href="/">
+        <img src="/assets/images/ManagedKube-Logo.png">
+      </a><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+            <a class="page-link" href="/managed-kube">Platform</a>
+            <a class="page-link" href="/devops-consulting">DevOps Consulting</a>
+            <a class="page-link" href="/kubernetes-cost-attribution">Kubernetes Cost Attribution</a>
+            <a class="page-link" href="/blog/">Blog</a>
+            <a class="page-link" href="/contact">Contact</a></div>
+
+        </nav></div>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="devops-consulting page"> 
+	<div class="banner">
+	  <div class="section">
+	    <div class="banner-text center">
+	      <h1 class="banner-heading">Kubernetes Cost Attribution</h1>
+	      <p class="banner-subheading">
+	        An easy-to-use cost monitoring application that breaks down the costs of what is running on your Kubernetes clusters. Think of it as an easy-to-read, detailed cloud bill.
+	      </p>
+	      <div class="banner-container">
+	      	<div class="application">
+	      		<img src="/assets/images/amazon-eks.png">
+	      	</div>
+	      	<div class="application">
+	      		<img src="/assets/images/google-cloud-platform.png">
+	      	</div>
+	      	<div class="application">
+	      		<img src="/assets/images/cost-kubernetes.png">
+	      	</div>
+	      </div>
+	      <a href="#cost-form"><div class="button"><span>Start Free Trial<span></div></a>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- why devops services? -->
+	<div class="white-bg why-kubernetes-cost-attribution">
+	 	<div class="section">
+
+	    	<!-- <h1 class="header center blue">Why DevOps Services?</h1> -->
+			<h1 class="header center blue">Why Kubernetes Cost Attribution?</h1>
+		    
+		    <p class="center">
+		    	Kubernetes is a clustered system that can handle multi-tenancy or groups within the same company. However, cloud systems don’t break down the cost of the resources each group is using on this cluster. It can only tell you that you are running many instances. 
+ 			</p>
+ 			<br>
+ 			<p class="center">
+				ManagedKube’s Kubernetes Cost Attribution tool gets you this information by monitoring the Kubernetes cluster to see what is running and for how long. This application gives you a breakdown of everything that is running on the cluster and how much it’s costing you.
+		    </p>
+
+		</div>
+	</div>
+
+
+	<!-- Kubernetes Cost Attribution Benefits -->
+	<div class="blue-bg benefits">
+		<div class="section">
+		  
+		  <h1 class="header center white">Kubernetes Cost Attribution Benefits</h1>		  
+		  <div class="box-wrapper">
+		      <div class="box">
+		        <div class="box_img-wrapper">	
+					<svg width="202px" height="225px" viewBox="0 0 202 225" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+					    <desc>Created with Sketch.</desc>
+					    <defs></defs>
+					    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <g id="Desktop-HD-Copy-2" transform="translate(-204.000000, -1550.000000)" fill-rule="nonzero">
+					            <g id="Group-18" transform="translate(180.000000, 1538.000000)">
+					                <g id="Group-16">
+					                    <g id="Group-4" transform="translate(129.500000, 140.000000) rotate(-19.000000) translate(-129.500000, -140.000000) translate(48.000000, 20.000000)">
+					                        <path d="M124.870853,183.678615 L143.325909,234.383465 L130.020106,239.226381 L111.624873,188.685892 L86.0725177,206.850554 L88.6831139,98.1190898 L157.682065,182.193409 L124.870853,183.678615 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+					                        <path d="M79.2600375,125.137 C53.9228906,125.137 33.3830748,104.597184 33.3830748,79.2600375 C33.3830748,53.9228906 53.9228906,33.3830748 79.2600375,33.3830748 C104.597184,33.3830748 125.137,53.9228906 125.137,79.2600375 C125.137,104.597184 104.597184,125.137 79.2600375,125.137 Z M79.2600375,112.643112 C97.6970006,112.643112 112.643112,97.6970006 112.643112,79.2600375 C112.643112,60.8230744 97.6970006,45.8769627 79.2600375,45.8769627 C60.8230744,45.8769627 45.8769627,60.8230744 45.8769627,79.2600375 C45.8769627,97.6970006 60.8230744,112.643112 79.2600375,112.643112 Z" id="Oval-2" fill="#FFFFFF"></path>
+					                        <circle id="Oval-2-Copy-2" stroke="#FFFFFF" stroke-width="20" cx="79.2600375" cy="79.2600375" r="79.2600375"></circle>
+					                        <polygon id="Line" fill="#326CE5" points="62.9683863 90.4783201 88.7814647 91.1056996 86.4367844 187.575884 60.6237059 186.948505"></polygon>
+					                        <polygon id="Line-Copy" fill="#326CE5" points="82.2035601 90.8556031 100.821588 75.4664569 162.236734 149.767453 143.618707 165.156599"></polygon>
+					                    </g>
+					                </g>
+					            </g>
+					        </g>
+					    </g>
+					</svg>
+		        </div>
+		        <p class="text center white">Easy-to-use:</p>
+		    	<p class="text center white">one-click installation from GKE Marketplace</p>
+		      </div>
+		      <hr class="display-on-mobile"> 
+		      <div class="box">
+		        <div class="box_img-wrapper">
+					<svg width="245px" height="244px" viewBox="0 0 245 244" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+					    <desc>Created with Sketch.</desc>
+					    <defs></defs>
+					    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <g id="Desktop-HD-Copy-2" transform="translate(-589.000000, -1538.000000)">
+					            <g id="Group-18" transform="translate(180.000000, 1538.000000)">
+					                <g id="Group-15" transform="translate(408.500000, 0.000000)">
+					                    <g id="Group-13">
+					                        <g id="Group-12" transform="translate(72.427844, 107.281106)" fill-rule="nonzero">
+					                            <rect id="Rectangle-4-Copy" fill="#D8FFAD" x="54.1353383" y="40.1649285" width="34.9260247" height="92.5539656"></rect>
+					                            <rect id="Rectangle-4-Copy-2" fill="#FFE5BB" x="92.5539656" y="27.0676692" width="34.9260247" height="104.778074"></rect>
+					                            <rect id="Rectangle-4-Copy-3" fill="#FFBEC6" x="130.972593" y="0" width="34.9260247" height="131.845743"></rect>
+					                            <path d="M0,131.19088 L167.208343,131.19088" id="Line-2" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square"></path>
+					                        </g>
+					                        <g id="Group-11" fill="#FFFFFF">
+					                            <path d="M52.6110849,120.625746 C58.9845352,113.780188 69.7006584,113.39747 76.546216,119.77092 C83.3917737,126.14437 83.7744924,136.860493 77.4010421,143.706051 L30.2509087,194.348787 C23.8774585,201.194345 13.1613353,201.577063 6.31577766,195.203613 C-0.529779996,188.830163 -0.912498682,178.11404 5.46095155,171.268482 L52.6110849,120.625746 Z" id="Line-2-Copy" fill-rule="nonzero"></path>
+					                            <path d="M81.5226953,103.645052 C84.254174,100.711242 88.8467982,100.54722 91.7806086,103.278698 C94.7144191,106.010177 94.8784414,110.602801 92.1469627,113.536612 L44.9968293,164.179347 C42.2653506,167.113158 37.6727264,167.27718 34.738916,164.545701 C31.8051055,161.814223 31.6410833,157.221599 34.3725619,154.287788 L81.5226953,103.645052 Z" id="Line-2-Copy-2" fill-rule="nonzero"></path>
+					                            <path d="M143.781502,81.5795111 C143.781502,78.9963329 143.064838,76.9408469 141.631489,75.4129914 C140.198141,73.885136 137.764634,72.4754349 134.330897,71.1838458 C130.89716,69.8922566 127.936,68.6085623 125.447329,67.3327243 C122.958657,66.0568863 120.824417,64.5920572 119.044544,62.938193 C117.264671,61.2843289 115.878596,59.3390989 114.886278,57.1024446 C113.893959,54.8657902 113.397807,52.2038965 113.397807,49.1166835 C113.397807,43.7928161 115.098899,39.4298305 118.501134,36.0275958 C121.903369,32.625361 126.423863,30.6407538 132.062752,30.0737147 L132.062752,19.9615675 L139.623236,19.9615675 L139.623236,30.2154738 C145.199121,31.0030281 149.562106,33.3262786 152.712324,37.1852949 C155.862541,41.0443111 157.437626,46.0452062 157.437626,52.18813 L143.781502,52.18813 C143.781502,48.4078692 143.001835,45.5805915 141.442477,43.7062122 C139.88312,41.8318329 137.796132,40.8946573 135.181452,40.8946573 C132.598273,40.8946573 130.597915,41.6270718 129.180318,43.0919229 C127.76272,44.556774 127.053931,46.5807583 127.053931,49.1639365 C127.053931,51.5581017 127.746969,53.4797055 129.133065,54.9288054 C130.51916,56.3779054 133.094424,57.8584854 136.858934,59.3705897 C140.623444,60.8826941 143.718486,62.308146 146.144153,63.6469884 C148.569821,64.9858308 150.617431,66.4979124 152.287046,68.1832787 C153.956662,69.868645 155.23248,71.7902488 156.114541,73.9481477 C156.996602,76.1060466 157.437626,78.6183072 157.437626,81.485005 C157.437626,86.8403746 155.768036,91.1876093 152.428805,94.5268397 C149.089575,97.8660701 144.490327,99.8349264 138.630922,100.433468 L138.630922,109.83682 L131.117692,109.83682 L131.117692,100.480721 C124.659746,99.7876729 119.658851,97.4959242 116.114856,93.6054057 C112.570862,89.7148873 110.798891,84.5407329 110.798891,78.0827873 L124.455015,78.0827873 C124.455015,81.831546 125.344938,84.7060762 127.124811,86.7064642 C128.904684,88.7068522 131.464197,89.7070312 134.803427,89.7070312 C137.575619,89.7070312 139.764987,88.9746167 141.371598,87.5097656 C142.978209,86.0449146 143.781502,84.0681828 143.781502,81.5795111 Z" id="$"></path>
+					                            <path d="M131.518312,132.875333 C94.959419,132.875333 65.3225806,103.238495 65.3225806,66.6796022 C65.3225806,30.1207094 94.959419,0.483870968 131.518312,0.483870968 C168.077205,0.483870968 197.714043,30.1207094 197.714043,66.6796022 C197.714043,103.238495 168.077205,132.875333 131.518312,132.875333 Z M131.518312,118.359204 C160.060168,118.359204 183.197914,95.2214584 183.197914,66.6796022 C183.197914,38.137746 160.060168,15 131.518312,15 C102.976456,15 79.8387097,38.137746 79.8387097,66.6796022 C79.8387097,95.2214584 102.976456,118.359204 131.518312,118.359204 Z" id="Oval-3" fill-rule="nonzero"></path>
+					                        </g>
+					                    </g>
+					                </g>
+					            </g>
+					        </g>
+					    </g>
+					</svg>
+		        </div>
+		        <p class="text center white">Better manage your budgets and forecasting with a Dashboard that highlights namespaces and cost</p>
+		      </div>
+		      <hr class="display-on-mobile"> 
+		      <div class="box">
+		        <div class="box_img-wrapper">
+					<svg width="239px" height="239px" viewBox="0 0 239 239" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+					    <desc>Created with Sketch.</desc>
+					    <defs></defs>
+					    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <g id="Desktop-HD-Copy-2" transform="translate(-1012.000000, -1539.000000)">
+					            <g id="Group-18" transform="translate(180.000000, 1538.000000)">
+					                <g id="Group-17" transform="translate(821.000000, 1.000000)">
+					                    <g id="Group-14" transform="translate(11.000000, 0.000000)">
+					                        <polygon id="Star-Copy" fill="#FFFFFF" fill-rule="nonzero" points="119.161307 220.832693 95.4586494 238.322614 80.253352 213.09342 51.6618488 220.181385 47.2687803 191.053834 18.1412288 186.660765 25.2291942 158.069262 -5.32907052e-14 142.863965 17.4899207 119.161307 -5.32907052e-14 95.4586494 25.2291942 80.253352 18.1412288 51.6618488 47.2687803 47.2687803 51.6618488 18.1412288 80.253352 25.2291942 95.4586494 4.14779322e-13 119.161307 17.4899207 142.863965 4.01456646e-13 158.069262 25.2291942 186.660765 18.1412288 191.053834 47.2687803 220.181385 51.6618488 213.09342 80.253352 238.322614 95.4586494 220.832693 119.161307 238.322614 142.863965 213.09342 158.069262 220.181385 186.660765 191.053834 191.053834 186.660765 220.181385 158.069262 213.09342 142.863965 238.322614"></polygon>
+					                        <path d="M119,206.211697 L98.6683307,221.214204 L85.6255284,199.573102 L61.1003045,205.653018 L57.3320176,180.667982 L32.346982,176.899696 L38.426898,152.374472 L16.785796,139.331669 L31.7883029,119 L16.785796,98.6683307 L38.426898,85.6255284 L32.346982,61.1003045 L57.3320176,57.3320176 L61.1003045,32.346982 L85.6255284,38.426898 L98.6683307,16.785796 L119,31.7883029 L139.331669,16.785796 L152.374472,38.426898 L176.899696,32.346982 L180.667982,57.3320176 L205.653018,61.1003045 L199.573102,85.6255284 L221.214204,98.6683307 L206.211697,119 L221.214204,139.331669 L199.573102,152.374472 L205.653018,176.899696 L180.667982,180.667982 L176.899696,205.653018 L152.374472,199.573102 L139.331669,221.214204 L119,206.211697 Z" id="Star" stroke="#326CE5" stroke-width="4" fill-rule="nonzero"></path>
+					                        <path d="M79.2911161,101.351562 L94.2208036,101.351562 L94.2208036,107 L72.2598661,107 L72.2598661,72.875 L79.2911161,72.875 L79.2911161,101.351562 Z M124.771518,90.7109375 C124.771518,94.0703293 124.177774,97.0156123 122.990268,99.546875 C121.802762,102.078138 120.10356,104.031243 117.892612,105.40625 C115.681663,106.781257 113.146532,107.46875 110.287143,107.46875 C107.459004,107.46875 104.935591,106.789069 102.71683,105.429688 C100.498069,104.070306 98.7793364,102.128919 97.5605804,99.6054688 C96.3418243,97.0820186 95.7246429,94.1797039 95.7090179,90.8984375 L95.7090179,89.2109375 C95.7090179,85.8515457 96.3144806,82.894544 97.5254241,80.3398438 C98.7363677,77.7851435 100.447288,75.8242256 102.658237,74.4570312 C104.869185,73.0898369 107.396504,72.40625 110.240268,72.40625 C113.084032,72.40625 115.611351,73.0898369 117.822299,74.4570312 C120.033248,75.8242256 121.744168,77.7851435 122.955112,80.3398438 C124.166055,82.894544 124.771518,85.8437333 124.771518,89.1875 L124.771518,90.7109375 Z M117.646518,89.1640625 C117.646518,85.5859196 117.005899,82.8671968 115.724643,81.0078125 C114.443386,79.1484282 112.61528,78.21875 110.240268,78.21875 C107.880881,78.21875 106.060587,79.1367096 104.77933,80.9726562 C103.498074,82.8086029 102.849643,85.4999823 102.834018,89.046875 L102.834018,90.7109375 C102.834018,94.1953299 103.474636,96.8984279 104.755893,98.8203125 C106.037149,100.742197 107.880881,101.703125 110.287143,101.703125 C112.64653,101.703125 114.459012,100.777353 115.724643,98.9257812 C116.990274,97.0742095 117.630893,94.3750177 117.646518,90.828125 L117.646518,89.1640625 Z M156.447232,97.15625 L161.040982,72.875 L168.048795,72.875 L160.478482,107 L153.400357,107 L147.84567,84.171875 L142.290982,107 L135.212857,107 L127.642545,72.875 L134.650357,72.875 L139.267545,97.109375 L144.892545,72.875 L150.84567,72.875 L156.447232,97.15625 Z M86.8359375,152.632812 C86.5703112,156.304706 85.214856,159.195302 82.7695312,161.304688 C80.3242065,163.414073 77.1015825,164.46875 73.1015625,164.46875 C68.7265406,164.46875 65.2851688,162.996108 62.7773438,160.050781 C60.2695187,157.105454 59.015625,153.062526 59.015625,147.921875 L59.015625,145.835938 C59.015625,142.554671 59.5937442,139.664075 60.75,137.164062 C61.9062558,134.66405 63.558583,132.7461 65.7070312,131.410156 C67.8554795,130.074212 70.3515483,129.40625 73.1953125,129.40625 C77.1328322,129.40625 80.3046755,130.460927 82.7109375,132.570312 C85.1171995,134.679698 86.5078106,137.640606 86.8828125,141.453125 L79.8515625,141.453125 C79.6796866,139.249989 79.0664115,137.652349 78.0117188,136.660156 C76.957026,135.667964 75.3515733,135.171875 73.1953125,135.171875 C70.8515508,135.171875 69.0976621,136.01171 67.9335938,137.691406 C66.7695254,139.371102 66.1718752,141.976545 66.140625,145.507812 L66.140625,148.085938 C66.140625,151.773456 66.6992132,154.468741 67.8164062,156.171875 C68.9335993,157.875009 70.6953005,158.726562 73.1015625,158.726562 C75.2734484,158.726562 76.8945259,158.230474 77.9648438,157.238281 C79.0351616,156.246089 79.6484367,154.710948 79.8046875,152.632812 L86.8359375,152.632812 Z M119.472589,147.710938 C119.472589,151.070329 118.878845,154.015612 117.691339,156.546875 C116.503833,159.078138 114.804632,161.031243 112.593683,162.40625 C110.382734,163.781257 107.847604,164.46875 104.988214,164.46875 C102.160075,164.46875 99.6366629,163.789069 97.4179018,162.429688 C95.1991407,161.070306 93.4804079,159.128919 92.2616518,156.605469 C91.0428957,154.082019 90.4257144,151.179704 90.4100893,147.898438 L90.4100893,146.210938 C90.4100893,142.851546 91.015552,139.894544 92.2264955,137.339844 C93.4374391,134.785143 95.1483595,132.824226 97.359308,131.457031 C99.5702566,130.089837 102.097575,129.40625 104.941339,129.40625 C107.785104,129.40625 110.312422,130.089837 112.523371,131.457031 C114.734319,132.824226 116.445239,134.785143 117.656183,137.339844 C118.867127,139.894544 119.472589,142.843733 119.472589,146.1875 L119.472589,147.710938 Z M112.347589,146.164062 C112.347589,142.58592 111.706971,139.867197 110.425714,138.007812 C109.144458,136.148428 107.316351,135.21875 104.941339,135.21875 C102.581952,135.21875 100.761658,136.13671 99.4804018,137.972656 C98.1991454,139.808603 97.5507144,142.499982 97.5350893,146.046875 L97.5350893,147.710938 C97.5350893,151.19533 98.1757079,153.898428 99.4569643,155.820312 C100.738221,157.742197 102.581952,158.703125 104.988214,158.703125 C107.347601,158.703125 109.160083,157.777353 110.425714,155.925781 C111.691346,154.074209 112.331964,151.375018 112.347589,147.828125 L112.347589,146.164062 Z M142.265491,155.046875 C142.265491,153.718743 141.796746,152.699222 140.859241,151.988281 C139.921736,151.27734 138.234253,150.527348 135.796741,149.738281 C133.359229,148.949215 131.429561,148.171879 130.007679,147.40625 C126.132659,145.31249 124.195179,142.492205 124.195179,138.945312 C124.195179,137.101553 124.714705,135.457038 125.753772,134.011719 C126.79284,132.566399 128.285013,131.437504 130.230335,130.625 C132.175657,129.812496 134.359229,129.40625 136.781116,129.40625 C139.218628,129.40625 141.390482,129.847652 143.296741,130.730469 C145.203001,131.613286 146.683455,132.859367 147.738147,134.46875 C148.79284,136.078133 149.320179,137.90624 149.320179,139.953125 L142.288929,139.953125 C142.288929,138.390617 141.796746,137.175786 140.812366,136.308594 C139.827986,135.441402 138.445187,135.007812 136.663929,135.007812 C134.94517,135.007812 133.609246,135.37109 132.656116,136.097656 C131.702986,136.824222 131.226429,137.781244 131.226429,138.96875 C131.226429,140.078131 131.785017,141.007809 132.90221,141.757812 C134.019403,142.507816 135.663918,143.210934 137.835804,143.867188 C141.835824,145.070319 144.749857,146.562491 146.577991,148.34375 C148.406125,150.125009 149.320179,152.343737 149.320179,155 C149.320179,157.95314 148.203002,160.269523 145.968616,161.949219 C143.73423,163.628915 140.726447,164.46875 136.945179,164.46875 C134.320165,164.46875 131.929564,163.988286 129.773304,163.027344 C127.617043,162.066401 125.972528,160.750008 124.83971,159.078125 C123.706892,157.406242 123.140491,155.468761 123.140491,153.265625 L130.195179,153.265625 C130.195179,157.031269 132.445156,158.914062 136.945179,158.914062 C138.617062,158.914062 139.921736,158.574222 140.859241,157.894531 C141.796746,157.21484 142.265491,156.265631 142.265491,155.046875 Z M179.753705,135.570312 L169.30058,135.570312 L169.30058,164 L162.26933,164 L162.26933,135.570312 L151.95683,135.570312 L151.95683,129.875 L179.753705,129.875 L179.753705,135.570312 Z" id="LOW-COST" fill="#326CE5"></path>
+					                    </g>
+					                </g>
+					            </g>
+					        </g>
+					    </g>
+					</svg>
+		        </div>
+		        <p class="text center white">Affordable pricing:</p>
+				<p class="text center white">$50/month</p>
+		      </div>
+		  </div>
+
+		</div>
+	</div>
+
+	<!-- savings for you -->
+	<div class="white-bg comparison">
+		<div class="section">
+		  <h1 class="header center blue"> With our dashboard, you can quickly identify which namespaces are driving your cloud costs.</h1>
+		  <div class="compare">
+		  	<p class="center">The AWS Dashboard doesn't show any cost breakdowns.</p>
+		  	<div class="compare_image-wrapper">
+		  		<img src="/assets/images/aws.jpg">
+		  	</div>
+		  	<div class="compare_image-wrapper-mobile">
+		  		<img src="/assets/images/aws-mobile.jpg">
+		  	</div>
+		  </div>
+		  <div class="compare">
+			<p class="center">The Kubernetes Cost Attribution tool provides an easy to read, detailed look at what you’re running and how much it’s costing you.</p>
+			<div class="compare_image-wrapper">
+		  		<img src="/assets/images/cost-att.jpg">
+		  	</div>
+		  	<div class="compare_image-wrapper-mobile">
+		  		<img src="/assets/images/cost-att-mobile.jpg">
+		  	</div>
+		  </div>
+		  
+		</div>
+	</div>
+
+  	<!-- Clients that we’ve worked with -->
+	<div class="light-blue-bg featured-clients cost-att">
+		<div class="section">
+		  <h1 class="header center blue">Featured Clients</h1>
+		  <div class="client-list">
+		    <div class="client-list_img-wrapper">
+		      <a href="https://www.leanplum.com" target="_blank">
+		        <img src="/assets/images/leanplum.png">
+		      </a>
+		    </div>
+		    <div class="client-list_img-wrapper">
+		      <a href="http://tillster.com" target="_blank">
+		        <img src="/assets/images/tillster.png">
+		      </a>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+	<div class="white-bg get-in-touch-today" id="cost-form">
+		<div class="section">
+		  <h1 class="header center blue">Find out more or start free trial</h1>
+			<form class="contact-form" action="https://formspree.io/garlandk@gmail.com" method="POST">
+			    <input type="text" name="full_name" placeholder="Full Name">
+			    <!-- <input type="text" name="last_name" placeholder="Last Name"> -->
+			    <!-- <input type="text" name="business_name" placeholder="Business Name"> -->
+			    <input type="email" name="_replyto" placeholder="Email Address">
+			    <textarea name="message" placeholder="How can we help you?"></textarea>
+			    <input type="text" name="_gotcha" style="display:none" />
+			    <button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(".button").click(function() {
+	    var offset = 20; //Offset of 20px
+
+	    $('html, body').animate({
+	        scrollTop: $("#cost-form").offset().top + offset
+	    }, 600);
+	});
+</script>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <p class="footer-heading">© 2018 ManagedKube</p>
+
+    
+
+  </div>
+
+</footer>
+</body>
+
+</html>
