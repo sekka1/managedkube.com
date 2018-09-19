@@ -409,10 +409,16 @@ pre {
       font-size: 18px;
       margin-top: 24px; } }
 
+@media screen and (max-width: 786px) {
+  .kubernetes-cost-attribution .banner-heading {
+    font-size: 30px; }
+  .kubernetes-cost-attribution .banner-subheading {
+    font-size: 22px; } }
+
 .banner-container {
   background: rgba(255, 255, 255, 0.4);
   width: 100%;
-  margin: 36px auto;
+  margin: 24px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -770,6 +776,11 @@ img {
   box-shadow: none; }
   .benefits .box .text {
     font-size: 24px; }
+  .benefits .box .box_img-wrapper {
+    height: 180px; }
+  .benefits .box svg {
+    height: 100%;
+    width: auto; }
   .benefits .box:hover .text {
     color: #fff; }
   @media screen and (max-width: 900px) {
@@ -790,9 +801,15 @@ img {
       margin: auto;
       margin-bottom: 36px;
       width: 240px; } }
-  .benefits .box svg {
-    width: 100%;
-    height: auto; }
+
+.kubernetes-cost-attribution .banner .section {
+  min-height: calc(100vh - 80px); }
+
+.kubernetes-cost-attribution .banner-text {
+  padding: 36px 60px; }
+
+.kubernetes-cost-attribution .banner-subheading {
+  margin-top: 24px; }
 
 .cost-att .client-list {
   justify-content: center; }
@@ -804,6 +821,9 @@ img {
     @media screen and (max-width: 786px) {
       .cost-att .client-list .client-list_img-wrapper {
         margin-bottom: 24px; } }
+  @media screen and (max-width: 600px) {
+    .cost-att .client-list {
+      flex-direction: column; } }
 
 .compare:first-of-type {
   margin-bottom: 60px; }

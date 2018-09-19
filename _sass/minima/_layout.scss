@@ -340,10 +340,21 @@
   }
 }
 
+.kubernetes-cost-attribution {
+    @media screen and (max-width: 786px) {
+      .banner-heading {
+        font-size: $banner-mobile-font-size;
+      }
+      .banner-subheading {
+        font-size: 22px;
+      }
+    }
+}
+
 .banner-container {
   background: rgba(255,255,255,.4);
   width: 100%;
-  margin: 36px auto;
+  margin: 24px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -780,6 +791,14 @@ justify-content: space-between;
   .text {
     font-size: 24px;
   }
+  .box_img-wrapper {
+    height: 180px;
+  }
+  svg {
+    height: 100%;
+    width: auto;
+  }
+
   &:hover {
     .text {
       color: $white;
@@ -806,10 +825,18 @@ justify-content: space-between;
     margin-bottom: 36px;
     width: 240px;
   }
-  svg {
-    width: 100%;
-    height: auto;
-  }
+}
+
+.kubernetes-cost-attribution .banner .section {
+  min-height: calc(100vh - 80px);
+}
+
+.kubernetes-cost-attribution .banner-text {
+  padding: 36px 60px;
+}
+
+.kubernetes-cost-attribution .banner-subheading {
+  margin-top: 24px;
 }
 
 .cost-att .client-list {
@@ -822,6 +849,9 @@ justify-content: space-between;
       @media screen and (max-width: 786px) {
         margin-bottom: 24px;
       }
+  }
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
   }
 }
 
