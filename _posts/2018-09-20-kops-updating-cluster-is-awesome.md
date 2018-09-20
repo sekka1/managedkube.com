@@ -31,7 +31,7 @@ I would expect it to.
 So i make my changes and run the command to check what `kops` would change without
 actually applying it to the cluster:
 
-```bash
+```
 kops --name prod.ap-southeast-1.k8s.managedkube.com update cluster
 ```
 
