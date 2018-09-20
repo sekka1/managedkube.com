@@ -32,7 +32,7 @@ So i make my changes and run the command to check what `kops` would change witho
 actually applying it to the cluster:
 
 ```
-kops --name prod.ap-southeast-1.k8s.tillster.com update cluster
+kops --name prod.ap-southeast-1.k8s.managedkube.com update cluster
 ```
 
 It returns back to me this very handy and life saving diff on what it will exactly
@@ -41,62 +41,62 @@ do.
 1) I can see here that it will add these `instance groups`:
 ```yaml
 Will create resources:
-  AutoscalingGroup/ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  AutoscalingGroup/ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
   	MinSize             	1
   	MaxSize             	5
-  	Subnets             	[name:worker-zone-a.prod.ap-southeast-1.k8s.tillster.com id:subnet-58c7a93f]
-  	Tags                	{Project: cloud, k8s.io/cluster-autoscaler/node-template/label/k8s.info/hasPublicIP: false, k8s.io/cluster-autoscaler/node-template/label/k8s.info/instanceType: m4.large, k8s.io/cluster-autoscaler/node-template/label/k8s.info/application: infrastructure, k8s.io/role/node: 1, Name: ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com, k8s.io/cluster-autoscaler/node-template/label/prod.ap-southeast-1.k8s.tillster.com/role: scale-zero, Owner: kubernetes, k8s.io/cluster-autoscaler/node-template/label/k8s.info/isSpot: false, k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup: ondemand-zone-a, KubernetesCluster: prod.ap-southeast-1.k8s.tillster.com, Purpose: kubernetes-ondemand-node, CostCenter: kubernetes-saas}
+  	Subnets             	[name:worker-zone-a.prod.ap-southeast-1.k8s.managedkube.com id:subnet-58c7a93f]
+  	Tags                	{Project: cloud, k8s.io/cluster-autoscaler/node-template/label/k8s.info/hasPublicIP: false, k8s.io/cluster-autoscaler/node-template/label/k8s.info/instanceType: m4.large, k8s.io/cluster-autoscaler/node-template/label/k8s.info/application: infrastructure, k8s.io/role/node: 1, Name: ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com, k8s.io/cluster-autoscaler/node-template/label/prod.ap-southeast-1.k8s.managedkube.com/role: scale-zero, Owner: kubernetes, k8s.io/cluster-autoscaler/node-template/label/k8s.info/isSpot: false, k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup: ondemand-zone-a, KubernetesCluster: prod.ap-southeast-1.k8s.managedkube.com, Purpose: kubernetes-ondemand-node, CostCenter: kubernetes-saas}
   	Granularity         	1Minute
   	Metrics             	[GroupDesiredCapacity, GroupInServiceInstances, GroupMaxSize, GroupMinSize, GroupPendingInstances, GroupStandbyInstances, GroupTerminatingInstances, GroupTotalInstances]
-  	LaunchConfiguration 	name:ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  	LaunchConfiguration 	name:ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
 
-  AutoscalingGroup/ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  AutoscalingGroup/ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
   	MinSize             	1
   	MaxSize             	5
-  	Subnets             	[name:worker-zone-b.prod.ap-southeast-1.k8s.tillster.com id:subnet-9455cbdd]
-  	Tags                	{CostCenter: kubernetes-saas, Owner: kubernetes, k8s.io/cluster-autoscaler/node-template/label/k8s.info/isSpot: false, k8s.io/cluster-autoscaler/node-template/label/k8s.info/application: infrastructure, Name: ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com, KubernetesCluster: prod.ap-southeast-1.k8s.tillster.com, Project: cloud, Purpose: kubernetes-ondemand-node, k8s.io/cluster-autoscaler/node-template/label/prod.ap-southeast-1.k8s.tillster.com/role: scale-zero, k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup: ondemand-zone-b, k8s.io/cluster-autoscaler/node-template/label/k8s.info/hasPublicIP: false, k8s.io/cluster-autoscaler/node-template/label/k8s.info/instanceType: m4.large, k8s.io/role/node: 1}
+  	Subnets             	[name:worker-zone-b.prod.ap-southeast-1.k8s.managedkube.com id:subnet-9455cbdd]
+  	Tags                	{CostCenter: kubernetes-saas, Owner: kubernetes, k8s.io/cluster-autoscaler/node-template/label/k8s.info/isSpot: false, k8s.io/cluster-autoscaler/node-template/label/k8s.info/application: infrastructure, Name: ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com, KubernetesCluster: prod.ap-southeast-1.k8s.managedkube.com, Project: cloud, Purpose: kubernetes-ondemand-node, k8s.io/cluster-autoscaler/node-template/label/prod.ap-southeast-1.k8s.managedkube.com/role: scale-zero, k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup: ondemand-zone-b, k8s.io/cluster-autoscaler/node-template/label/k8s.info/hasPublicIP: false, k8s.io/cluster-autoscaler/node-template/label/k8s.info/instanceType: m4.large, k8s.io/role/node: 1}
   	Granularity         	1Minute
   	Metrics             	[GroupDesiredCapacity, GroupInServiceInstances, GroupMaxSize, GroupMinSize, GroupPendingInstances, GroupStandbyInstances, GroupTerminatingInstances, GroupTotalInstances]
-  	LaunchConfiguration 	name:ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  	LaunchConfiguration 	name:ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
 
-  AutoscalingGroup/ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  AutoscalingGroup/ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
   	MinSize             	1
   	MaxSize             	5
-  	Subnets             	[name:worker-zone-c.prod.ap-southeast-1.k8s.tillster.com id:subnet-53715d15]
-  	Tags                	{CostCenter: kubernetes-saas, k8s.io/cluster-autoscaler/node-template/label/k8s.info/isSpot: false, k8s.io/role/node: 1, Name: ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com, KubernetesCluster: prod.ap-southeast-1.k8s.tillster.com, k8s.io/cluster-autoscaler/node-template/label/prod.ap-southeast-1.k8s.tillster.com/role: scale-zero, Owner: kubernetes, Project: cloud, Purpose: kubernetes-ondemand-node, k8s.io/cluster-autoscaler/node-template/label/k8s.info/application: infrastructure, k8s.io/cluster-autoscaler/node-template/label/k8s.info/hasPublicIP: false, k8s.io/cluster-autoscaler/node-template/label/k8s.info/instanceType: m4.large, k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup: ondemand-zone-c}
+  	Subnets             	[name:worker-zone-c.prod.ap-southeast-1.k8s.managedkube.com id:subnet-53715d15]
+  	Tags                	{CostCenter: kubernetes-saas, k8s.io/cluster-autoscaler/node-template/label/k8s.info/isSpot: false, k8s.io/role/node: 1, Name: ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com, KubernetesCluster: prod.ap-southeast-1.k8s.managedkube.com, k8s.io/cluster-autoscaler/node-template/label/prod.ap-southeast-1.k8s.managedkube.com/role: scale-zero, Owner: kubernetes, Project: cloud, Purpose: kubernetes-ondemand-node, k8s.io/cluster-autoscaler/node-template/label/k8s.info/application: infrastructure, k8s.io/cluster-autoscaler/node-template/label/k8s.info/hasPublicIP: false, k8s.io/cluster-autoscaler/node-template/label/k8s.info/instanceType: m4.large, k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup: ondemand-zone-c}
   	Granularity         	1Minute
   	Metrics             	[GroupDesiredCapacity, GroupInServiceInstances, GroupMaxSize, GroupMinSize, GroupPendingInstances, GroupStandbyInstances, GroupTerminatingInstances, GroupTotalInstances]
-  	LaunchConfiguration 	name:ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  	LaunchConfiguration 	name:ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
 
-  LaunchConfiguration/ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  LaunchConfiguration/ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
   	ImageID             	595879546273/CoreOS-stable-1745.7.0-hvm
   	InstanceType        	m4.large
-  	SSHKey              	name:tillster_automation_1 id:tillster_automation_1
-  	SecurityGroups      	[name:nodes.prod.ap-southeast-1.k8s.tillster.com id:sg-c649a7bf]
+  	SSHKey              	name:managedkube_automation_1 id:managedkube_automation_1
+  	SecurityGroups      	[name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:sg-c649a7bf]
   	AssociatePublicIP   	false
-  	IAMInstanceProfile  	name:nodes.prod.ap-southeast-1.k8s.tillster.com id:nodes.prod.ap-southeast-1.k8s.tillster.com
+  	IAMInstanceProfile  	name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:nodes.prod.ap-southeast-1.k8s.managedkube.com
   	RootVolumeSize      	128
   	RootVolumeType      	gp2
   	SpotPrice           	
 
-  LaunchConfiguration/ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  LaunchConfiguration/ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
   	ImageID             	595879546273/CoreOS-stable-1745.7.0-hvm
   	InstanceType        	m4.large
-  	SSHKey              	name:tillster_automation_1 id:tillster_automation_1
-  	SecurityGroups      	[name:nodes.prod.ap-southeast-1.k8s.tillster.com id:sg-c649a7bf]
+  	SSHKey              	name:managedkube_automation_1 id:managedkube_automation_1
+  	SecurityGroups      	[name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:sg-c649a7bf]
   	AssociatePublicIP   	false
-  	IAMInstanceProfile  	name:nodes.prod.ap-southeast-1.k8s.tillster.com id:nodes.prod.ap-southeast-1.k8s.tillster.com
+  	IAMInstanceProfile  	name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:nodes.prod.ap-southeast-1.k8s.managedkube.com
   	RootVolumeSize      	128
   	RootVolumeType      	gp2
   	SpotPrice           	
 
-  LaunchConfiguration/ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  LaunchConfiguration/ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
   	ImageID             	595879546273/CoreOS-stable-1745.7.0-hvm
   	InstanceType        	m4.large
-  	SSHKey              	name:tillster_automation_1 id:tillster_automation_1
-  	SecurityGroups      	[name:nodes.prod.ap-southeast-1.k8s.tillster.com id:sg-c649a7bf]
+  	SSHKey              	name:managedkube_automation_1 id:managedkube_automation_1
+  	SecurityGroups      	[name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:sg-c649a7bf]
   	AssociatePublicIP   	false
-  	IAMInstanceProfile  	name:nodes.prod.ap-southeast-1.k8s.tillster.com id:nodes.prod.ap-southeast-1.k8s.tillster.com
+  	IAMInstanceProfile  	name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:nodes.prod.ap-southeast-1.k8s.managedkube.com
   	RootVolumeSize      	128
   	RootVolumeType      	gp2
   	SpotPrice           	
@@ -107,13 +107,13 @@ to the new value:
 
 ```yaml
 Will modify resources:
-  AutoscalingGroup/spot-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  AutoscalingGroup/spot-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
   	MinSize             	 0 -> 1
 
-  AutoscalingGroup/spot-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  AutoscalingGroup/spot-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
   	MinSize             	 0 -> 1
 
-  AutoscalingGroup/spot-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.tillster.com
+  AutoscalingGroup/spot-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com
   	MinSize             	 0 -> 1
 ```
 
@@ -121,7 +121,7 @@ Will modify resources:
 it enumerates that through to all of the instance groups that it touched.
 
 ```yaml
-  LaunchConfiguration/master-ap-southeast-1a.masters.prod.ap-southeast-1.k8s.tillster.com
+  LaunchConfiguration/master-ap-southeast-1a.masters.prod.ap-southeast-1.k8s.managedkube.com
   	UserData            
   	                    	...
   	                    	    podInfraContainerImage: gcr.io/google_containers/pause-amd64:3.0
@@ -138,7 +138,7 @@ it enumerates that through to all of the instance groups that it touched.
   	                    	...
 
 
-  LaunchConfiguration/master-ap-southeast-1b.masters.prod.ap-southeast-1.k8s.tillster.com
+  LaunchConfiguration/master-ap-southeast-1b.masters.prod.ap-southeast-1.k8s.managedkube.com
   	UserData            
   	                    	...
   	                    	    podInfraContainerImage: gcr.io/google_containers/pause-amd64:3.0
