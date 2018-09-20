@@ -1,8 +1,8 @@
 ---
 layout: post
 title: KOPS Updating Cluster Is Awesome
-categories: Kubernetes KOPS
-keywords: Kubernetes kops
+categories: Kubernetes KOPS gitops
+keywords: Kubernetes kops gitops
 ---
 
 Here is yet another reason why I think the `Kops` tool for creating and managing a Kubernetes' cluster
