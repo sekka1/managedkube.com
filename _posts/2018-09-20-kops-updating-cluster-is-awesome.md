@@ -15,8 +15,8 @@ is in ap-southeast-1 and pulling docker images is really really slow from there.
 time it takes longer than 2 minutes and the Kubelet will time out.
 
 Well luckily `kops` exposes all of the Kubelets flags so you can tune it however
-you want.  Here is the Kubelet documentation (https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) showing me
-I need to use the `--runtime-request-timeout` flag.  This maps to the `kops` doc (https://github.com/kubernetes/kops/blob/release-1.10/docs/apireference/build/documents/_generated_kubeletconfigspec_v1alpha2_kops_definition.md) on what this parameter should be in my `kops` configs:
+you want.  Here is the Kubelet [documentation](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) showing me
+I need to use the `--runtime-request-timeout` flag.  This maps to the `kops` [doc](https://github.com/kubernetes/kops/blob/release-1.10/docs/apireference/build/documents/_generated_kubeletconfigspec_v1alpha2_kops_definition.md) on what this parameter should be in my `kops` configs:
 
 ```
 runtimeRequestTimeout: 10m0s
