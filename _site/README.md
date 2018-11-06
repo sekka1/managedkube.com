@@ -234,3 +234,27 @@ To test your theme, run `script/server` (or `bundle exec jekyll serve`) and open
 ## License
 
 The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+# Running locally:
+
+Running for the first time:
+
+```
+docker run --name blog -it -v ${PWD}:/opt --net=host -p 4000:4000 ruby:2.4.1 bash
+
+cd /opt
+bundle install
+
+jekyll serve -H 0.0.0.0
+```
+
+Running it subsequently without having to re-run all of the `gem install` steps:
+
+```
+docker start blog
+docker exec -it blog bash
+
+cd /opt
+
+jekyll serve -H 0.0.0.0
+```
