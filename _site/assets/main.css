@@ -387,7 +387,7 @@ pre {
   background-color: rgba(74, 74, 74, 0.25); }
   @media screen and (max-width: 500px) {
     .banner-text {
-      padding: 20px;
+      padding: 10px 20px;
       width: 90%; } }
 
 .banner-heading {
@@ -419,6 +419,10 @@ pre {
   .kubernetes-cost-attribution .banner-heading {
     font-size: 30px; }
   .kubernetes-cost-attribution .banner-subheading {
+    font-size: 16px;
+    line-height: 22px; } }
+@media screen and (max-width: 330px) {
+  .kubernetes-cost-attribution .banner-heading {
     font-size: 22px; } }
 
 .banner-container {
@@ -827,9 +831,6 @@ img {
 
 .kubernetes-cost-attribution .banner .section {
   min-height: calc(100vh - 80px); }
-
-.kubernetes-cost-attribution .banner-text {
-  padding: 36px 60px; }
 
 .kubernetes-cost-attribution .banner-subheading {
   margin-top: 24px; }

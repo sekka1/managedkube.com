@@ -313,7 +313,7 @@
   width: 80%;
   background-color: rgba(74,74,74,.25);
   @media screen and (max-width: 500px) {
-    padding: 20px;
+    padding: 10px 20px;
     width: 90%;
   }
 }
@@ -351,6 +351,12 @@
         font-size: $banner-mobile-font-size;
       }
       .banner-subheading {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+    @media screen and (max-width: 330px) {
+      .banner-heading {
         font-size: 22px;
       }
     }
@@ -864,9 +870,9 @@ justify-content: space-between;
   min-height: calc(100vh - 80px);
 }
 
-.kubernetes-cost-attribution .banner-text {
-  padding: 36px 60px;
-}
+// .kubernetes-cost-attribution .banner-text {
+//   padding: 36px 60px;
+// }
 
 .kubernetes-cost-attribution .banner-subheading {
   margin-top: 24px;
