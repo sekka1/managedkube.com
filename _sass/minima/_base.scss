@@ -23,6 +23,7 @@ body {
   font: $base-font-weight $base-font-size $base-font-family;
   color: $text-color;
   background-color: $white;
+  line-height: 32px;
   @media screen and (max-width: 720px) {
       font: $base-font-weight $base-tablet-font-size $base-font-family;
   }

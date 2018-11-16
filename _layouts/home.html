@@ -7,9 +7,9 @@ title: Home
 	<div class="banner">
 	  <div class="section">
 	    <div class="banner-text center">
-	      <h1 class="banner-heading">Kubernetes Cost Attribution</h1>
+	      <h1 class="banner-heading">Reducing Your Kubernetes Cloud Costs</h1>
 	      <p class="banner-subheading">
-	        An easy-to-use cost monitoring application that breaks down the costs of what is running on your Kubernetes clusters. Think of it as an easy-to-read, detailed cloud bill.
+	        Cloud providers don’t tell you where you’re spending money in Kubernetes clusters. With ManagedKube’s detailed cloud spend dashboard, you can better plan your budgets and identify opportunity areas to reduce cloud compute costs.
 	      </p>
 	      <div class="banner-container">
 	      	<div class="application">
@@ -19,7 +19,7 @@ title: Home
 	      		<img src="/assets/images/google-cloud-platform.png">
 	      	</div>
 	      	<div class="application">
-	      		<img src="/assets/images/cost-kubernetes.png">
+	      		<img src="/assets/images/microsoft-azure-logo.png">
 	      	</div>
 	      </div>
 	      <a href="#cost-form"><div class="button"><span>Start Free Trial<span></div></a>
@@ -32,14 +32,14 @@ title: Home
 	 	<div class="section">
 
 	    	<!-- <h1 class="header center blue">Why DevOps Services?</h1> -->
-			<h1 class="header center blue">Why Kubernetes Cost Attribution?</h1>
+			<h1 class="header center blue">Why ManagedKube?</h1>
 
 		    <p class="center">
-		    	Kubernetes is a clustered system that can handle multi-tenancy or groups within the same company. However, cloud systems don’t break down the cost of the resources each group is using on this cluster. It can only tell you that you are running many instances.
+		    	Great, you’ve got Kubernetes running in a production environment! Now, you need to understand how much it costs, from what each namespace or pod costs to how much disks or network traffic in the cluster costs, so you can manage your budget.  Unfortunately, cloud providers don’t provide this key information. At most, they’ll show spend data at the VM level because the cloud providers don’t reach into Kubernetes to ask it information on what workload is actually running in the cluster.
  			</p>
  			<br>
  			<p class="center">
-				ManagedKube’s Kubernetes Cost Attribution tool gets you this information by monitoring the Kubernetes cluster to see what is running and for how long. This application gives you a breakdown of everything that is running on the cluster and how much it’s costing you.
+				ManagedKube gets you this information by monitoring the Kubernetes cluster to see what is running and for how long. This application gives you a breakdown of everything that is running on the cluster and how much it’s costing you.
 		    </p>
 
 		</div>
@@ -50,7 +50,7 @@ title: Home
 	<div class="blue-bg benefits">
 		<div class="section">
 
-		  <h1 class="header center white">Kubernetes Cost Attribution Benefits</h1>
+		  <h1 class="header center white">ManagedKube benefits</h1>
 		  <div class="box-wrapper">
 		      <div class="box">
 		        <div class="box_img-wrapper">
@@ -137,6 +137,7 @@ title: Home
 				<p class="text center white">$50/month</p>
 		      </div>
 		  </div>
+				<!-- <p class="text center white">Get up to $500 in GCP credits when you start with ManagedKube from the GKE marketplace. Get it here</p> -->
 
 		</div>
 	</div>
@@ -155,7 +156,7 @@ title: Home
 		  	</div>
 		  </div>
 		  <div class="compare">
-			<p class="center">The Kubernetes Cost Attribution tool provides an easy to read, detailed look at what you’re running and how much it’s costing you.</p>
+			<p class="center">The Kubernetes Cost Attribution tool provides an easy to read, detailed look at what you’re running and how much it’s costing you. Quickly identify ways to optimize your cloud spend with this valuable information.</p>
 			<div class="compare_image-wrapper">
 		  		<img src="/assets/images/cost-att.jpg">
 		  	</div>
@@ -194,7 +195,7 @@ title: Home
 			  </div>
 			  <div class="client-list_img-wrapper" style="margin: 0 auto;">
 			    <a href="https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1003905&utm_content=text-ad-none-any-DEV_c-CRE_113120492767-ADGP_Hybrid+%7C+AW+SEM+%7C+BKWS+%7C+US+%7C+en+%7C+EXA+%7E+Google+Cloud+Platform-KWID_43700009942847400-kwd-26415313501&utm_term=KW_google%20cloud%20platform-ST_google+cloud+platform&gclid=CjwKCAjw54fdBRBbEiwAW28S9kZJpYNNbLzLyLXZFB8A-DFfM9LgHWdEePnsycar5BIGBZyo9KZCFRoCk54QAvD_BwE&dclid=CNCjkezex90CFYElfwodq34M-Q" target="_blank">
-			    	<img src="/assets/images/google-cloud-platform.png">
+			    	<img src="/assets/images/google-cloud-partner.png">
 			    </a>
 			  </div>
 			  <div class="client-list_img-wrapper" style="margin: 0 auto;">
@@ -206,18 +207,17 @@ title: Home
 		</div>
 	</div>
 
-	<div class="white-bg get-in-touch-today" id="cost-form">
+	<div class="white-bg get-in-touch-today home-form" id="cost-form">
 		<div class="section">
 		  <h1 class="header center blue">Find out more or start free trial</h1>
-			<form class="contact-form" action="https://formspree.io/garlandk@gmail.com" method="POST">
+			<!-- <form class="contact-form" action="https://formspree.io/garlandk@gmail.com" method="POST">
 			    <input type="text" name="full_name" placeholder="Full Name">
-			    <!-- <input type="text" name="last_name" placeholder="Last Name"> -->
-			    <!-- <input type="text" name="business_name" placeholder="Business Name"> -->
 			    <input type="email" name="_replyto" placeholder="Email Address">
 			    <textarea name="message" placeholder="How can we help you?"></textarea>
 			    <input type="text" name="_gotcha" style="display:none" />
 			    <button type="submit">Submit</button>
-			</form>
+			</form> -->
+		{%- include contact_form.html -%}
 		</div>
 	</div>
 </div>

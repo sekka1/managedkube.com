@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>KOPS Updating Cluster Is Awesome | ManagedKube</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="KOPS Updating Cluster Is Awesome" />
+<meta name="author" content="Garland Kan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Here is yet another reason why I think the Kops tool for creating and managing a Kubernetes’ cluster lifecycle is so great." />
+<meta property="og:description" content="Here is yet another reason why I think the Kops tool for creating and managing a Kubernetes’ cluster lifecycle is so great." />
+<link rel="canonical" href="http://localhost:4000/kubernetes/kops/gitops/2018/09/20/kops-updating-cluster-is-awesome.html" />
+<meta property="og:url" content="http://localhost:4000/kubernetes/kops/gitops/2018/09/20/kops-updating-cluster-is-awesome.html" />
+<meta property="og:site_name" content="ManagedKube" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-20T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"Here is yet another reason why I think the Kops tool for creating and managing a Kubernetes’ cluster lifecycle is so great.","author":{"@type":"Person","name":"Garland Kan"},"@type":"BlogPosting","url":"http://localhost:4000/kubernetes/kops/gitops/2018/09/20/kops-updating-cluster-is-awesome.html","headline":"KOPS Updating Cluster Is Awesome","dateModified":"2018-09-20T00:00:00-07:00","datePublished":"2018-09-20T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/kubernetes/kops/gitops/2018/09/20/kops-updating-cluster-is-awesome.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ManagedKube" /><script type="text/javascript">
+  	$(document).ready(function(){
+
+  		$('label[for="nav-trigger"]').click(function() {
+  			$('body').toggleClass('nav-open');
+  		})
+      var pathName = window.location.pathname;
+      // alert('[href= "'" + pathName + "'"]');
+      $('.page-link').removeClass('page-linkactive');
+      $(".page-link[href='" + pathName + "']").addClass('page-linkactive');
+  	});
+  </script>
+
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <div class="section"><a class="site-title" rel="author" href="/">
+        <img src="/assets/images/ManagedKube-Logo.png">
+      </a><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+            <a class="page-link" href="/">Kubernetes Cost Attribution</a>
+            <a class="page-link" href="/blog/">Blog</a>
+            <a class="page-link" href="/start-free-trail">Start Free Trial</a></div>
+
+        </nav></div>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-wrap">
+    <div class="post-container">
+      <header class="post-header">
+        <h1 class="post-title p-name" itemprop="name headline">KOPS Updating Cluster Is Awesome</h1>
+        <div class="meta-wrap">
+          <p class="post-author"></p>
+          <time class="dt-published" datetime="2018-09-20T00:00:00-07:00" itemprop="datePublished">Sep 20, 2018
+          </time>
+<!---->
+        </div>
+      </header>
+
+      <div class="post-content e-content" itemprop="articleBody">
+        <p>Here is yet another reason why I think the <code class="highlighter-rouge">Kops</code> tool for creating and managing a Kubernetes’ cluster
+lifecycle is so great.</p>
+
+<p>I needed to do three things to the cluster:</p>
+
+<p>1) Set the kubelet timeout to something higher than the default 2 minutes.  This cluster
+is in ap-southeast-1 and pulling docker images is really really slow from there.  Some
+time it takes longer than 2 minutes and the Kubelet will time out.</p>
+
+<p>Well luckily <code class="highlighter-rouge">kops</code> exposes all of the Kubelets flags so you can tune it however
+you want.  Here is the Kubelet <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/">documentation</a> showing me
+I need to use the <code class="highlighter-rouge">--runtime-request-timeout</code> flag.  This maps to the <code class="highlighter-rouge">kops</code> <a href="https://github.com/kubernetes/kops/blob/release-1.10/docs/apireference/build/documents/_generated_kubeletconfigspec_v1alpha2_kops_definition.md">doc</a> on what this parameter should be in my <code class="highlighter-rouge">kops</code> configs:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>runtimeRequestTimeout: 10m0s
+</code></pre></div></div>
+<p>This is documentation working to its finest here!  Everything lined up exactly how
+I would expect it to.</p>
+
+<p>2) Change the instance group size on a few instance groups</p>
+
+<p>3) I needed to add a new <code class="highlighter-rouge">kops instance group</code></p>
+
+<p>So i make my changes and run the command to check what <code class="highlighter-rouge">kops</code> would change without
+actually applying it to the cluster:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kops --name prod.ap-southeast-1.k8s.managedkube.com update cluster
+</code></pre></div></div>
+
+<p>It returns back to me this very handy and life saving diff on what it will exactly
+do.</p>
+
+<p>1) I can see here that it will add these <code class="highlighter-rouge">instance groups</code>:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Will create resources</span><span class="pi">:</span>
+  <span class="s">AutoscalingGroup/ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">MinSize             </span><span class="err">	</span><span class="s">1</span>
+  <span class="err">	</span><span class="s">MaxSize             </span><span class="err">	</span><span class="s">5</span>
+  <span class="err">	</span><span class="s">Subnets             </span><span class="err">	</span><span class="s">[name:worker-zone-a.prod.ap-southeast-1.k8s.managedkube.com id:subnet-58c7a93f]</span>
+  <span class="err">	</span><span class="s">Tags                </span><span class="err">	</span><span class="s">{Project</span><span class="pi">:</span> <span class="s">cloud, k8s.io/cluster-autoscaler/node-template/label/k8s.info/hasPublicIP</span><span class="pi">:</span> <span class="no">false</span><span class="s">, k8s.io/cluster-autoscaler/node-template/label/k8s.info/instanceType</span><span class="pi">:</span> <span class="s">m4.large, k8s.io/cluster-autoscaler/node-template/label/k8s.info/application</span><span class="pi">:</span> <span class="s">infrastructure, k8s.io/role/node</span><span class="pi">:</span> <span class="s">1, Name</span><span class="pi">:</span> <span class="s">ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com, k8s.io/cluster-autoscaler/node-template/label/prod.ap-southeast-1.k8s.managedkube.com/role</span><span class="pi">:</span> <span class="s">scale-zero, Owner</span><span class="pi">:</span> <span class="s">kubernetes, k8s.io/cluster-autoscaler/node-template/label/k8s.info/isSpot</span><span class="pi">:</span> <span class="no">false</span><span class="s">, k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup</span><span class="pi">:</span> <span class="s">ondemand-zone-a, KubernetesCluster</span><span class="pi">:</span> <span class="s">prod.ap-southeast-1.k8s.managedkube.com, Purpose</span><span class="pi">:</span> <span class="s">kubernetes-ondemand-node, CostCenter</span><span class="pi">:</span> <span class="s">kubernetes-saas}</span>
+  <span class="err">	</span><span class="s">Granularity         </span><span class="err">	</span><span class="s">1Minute</span>
+  <span class="err">	</span><span class="s">Metrics             </span><span class="err">	</span><span class="s">[GroupDesiredCapacity, GroupInServiceInstances, GroupMaxSize, GroupMinSize, GroupPendingInstances, GroupStandbyInstances, GroupTerminatingInstances, GroupTotalInstances]</span>
+  <span class="err">	</span><span class="s">LaunchConfiguration </span><span class="err">	</span><span class="s">name:ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+
+  <span class="s">AutoscalingGroup/ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">MinSize             </span><span class="err">	</span><span class="s">1</span>
+  <span class="err">	</span><span class="s">MaxSize             </span><span class="err">	</span><span class="s">5</span>
+  <span class="err">	</span><span class="s">Subnets             </span><span class="err">	</span><span class="s">[name:worker-zone-b.prod.ap-southeast-1.k8s.managedkube.com id:subnet-9455cbdd]</span>
+  <span class="err">	</span><span class="s">Tags                </span><span class="err">	</span><span class="s">{CostCenter</span><span class="pi">:</span> <span class="s">kubernetes-saas, Owner</span><span class="pi">:</span> <span class="s">kubernetes, k8s.io/cluster-autoscaler/node-template/label/k8s.info/isSpot</span><span class="pi">:</span> <span class="no">false</span><span class="s">, k8s.io/cluster-autoscaler/node-template/label/k8s.info/application</span><span class="pi">:</span> <span class="s">infrastructure, Name</span><span class="pi">:</span> <span class="s">ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com, KubernetesCluster</span><span class="pi">:</span> <span class="s">prod.ap-southeast-1.k8s.managedkube.com, Project</span><span class="pi">:</span> <span class="s">cloud, Purpose</span><span class="pi">:</span> <span class="s">kubernetes-ondemand-node, k8s.io/cluster-autoscaler/node-template/label/prod.ap-southeast-1.k8s.managedkube.com/role</span><span class="pi">:</span> <span class="s">scale-zero, k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup</span><span class="pi">:</span> <span class="s">ondemand-zone-b, k8s.io/cluster-autoscaler/node-template/label/k8s.info/hasPublicIP</span><span class="pi">:</span> <span class="no">false</span><span class="s">, k8s.io/cluster-autoscaler/node-template/label/k8s.info/instanceType</span><span class="pi">:</span> <span class="s">m4.large, k8s.io/role/node</span><span class="pi">:</span> <span class="s">1}</span>
+  <span class="err">	</span><span class="s">Granularity         </span><span class="err">	</span><span class="s">1Minute</span>
+  <span class="err">	</span><span class="s">Metrics             </span><span class="err">	</span><span class="s">[GroupDesiredCapacity, GroupInServiceInstances, GroupMaxSize, GroupMinSize, GroupPendingInstances, GroupStandbyInstances, GroupTerminatingInstances, GroupTotalInstances]</span>
+  <span class="err">	</span><span class="s">LaunchConfiguration </span><span class="err">	</span><span class="s">name:ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+
+  <span class="s">AutoscalingGroup/ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">MinSize             </span><span class="err">	</span><span class="s">1</span>
+  <span class="err">	</span><span class="s">MaxSize             </span><span class="err">	</span><span class="s">5</span>
+  <span class="err">	</span><span class="s">Subnets             </span><span class="err">	</span><span class="s">[name:worker-zone-c.prod.ap-southeast-1.k8s.managedkube.com id:subnet-53715d15]</span>
+  <span class="err">	</span><span class="s">Tags                </span><span class="err">	</span><span class="s">{CostCenter</span><span class="pi">:</span> <span class="s">kubernetes-saas, k8s.io/cluster-autoscaler/node-template/label/k8s.info/isSpot</span><span class="pi">:</span> <span class="no">false</span><span class="s">, k8s.io/role/node</span><span class="pi">:</span> <span class="s">1, Name</span><span class="pi">:</span> <span class="s">ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com, KubernetesCluster</span><span class="pi">:</span> <span class="s">prod.ap-southeast-1.k8s.managedkube.com, k8s.io/cluster-autoscaler/node-template/label/prod.ap-southeast-1.k8s.managedkube.com/role</span><span class="pi">:</span> <span class="s">scale-zero, Owner</span><span class="pi">:</span> <span class="s">kubernetes, Project</span><span class="pi">:</span> <span class="s">cloud, Purpose</span><span class="pi">:</span> <span class="s">kubernetes-ondemand-node, k8s.io/cluster-autoscaler/node-template/label/k8s.info/application</span><span class="pi">:</span> <span class="s">infrastructure, k8s.io/cluster-autoscaler/node-template/label/k8s.info/hasPublicIP</span><span class="pi">:</span> <span class="no">false</span><span class="s">, k8s.io/cluster-autoscaler/node-template/label/k8s.info/instanceType</span><span class="pi">:</span> <span class="s">m4.large, k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup</span><span class="pi">:</span> <span class="s">ondemand-zone-c}</span>
+  <span class="err">	</span><span class="s">Granularity         </span><span class="err">	</span><span class="s">1Minute</span>
+  <span class="err">	</span><span class="s">Metrics             </span><span class="err">	</span><span class="s">[GroupDesiredCapacity, GroupInServiceInstances, GroupMaxSize, GroupMinSize, GroupPendingInstances, GroupStandbyInstances, GroupTerminatingInstances, GroupTotalInstances]</span>
+  <span class="err">	</span><span class="s">LaunchConfiguration </span><span class="err">	</span><span class="s">name:ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+
+  <span class="s">LaunchConfiguration/ondemand-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">ImageID             </span><span class="err">	</span><span class="s">595879546273/CoreOS-stable-1745.7.0-hvm</span>
+  <span class="err">	</span><span class="s">InstanceType        </span><span class="err">	</span><span class="s">m4.large</span>
+  <span class="err">	</span><span class="s">SSHKey              </span><span class="err">	</span><span class="s">name:managedkube_automation_1 id:managedkube_automation_1</span>
+  <span class="err">	</span><span class="s">SecurityGroups      </span><span class="err">	</span><span class="s">[name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:sg-c649a7bf]</span>
+  <span class="err">	</span><span class="s">AssociatePublicIP   </span><span class="err">	</span><span class="no">false</span>
+  <span class="err">	</span><span class="s">IAMInstanceProfile  </span><span class="err">	</span><span class="s">name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:nodes.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">RootVolumeSize      </span><span class="err">	</span><span class="s">128</span>
+  <span class="err">	</span><span class="s">RootVolumeType      </span><span class="err">	</span><span class="s">gp2</span>
+  <span class="err">	</span><span class="s">SpotPrice           </span><span class="err">	</span>
+
+  <span class="s">LaunchConfiguration/ondemand-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">ImageID             </span><span class="err">	</span><span class="s">595879546273/CoreOS-stable-1745.7.0-hvm</span>
+  <span class="err">	</span><span class="s">InstanceType        </span><span class="err">	</span><span class="s">m4.large</span>
+  <span class="err">	</span><span class="s">SSHKey              </span><span class="err">	</span><span class="s">name:managedkube_automation_1 id:managedkube_automation_1</span>
+  <span class="err">	</span><span class="s">SecurityGroups      </span><span class="err">	</span><span class="s">[name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:sg-c649a7bf]</span>
+  <span class="err">	</span><span class="s">AssociatePublicIP   </span><span class="err">	</span><span class="no">false</span>
+  <span class="err">	</span><span class="s">IAMInstanceProfile  </span><span class="err">	</span><span class="s">name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:nodes.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">RootVolumeSize      </span><span class="err">	</span><span class="s">128</span>
+  <span class="err">	</span><span class="s">RootVolumeType      </span><span class="err">	</span><span class="s">gp2</span>
+  <span class="err">	</span><span class="s">SpotPrice           </span><span class="err">	</span>
+
+  <span class="s">LaunchConfiguration/ondemand-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">ImageID             </span><span class="err">	</span><span class="s">595879546273/CoreOS-stable-1745.7.0-hvm</span>
+  <span class="err">	</span><span class="s">InstanceType        </span><span class="err">	</span><span class="s">m4.large</span>
+  <span class="err">	</span><span class="s">SSHKey              </span><span class="err">	</span><span class="s">name:managedkube_automation_1 id:managedkube_automation_1</span>
+  <span class="err">	</span><span class="s">SecurityGroups      </span><span class="err">	</span><span class="s">[name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:sg-c649a7bf]</span>
+  <span class="err">	</span><span class="s">AssociatePublicIP   </span><span class="err">	</span><span class="no">false</span>
+  <span class="err">	</span><span class="s">IAMInstanceProfile  </span><span class="err">	</span><span class="s">name:nodes.prod.ap-southeast-1.k8s.managedkube.com id:nodes.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">RootVolumeSize      </span><span class="err">	</span><span class="s">128</span>
+  <span class="err">	</span><span class="s">RootVolumeType      </span><span class="err">	</span><span class="s">gp2</span>
+  <span class="err">	</span><span class="s">SpotPrice           </span><span class="err">	</span>
+</code></pre></div></div>
+
+<p>2) It tells me that these instance groups <code class="highlighter-rouge">MinSize</code> will be changed from what value
+to the new value:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Will modify resources</span><span class="pi">:</span>
+  <span class="s">AutoscalingGroup/spot-zone-a-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">MinSize             </span><span class="err">	</span><span class="s"> 0 -&gt; 1</span>
+
+  <span class="s">AutoscalingGroup/spot-zone-b-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">MinSize             </span><span class="err">	</span><span class="s"> 0 -&gt; 1</span>
+
+  <span class="s">AutoscalingGroup/spot-zone-c-m4-large-infrastructure.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">MinSize             </span><span class="err">	</span><span class="s"> 0 -&gt; 1</span>
+</code></pre></div></div>
+
+<p>3) Then finally it outputs the <code class="highlighter-rouge">runtimeRequestTimeout</code> flag that I wanted to add and
+it enumerates that through to all of the instance groups that it touched.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="s">LaunchConfiguration/master-ap-southeast-1a.masters.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">UserData</span>            
+  <span class="err">	</span><span class="s">                    </span><span class="err">	</span><span class="s">...</span>
+  <span class="err">	</span><span class="s">                    </span><span class="err">	</span><span class="s">    podInfraContainerImage</span><span class="pi">:</span> <span class="s">gcr.io/google_containers/pause-amd64:3.0</span>
+  <span class="err">	</span>                    <span class="err">	</span>    <span class="na">podManifestPath</span><span class="pi">:</span> <span class="s">/etc/kubernetes/manifests</span>
+  <span class="err">	</span>                    <span class="err">	</span><span class="s">+   runtimeRequestTimeout</span><span class="pi">:</span> <span class="s">10m0s</span>
+  <span class="err">	</span>                    <span class="err">	</span>  <span class="na">masterKubelet</span><span class="pi">:</span>
+<span class="err">  	                    	</span>    <span class="na">allowPrivileged</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="err">	</span>                    <span class="err">	</span><span class="s">...</span>
+  <span class="err">	</span>                    <span class="err">	</span>    <span class="na">podManifestPath</span><span class="pi">:</span> <span class="s">/etc/kubernetes/manifests</span>
+  <span class="err">	</span>                    <span class="err">	</span>    <span class="na">registerSchedulable</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="err">	</span>                    <span class="err">	</span><span class="s">+   runtimeRequestTimeout</span><span class="pi">:</span> <span class="s">10m0s</span>
+
+  <span class="err">	</span>                    <span class="err">	</span>  <span class="s">__EOF_CLUSTER_SPEC</span>
+  <span class="err">	</span>                    <span class="err">	</span><span class="s">...</span>
+
+
+  <span class="s">LaunchConfiguration/master-ap-southeast-1b.masters.prod.ap-southeast-1.k8s.managedkube.com</span>
+  <span class="err">	</span><span class="s">UserData</span>            
+  <span class="err">	</span>                    <span class="err">	</span><span class="s">...</span>
+  <span class="err">	</span>                    <span class="err">	</span>    <span class="na">podInfraContainerImage</span><span class="pi">:</span> <span class="s">gcr.io/google_containers/pause-amd64:3.0</span>
+  <span class="err">	</span>                    <span class="err">	</span>    <span class="na">podManifestPath</span><span class="pi">:</span> <span class="s">/etc/kubernetes/manifests</span>
+  <span class="err">	</span>                    <span class="err">	</span><span class="s">+   runtimeRequestTimeout</span><span class="pi">:</span> <span class="s">10m0s</span>
+  <span class="err">	</span>                    <span class="err">	</span>  <span class="na">masterKubelet</span><span class="pi">:</span>
+<span class="err">  	                    	</span>    <span class="na">allowPrivileged</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="err">	</span>                    <span class="err">	</span><span class="s">...</span>
+  <span class="err">	</span>                    <span class="err">	</span>    <span class="na">podManifestPath</span><span class="pi">:</span> <span class="s">/etc/kubernetes/manifests</span>
+  <span class="err">	</span>                    <span class="err">	</span>    <span class="na">registerSchedulable</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="err">	</span>                    <span class="err">	</span><span class="s">+   runtimeRequestTimeout</span><span class="pi">:</span> <span class="s">10m0s</span>
+
+  <span class="err">	</span>                    <span class="err">	</span>  <span class="s">__EOF_CLUSTER_SPEC</span>
+  <span class="err">	</span>                    <span class="err">	</span><span class="s">...</span>
+</code></pre></div></div>
+
+<p>And finally at the end, it tells me if I want to apply these changes add the
+<code class="highlighter-rouge">--yes</code> to my command.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">Must specify --yes to apply changes</span>
+</code></pre></div></div>
+
+<p>This is absolutely wonderful and this is how I like to apply infrastructure level
+changes to my cluster.  Changing any of these without being certain what it will
+do exactly can mean major downtime!  I know this is mostly just a diff of some
+configs but it is presented out so well that every time I apply this type of changes
+it makes me smile =).</p>
+
+<!--         <p class="post-keywords">Kubernetes | kops | gitops</p>
+ -->  
+          <p class="post-keywords">Kubernetes | kops | gitops</p>
+      </div><a class="u-url" href="/kubernetes/kops/gitops/2018/09/20/kops-updating-cluster-is-awesome.html" hidden></a>
+    </div>
+    
+    <!-- Pagination links -->
+    <div class="pagination">
+      
+        <a href="/kubernetes/rbac/port/forward/2018/09/01/kubernetes-rbac-port-forward.html" class="previous">< Previous</a>
+      
+      <a class="view-all" href="/blog">View All</a>
+      
+        <span class="no-next"> </span>
+      
+    </div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <p class="footer-heading">© 2018 ManagedKube</p>
+
+
+
+  </div>
+
+  <script type="text/javascript">
+var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq ||
+{widgetcode:"2e41d21e243a88a4440cf6ccf88eb5922a8ca33fed01b21cc1fb19cd7cbea9f35d5fe629768af6d9a03793700d9418c2", values:{},ready:function(){}};
+var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
+</script>
+
+
+</footer>
+</body>
+
+</html>

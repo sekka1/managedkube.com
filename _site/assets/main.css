@@ -20,7 +20,8 @@ html, body {
 body {
   font: 400 22px "Roboto", sans-serif;
   color: #4A4A4A;
-  background-color: #fff; }
+  background-color: #fff;
+  line-height: 32px; }
   @media screen and (max-width: 720px) {
     body {
       font: 400 19.8px "Roboto", sans-serif; } }
@@ -233,7 +234,7 @@ pre {
     color: #326CE5; }
     .site-nav .page-linkactive:not(:last-child) {
       margin-right: 30px; }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 800px) {
     .site-nav {
       position: absolute;
       right: 24px;
@@ -301,6 +302,7 @@ pre {
   padding: 12px 0; }
 
 .footer-heading {
+  background-color: #326CE5;
   font-size: 16px;
   text-align: center;
   color: #fff;
@@ -331,6 +333,9 @@ pre {
   font-family: 40px;
   font-weight: 700;
   margin-bottom: 60px; }
+  @media screen and (min-width: 720px) {
+    .header {
+      line-height: 54px; } }
   @media screen and (max-width: 720px) {
     .header {
       font: 700 30px "Roboto", sans-serif; } }
@@ -387,7 +392,7 @@ pre {
 
 .banner-heading {
   color: #fff;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700; }
   @media screen and (max-width: 600px) {
     .banner-heading {
@@ -399,8 +404,9 @@ pre {
 .banner-subheading {
   color: #fff;
   font-family: "Lora", serif;
-  font-size: 26px;
-  margin-top: 60px; }
+  font-size: 24px;
+  margin-top: 60px;
+  line-height: 32px; }
   @media screen and (max-width: 600px) {
     .banner-subheading {
       font-size: 22px; } }
@@ -483,14 +489,13 @@ img {
         width: 100%; } }
 
 .box {
-  width: 240px;
+  width: 320px;
   padding: 24px;
   box-shadow: 1px 1px 2px 1px #4A4A4A;
   transition: box-shadow .2s ease; }
   @media screen and (max-width: 1040px) {
     .box {
-      width: 200px;
-      padding: 24px 12px; } }
+      padding: 24px 30px; } }
   @media screen and (max-width: 900px) {
     .box {
       display: flex;
@@ -545,7 +550,14 @@ img {
     padding: 60px 24px; }
 
 .contact-form {
-  margin: auto; }
+  margin: auto;
+  width: 100%; }
+  @media screen and (min-width: 660px) {
+    .contact-form {
+      width: 600px; }
+      .contact-form .two-columns {
+        display: flex;
+        justify-content: space-between; } }
 
 .contact-form input {
   width: 100%;
@@ -561,19 +573,16 @@ img {
     outline-offset: 0px;
     outline-style: none;
     outline-color: transparent; }
-  @media screen and (min-width: 600px) {
-    .contact-form input {
-      width: 49%;
-      display: inline-block; }
-      .contact-form input:nth-of-type(odd) {
-        margin-right: 1%; } }
-  @media screen and (min-width: 770px) {
+  @media screen and (min-width: 660px) {
     .contact-form input {
       width: 49%;
       display: inline-block; }
       .contact-form input:nth-of-type(odd) {
         margin-right: 1.2%; } }
 
+@media screen and (max-width: 660px) {
+  .contact-form .two-columns input:nth-of-type(odd) {
+    margin-bottom: 20px !important; } }
 .contact-form textarea {
   border: #326CE5 solid 1px;
   width: 100%;
@@ -588,29 +597,34 @@ img {
     outline-style: none;
     outline-color: transparent; }
 
-.contact-form button, .button {
+.contact-form button, .button, input[type="reset"], input[type="submit"] {
   border: 0;
   background-color: #326CE5;
   width: 100%;
   height: 48px;
   font-size: 18px;
   color: #fff;
-  box-shadow: 0px 1px 2px 1px #4A4A4A;
   transition: all .2s ease; }
-  .contact-form button:focus, .contact-form button:active, .button:focus, .button:active {
+  .contact-form button:focus, .contact-form button:active, .button:focus, .button:active, input[type="reset"]:focus, input[type="reset"]:active, input[type="submit"]:focus, input[type="submit"]:active {
     outline-width: 0;
     outline-offset: 0px;
     outline-style: none;
     outline-color: transparent; }
-  .contact-form button:hover, .button:hover {
+  .contact-form button:hover, .button:hover, input[type="reset"]:hover, input[type="submit"]:hover {
     box-shadow: none;
     cursor: pointer;
     background-color: rgba(50, 108, 229, 0.8); }
   @media screen and (min-width: 600px) {
-    .contact-form button, .button {
+    .contact-form button, .button, input[type="reset"], input[type="submit"] {
       width: 25%;
       min-width: 240px;
       float: right; } }
+
+@media screen and (min-width: 600px) {
+  input[type="reset"], input[type="submit"] {
+    width: 100%;
+    min-width: 240px;
+    float: none; } }
 
 .button {
   display: flex;
@@ -623,6 +637,12 @@ img {
       margin: 12px auto 0;
       float: none; } }
 
+.home-form .get-in-touch-today .section {
+  padding-top: 0; }
+
+.home-form .form-header {
+  display: none; }
+
 .contact_social-media {
   clear: right;
   padding-top: 60px;
@@ -631,13 +651,13 @@ img {
     text-decoration: none;
     color: rgba(50, 108, 229, 0.8); }
   .contact_social-media .username {
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 700;
     transition: color .2s ease;
-    padding: 3px 0; }
+    padding: 3px 0;
+    vertical-align: middle; }
     @media screen and (max-width: 440px) {
       .contact_social-media .username {
-        font-size: 36px;
         padding: 6px 0; } }
     @media screen and (max-width: 330px) {
       .contact_social-media .username {
@@ -646,7 +666,7 @@ img {
   .contact_social-media .svg-icon {
     width: 48px;
     height: 48px;
-    vertical-align: top; }
+    vertical-align: middle; }
     @media screen and (max-width: 440px) {
       .contact_social-media .svg-icon {
         width: 40px;
@@ -775,9 +795,13 @@ img {
 .benefits .box {
   box-shadow: none; }
   .benefits .box .text {
-    font-size: 24px; }
+    font-size: 21px;
+    line-height: 24px; }
   .benefits .box .box_img-wrapper {
     height: 180px; }
+    @media screen and (min-width: 600px) and (max-width: 800px) {
+      .benefits .box .box_img-wrapper {
+        height: 140px; } }
   .benefits .box svg {
     height: 100%;
     width: auto; }
@@ -786,7 +810,7 @@ img {
   @media screen and (max-width: 900px) {
     .benefits .box {
       display: block;
-      width: 200px;
+      width: 300px;
       padding: 24px 12px; }
       .benefits .box .box_img-wrapper {
         padding-right: 0;
@@ -799,8 +823,7 @@ img {
   @media screen and (max-width: 600px) {
     .benefits .box {
       margin: auto;
-      margin-bottom: 36px;
-      width: 240px; } }
+      margin-bottom: 36px; } }
 
 .kubernetes-cost-attribution .banner .section {
   min-height: calc(100vh - 80px); }
