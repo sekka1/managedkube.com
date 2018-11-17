@@ -630,6 +630,14 @@ input[type="reset"], input[type="submit"] {
     float: none;
   }
 }
+
+.benefits .button {
+  border: 2px solid white;
+  &:hover {
+    background: white;
+    color: $blue;
+  }
+}
 .home-form .get-in-touch-today .section {
   padding-top: 0;
 }

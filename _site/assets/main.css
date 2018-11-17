@@ -641,6 +641,12 @@ img {
       margin: 12px auto 0;
       float: none; } }
 
+.benefits .button {
+  border: 2px solid white; }
+  .benefits .button:hover {
+    background: white;
+    color: #326CE5; }
+
 .home-form .get-in-touch-today .section {
   padding-top: 0; }
 
