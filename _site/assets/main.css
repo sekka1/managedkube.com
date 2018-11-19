@@ -647,8 +647,12 @@ img {
     background: white;
     color: #326CE5; }
 
+.home-form .get-in-touch-today {
+  min-height: 0; }
+
 .home-form .get-in-touch-today .section {
-  padding-top: 0; }
+  padding-top: 0;
+  padding-bottom: 0; }
 
 .home-form .form-header {
   display: none; }
