@@ -550,10 +550,12 @@ img {
   }
 
   @media screen and (min-width: 660px) {
+    &.names { 
     width: 49%;
-    display: inline-block;
-    &:nth-of-type(odd) {
-      margin-right: 1.2%;
+    float: left;
+  }
+    &[name="first_name"] {
+      margin-right: 2%;
     }
   }
 

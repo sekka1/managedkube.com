@@ -578,11 +578,11 @@ img {
     outline-style: none;
     outline-color: transparent; }
   @media screen and (min-width: 660px) {
-    .contact-form input {
+    .contact-form input.names {
       width: 49%;
-      display: inline-block; }
-      .contact-form input:nth-of-type(odd) {
-        margin-right: 1.2%; } }
+      float: left; }
+    .contact-form input[name="first_name"] {
+      margin-right: 2%; } }
 
 @media screen and (max-width: 660px) {
   .contact-form .two-columns input:nth-of-type(odd) {
