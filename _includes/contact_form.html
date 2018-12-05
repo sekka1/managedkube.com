@@ -1,20 +1,25 @@
 <div class="white-bg get-in-touch-today">
 	<div class="section">
-	  <h1 class="header center blue form-header">Start your free trial and get in touch today!</h1>
+	  <h1 class="header center blue form-header">Contact Us</h1>
 		<form class="contact-form" action="https://formspree.io/garlandk@gmail.com" method="POST">
-		    <input type="text" class="names" name="first_name" placeholder="First Name">
-		    <input type="text" class="names" name="last_name" placeholder="Last Name">
+		    <input type="text" class="names" name="first_name" placeholder="First Name*" required>
+		    <input type="text" class="names" name="last_name" placeholder="Last Name*" required>
 		    <input type="text" name="company_name" placeholder="Company">
-		    <input type="email" name="_replyto" placeholder="Email Address">
+		    <input type="email" name="_replyto" placeholder="Email Address *" required>
+		    <textarea name="message" placeholder="How can we help you?"></textarea>
 		    <input type="text" name="_gotcha" style="display:none" />
-		    <button type="submit">Submit</button>
+		     <input type='hidden' name='_next' value='/thank-you.html' />
+		    <button class="send-email" type="submit">Submit</button>
 		</form>
 
-
+<!-- 
 		<div class="contact_social-media">
 			{%- include social.html -%}
-		</div>
+		</div> -->
 	</div>
 </div>
 
-
+<script>
+    var contactform =  document.getElementById('formaction');
+    contactform.setAttribute('action', '//formspree.io/' + 'garlandk' + '@' + 'gmail' + '.' + 'com');
+</script>

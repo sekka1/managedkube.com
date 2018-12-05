@@ -45,7 +45,7 @@
   .page-link {
     color: $text-color;
     font-size: 18px;
-    transition: color .2s ease;
+    transition: color .4s ease;
     &:hover {
       color: $blue;
     }
@@ -322,8 +322,10 @@
   color: $white;
   font-size: $banner-font-size;
   font-weight: $header-font-weight;
+  line-height: $banner-font-size * 1.2;
   @media screen and (max-width: 600px) {
     font-size: $banner-mobile-font-size;
+    line-height: $banner-mobile-font-size * 1.2;
   }
   @media screen and (max-width: 500px) {
     font-size: 26px;
@@ -437,6 +439,7 @@ img {
 .box-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 60px;
   @media screen and (max-width: 900px) {
     display: block;
     a {
@@ -450,7 +453,7 @@ img {
   width: 320px;
   padding: 24px;
   box-shadow: 1px 1px 2px 1px $text-color;
-  transition: box-shadow .2s ease;
+  transition: box-shadow .4s ease;
   @media screen and (max-width: 1040px) {
     padding: 24px 30px;
   }
@@ -469,7 +472,7 @@ img {
     box-shadow: none;
     .text {
       color: $text-color-hover;
-      transition: color .2s ease;
+      transition: color .4s ease;
     }
   }
 }
@@ -515,8 +518,14 @@ img {
 
 .get-in-touch-today {
   min-height: calc(100vh - 120px);
+  position: relative;
   .section {
     padding: 60px 24px;
+    position: absolute;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -592,7 +601,7 @@ img {
   font-size: 18px;
   color: $white;
   // box-shadow: 0px 1px 2px 1px $text-color;
-  transition: all .2s ease;
+  transition: all .4s ease;
 
   &:focus, &:active {
     outline-width: 0;
@@ -642,13 +651,16 @@ input[type="reset"], input[type="submit"] {
 }
 .home-form .get-in-touch-today {
   min-height: 0;
+  background-color: $light-blue-bg;
 }
 .home-form .get-in-touch-today .section {
   padding-top: 0;
   padding-bottom: 0;
+  position: static;
+  transform: none;
 }
 .home-form .form-header {
-  display: none;
+  // display: none;
 }
 
 .contact_social-media {
@@ -664,7 +676,7 @@ input[type="reset"], input[type="submit"] {
   .username {
     font-size: 36px;
     font-weight: 700;
-    transition: color .2s ease;
+    transition: color .4s ease;
     padding: 3px 0;
     vertical-align: middle;
     @media screen and (max-width: 440px) {
@@ -1122,6 +1134,54 @@ justify-content: space-between;
     @media screen and (min-width: 600px) and (max-width: 720px) {
       width: 75%
     }
+  }
+}
+
+.install-buttons {
+  display: flex;
+  justify-content: center;
+  .install-btn {
+    flex-basis: 50%;
+    margin: 0 auto;
+    max-width: 420px;
+  }
+  svg {
+      transition: .4s ease;
+      min-width: 240px;
+      width: 60%;
+      display: block;
+      margin: auto;
+  }
+  h4, #command-line #path4514, #market #path4514 {
+      transition: .4s ease;
+    }
+
+}
+
+.banner-subheading a {
+  transition: .4s ease;
+  font-weight: 900;
+  color: #8AABEF;
+}
+
+.install-btn .button {
+  min-width: 360px;
+  @media screen and (max-width: 600px) {
+    min-width: 100%;
+
+  }
+}
+
+.banner-subheading a:hover {
+    color: rgba(#8AABEF, 0.8);
+}
+
+.install-btn:hover {
+  #command-line #path4514, #market #path4514 {
+    fill: rgba(50, 108, 229, 0.8);
+  }
+  h4 {
+    color: rgba(50, 108, 229, 0.8);
   }
 }
 
@@ -1701,7 +1761,7 @@ a.post-link:hover {
     height: auto;
   }
   a {
-    transition: color .2s ease;
+    transition: color .4s ease;
     &:hover {
       color: $blue-hover;
     }
@@ -1722,9 +1782,27 @@ a.post-link:hover {
     &.next {
       text-align: right;
     }
-    transition: color .2s ease; 
+    transition: color .4s ease; 
   }
   a:hover {
     color: $blue;
+  }
+}
+
+/**
+ * thank you
+ */
+
+.thank-you {
+  min-height: calc(100vh - 120px);
+  position: relative;
+  .section {
+    position: absolute;
+    max-width: 800px;
+    width: 60%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
