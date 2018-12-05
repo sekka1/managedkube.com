@@ -1053,6 +1053,9 @@ img {
 .install-buttons {
   display: flex;
   justify-content: center; }
+  @media screen and (max-width: 600px) {
+    .install-buttons {
+      display: block; } }
   .install-buttons .install-btn {
     flex-basis: 50%;
     margin: 0 auto;
@@ -1065,6 +1068,11 @@ img {
     margin: auto; }
   .install-buttons h4, .install-buttons #command-line #path4514, .install-buttons #market #path4514 {
     transition: .4s ease; }
+  @media screen and (max-width: 600px) {
+    .install-buttons {
+      display: block; }
+      .install-buttons .install-btn {
+        margin-bottom: 60px; } }
 
 .banner-subheading a {
   transition: .4s ease;
