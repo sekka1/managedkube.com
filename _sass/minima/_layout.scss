@@ -600,8 +600,9 @@ img {
   height: 48px;
   font-size: 18px;
   color: $white;
-  // box-shadow: 0px 1px 2px 1px $text-color;
+  box-shadow: 2px 2px 4px #666;
   transition: all .4s ease;
+  border-radius: 6px;
 
   &:focus, &:active {
     outline-width: 0;
@@ -612,7 +613,7 @@ img {
   &:hover {
     box-shadow: none;
     cursor: pointer;
-    background-color: $blue-hover
+    // background-color: $blue-hover
   }
 
   @media screen and (min-width: 600px) {
@@ -634,6 +635,8 @@ input[type="reset"], input[type="submit"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px #444;
   @media screen and (min-width: 320px) {
     width: 25%;
     min-width: 260px;
@@ -646,7 +649,7 @@ input[type="reset"], input[type="submit"] {
   background-color: white;
   color: $blue;
   &:hover {
-    background-color: rgba(255,255,255,.8);
+    // background-color: rgba(255,255,255,.8);
     color: $blue;
   }
 }
@@ -1153,12 +1156,17 @@ justify-content: space-between;
       transition: .4s ease;
       min-width: 240px;
       width: 60%;
+      height: auto;
       display: block;
       margin: 0 auto 36px;
-  }
-  h4, #command-line_ns #path4514, #marketplace_ns #path4514 {
+      background-color: $blue;
+      box-shadow: 2px 2px 4px #444;
+      border-radius: 100%;
       transition: .4s ease;
-    }
+  }
+
+  // h4, #command-line_ns #path4514, #marketplace_ns #path4514 {
+  //   }
   @media screen and (max-width: 600px) {
     display: block;
     .install-btn {
@@ -1186,8 +1194,11 @@ justify-content: space-between;
 }
 
 .install-btn:hover {
-  #command-line_ns #path4514, #marketplace_ns #path4514 {
-    fill: rgba(50, 108, 229, 0.8);
+  // #command-line_ns #path4514, #marketplace_ns #path4514 {
+  //   fill: rgba(50, 108, 229, 0.8);
+  // }
+  svg {
+    box-shadow: none;
   }
   h4 {
     color: rgba(50, 108, 229, 0.8);
@@ -1330,6 +1341,59 @@ justify-content: space-between;
 //     display: block;
 //   }
 // }
+
+.google-cloud-button img {
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px #444;
+  transition: .4s ease;
+  margin-top: 40px;
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.steps .section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .step {
+    flex-basis: calc(50% - 24px);
+    margin-bottom: 48px;
+    @media screen and (max-width: 1100px) {
+      flex-basis: 100%;
+      
+    }
+    img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0px 0px 4px #666;
+      border-radius: 4px;
+    }
+  }
+}
+
+.steps h1 {
+  display: inline-block;
+}
+
+.steps p {
+  margin: 20px 0;
+  font-size: 18px;
+  line-height: 26px;
+  width: 80%;
+  min-height: 52px;
+}
+
+.blue-circle {
+  background-color: $blue;
+  padding: 16px;
+  padding-left: 19px;
+  width: 64px;
+  border-radius: 100%;
+}
+
+
+
 
 /**
  * Devops Infrastructure
