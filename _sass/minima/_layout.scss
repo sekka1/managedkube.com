@@ -643,9 +643,10 @@ input[type="reset"], input[type="submit"] {
 }
 
 .benefits .button {
-  border: 2px solid white;
+  background-color: white;
+  color: $blue;
   &:hover {
-    background: white;
+    background-color: rgba(255,255,255,.8);
     color: $blue;
   }
 }
@@ -1153,9 +1154,9 @@ justify-content: space-between;
       min-width: 240px;
       width: 60%;
       display: block;
-      margin: auto;
+      margin: 0 auto 36px;
   }
-  h4, #command-line #path4514, #market #path4514 {
+  h4, #command-line_ns #path4514, #marketplace_ns #path4514 {
       transition: .4s ease;
     }
   @media screen and (max-width: 600px) {
@@ -1181,11 +1182,11 @@ justify-content: space-between;
 }
 
 .banner-subheading a:hover {
-    color: rgba(#8AABEF, 0.8);
+    color: $blue-hover;
 }
 
 .install-btn:hover {
-  #command-line #path4514, #market #path4514 {
+  #command-line_ns #path4514, #marketplace_ns #path4514 {
     fill: rgba(50, 108, 229, 0.8);
   }
   h4 {
@@ -1314,6 +1315,22 @@ justify-content: space-between;
     }
   }
 }
+
+/**
+ * install on gke
+ */
+// #contact-form, .get-in-touch-today {
+//   min-height: 0;
+//   height: auto;
+//   position: static;
+// }
+// #contact-form h1 {
+//   display: none;
+//   &.section-header {
+//     display: block;
+//   }
+// }
+
 /**
  * Devops Infrastructure
  */

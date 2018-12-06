@@ -20,20 +20,12 @@ permalink: /install-on-gke
 	  </div>
 	</div>
 
-	<!-- why devops services? -->
-	<div class="white-bg why-kubernetes-cost-attribution">
+	<!-- steps -->
+	<div class="white-bg steps">
 	 	<div class="section">
-
-	    	<!-- <h1 class="header center blue">Why DevOps Services?</h1> -->
 			<h1 class="header center blue">Why Kubernetes Cost Attribution?</h1>
 		    
-		    <p class="center">
-		    	Kubernetes is a clustered system that can handle multi-tenancy or groups within the same company. However, cloud systems don’t break down the cost of the resources each group is using on this cluster. It can only tell you that you are running many instances. 
- 			</p>
- 			<br>
- 			<p class="center">
-				ManagedKube’s Kubernetes Cost Attribution tool gets you this information by monitoring the Kubernetes cluster to see what is running and for how long. This application gives you a breakdown of everything that is running on the cluster and how much it’s costing you.
-		    </p>
+		    <img>
 
 		</div>
 	</div>
@@ -199,20 +191,11 @@ permalink: /install-on-gke
 		</div>
 	</div>
 
-	<div class="white-bg get-in-touch-today" id="cost-form">
-		<div class="section">
-		  <h1 class="header center blue">Find out more or start free trial</h1>
-			<form class="contact-form" action="https://formspree.io/garlandk@gmail.com" method="POST">
-			    <input type="text" name="full_name" placeholder="Full Name">
-			    <!-- <input type="text" name="last_name" placeholder="Last Name"> -->
-			    <!-- <input type="text" name="business_name" placeholder="Business Name"> -->
-			    <input type="email" name="_replyto" placeholder="Email Address">
-			    <textarea name="message" placeholder="What cloud are you running on?"></textarea>
-			    <input type="text" name="_gotcha" style="display:none" />
-			    <button type="submit">Submit</button>
-			</form>
-		</div>
-	</div>
+	<!-- <div class="white-bg get-in-touch-today" id="contact-form">
+		<div class="section"> -->
+		  	{%- include contact_form.html -%} 
+		<!-- </div>
+	</div> -->
 </div>
 
 <script>

@@ -651,9 +651,10 @@ img {
       float: none; } }
 
 .benefits .button {
-  border: 2px solid white; }
+  background-color: white;
+  color: #326CE5; }
   .benefits .button:hover {
-    background: white;
+    background-color: rgba(255, 255, 255, 0.8);
     color: #326CE5; }
 
 .home-form .get-in-touch-today {
@@ -1065,8 +1066,8 @@ img {
     min-width: 240px;
     width: 60%;
     display: block;
-    margin: auto; }
-  .install-buttons h4, .install-buttons #command-line #path4514, .install-buttons #market #path4514 {
+    margin: 0 auto 36px; }
+  .install-buttons h4, .install-buttons #command-line_ns #path4514, .install-buttons #marketplace_ns #path4514 {
     transition: .4s ease; }
   @media screen and (max-width: 600px) {
     .install-buttons {
@@ -1086,9 +1087,9 @@ img {
       min-width: 100%; } }
 
 .banner-subheading a:hover {
-  color: rgba(138, 171, 239, 0.8); }
+  color: rgba(50, 108, 229, 0.8); }
 
-.install-btn:hover #command-line #path4514, .install-btn:hover #market #path4514 {
+.install-btn:hover #command-line_ns #path4514, .install-btn:hover #marketplace_ns #path4514 {
   fill: rgba(50, 108, 229, 0.8); }
 .install-btn:hover h4 {
   color: rgba(50, 108, 229, 0.8); }
@@ -1178,6 +1179,9 @@ img {
         padding-left: 0;
         padding-right: 0; } }
 
+/**
+ * install on gke
+ */
 /**
  * Devops Infrastructure
  */

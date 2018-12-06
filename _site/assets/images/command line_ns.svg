@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="235px" height="235px" viewBox="0 0 235 235" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>command line_ns</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-1.7%" y="-1.7%" width="103.5%" height="103.5%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="command-line_ns" filter="url(#filter-1)" transform="translate(2.000000, 2.000000)">
+            <circle id="path4514" fill="#326CE5" cx="115.499998" cy="115.499998" r="115.499998"></circle>
+            <g id="Group" transform="translate(43.312500, 57.750000)">
+                <rect id="Rectangle" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" x="0" y="28.875" width="144.375" height="86.625"></rect>
+                <rect id="Rectangle" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" x="0" y="0" width="144.375" height="28.875"></rect>
+                <circle id="Oval" fill="#FFFFFF" cx="19.25" cy="14.4375" r="4.8125"></circle>
+                <circle id="Oval" fill="#FFFFFF" cx="38.5" cy="14.4375" r="4.8125"></circle>
+                <circle id="Oval" fill="#FFFFFF" cx="57.75" cy="14.4375" r="4.8125"></circle>
+            </g>
+            <g id="Group" transform="translate(67.375000, 101.062500)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="7">
+                <polyline id="Path" points="26.46875 4.8125 2.40625 28.875 26.46875 52.9375"></polyline>
+                <polyline id="Path" points="69.78125 4.8125 93.84375 28.875 69.78125 52.9375"></polyline>
+                <path d="M40.90625,57.75 L55.34375,0" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>
