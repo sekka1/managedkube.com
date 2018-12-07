@@ -551,16 +551,22 @@ img {
       flex-basis: 45%;
       margin-bottom: 24px; } }
 
-.get-in-touch-today {
+.contact .get-in-touch-today {
   min-height: calc(100vh - 120px);
   position: relative; }
-  .get-in-touch-today .section {
+  .contact .get-in-touch-today .section {
     padding: 60px 24px;
     position: absolute;
     height: auto;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
+    @media screen and (max-height: 600px) {
+      .contact .get-in-touch-today .section {
+        position: static;
+        left: auto;
+        top: auto;
+        transform: translate(0, 0); } }
 
 .contact-form {
   margin: auto;
@@ -1199,10 +1205,13 @@ img {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; }
+  @media screen and (max-width: 980px) {
+    .steps .section {
+      max-width: 720px; } }
   .steps .section .step {
     flex-basis: calc(50% - 24px);
     margin-bottom: 48px; }
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 980px) {
       .steps .section .step {
         flex-basis: 100%; } }
     .steps .section .step img {
@@ -1214,12 +1223,20 @@ img {
 .steps h1 {
   display: inline-block; }
 
+.step.three p, .step.four p {
+  min-height: 78px; }
+
+@media screen and (max-width: 1080px) {
+  .step.seven p, .step.eight p {
+    min-height: 78px; } }
 .steps p {
   margin: 20px 0;
   font-size: 18px;
   line-height: 26px;
-  width: 80%;
   min-height: 52px; }
+  @media screen and (max-width: 980px) {
+    .steps p {
+      min-height: 0 !important; } }
 
 .blue-circle {
   background-color: #326CE5;
@@ -1227,6 +1244,10 @@ img {
   padding-left: 19px;
   width: 64px;
   border-radius: 100%; }
+  @media screen and (max-width: 720px) {
+    .blue-circle {
+      padding: 8px 16px;
+      padding-left: 21px; } }
 
 /**
  * Devops Infrastructure
