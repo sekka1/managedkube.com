@@ -817,6 +817,9 @@ img {
     width: 72px;
     height: auto; } }
 
+.benefits .section {
+  padding: 96px 0 72px; }
+
 @media screen and (max-width: 900px) {
   .benefits .box-wrapper {
     display: flex; } }

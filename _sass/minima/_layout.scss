@@ -849,6 +849,10 @@ justify-content: space-between;
     }
 }
 
+.benefits .section {
+  padding: 96px 0 72px;
+}
+
 .benefits .box-wrapper {
   @media screen and (max-width: 900px) {
     display: flex;
