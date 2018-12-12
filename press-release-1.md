@@ -1,6 +1,6 @@
 ---
 layout: press
-title: "New Kubernetes Cost Monitoring Application"
+title: "ManagedKube LAUNCHES NEW COST MONITORING APPLICATION DEDICATED TO INCREASING COST VISIBILITY, COLLABORATED WITH GOOGLE CLOUD"
 permalink: /press-release-121118
 
 ---
