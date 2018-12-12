@@ -1,6 +1,6 @@
 ---
 layout: press
-title: "ManageKube Launches New Kubernetes Cost Monitoring Application"
+title: "New Kubernetes Cost Monitoring Application"
 permalink: /press-release-121118
 
 ---
