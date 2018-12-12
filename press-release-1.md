@@ -1,6 +1,6 @@
 ---
 layout: press
-title: "ManageKube LAUNCHES NEW COST MONITORING APPLICATION DEDICATED TO INCREASING COST VISIBILITY, COLLABORATEDWITH GOOGLE CLOUD"
+title: "ManageKube LAUNCHES NEW COST MONITORING APPLICATION DEDICATED TO INCREASING COST VISIBILITY"
 permalink: /press-release-121118
 
 ---
@@ -16,7 +16,7 @@ The company announced ManagedKube’s Kubernetes Cost Attribution launch on the 
 Install l ManagedKube’s Kubernetes Cost Attribution application on the GCP Marketplace [here][link]
 
 **About ManagedKube**
-[ManagedKube][https://managedkube.com] offers tools, applications, and services dedicated to making it easier to deploy within Kubernetes and Docker ecosystems. ManagedKube’s Kubernetes Cost Attribution monitoring tool
+[ManagedKube][link2] offers tools, applications, and services dedicated to making it easier to deploy within Kubernetes and Docker ecosystems. ManagedKube’s Kubernetes Cost Attribution monitoring tool
 provides cost visibility so companies can forecast budgets, understand product margins, and reduce
 Kubernetes cluster costs through optimizing utilization. The company is a privately held company
 headquartered in San Francisco.
@@ -25,3 +25,4 @@ Press Inquiries: Christie Lee, christie@managedkube.com
 
 
 [link]: https://managedkube.com/install-on-gke
+[link2]: https://managedkube.com
