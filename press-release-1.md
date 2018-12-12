@@ -1,6 +1,6 @@
 ---
 layout: press
-title: "ManagedKube LAUNCHES NEW COST MONITORING APPLICATION DEDICATED TO INCREASING COST VISIBILITY, COLLABORATED WITH GOOGLE CLOUD"
+title: "MANAGEDKUBE LAUNCHES NEW COST MONITORING APPLICATION DEDICATED TO INCREASING COST VISIBILITY, COLLABORATED WITH GOOGLE CLOUD"
 permalink: /press-release-121118
 
 ---
@@ -13,7 +13,7 @@ Companies can now understand how much compute spend a team or customer is respon
 
 The company announced ManagedKube’s Kubernetes Cost Attribution launch on the GCP Marketplace at KubeCon in Seattle, WA. “We are proud to work closely with Google Cloud to launch our Kubernetes-focused cost monitoring application. This collaboration allows us to provide cost metrics for Kubernetes users so they can make smart business decisions,” said Christie Lee, COO of ManagedKube. “We’re excited to give companies an effortless way to measure and manage their cloud spend with a detailed cloud bill.”
 
-Install l ManagedKube’s Kubernetes Cost Attribution application on the GCP Marketplace [here][link]
+Install ManagedKube’s Kubernetes Cost Attribution application on the GCP Marketplace [here][link]
 
 **About ManagedKube**
 [ManagedKube][link2] offers tools, applications, and services dedicated to making it easier to deploy within Kubernetes and Docker ecosystems. ManagedKube’s Kubernetes Cost Attribution monitoring tool
