@@ -1,11 +1,9 @@
 ---
 layout: press
-title: "ManageKube LAUNCHES NEW KUBERNETES COST MONITORING APPLICATION"
+title: "ManageKube Launches New Kubernetes Cost Monitoring Application"
 permalink: /press-release-121118
 
 ---
-
-# LAUNCHES NEW COST MONITORING APPLICATION DEDICATED TO INCREASING COST VISIBILITY, COLLABORATED WITH GOOGLE CLOUD
 
 ## ManagedKube Launches Tool to Decrease Kubernetes Cloud Costs on the Google Cloud Platform (GCP) Marketplace
 
