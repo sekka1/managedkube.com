@@ -1,7 +1,7 @@
 ---
 layout: press
 title: "MANAGEDKUBE LAUNCHES NEW COST MONITORING APPLICATION DEDICATED TO INCREASING COST VISIBILITY, COLLABORATED WITH GOOGLE CLOUD"
-permalink: /press-release-121118
+permalink: /press-release-ManagedKube-GCP
 
 ---
 
