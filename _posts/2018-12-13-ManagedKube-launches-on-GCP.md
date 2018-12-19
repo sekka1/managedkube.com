@@ -1,8 +1,8 @@
 ---
 layout: post
 title: ManagedKube launches on GKE Marketplace at KubeCon
-categories: Kubernetes tool
-keywords: Kubernetes cost monitoring visibility tool metrics data ManagedKube
+categories: Kubernetes cost monitoring visibility tool metrics data ManagedKube
+keywords: Kubernetes cost tool
 ---
 
 ManagedKube is excited to announce their launch on GKE’s Marketplace at KubeCon! Keep an eye out for our application during Google’s keynote.
