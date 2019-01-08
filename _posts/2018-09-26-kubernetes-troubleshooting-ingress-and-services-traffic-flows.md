@@ -22,14 +22,16 @@ The first thing to do is to make sure that the pod is up and running and doing w
 
 Make sure the pod’s “Status” is “Running” (pod status doc).
 
-```$ kubectl get pods -o wide
+```bash
+$ kubectl get pods -o wide
 NAME                  READY     STATUS    RESTARTS   AGE       
 IP            NODE
 web-2136164036-ghs1p  1/1       Running   0          36m       100.96.3.11   ip-172-20-57-113.ec2.internal```
 
 Look at the logs to make sure everything looks good.
 
-```$ kubectl logs web-2136164036-ghs1p
+```bash
+$ kubectl logs web-2136164036-ghs1p
 warn:    --minUptime not set. Defaulting to: 1000ms
 warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
 sleep: using busy loop fallback
@@ -45,13 +47,15 @@ Now, we will take a look at the Kubernetes service. A Kubernetes service is an a
 
 Let’s list all of the services:
 
-```$ kubectl get service
+```bash
+$ kubectl get service
 NAME                    CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
 web                       100.70.162.175   <none>              3000/TCP   39m```
 
 For this current example, we are interested in the “web” application. Let’s describe this service.
 
-```$ kubectl describe service web
+```bash
+$ kubectl describe service web
 Name: drywall-flowlog-stats
 Namespace: flowlog-stats
 Labels: app=drywall-flowlog-stats
@@ -75,13 +79,15 @@ Next we will take a look at the ingress to make sure everything is hooked up cor
 
 List all of the ingresses:
 
-```$ kubectl get ingress
+```bash
+$ kubectl get ingress
 NAME    HOSTS             ADDRESS         PORTS     AGE
 Web     www.example.com   54.236.40.106   80, 443   46m```
 
 Let’s get more details about the ingress we are working with: “web”.
 
-```$kubectl describe ingress web
+```bash
+$kubectl describe ingress web
 Name: Web
 Namespace: default
 Address: 54.236.40.106
@@ -96,13 +102,15 @@ We are checking to make sure that the output here is routing to the correct plac
 
 Let’s “jack” into the ingress pod. First we need to find the ingress pod.
 
-```$ kubectl get pods
+```bash
+$ kubectl get pods
 NAME                            READY     STATUS    RESTARTS   AGE       IP             NODE
 nginx-ingress-1167843297-40nbm  1/1       Running   0          1d        10.2.105.5     ip-10-15-82-74.ec2.internal```
 
 It should be a pod named Nginx, ingress, or something. It is really up to you to name the ingress whatever you want. Once you have the ingress pod’s name, we can “exec” into it with an interactive shell and run the cURL command to see what the Ingress returns us.
 
-```$ kubectl exec nginx-ingress-1167843297-40nbm -it bash
+```bash
+$ kubectl exec nginx-ingress-1167843297-40nbm -it bash
 root@nginx-ingress-1167843297-40nbm:/# 
 root@nginx-ingress-1167843297-40nbm:/#
 root@nginx-ingress-1167843297-40nbm:/# curl -H "HOST: www.example.com" localhost 
@@ -120,7 +128,8 @@ The next item down the line is the ELB. We are making sure traffic is routing fr
 
 The first thing we need to do is to find out the ELB URL. If you are using a cloud provider that created your external load balancer for you, you can issue a few kubectl commands to get it by first listing all of the services:
 
-```$ kubectl get services
+```bash
+$ kubectl get services
 NAME                      CLUSTER-IP       EXTERNAL-IP        PORT(S)                      AGE
 ingress-default-backend   100.69.45.28     <none>             
 80/TCP                       14d
@@ -128,7 +137,8 @@ ingress-lb                100.70.128.181  a1e2f6a9e0f76...    80:32686/TCP,443:3
 
 Here the ingress service is “ingress-lb”. Let’s describe that ingress to get more information.
 
-```$ kubectl describe service ingress-lb
+```bash
+$ kubectl describe service ingress-lb
 Name: ingress-lb
 Namespace: default
 Labels: <none>
@@ -158,7 +168,8 @@ The next thing to check is if the DNS is resolving correctly to our external loa
 
 We will run an `nslookup` on our local terminal.
 
-```$ nslookup www.example.com
+```bash
+$ nslookup www.example.com
 Server: 127.0.1.1
 Address: 127.0.1.1#53
 Non-authoritative answer:
