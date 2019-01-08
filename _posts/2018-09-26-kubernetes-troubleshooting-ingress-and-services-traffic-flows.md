@@ -26,7 +26,8 @@ Make sure the pod’s “Status” is “Running” (pod status doc).
 $ kubectl get pods -o wide
 NAME                  READY     STATUS    RESTARTS   AGE       
 IP            NODE
-web-2136164036-ghs1p  1/1       Running   0          36m       100.96.3.11   ip-172-20-57-113.ec2.internal```
+web-2136164036-ghs1p  1/1       Running   0          36m       100.96.3.11   ip-172-20-57-113.ec2.internal
+```
 
 Look at the logs to make sure everything looks good.
 
