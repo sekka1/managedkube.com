@@ -62,8 +62,8 @@ Port: http 3000/TCP
 Endpoints: 100.96.3.11:3000
 Session Affinity: None
 No events.```
-T
-he item we are looking for in here is that there is an IP address in the “Endpoints” field. The IP addresses in this field mean that these pods are running and has passed their health checks. If you also take a look back above to where you listed all of the pods. This IP should be on that list.
+
+The item we are looking for in here is that there is an IP address in the “Endpoints” field. The IP addresses in this field mean that these pods are running and has passed their health checks. If you also take a look back above to where you listed all of the pods. This IP should be on that list.
 
 Declaring a healthcheck for your pod is very important. It is basically some kind of check towards your pod to tell Kubernetes that your pod is alive and healthy. This can be an HTTP request to some endpoint that is returning and HTTP 200 or it can be a command that runs in the container. Here is more information about how to setup the healthchecks: <A HREF="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/">https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/</a>.
 
@@ -122,7 +122,6 @@ The first thing we need to do is to find out the ELB URL. If you are using a clo
 
 ```$ kubectl get services
 NAME                      CLUSTER-IP       EXTERNAL-IP        PORT(S)                      AGE
-
 ingress-default-backend   100.69.45.28     <none>             
 80/TCP                       14d
 ingress-lb                100.70.128.181  a1e2f6a9e0f76...    80:32686/TCP,443:31345/TCP   14d```
@@ -151,6 +150,7 @@ In the describe output it tells us that the external load balancer is `a1e2f6a9e
 Now we have all of the information we need to make a test cURL call over to the external load balancer. On your local machines terminal run the following:
 
 ```$ curl -H "HOST: www.example.com" a1e2f6a9e0f7611e79389293847201-54998145.us-east-1.elb.amazonaws.com```
+
 This will make a cURL call over to the load balancer with the host headers. If everything is working correctly it would return content from your web pod. If it doesnt, then it is most likely something is misconfigured with your external load balancer.
 
 ## DNS
