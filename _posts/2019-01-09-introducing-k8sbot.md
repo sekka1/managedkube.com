@@ -1,9 +1,12 @@
 ---
 layout: post
-title: Introducing k8sBot, a Kubernetes troubleshooting chatbot
+title: Introducing k8sBot
 categories: kubernetes slack bot troubleshooting chatbot k8sbot
 keywords: kubernetes slack bot troubleshooting chatbot k8sbot
 ---
+
+# A Kubernetes troubleshooting chatbot
+
 
 We have been working on a Slack chatbot that will help you to troubleshoot Kubernetes and would love your feedback. k8sBot is your friendly Kubernetes companion that helps you navigate the system and save you time.
 
