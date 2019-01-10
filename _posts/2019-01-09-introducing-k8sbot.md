@@ -12,7 +12,9 @@ We have been working on a Slack chatbot that will help you to troubleshoot Kuber
 
 We heard from a lot of you that Kubernetes is complex. We also learned that many non-infrastructure engineers are getting pulled into Kubernetes to deploy their code. We created k8sBot to help make Kubernetes easier to use.
 
-k8sBot helps you quickly and easily troubleshoot your clusters. Ask k8sBot what’s going on in and it will let you know in plain old English. You can:
+k8sBot helps you quickly and easily troubleshoot your clusters by giving contextual information from a bot running inside your cluster(s).
+
+Ask k8sBot what’s going on in and it will let you know in plain old English. You can:
 * Save valuable time with faster troubleshooting
 * Learn Kubernetes on-the-fly
 * Quickly parse k8s output into easily digestible information
