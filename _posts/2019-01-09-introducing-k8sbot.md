@@ -60,8 +60,8 @@ The user can also ask the bot why the service is not working correctly.
 
 I’ve run into this issue countless times. I’m looking at the lines of service description output and just can’t figure out what is wrong with it.  This bot can save users minutes to hours of debugging and poking around to figure out what is wrong with the service.
 
-## Summary
+## Feedback
 
-We’d love to hear what you think about k8sBot. Would a Kubernetes troubleshooting chatbot be useful to you? What are the problems that you’d like k8sBot to help you solve? Drop us a line at info@managedkube.com
+We’d love to hear what you think about k8sBot. Would a Kubernetes troubleshooting chatbot be useful to you? What are the problems that you’d like k8sBot to help you solve? Drop us a line at info@managedkube.com or fill out the form below. Thanks a lot!
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKBI65sB6Zq3nZXz9epiGinYG86z2LN00ob3aI57mQQG8GoQ/viewform?embedded=true" width="640" height="1874" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
