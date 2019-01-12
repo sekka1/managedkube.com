@@ -6,8 +6,8 @@ keywords: kubernetes cloud costs
 
 ---
 
-- [Introduction: cost saving with your Kubernetes clusters](###Introduction: cost saving with your Kubernetes clusters)
-- [Example 1 Heading](###How to Use Cluster AutoScaler to Keep Your Kubernetes Costs Under Control)
+- [Introduction: cost saving with your Kubernetes clusters](##Introduction: cost saving with your Kubernetes clusters)
+- [Example 1 Heading](##How to Use Cluster AutoScaler to Keep Your Kubernetes Costs Under Control)
 
 ## Introduction: cost saving with your Kubernetes clusters
 Kubernetes is a great platform to deploy your application on.  It gives you a very nice framework to work in and it takes care of a lot of the low-level infrastructure for you.  This makes it easier for you and developers to deploy applications on top of it.  However, as with all things, there are tradeoffs that come with this ease of deployment. It’s great because it is easy and there is less friction to deploying applications, but this also means that users can turn on applications with little effort and thought. We regularly see clients whose clusters are very overprovisioned and have single digit utilization ($$$!).
