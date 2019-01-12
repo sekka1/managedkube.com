@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Dramatically Lower Cloud Costs of Kubernetes Clusters: A Complete Guide and Walkthrough
+title: "How to Dramatically Lower Cloud Costs of Kubernetes Clusters: A Complete Guide and Walkthrough"
 categories: kubernetes cloud costs
 keywords: kubernetes cloud costs
 
