@@ -55,23 +55,23 @@ The tool that you use to understand your cloud bill isn’t important, only that
 
 ## How to Use Cluster AutoScaler to Keep Your Kubernetes Costs Under Control
 
-The Cluster AutoScaler is a Kubernetes project that helps you dynamically scale your cloud instances on and off.  The project source and documentation can be found here:  https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler
+The Cluster AutoScaler is a Kubernetes project that helps you dynamically scale your cloud instances on and off.  The project source and documentation is <A HREF="https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler">here</a>.
 It is a process that you turn on inside your cluster that talks to the Kubernetes API and watches for certain signals.  One of those signals are pods in a “pending” state due to no nodes being available for Kubernetes to schedule (run) on.
 
-By doing a “kubectl get pods”, you can see what is pending.
+By doing a `kubectl get pods`, you can see what is pending.
 
 ![kubectl example]({{ "/assets/blog/images/costs-walkthrough-4-kubectl.png" | absolute_url }})
 
 The Cluster AutoScaler takes into account what you are trying to turn on and if the nodes groups it has access to for it to increase the number of nodes.  If it determines that the pod that is trying to get scheduled out will get scheduled out if it turned on a new instance, the cluster autoscaler will turn on an instance for you.
 
-By describing a pod by running the command: kubectl describe pod <pod namd>
+By describing a pod by running the command: `kubectl describe pod <pod name>`
 
-You get the events that are associated with this pod.  This event is telling you that the “cluster-autoscaler” is scaling up the instance group from 1 node to 2 nodes.
+You get the events that are associated with this pod.  This event is telling you that the cluster-autoscaler” is scaling up the instance group from 1 node to 2 nodes.
 
 ![Cluster Autoscaler Example]({{ "/assets/blog/images/costs-walkthrough-5-cluster-autoscaler.png" | absolute_url }})
 
 You might think, great...this will help me spend more.  How is this helping me save money?  
 
-That is a very good question.  The Cluster AutoScaler also does this in reverse with the <A HREF="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-are-the-parameters-to-ca">“scale-down-*” parameters</a>.  The Cluster AutoScaler will scale down nodes with nothing running on them or, depending on the settings you give the cluster autoscaler, it will try to condense the pods you have running on various instances down to fewer instances.
+That is a very good question.  The Cluster AutoScaler also does this in reverse with the `scale-down-*` <A HREF="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-are-the-parameters-to-ca">parameters</a>.  The Cluster AutoScaler will scale down nodes with nothing running on them or, depending on the settings you give the cluster autoscaler, it will try to condense the pods you have running on various instances down to fewer instances.
 
-This is a very good service for your cluster as it will scale the number of instances up and down per your requirements.  While this tool works well, it is not foolproof.  The Cluster AutoScaler is pretty conservative; most of the scaling down errs on the side of caution.  If for any reason it thinks it is not safe to scale down and compact the pods onto a node, it will not.  So while you might take a look at it and think it should scale down, sometimes it might not.  You have to tune the “scale-down-*” parameters to your liking.  The first step is to run this and have it in motion. Then, you can continue to customize the Customer AutoScaler’s actions to mirror how you would manage the cluster.
+This is a very good service for your cluster as it will scale the number of instances up and down per your requirements.  While this tool works well, it is not foolproof.  The Cluster AutoScaler is pretty conservative; most of the scaling down errs on the side of caution.  If for any reason it thinks it is not safe to scale down and compact the pods onto a node, it will not.  So while you might take a look at it and think it should scale down, sometimes it might not.  You have to tune the `scale-down-*` parameters to your liking.  The first step is to run this and have it in motion. Then, you can continue to customize the Customer AutoScaler’s actions to mirror how you would manage the cluster.
