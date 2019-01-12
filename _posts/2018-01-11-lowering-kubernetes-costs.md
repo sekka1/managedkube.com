@@ -18,11 +18,11 @@ The first step in controlling your costs is to take the time to understand what 
 
 From your cloud provider’s billing dashboard, you can get a total monthly cost across all services or by tags based on just one or all of your Kubernetes clusters:
 
-![Example AWS Cost Dashboard]({{ "/assets/blog/images/costs-walkthrough-1-aws-dashboard.png" | absolute_url }})
+![Example AWS Cost Dashboard]({{ "/assets/blog/images/costs-walkthrough-1-aws-dashboard-1.png" | absolute_url }})
 
 This is a good starting point for high-level information.  It is telling me that I am spending around $100/day on all services on AWS.  This makes my monthly bill ~$3k. This information is good but it is too high level.  Let's try to drill down into the details.  
 
-![Example AWS Cost Dashboard Drilldown]({{ "/assets/blog/images/costs-walkthrough-2-aws-dashboard.png" | absolute_url }})
+![Example AWS Cost Dashboard Drilldown]({{ "/assets/blog/images/costs-walkthrough-2-aws-dashboard (2).png" | absolute_url }})
 
 Grouping by “Service” gives us a stacked bar chart on where the daily costs are going.  From here, we can see that “EC2-Other” and “EC2-Instances” are >80% of the daily cost and the rest of the costs are distributed over a few other items that are not contributing that much to my overall cloud spend. 
 
@@ -32,7 +32,7 @@ You might be wondering what “EC2-Other” and “Others” are.  Depending on 
 
 If you group by “User Type,” you can get info about which instance and spot types are allocated to a day’s cost:
 
-![Example AWS Spot Pricing]({{ "/assets/blog/images/costs-walkthrough-3-spot-pricing.png" | absolute_url }})
+![Example AWS Spot Pricing]({{ "/assets/blog/images/costs-walkthrough-3-spot pricing-1.png" | absolute_url }})
 
 This is great information about my total costs at a high-level but I still don’t know which group of users on my Kubernetes cluster is using the most resources.  Let’s say that $80/day on instance related cost is too high and we need to optimize our cloud spend. These charts point out what is my biggest cost, but not which team or customer is responsible for it. 
 
@@ -68,7 +68,7 @@ By describing a pod by running the command: `kubectl describe pod <pod name>`
 
 You get the events that are associated with this pod.  This event is telling you that the cluster-autoscaler” is scaling up the instance group from 1 node to 2 nodes.
 
-![Cluster Autoscaler Example]({{ "/assets/blog/images/costs-walkthrough-5-cluster-autoscaler.png" | absolute_url }})
+![Cluster Autoscaler Example]({{ "/assets/blog/images/costs-walkthrough-5-autoscaler.png" | absolute_url }})
 
 You might think, great...this will help me spend more.  How is this helping me save money?  
 
