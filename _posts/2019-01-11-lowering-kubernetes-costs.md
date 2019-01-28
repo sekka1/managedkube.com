@@ -6,6 +6,9 @@ keywords: kubernetes cloud costs
 
 ---
 
+* TOC
+{:toc}
+
 - [Introduction: cost saving with your Kubernetes clusters](#Introduction: cost saving with your Kubernetes clusters)
 - [How to Use Cluster AutoScaler to Keep Your Kubernetes Costs Under Control](#How to Use Cluster AutoScaler to Keep Your Kubernetes Costs Under Control)
 
