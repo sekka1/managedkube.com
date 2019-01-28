@@ -83,7 +83,7 @@ The Kubernetes <A HREF="https://kubernetes.io/docs/tasks/run-application/horizon
 
 This works really well if your workload is CPU bound and scales on this axis.  When it is off peak hours this technique will help you scale down the number of pods you are running to the lowest amount you have set and then at peak hours, it will grow to the maximum amount you have set.  This is all done with minimal effort from you.
 
-If your application does not scale on the CPU axis, you can use <A HREF="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#support-for-metrics-apis>custom metrics</a>.  There is a bit more work for you to do on this front.  You have to actively figure out what metrics you want and then expose it to Kubernetes so that Kubernetes can watch it to scale up and down on this metric.  The great part is that the Kubernetes framework has done most of the heavy lifting for you; the hard part is exposing the metric you want and then it’s pretty straightforward to use the same configurations to scale up and down.
+If your application does not scale on the CPU axis, you can use <A HREF="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#support-for-metrics-apis">custom metrics</a>.  There is a bit more work for you to do on this front.  You have to actively figure out what metrics you want and then expose it to Kubernetes so that Kubernetes can watch it to scale up and down on this metric.  The great part is that the Kubernetes framework has done most of the heavy lifting for you; the hard part is exposing the metric you want and then it’s pretty straightforward to use the same configurations to scale up and down.
   
 ## Using AWS Spot Instances to Lower Your Kubernetes Costs
 
@@ -96,7 +96,7 @@ Here’s the background for how AWS Spot Instances came to be: When it is peak s
 If you are able to leverage this type of instance, then you can save a lot.  From the Spot Instance Pricing History chart (also viewable in the AWS console), the On-Demand price for a normal m5.xlarge instance is $0.1920/hour.  The average price for the last three months on a Spot Instance has been around $0.090/hour.  That means you could be saving ~50% off of the On-Demand price with a Spot Instance if you can stomach the ups and downs of the prices. One important way to prepare for the volatility of Spot Instance pricing is to have a scheme in place so that if the Spot price goes beyond what you want to bid for (which can happen at anytime), you have an automated mechanism to switch from using Spot Instances to using On-Demand Instances or find other Spot Instances to turn on.
 
 ### Using SpotInst.com
-SpotInst.com (not affiliated with AWS Spot Instances) is a very good paid option to manage Spot Instances and On Demand Instances.  This company exclusively helps you to safely use Spot Instances.  They charge you 10-12% (I have heard of volume deals negotiated to <5%) of your savings from using Spot Instances.  If you wouldn’t otherwise set up the infrastructure to use Spot Instances, SpotInst.com is in essence a ‘free’ service since it just reduces the amount that you save from using Spot Instances. And if you would set up your own infrastructure to use Spot Instances, the key question to ask then is if that internal development will cost you more than 10-12% of your ongoing savings?
+<A HREF="https://spotinst.com/">SpotInst.com</a> (not affiliated with AWS Spot Instances) is a very good paid option to manage Spot Instances and On Demand Instances.  This company exclusively helps you to safely use Spot Instances.  They charge you 10-12% (I have heard of volume deals negotiated to <5%) of your savings from using Spot Instances.  If you wouldn’t otherwise set up the infrastructure to use Spot Instances, SpotInst.com is in essence a ‘free’ service since it just reduces the amount that you save from using Spot Instances. And if you would set up your own infrastructure to use Spot Instances, the key question to ask then is if that internal development will cost you more than 10-12% of your ongoing savings?
 
 SpotInst.com will help you maintain a fleet of servers that can be a mix of Spot or On-Demand Instances.  If the Spot prices go above what you’d like to pay, they will turn on the On-Demand Instances for you.  They have very fancy predictive algorithms that forecast when Spot prices will go up or down. SpotInst.com then uses this information to manage your fleet, either by turning you on other Spot Instances or using On-Demand Instances to fulfill what you have specified as the minimum number of instances in your fleet.  They are also natively integrated with Kubernetes, so they can tell your Kubernetes cluster when they are going to take an instance offline by cordoning it off and draining the pods off that node safely instead of just turning it off.  SpotInst.com is a good option if you would like to buy a solution.  It is very well rounded and offers a lot of great features.
 
@@ -109,7 +109,7 @@ No matter how you implement it, using Spot instances can substantially lower the
 
 ## Using Quotas to Lower Your Kubernetes Costs
 
-Kubernetes <A HREF="https://kubernetes.io/docs/concepts/policy/resource-quotas/">quota</a> is native functionality that allows you to place quota limits on a namespace.  A namspace is a logical construct in Kubernetes that allows you to separate out the cluster into smaller semi-isolated spaces.  This allows you to then give one team a namespace or give a team a few namespaces like: dev, qa, staging, etc.  You can then deligate that namespace to this team giving them pretty much full control of it but limiting them by using quotas so that they cannot request a thousand CPUs or hundreds of terrabyte of disks.
+Kubernetes <A HREF="https://kubernetes.io/docs/concepts/policy/resource-quotas/">quotas</a> is native functionality that allows you to place quota limits on a namespace.  A namspace is a logical construct in Kubernetes that allows you to separate out the cluster into smaller semi-isolated spaces.  This allows you to then give one team a namespace or give a team a few namespaces like: dev, qa, staging, etc.  You can then deligate that namespace to this team giving them pretty much full control of it but limiting them by using quotas so that they cannot request a thousand CPUs or hundreds of terrabyte of disks.
 
 You can limit them by:
 - Configmaps
@@ -145,7 +145,7 @@ If you are serious about controlling cost on Kubernetes, using Quotas is definit
 
 ## Using Pod Request and Limits to Lower Your Kubernetes Costs
 
-Kubernetes has <A HREF="https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/">settings for each type of deployment</a> that can set the resource request (low) and the limits (high) [1] on what each pod wants for CPU and memory.  This indirectly helps you with controlling cost on a Kubernetes cluster.  
+Kubernetes has <A HREF="https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/">settings for each type of deployment</a> that can set the resource request (low) and the limits (high) on what each pod wants for CPU and memory.  This indirectly helps you with controlling cost on a Kubernetes cluster.  
 
 ```
 apiVersion: v1
@@ -164,8 +164,7 @@ spec:
         memory: "512Mi"
         cpu: "500m"
 ```
-1028Mi is equivalent to 1GB
-500m is equivalent to 1 CPU core 
+1028Mi is equivalent to 1GB; 500m is equivalent to 1 CPU core 
 
 By setting the “requests” you ensure that this item will be guaranteed that low limit threshold that it has asked for.  Kubernetes will not schedule (run) this unit unless the instance has at least this much free capacity.
 
@@ -187,7 +186,7 @@ To set the above “my-app” example to the most conservative setting with no o
 
 This means that on the one instance you have, you will be able to schedule out exactly 2 of these items (just an example, not accounting for cluster services).  Kubernetes will not and won't be able to schedule more than two of these items on this node type.
 
-Lets say you want to be more aggressive and you know that most of the time this application does not use all of the resources specificed and you can over provision:
+Let's say you want to be more aggressive and you know that most of the time this application does not use all of the resources specificed and you can over provision:
 
 ```
     resources:
@@ -203,7 +202,7 @@ These settings will allow 4 of these items to be scheduled out on this one node.
 
 ## Conclusion: you can lower cloud costs by 50-70% for your Kubernetes clusters
 
-You can use all of the tools both independently and together to dramatically lower your Kubernetes costs. Follow these steps to achieve these results:
+You can use all of the tools both independently and together to dramatically lower your Kubernetes costs. In summary, for best results:
 1. Understand your cloud spend today and identify the biggest drivers of costs 
-2. Determine which of the available tools describes above are most helpful to driving down your costs
+2. Determine which of the available tools described above are most helpful to driving down your costs
 3. Don't forget to address the tradeoffs of the above tools so your clusters are stable
