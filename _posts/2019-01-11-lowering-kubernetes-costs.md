@@ -109,7 +109,7 @@ No matter how you implement it, using Spot instances can substantially lower the
 
 ## Using Quotas to Lower Your Kubernetes Costs
 
-Kubernetes <A HREF="https://kubernetes.io/docs/concepts/policy/resource-quotas/">quotas</a> is native functionality that allows you to place quota limits on a namespace.  A namspace is a logical construct in Kubernetes that allows you to separate out the cluster into smaller semi-isolated spaces.  This allows you to then give one team a namespace or give a team a few namespaces like: dev, qa, staging, etc.  You can then deligate that namespace to this team giving them pretty much full control of it but limiting them by using quotas so that they cannot request a thousand CPUs or hundreds of terrabyte of disks.
+Kubernetes <A HREF="https://kubernetes.io/docs/concepts/policy/resource-quotas/">quotas</a> is native functionality that allows you to place quota limits on a namespace.  A namsepace is a logical construct in Kubernetes that allows you to separate out the cluster into smaller semi-isolated spaces.  This allows you to then give one team a namespace or give a team a few namespaces like: dev, qa, staging, etc.  You can then delegate that namespace to this team giving them pretty much full control of it but limiting them by using quotas so that they cannot request a thousand CPUs or hundreds of terrabyte of disks.
 
 You can limit them by:
 - Configmaps
