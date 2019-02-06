@@ -60,6 +60,7 @@ plugins:
  - jekyll-feed
  - jekyll-seo-tag
  - jekyll-paginate-v2
+ - jekyll-sitemap
 
 plugins: [jekyll-paginate-v2]
 
