@@ -1,13 +1,18 @@
 title: ManagedKube
-author: Garland Kan
-email: garlandk@gmail.com
+author: ManagedKube
+email: garlandk@managedkube.com
 description: > # this means to ignore newlines until "twitter_username:"
   Kubernetes Troubleshooting Chatbot
+url: https://managedkube.com/
+logo: /assets/logo/M_1000.jpg
+
+# Open graph meta data usage:
+# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 
 highlighter: rouge
 
 # social links
-# twitter_username: jekyllrb
+twitter_username: ManagedKube
 # github_username:  jekyll
 # rss: rss
 # dribbble_username: jekyll
@@ -28,7 +33,7 @@ linkedin_username: garland-kan-a62890
 
 defaults:
   - scope:
-      path: "assets/images"
+      path: "/assets/logo/M_1000.jpg"
     values:
       image: true
 
