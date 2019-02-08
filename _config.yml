@@ -67,7 +67,7 @@ plugins:
  - jekyll-paginate-v2
  - jekyll-sitemap
 
-plugins: [jekyll-paginate-v2]
+# plugins: [jekyll-paginate-v2]
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem

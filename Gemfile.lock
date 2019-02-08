@@ -251,6 +251,7 @@ DEPENDENCIES
   bundler (~> 1.15)
   github-pages
   jekyll-paginate-v2
+  jekyll-sitemap
   minima!
 
 BUNDLED WITH
