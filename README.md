@@ -240,7 +240,7 @@ The theme is available as open source under the terms of the [MIT License](http:
 Running for the first time:
 
 ```
-docker run --name blog -it -v ${PWD}:/opt --net=host -p 4000:4000 ruby:2.4.1 bash
+docker run --name blog -it -v ${PWD}:/opt --net=host -p 4000:4000 ruby:2.6.1 bash
 
 cd /opt
 bundle install
