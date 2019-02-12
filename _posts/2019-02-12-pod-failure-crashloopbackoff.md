@@ -5,7 +5,8 @@ categories: kubernetes pod failure CrashLoopBackOff
 keywords: kubernetes pod failure CrashLoopBackOff
 ---
 
-[crash loop](/assets/blog/images/crash-loop.jpg)
+![crash loop](/assets/blog/images/crash-loop.jpg)
+
 
 Your pod can fail in all kinds of way.  One failure status is CrashLoopBackOff.  You will usually see this when you do a “kubectl get pods”.
 
