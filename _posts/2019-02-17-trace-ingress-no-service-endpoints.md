@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Trace ingress no service endpoints
-categories: kubernetes Trace ingress no service endpoints
-keywords: kubernetes Trace ingress no service endpoints
+categories: kubernetes Trace ingress no service endpoints k8sbot
+keywords: kubernetes Trace ingress no service endpoints k8sbot
 ---
 
 You encounter an error on your ingress where you can't reach your website.

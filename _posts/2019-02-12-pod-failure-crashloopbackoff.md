@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Pod Failure CrashLoopBackOff
-categories: kubernetes pod failure CrashLoopBackOff
-keywords: kubernetes pod failure CrashLoopBackOff
+categories: kubernetes pod failure CrashLoopBackOff k8sbot
+keywords: kubernetes pod failure CrashLoopBackOff k8sbot
 ---
 
 ![crash loop](/assets/blog/images/crash-loop.jpg)
