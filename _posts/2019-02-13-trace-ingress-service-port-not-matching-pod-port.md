@@ -5,6 +5,8 @@ categories: kubernetes trace ingress service port not matching pod port k8sbot
 keywords: kubernetes trace ingress service port not matching pod port k8sbot
 ---
 
+This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters. 
+
 You encounter an error on your ingress where you can't reach your website. 
 
 ```bash
