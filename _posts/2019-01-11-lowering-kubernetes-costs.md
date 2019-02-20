@@ -12,7 +12,7 @@ keywords: kubernetes cloud costs
 ## Introduction: cost saving with your Kubernetes clusters
 Kubernetes is a great platform to deploy your application on.  It gives you a very nice framework to work in and it takes care of a lot of the low-level infrastructure for you.  This makes it easier for you and developers to deploy applications on top of it.  However, as with all things, there are tradeoffs that come with this ease of deployment. It’s great because it is easy and there is less friction to deploying applications, but this also means that users can turn on applications with little effort and thought. We regularly see clients whose clusters are very overprovisioned and have single digit utilization ($$$!).
 
-Because of the inherent sharing nature of Kubernetes, it’s difficult to see what is driving your cloud costs and therefore understand how you can lower cloud costs. In this post, I’ll outline the best options for helping you lower your cloud spend, from open source tactics to paid tools. 
+Because of the inherent sharing nature of Kubernetes, it’s difficult to see what is driving your cloud costs and therefore understand how you can lower cloud costs. In this post, I’ll outline the best options for helping you lower your cloud spend, from open source tactics to paid tools.
 
 ### First things first: understand your cloud spend today
 The first step in controlling your costs is to take the time to understand what your current infrastructure and costs look like.  Assess the situation and then make smart data-driven decisions based on your evaluation. I fully believe in the mantra, “What you measure, you manage.” You need to know what’s going on holistically to take informed, actionable steps towards reducing your costs.  What if your major cost is not from instances but instead from users that are requesting very large and fast EBS disks?  By not taking an inventory on your compute spend, you might be optimizing the wrong thing.
@@ -25,9 +25,9 @@ This is a good starting point for high-level information.  It is telling me that
 
 ![Example AWS Cost Dashboard Drilldown]({{ "/assets/blog/images/costs-walkthrough-2-aws-dashboard (2).png" | absolute_url }})
 
-Grouping by “Service” gives us a stacked bar chart on where the daily costs are going.  From here, we can see that “EC2-Other” and “EC2-Instances” are >80% of the daily cost and the rest of the costs are distributed over a few other items that are not contributing that much to my overall cloud spend. 
+Grouping by “Service” gives us a stacked bar chart on where the daily costs are going.  From here, we can see that “EC2-Other” and “EC2-Instances” are >80% of the daily cost and the rest of the costs are distributed over a few other items that are not contributing that much to my overall cloud spend.
 
-From this, I know to focus my energy and time on reducing EC2 costs because that is the primary driver of my monthly costs. I have the potential to save significant dollars by taking a closer look at my EC2 instances. 
+From this, I know to focus my energy and time on reducing EC2 costs because that is the primary driver of my monthly costs. I have the potential to save significant dollars by taking a closer look at my EC2 instances.
 
 You might be wondering what “EC2-Other” and “Others” are.  Depending on the view, AWS buckets items like snapshots, load balancers, or NAT gateways into these categories.
 
@@ -35,7 +35,7 @@ If you group by “User Type,” you can get info about which instance and spot 
 
 ![Example AWS Spot Pricing]({{ "/assets/blog/images/costs-walkthrough-3-spot pricing-1.png" | absolute_url }})
 
-This is great information about my total costs at a high-level but I still don’t know which group of users on my Kubernetes cluster is using the most resources.  Let’s say that $80/day on instance related cost is too high and we need to optimize our cloud spend. These charts point out what is my biggest cost, but not which team or customer is responsible for it. 
+This is great information about my total costs at a high-level but I still don’t know which group of users on my Kubernetes cluster is using the most resources.  Let’s say that $80/day on instance related cost is too high and we need to optimize our cloud spend. These charts point out what is my biggest cost, but not which team or customer is responsible for it.
 
 This is because Kubernetes is a multi-tenant type cluster system.  Workloads from different applications or groups can run on the same node, giving you better efficiency and resiliency by utilizing a single node for more than one purpose. However, this also makes your billing and infrastructure more complicated.
 
@@ -43,9 +43,9 @@ To get the additional information we need, we need to go to Kubernetes and ask, 
 
 ### Tools for understanding your cloud bill
 
-There are many different ways that you can understand your Kubernetes cost allocation: 
+There are many different ways that you can understand your Kubernetes cost allocation:
 - The large cloud monitoring companies, such as <A HREF="https://www.cloudhealthtech.com/">CloudHealth</a>, <A HREF="https://cloudcheckr.com/">CloudCheckr</a>, and <A HREF="https://www.cloudability.com/">Cloudability</a> , offer monitoring. This comes at a steep price (2.5% of your cloud spend) and unfortunately, you cannot decouple this feature from their overall product.
-- For clusters on GKE, they just launched a free <A HREF="https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering">cost metering</a> tool. Here's an example of what the <A HREF="https://datastudio.google.com/u/0/reporting/1JsheUOianMrAlIIyR8Uk8-HSiJX2vLHZ/page/bLKZ">dashboard</a> looks like. 
+- For clusters on GKE, they just launched a free <A HREF="https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering">cost metering</a> tool. Here's an example of what the <A HREF="https://datastudio.google.com/u/0/reporting/1JsheUOianMrAlIIyR8Uk8-HSiJX2vLHZ/page/bLKZ">dashboard</a> looks like.
 - CoreOS offers an <A HREF="https://coreos.com/blog/metering">open source metering option</a>
 - <A HREF="https://www.ManagedKube.com">ManagedKube</a> offers a paid Kubernetes cost allocation product.
 
@@ -84,7 +84,7 @@ The Kubernetes <A HREF="https://kubernetes.io/docs/tasks/run-application/horizon
 This works really well if your workload is CPU bound and scales on this axis.  When it is off peak hours this technique will help you scale down the number of pods you are running to the lowest amount you have set and then at peak hours, it will grow to the maximum amount you have set.  This is all done with minimal effort from you.
 
 If your application does not scale on the CPU axis, you can use <A HREF="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#support-for-metrics-apis">custom metrics</a>.  There is a bit more work for you to do on this front.  You have to actively figure out what metrics you want and then expose it to Kubernetes so that Kubernetes can watch it to scale up and down on this metric.  The great part is that the Kubernetes framework has done most of the heavy lifting for you; the hard part is exposing the metric you want and then it’s pretty straightforward to use the same configurations to scale up and down.
-  
+
 ## Using AWS Spot Instances to Lower Your Kubernetes Costs
 
 If you are running your Kubernetes cluster on AWS, you can utilize <A HREF="https://aws.amazon.com/ec2/spot/">Spot instances</a>.  These are instances that AWS deems as spare instances and offers them to you at a substantially lower price.  The price of Spot instances fluctuate based on demand for an <A HREF="https://aws.amazon.com/ec2/pricing/on-demand/">instance type</a> in a particular AWS zone and region.  
@@ -137,7 +137,7 @@ spec:
    memory: 200Gi
 ```
 
-This would place a maximum of 10 CPU cores, 200 GB of memory, and a maximum of 50 pods limit on the namespace.  The team would be able to request up to this amount with no problem and after this amount, there will be error messages telling the team it has exceeded their quota. 
+This would place a maximum of 10 CPU cores, 200 GB of memory, and a maximum of 50 pods limit on the namespace.  The team would be able to request up to this amount with no problem and after this amount, there will be error messages telling the team it has exceeded their quota.
 
 There are various options on setting disks limits and even cloud CPU limits on a namespace.
 
@@ -164,7 +164,7 @@ spec:
         memory: "512Mi"
         cpu: "500m"
 ```
-1028Mi is equivalent to 1GB; 500m is equivalent to 1 CPU core 
+1028Mi is equivalent to 1GB; 500m is equivalent to 0.5 CPU core 
 
 By setting the “requests” you ensure that this item will be guaranteed that low limit threshold that it has asked for.  Kubernetes will not schedule (run) this unit unless the instance has at least this much free capacity.
 
@@ -203,6 +203,6 @@ These settings will allow 4 of these items to be scheduled out on this one node.
 ## Conclusion: you can lower cloud costs by 50-70% for your Kubernetes clusters
 
 You can use all of the tools both independently and together to dramatically lower your Kubernetes costs. In summary, for best results:
-1. Understand your cloud spend today and identify the biggest drivers of costs 
+1. Understand your cloud spend today and identify the biggest drivers of costs
 2. Determine which of the available tools described above are most helpful to driving down your costs
 3. Don't forget to address the tradeoffs of the above tools so your clusters are stable
