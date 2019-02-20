@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Failing Job
-categories: kubernetes Failing Job k8sbot
-keywords: kubernetes Failing Job k8sbot
+title: Troubleshooting Walkthrough: Failing Job
+categories: kubernetes Failing Job k8sbot troubleshooting
+keywords: kubernetes Failing Job k8sbot troubleshooting
 ---
 
 You encounter an error on your job.
