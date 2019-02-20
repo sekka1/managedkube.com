@@ -1,11 +1,11 @@
 ---
 layout: post
-title: trace ingress service port not matching pod port
+title: Troubleshooting Walkthrough: trace ingress service port not matching pod port
 categories: kubernetes trace ingress service port not matching pod port k8sbot
 keywords: kubernetes trace ingress service port not matching pod port k8sbot
 ---
 
-You encounter an error on your ingress where you can't reach your website.
+You encounter an error on your ingress where you can't reach your website. 
 
 ```bash
 $ curl example.com/foo -v
