@@ -5,6 +5,8 @@ categories: kubernetes Failing Job k8sbot troubleshooting
 keywords: kubernetes Failing Job k8sbot troubleshooting
 ---
 
+This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters. 
+
 You encounter an error on your job.
 
 ```bash
