@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Trace ingress no service endpoints
+title: Troubleshooting Walkthrough: Trace ingress no service endpoints
 categories: kubernetes Trace ingress no service endpoints k8sbot
 keywords: kubernetes Trace ingress no service endpoints k8sbot
 ---
+
+This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters. 
 
 You encounter an error on your ingress where you can't reach your website.
 
