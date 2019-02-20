@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Troubleshooting Walkthrough - Failing Job
+title: Kubernetes Troubleshooting Walkthrough - Failing Job
 categories: kubernetes Failing Job k8sbot troubleshooting
 keywords: kubernetes Failing Job k8sbot troubleshooting
 ---
