@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Troubleshooting Walkthrough - trace ingress service port not matching pod port
+title: Kubernetes Troubleshooting Walkthrough - trace ingress service port not matching pod port
 categories: kubernetes trace ingress service port not matching pod port k8sbot
 keywords: kubernetes trace ingress service port not matching pod port k8sbot
 ---
