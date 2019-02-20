@@ -31,15 +31,17 @@ $ curl example.com/foo -v
 
 Ask @k8sbot for troubleshooting help:
 
-![get ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/get-ingress.png)
+![get ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/ingress-pod-1.png)
 
 @k8sbot runs inside of your Kubernetes cluster and gives you diagnostic information
 from interacting with the Kubernetes API
 
 ![get ingress](/assets/blog/images/workflow/k8sbot-agent-request.png)
 
-K8sbot provides troubleshooting recommendations based on real time information
+k8sbot provides troubleshooting recommendations based on real time information
 from your cluster.  It offers relevant suggestions based on what's happening
 in your cluster, right now.
 
-![get ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/trace-ingress.png)
+![get ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/ingress-pod-2.png)
+
+<A HREF="https://www.managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
