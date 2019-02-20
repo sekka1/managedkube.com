@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Troubleshooting Walkthrough: Trace ingress no service endpoints
+title: Troubleshooting Walkthrough - Trace ingress no service endpoints
 categories: kubernetes Trace ingress no service endpoints k8sbot
 keywords: kubernetes Trace ingress no service endpoints k8sbot
 ---
