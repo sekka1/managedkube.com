@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Troubleshooting Walkthrough - Pod Failure CrashLoopBackOff
+title: Kubernetes Troubleshooting Walkthrough - Pod Failure CrashLoopBackOff
 categories: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 keywords: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 ---
