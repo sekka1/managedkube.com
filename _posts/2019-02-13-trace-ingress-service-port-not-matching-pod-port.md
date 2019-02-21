@@ -1,21 +1,13 @@
 ---
 layout: post
-<<<<<<< HEAD
-title: trace ingress - service port not matching pod port
-=======
 title: Kubernetes Troubleshooting Walkthrough - trace ingress service port not matching pod port
->>>>>>> 5c509c05f9c2b8d5c322daf395d8cd4634de61c1
 categories: kubernetes trace ingress service port not matching pod port k8sbot
 keywords: kubernetes trace ingress service port not matching pod port k8sbot
 ---
 
-<<<<<<< HEAD
 When you are not able to reach your website or your API endpoint through a Kubernetes ingress, there can be various reasons on why that is the case.  An ingress resource depends on a Kubernetes `service` and a `service` depends on pod(s) where it can send the traffic to.  If any of these items are misconfigured or not in a ready state, you can potentially not reach your website or API endpoint.
-=======
-This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters. 
 
-You encounter an error on your ingress where you can't reach your website. 
->>>>>>> 5c509c05f9c2b8d5c322daf395d8cd4634de61c1
+You encounter an error on your ingress where you can't reach your website.
 
 You should take note on what the error code the ingress loadbalancer returns
 
@@ -75,10 +67,6 @@ k8sbot provides troubleshooting recommendations based on real time information
 from your cluster.  It offers relevant suggestions based on what's happening
 in your cluster, right now.
 
-<<<<<<< HEAD
 ![trace ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/trace-ingress.png)
-=======
-![get ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/ingress-pod-2.png)
 
 <A HREF="https://www.managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
->>>>>>> 5c509c05f9c2b8d5c322daf395d8cd4634de61c1
