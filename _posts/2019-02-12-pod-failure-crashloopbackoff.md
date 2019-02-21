@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Pod Failure CrashLoopBackOff
-categories: kubernetes pod failure CrashLoopBackOff k8sbot
-keywords: kubernetes pod failure CrashLoopBackOff k8sbot
+title: Kubernetes Troubleshooting Walkthrough - Pod Failure CrashLoopBackOff
+categories: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
+keywords: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 ---
+
+This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters. 
 
 ![crash loop](/assets/blog/images/crash-loop.jpg)
 
@@ -234,3 +236,5 @@ Kubernetes is backing off on restarting the container so many times.  Then the n
 the `Liveness` probe failed.  This gives us an indication that we should look at our `Liveness` probe.  Either we configured the liveness probe incorrectly or it is indeed not working.  We should start with checking one and then the other.
 
 The error `CrashLoopBackOff` can be tricky if we don't know where to look but with a few commands and looking at the correct places, we can pull out the nugget of information we need to tell us why Kubernetes is declaring the error and doing what it is doing.  Then the next part is on us to test a few things to make sure everything is correct with our configuration and/or our application.
+
+<A HREF="https://www.managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot that can help you quickly resolve these types of errors.

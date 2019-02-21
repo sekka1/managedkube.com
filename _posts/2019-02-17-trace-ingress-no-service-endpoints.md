@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Trace ingress no service endpoints
+title: Kubernetes Troubleshooting Walkthrough - Trace ingress no service endpoints
 categories: kubernetes Trace ingress no service endpoints k8sbot
 keywords: kubernetes Trace ingress no service endpoints k8sbot
 ---
+
+This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters. 
 
 You encounter an error on your ingress where you can't reach your website.
 
@@ -31,7 +33,7 @@ $ curl example.com/foo -v
 
 Ask @k8sbot for troubleshooting help:
 
-![get ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/get-ingress.png)
+![get ingress](/assets/blog/images/trace-ingress-no-endpoints-1.png)
 
 @k8sbot runs inside of your Kubernetes cluster and gives you diagnostic information
 from interacting with the Kubernetes API
@@ -42,4 +44,6 @@ K8sbot provides troubleshooting recommendations based on real time information
 from your cluster.  It offers relevant suggestions based on what's happening
 in your cluster, right now.
 
-![trace ingress](/assets/blog/images/workflow/trace-ingress-no-service-endpoints/trace-ingress-no-endpoints.png)
+![trace ingress](/assets/blog/images/trace-ingress-no-endpoints-2.png)
+
+<A HREF="https://www.managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
