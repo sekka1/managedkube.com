@@ -7,6 +7,13 @@
 
   $('button.bannerContent__subscribeButton').click(function() {
       console.log("clicked subscribe!");
+
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Subscribe',
+        eventAction: 'clicked',
+        eventLabel: 'Mailchimp subscribed'
+      });
   });
   console.log("In button script");
 </script>
