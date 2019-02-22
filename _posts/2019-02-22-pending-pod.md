@@ -11,9 +11,9 @@ cluster and it is in a `pending` state.  What can you do now and how do you trou
 it to see what the problem is?
 
 ```bash
-$ kubectl -n dev-k8sbot-test-pods get pods
+$ kubectl get pods
 NAME                                                   READY   STATUS             RESTARTS   AGE
-echoserver-init-not-enough-cpu-657f6fb8f5-wmgj5        0/1     Pending            0          1d
+echoserver-657f6fb8f5-wmgj5        0/1     Pending            0          1d
 ```
 # Troubleshooting
 There can be various reason on why it is in a `pending` state.  Lets go through them and how to
@@ -26,7 +26,7 @@ determine what the error messages are telling you:
 With any of these errors, the first thing to do is to `describe` the pod:
 
 ```bash
-$ kubectl -n dev-k8sbot-test-pods describe pod echoserver-init-not-enough-cpu-657f6fb8f5-wmgj5
+$ kubectl describe pod echoserver-657f6fb8f5-wmgj5
 ```
 
 This will give you additional information.  The describe output can be long but look
@@ -35,7 +35,7 @@ at the `Events` section first.
 ## Not enough CPU
 
 ```bash
-kubectl -n dev-k8sbot-test-pods describe pod echoserver-init-not-enough-cpu-657f6fb8f5-wmgj5
+kubectl describe pod echoserver-657f6fb8f5-wmgj5
 ...
 ...
 Events:
