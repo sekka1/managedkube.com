@@ -10,18 +10,29 @@
   </div>
 
   <script type="text/javascript">
+    console.log("GA button clicks.");
+
     $('button').click(function() {
-        console.log("clicked subscribe: generic button");
-        alert("generic button")
+        console.log("clicked: generic button");
 
         ga('send', {
           hitType: 'event',
-          eventCategory: 'Subscribe',
-          eventAction: 'clicked',
-          eventLabel: 'Mailchimp subscribed'
+          eventCategory: 'buttonClick',
+          eventAction: 'genericButton',
+          eventLabel: 'Generic Button Click'
         });
     });
-    console.log("In button script 2");
+
+    $('button.bannerContent__subscribeButton').click(function() {
+        console.log("MailChimp Subscribe button click");
+
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'subscribe',
+          eventAction: 'mailchimp',
+          eventLabel: 'Mailchimp subscribe to newsletter'
+        });
+    });
   </script>
 
 </footer>
