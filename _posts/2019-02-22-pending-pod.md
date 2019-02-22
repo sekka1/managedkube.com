@@ -21,7 +21,7 @@ determine what the error messages are telling you:
 
 - <a href="#not-enough-cpu">Not enough CPU</a>
 - <a href="#not-enough-memory">Not enough Memory</a>
-- <a href="#not-enought-cpu-and-memory">Not enought CPU and Memory</a>
+- <a href="#not-enough-cpu-and-memory">Not enought CPU and Memory</a>
 
 With any of these errors, the first thing to do is to `describe` the pod:
 
