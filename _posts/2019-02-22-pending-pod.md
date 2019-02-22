@@ -197,3 +197,7 @@ problem and then look at what Kubernetes is telling you at that point and contin
 
 # k8sbot
 <A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
+
+For the easy way, `k8sBot` can help you trace through these issues faster and directly in Slack.
+
+![k8sbot workflow - pending pod](/assets/blog/images/workflow/Workflow-mobile-pending-pod.png)
