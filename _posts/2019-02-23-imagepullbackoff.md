@@ -165,7 +165,8 @@ Either way, you need to do at least two things:
 * Add the reference of the secret to use in your pod definition
 
 ```bash
-kubectl -namespace <YOUR NAMESPACE> create secret docker-registry registry-secret \
+kubectl -namespace <YOUR NAMESPACE> \
+create secret docker-registry registry-secret \
 --docker-server=https://index.docker.io/v1/ \
 --docker-username=<THE USERNAME> \
 --docker-password=<THE PASSWORD> \
