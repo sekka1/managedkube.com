@@ -197,4 +197,4 @@ More information: https://kubernetes.io/docs/concepts/containers/images/#referri
 
 For the easy way, `k8sBot` can help you trace through these issues faster and directly in Slack.
 
-<!--![k8sbot workflow - pending pod](/assets/blog/images/workflow/Workflow-mobile-pending-pod.png)-->
+![k8sbot workflow - pending pod](/assets/blog/images/workflow/Workflow-mobile-pending-pod.png)
