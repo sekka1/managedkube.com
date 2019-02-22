@@ -19,9 +19,9 @@ echoserver-657f6fb8f5-wmgj5        0/1     Pending            0          1d
 There can be various reason on why it is in a `pending` state.  Lets go through them and how to
 determine what the error messages are telling you:
 
-- [Not enough CPU](#not-enough-cpu)
-- [Not enough Memory](#not-enough-memory)
-- [Not enought CPU and Memory](#not-enought-cpu-and-memory)
+- <a href="#not-enough-cpu">Not enough CPU</a>
+- <a href="#not-enough-memory">Not enough Memory</a>
+- <a href="#not-enought-cpu-and-memory">Not enought CPU and Memory</a>
 
 With any of these errors, the first thing to do is to `describe` the pod:
 
