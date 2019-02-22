@@ -69,4 +69,4 @@ in your cluster, right now.
 
 ![trace ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/ingress-pod-2.png)
 
-<A HREF="https://www.managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.

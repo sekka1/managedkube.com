@@ -196,4 +196,4 @@ problem and then look at what Kubernetes is telling you at that point and contin
 
 
 # k8sbot
-<A HREF="https://www.managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.

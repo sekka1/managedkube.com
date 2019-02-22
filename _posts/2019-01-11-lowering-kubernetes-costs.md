@@ -47,7 +47,7 @@ There are many different ways that you can understand your Kubernetes cost alloc
 - The large cloud monitoring companies, such as <A HREF="https://www.cloudhealthtech.com/">CloudHealth</a>, <A HREF="https://cloudcheckr.com/">CloudCheckr</a>, and <A HREF="https://www.cloudability.com/">Cloudability</a> , offer monitoring. This comes at a steep price (2.5% of your cloud spend) and unfortunately, you cannot decouple this feature from their overall product.
 - For clusters on GKE, they just launched a free <A HREF="https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering">cost metering</a> tool. Here's an example of what the <A HREF="https://datastudio.google.com/u/0/reporting/1JsheUOianMrAlIIyR8Uk8-HSiJX2vLHZ/page/bLKZ">dashboard</a> looks like.
 - CoreOS offers an <A HREF="https://coreos.com/blog/metering">open source metering option</a>
-- <A HREF="https://www.ManagedKube.com">ManagedKube</a> offers a paid Kubernetes cost allocation product.
+- <A HREF="https://managedkube.com">ManagedKube</a> offers a paid Kubernetes cost allocation product.
 
 The tool that you use to understand your cloud bill isn’t important, only that you build cost visibility into your Kubernetes clusters. Once you know how much you’re spending on every pod, instance, and persistent volume, you can:
 - Create a game plan for controlling your cloud spend

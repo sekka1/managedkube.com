@@ -5,7 +5,7 @@ categories: kubernetes Failing Job k8sbot troubleshooting
 keywords: kubernetes Failing Job k8sbot troubleshooting
 ---
 
-This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters. 
+This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters.
 
 You encounter an error on your job.
 
@@ -33,4 +33,4 @@ in your cluster, right now.
 
 ![trace ingress](/assets/blog/images/workflow/failing-job/failed-job-2.png)
 
-<A HREF="https://www.managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
