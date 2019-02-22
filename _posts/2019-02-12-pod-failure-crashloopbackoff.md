@@ -5,10 +5,7 @@ categories: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 keywords: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 ---
 
-This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters. 
-
-![crash loop](/assets/blog/images/crash-loop.jpg)
-
+This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters.
 
 Your pod can fail in all kinds of way.  One failure status is CrashLoopBackOff.  You will usually see this when you do a “kubectl get pods”.
 
@@ -19,6 +16,8 @@ pod-crashloopbackoff-7f7c556bf5-9vc89   1/2     CrashLoopBackOff   35         2h
 ```
 
 What does this mean?
+
+This means that your pod is starting, crashing, starting again, and then crashing again.
 
 To get more information you should describe the pod to get more information:
 
@@ -133,7 +132,8 @@ hello, there...
 exiting with status 0
 ```
 
-In our case, if you look above at the `Command`, we have it outputting some text and then exiting to show you this demo.  However, if you had a real app, this could mean that your application is exiting for some reason and hopefully the application logs will tell you why.
+In our case, if you look above at the `Command`, we have it outputting some text and then exiting to show you this demo.  However, if you had a real app, this could mean that your application is exiting for some reason and hopefully the application logs will tell you why or give you a clue to why
+it is exiting.
 
 Another possibility is that the pod is crashing because of a `liveness` probe not returning a successful status.  It will be in the same `CrashLoopBackOff` state in the `get pods` output and you have to `describe pod` to get the real information.
 
@@ -233,8 +233,9 @@ Warning  Unhealthy  70s (x3 over 76s)  kubelet, gke-gar-3-pool-1-9781becc-bdb3  
 ```
 
 Kubernetes is backing off on restarting the container so many times.  Then the next event tells us that
-the `Liveness` probe failed.  This gives us an indication that we should look at our `Liveness` probe.  Either we configured the liveness probe incorrectly or it is indeed not working.  We should start with checking one and then the other.
+the `Liveness` probe failed.  This gives us an indication that we should look at our `Liveness` probe.  Either we configured the liveness probe incorrectly for our appplicatoin or it is indeed not working.  We should start with checking one and then the other.
 
 The error `CrashLoopBackOff` can be tricky if we don't know where to look but with a few commands and looking at the correct places, we can pull out the nugget of information we need to tell us why Kubernetes is declaring the error and doing what it is doing.  Then the next part is on us to test a few things to make sure everything is correct with our configuration and/or our application.
 
+# k8sbot
 <A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot that can help you quickly resolve these types of errors.
