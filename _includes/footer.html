@@ -6,8 +6,22 @@
     <p class="footer-heading">© 2018-2019 ManagedKube</p>
 
 
-
+<button type="submit">test</button>
   </div>
 
+  <script type="text/javascript">
+    $('button').click(function() {
+        console.log("clicked subscribe: generic button");
+        alert("generic button")
+
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Subscribe',
+          eventAction: 'clicked',
+          eventLabel: 'Mailchimp subscribed'
+        });
+    });
+    console.log("In button script 2");
+  </script>
 
 </footer>
