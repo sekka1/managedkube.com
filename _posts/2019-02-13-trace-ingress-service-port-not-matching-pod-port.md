@@ -204,6 +204,9 @@ from interacting with the Kubernetes API
 
 ![k8sbot](/assets/blog/images/workflow/k8sbot-agent-request.png)
 
+k8sbot traces the ingress, service, and pod out for you.  Then it lays it out in columns
+for you to easily read and look through.
+
 k8sbot provides troubleshooting recommendations based on real time information
 from your cluster.  It offers relevant suggestions based on what's happening
 in your cluster, right now.
