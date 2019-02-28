@@ -198,4 +198,7 @@ More information: https://kubernetes.io/docs/concepts/containers/images/#referri
 
 For the easy way, `k8sBot` can help you trace through these issues faster and directly in Slack.
 
-![k8sbot workflow - pending pod](/assets/blog/images/workflow/Workflow-mobile-pending-pod.png)
+The following describe how you would use @k8sbot in Slack for more information about this pod to get a recommendation on what could be wrong and how
+to fix it.
+
+![k8sbot workflow - imagepullbackoff pod](/assets/blog/images/workflow/k8sbot-imagepullbackoff.png)

@@ -239,3 +239,8 @@ The error `CrashLoopBackOff` can be tricky if we don't know where to look but wi
 
 # k8sbot
 <A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot that can help you quickly resolve these types of errors.
+
+The following describe how you would use @k8sbot in Slack for more information about this pod to get a recommendation on what could be wrong and how
+to fix it.
+
+![k8sbot workflow - crashloopbackoff pod](/assets/blog/images/workflow/k8sbot-crashloopbackoff.png)
