@@ -5,6 +5,20 @@ categories: kubernetes trace ingress service port not matching pod port k8sbot
 keywords: kubernetes trace ingress service port not matching pod port k8sbot
 ---
 
+---
+layout: post
+title: Kubernetes Troubleshooting Walkthrough - Tracing through an ingress
+categories: kubernetes trace ingress service port not matching pod port k8sbot
+keywords: kubernetes trace ingress service port not matching pod port k8sbot
+---
+
+* TOC
+{:toc}
+
+## Introduction: troubleshooting a Kubernetes ingress
+
+I am writing a series of blog posts about Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It's like trying to untangle a tangled ball of strings. In this post, I am going to walk you through troubleshooting a Kubernetes ingress.
+
 When you are not able to reach your website or your API endpoint through a Kubernetes ingress, there can be various reasons on why that is the case.  An ingress resource depends on a Kubernetes `service` and a `service` depends on pod(s) where it can send the traffic to.  If any of these items are misconfigured or not in a ready state, you can potentially not reach your website or API endpoint.
 
 For most people, they will be running the Kubernetes in a cloud (AWS, GCP, Azure, etc).
@@ -12,8 +26,8 @@ Kubernetes has cloud integration that are usually there by default.  When you cr
 of type [LoadBalancer](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer), Kubernetes will create a loadbalancer in your cloud (FYI, load balancers
 usually cost money and has an hourly billing rate associated to it like a machine).
 If you are on AWS, it will create you an ELB (external ELB by default).  You will
-probably be using some kind of ingress controller such as the popular Kubernetes
-Nginx Ingress (https://github.com/kubernetes/ingress-nginx).
+probably be using some kind of ingress controller such as the popular [Kubernetes
+Nginx Ingress](https://github.com/kubernetes/ingress-nginx).
 
 ![Kubernetes ingress flow](/assets/blog/images/workflow/k8sbot-kube-ingress-flow.png)
 
@@ -21,6 +35,8 @@ Kubernetes will then wire up the loadbalancer up for you, routing it to a [NodeP
 in your Kubernetes `Service` configuration.  In this case, port 80 as the target port.  Usually
 all of this automatic wiring up is done correctly and it works on the first try.  If
 it doesn't then you have to start troubleshooting where the problem is located.
+
+## Diagnosing a Kubernetes ingress issue
 
 The main way you will notice this path is not working is when you encounter an error on your ingress where you can't reach your website.
 
@@ -69,10 +85,8 @@ The server is currently unavailable (because it is overloaded or down for mainte
 This tells us a few things.  It tells us that our we are making it to our ingress and
 the Nginx ingress loadbalancer is trying to route it but it is saying there is nothing to route it to.  When you receive this message, this usually means that no `pods` associated with this `service` is in a ready state.  You should check if the `pods` are in a ready state to serve traffic.
 
-
 # Tracing through with kubectl
 The following describes how you can trace an ingress flows through the system through each Kubernetes resources.
-
 List all of the ingresses:
 
 ```yaml
@@ -192,10 +206,11 @@ NAME                                                   READY   STATUS           
 trace-ingress-4-5db9d55849-msrjw                       1/1     Running            0          9h    10.44.73.12   gke-gar-3-pool-1-9781becc-bdb3   <none>
 ```
 
+## Using k8sBot to troubleshoot a Kubernetes ingress
 
-# k8sbot
+I created k8sBot because of countless hours spent tracing ingress issues. I was frustrated with having to look at multiple Kubernetes resources and having to recognize if a long IP is one number off. There were many times when my eyes would skim right over the error and not notice that something was wrong. This is a prime example of when robots are better than humans!
 
-You can also use @k8sbot to help you troubleshoot this:
+@k8sbot can help you troubleshoot this:
 
 ![get ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/ingress-pod-1.png)
 
@@ -207,10 +222,10 @@ from interacting with the Kubernetes API
 k8sbot traces the ingress, service, and pod out for you.  Then it lays it out in columns
 for you to easily read and look through.
 
-k8sbot provides troubleshooting recommendations based on real time information
-from your cluster.  It offers relevant suggestions based on what's happening
+k8sbot provides troubleshooting recommendations based on current information
+from your cluster.  It offers relevant recommendations on how to fix your issue based on what's happening
 in your cluster, right now.
 
 ![trace ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/ingress-pod-2.png)
 
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshooting Slackbot or sign up for a free trial <a href="https://managedkube.com/start-free-trial">here</a>
