@@ -71,7 +71,7 @@ the Nginx ingress loadbalancer is trying to route it but it is saying there is n
 
 
 # Tracing through with kubectl
-You can trace through how the ingress
+The following describes how you can trace an ingress flows through the system through each Kubernetes resources.
 
 List all of the ingresses:
 
