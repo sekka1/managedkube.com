@@ -10,7 +10,7 @@ keywords: kubernetes trace ingress service port not matching pod port k8sbot
 
 ## Introduction: troubleshooting a Kubernetes ingress
 
-I am writing a series of blog posts about Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It's like trying to untangle a tangled ball of strings. In this post, I am going to walk you through troubleshooting a Kubernetes ingress.
+I am writing a series of blog posts about troubleshooting Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It's like trying to find the end of one string in a tangled ball of strings. In this post, I am going to walk you through troubleshooting a Kubernetes ingress.
 
 When you are not able to reach your website or your API endpoint through a Kubernetes ingress, there can be various reasons on why that is the case.  An ingress resource depends on a Kubernetes `service` and a `service` depends on pod(s) where it can send the traffic to.  If any of these items are misconfigured or not in a ready state, you can potentially not reach your website or API endpoint.
 
@@ -199,7 +199,7 @@ NAME                                                   READY   STATUS           
 trace-ingress-4-5db9d55849-msrjw                       1/1     Running            0          9h    10.44.73.12   gke-gar-3-pool-1-9781becc-bdb3   <none>
 ```
 
-## Using k8sBot to troubleshoot a Kubernetes ingress
+# Using k8sBot to troubleshoot a Kubernetes ingress
 
 I created k8sBot because of countless hours spent tracing ingress issues. I was frustrated with having to look at multiple Kubernetes resources and having to recognize if a long IP is one number off. There were many times when my eyes would skim right over the error and not notice that something was wrong. This is a prime example of when robots are better than humans!
 
