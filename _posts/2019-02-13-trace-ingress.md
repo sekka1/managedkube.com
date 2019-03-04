@@ -5,13 +5,6 @@ categories: kubernetes trace ingress service port not matching pod port k8sbot
 keywords: kubernetes trace ingress service port not matching pod port k8sbot
 ---
 
----
-layout: post
-title: Kubernetes Troubleshooting Walkthrough - Tracing through an ingress
-categories: kubernetes trace ingress service port not matching pod port k8sbot
-keywords: kubernetes trace ingress service port not matching pod port k8sbot
----
-
 * TOC
 {:toc}
 
