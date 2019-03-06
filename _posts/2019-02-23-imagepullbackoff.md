@@ -8,7 +8,7 @@ keywords: kubernetes k8sbot troubleshooting imagepullbackoff
 * TOC
 {:toc}
 
-## Introduction: troubleshooting the Kubernetes error, imagepullbackoff
+## Introduction: troubleshooting the Kubernetes error, `imagepullbackoff`
 
 I am writing a series of blog posts about troubleshooting Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It's like trying to find the end of one string in a tangled ball of strings. In this post, I am going to walk you through troubleshooting the state, imagepullbackoff.
 
