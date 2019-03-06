@@ -5,9 +5,14 @@ categories: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 keywords: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 ---
 
-This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters.
+* TOC
+{:toc}
 
-Your pod can fail in all kinds of way.  One failure status is CrashLoopBackOff.  You will usually see this when you do a “kubectl get pods”.
+## Introduction: troubleshooting `CrashLoopBackOff`
+
+I am writing a series of blog posts about troubleshooting Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It’s like trying to find the end of one string in a tangled ball of strings. In this post, I am going to walk you through troubleshooting the state, CrashLoopBackOff.
+
+Your pod can fail in all kinds of ways.  One failure status is CrashLoopBackOff.  You will usually see this when you do a “kubectl get pods”.
 
 ```yaml
 $ kubectl get pods
@@ -18,6 +23,8 @@ pod-crashloopbackoff-7f7c556bf5-9vc89   1/2     CrashLoopBackOff   35         2h
 What does this mean?
 
 This means that your pod is starting, crashing, starting again, and then crashing again.
+
+## Step One: Describe the pod for more information
 
 To get more information you should describe the pod to get more information:
 
@@ -113,7 +120,7 @@ Type     Reason     Age               From                                     M
 Warning  BackOff    1s (x2 over 19s)  kubelet, gke-gar-3-pool-1-9781becc-bdb3  Back-off restarting failed container
 ```
 
-The Message says that it is in a `Back-off restarting failed container`.  This most likely means that Kubernetes started your container, then the container subsequently exited.  As we all know, the Docker container should hold and keep pid 1 running or the container exits.  When the container exits, Kubernetes will try to restart it.  After restarting it a few times, it will declare this `BackOff` state.  However, Kubernetes will keep on trying to restart it.
+This message says that it is in a `Back-off restarting failed container`.  This most likely means that Kubernetes started your container, then the container subsequently exited.  As we all know, the Docker container should hold and keep pid 1 running or the container exits.  When the container exits, Kubernetes will try to restart it.  After restarting it a few times, it will declare this `BackOff` state.  However, Kubernetes will keep on trying to restart it.
 
 If you get the pods again, you can see the `restart` counter is incrementing as Kubernetes restarts the container but the container keeps on exiting.
 
@@ -122,6 +129,8 @@ $ kubectl get pods
 NAME                                    READY   STATUS   RESTARTS   AGE
 pod-crashloopbackoff-7f7c556bf5-9vc89   1/2     Error    6          6m
 ```
+
+## Step Two: Get the logs of the pod
 
 At this point you should get the logs of the pod.  
 
@@ -132,8 +141,9 @@ hello, there...
 exiting with status 0
 ```
 
-In our case, if you look above at the `Command`, we have it outputting some text and then exiting to show you this demo.  However, if you had a real app, this could mean that your application is exiting for some reason and hopefully the application logs will tell you why or give you a clue to why
-it is exiting.
+In our case, if you look above at the `Command`, we have it outputting some text and then exiting to show you this demo.  However, if you had a real app, this could mean that your application is exiting for some reason and hopefully the application logs will tell you why or give you a clue to why it is exiting.
+
+## Step Three: Look at the `Liveness` probe
 
 Another possibility is that the pod is crashing because of a `liveness` probe not returning a successful status.  It will be in the same `CrashLoopBackOff` state in the `get pods` output and you have to `describe pod` to get the real information.
 
@@ -233,14 +243,20 @@ Warning  Unhealthy  70s (x3 over 76s)  kubelet, gke-gar-3-pool-1-9781becc-bdb3  
 ```
 
 Kubernetes is backing off on restarting the container so many times.  Then the next event tells us that
-the `Liveness` probe failed.  This gives us an indication that we should look at our `Liveness` probe.  Either we configured the liveness probe incorrectly for our appplicatoin or it is indeed not working.  We should start with checking one and then the other.
+the `Liveness` probe failed.  This gives us an indication that we should look at our `Liveness` probe.  Either we configured the liveness probe incorrectly for our appplicatoin or it is indeed not working.  We should start with checking on one and then the other.
+
+# Summary: Troubleshooting `CrashLoopBackOff`
 
 The error `CrashLoopBackOff` can be tricky if we don't know where to look but with a few commands and looking at the correct places, we can pull out the nugget of information we need to tell us why Kubernetes is declaring the error and doing what it is doing.  Then the next part is on us to test a few things to make sure everything is correct with our configuration and/or our application.
 
-# k8sbot
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot that can help you quickly resolve these types of errors.
+# Using k8sBot to troubleshoot `CrashLoopBackOff`
 
-The following describe how you would use @k8sbot in Slack for more information about this pod to get a recommendation on what could be wrong and how
-to fix it.
+I created k8sBot because I have spent too many hours figuring out and fixing configuration issues and errors in Kubernetes. I was frustrated with having to look at multiple Kubernetes resources and having to pick out the one meaningful error in a sea of text, just like in "Where's Waldo?" There were many times when my eyes would skim right over the error and not notice that something was wrong. This is a prime example of when robots are better than humans!
+
+@k8sbot can help you instantly troubleshoot `CrashLoopBackOff`:
 
 ![k8sbot workflow - crashloopbackoff pod](/assets/blog/images/workflow/k8sbot-crashloopbackoff.png)
+
+@k8sbot provides troubleshooting recommendations based on current information from your cluster.  It offers relevant recommendations on how to fix your issue based on what's happening in your cluster, right now. 
+
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshooting Slackbot or sign up for a free trial <a href="https://managedkube.com/start-free-trial">here</a>
