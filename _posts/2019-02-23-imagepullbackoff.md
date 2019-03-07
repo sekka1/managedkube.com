@@ -31,7 +31,7 @@ $ kubectl -n dev-k8sbot-test-pods invalid-container-5896955f9f-cg9jg
 This will give you additional information.  The describe output can be long but look
 at the `Events` section first.
 
-# Troubleshooting: Invalid container image
+## Troubleshooting: Invalid container image
 
 ```bash
 $ kubectl -n dev-k8sbot-test-pods invalid-container-5896955f9f-cg9jg
@@ -82,7 +82,7 @@ correct name.  If you do, then you should make sure that this container registry
 image does not require authentication.  As a test you can try to pull the same imae from yor laptop
 to see if it works locally for you.
 
-# Troubleshooting: Invalid container image tag
+## Troubleshooting: Invalid container image tag
 
 Another variation to this is if the container tag does not exist:
 
@@ -150,7 +150,7 @@ We are able to successfully pull this image.
 This will help us determine what are the valid tags.  Or if your registry has a web
 GUI, you can go to that also to see what the valid tags are.
 
-# Troubleshooting: Unable to pull a private image
+## Troubleshooting: Unable to pull a private image
 As we mentioned above for the `invalid image` name, a private image that you don't
 have access to will return the same error messages.
 
