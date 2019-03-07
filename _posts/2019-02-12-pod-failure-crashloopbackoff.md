@@ -8,7 +8,7 @@ keywords: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 * TOC
 {:toc}
 
-## Introduction: troubleshooting CrashLoopBackOff
+# Introduction: troubleshooting CrashLoopBackOff
 
 I am writing a series of blog posts about troubleshooting Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It’s like trying to find the end of one string in a tangled ball of strings. In this post, I am going to walk you through troubleshooting the state, `CrashLoopBackOff`.
 
