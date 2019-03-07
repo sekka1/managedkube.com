@@ -8,7 +8,7 @@ keywords: kubernetes k8sbot troubleshooting pending pod
 * TOC
 {:toc}
 
-## Introduction: troubleshooting pending pods
+# Introduction: troubleshooting pending pods
 
 You got your deployment, statefulset, or somehow turned on a pod on the Kubernetes
 cluster and it is in a `pending` state.  What can you do now and how do you troubleshoot
@@ -124,7 +124,7 @@ be able to schedule it out.  We would have to request (per our calculation above
 CPU.
 
 
-## Troubleshooting Reason #2: Not Enough Memory
+## Troubleshooting Reason #2: Not enough memory
 
 ```bash
 Events:
@@ -179,7 +179,7 @@ We did request a lot of memory for this example; 64GB.  Same thing as the CPU, n
 of our nodes has this much memory.  We either lower the memory request or change
 the instance type to have sufficient memory.
 
-## Troubleshooting #3: Not enough CPU and memory
+## Troubleshooting Reason #3: Not enough CPU and memory
 
 ```bash
 Events:
