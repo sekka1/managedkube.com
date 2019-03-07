@@ -8,11 +8,11 @@ keywords: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 * TOC
 {:toc}
 
-## Introduction: troubleshooting `CrashLoopBackOff`
+## Introduction: troubleshooting CrashLoopBackOff
 
-I am writing a series of blog posts about troubleshooting Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It’s like trying to find the end of one string in a tangled ball of strings. In this post, I am going to walk you through troubleshooting the state, CrashLoopBackOff.
+I am writing a series of blog posts about troubleshooting Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It’s like trying to find the end of one string in a tangled ball of strings. In this post, I am going to walk you through troubleshooting the state, `CrashLoopBackOff`.
 
-Your pod can fail in all kinds of ways.  One failure status is CrashLoopBackOff.  You will usually see this when you do a “kubectl get pods”.
+Your pod can fail in all kinds of ways.  One failure status is `CrashLoopBackOff`.  You will usually see this when you do a `kubectl get pods`.
 
 ```yaml
 $ kubectl get pods
@@ -112,7 +112,7 @@ Events:
 
 ```
 
-That is a lot of output.  The first thing I would look at in this output are the `Events`.  This will tell you what Kubernetes is doing.  From the `Events` section, going from top to bottom.  The pod was assigned to a node, starts pulling the images, starting the images, and then it goes into this `BackOff` state.  
+That is a lot of output.  The first thing I would look at in this output are the `Events`.  This will tell you what Kubernetes is doing.  Reading the `Events` section from top to bottom tells me: the pod was assigned to a node, starts pulling the images, starting the images, and then it goes into this `BackOff` state.  
 
 ```
 Type     Reason     Age               From                                     Message
@@ -143,7 +143,7 @@ exiting with status 0
 
 In our case, if you look above at the `Command`, we have it outputting some text and then exiting to show you this demo.  However, if you had a real app, this could mean that your application is exiting for some reason and hopefully the application logs will tell you why or give you a clue to why it is exiting.
 
-## Step Three: Look at the `Liveness` probe
+## Step Three: Look at the Liveness probe
 
 Another possibility is that the pod is crashing because of a `liveness` probe not returning a successful status.  It will be in the same `CrashLoopBackOff` state in the `get pods` output and you have to `describe pod` to get the real information.
 
@@ -244,8 +244,6 @@ Warning  Unhealthy  70s (x3 over 76s)  kubelet, gke-gar-3-pool-1-9781becc-bdb3  
 
 Kubernetes is backing off on restarting the container so many times.  Then the next event tells us that
 the `Liveness` probe failed.  This gives us an indication that we should look at our `Liveness` probe.  Either we configured the liveness probe incorrectly for our appplicatoin or it is indeed not working.  We should start with checking on one and then the other.
-
-# Summary: Troubleshooting `CrashLoopBackOff`
 
 The error `CrashLoopBackOff` can be tricky if we don't know where to look but with a few commands and looking at the correct places, we can pull out the nugget of information we need to tell us why Kubernetes is declaring the error and doing what it is doing.  Then the next part is on us to test a few things to make sure everything is correct with our configuration and/or our application.
 
