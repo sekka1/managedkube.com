@@ -192,7 +192,7 @@ spec:
 
 More information: https://kubernetes.io/docs/concepts/containers/images/#referring-to-an-imagepullsecrets-on-a-pod
 
-# Using k8sBot to troubleshoot `imagepullbackoff`
+# Using k8sBot to troubleshoot imagepullbackoff
 
 I created k8sBot because of countless hours spent fixing Kubernetes configuration issues. It was frustrating to spend time looking at multiple Kubernetes resources to figure out what was wrong. There were many times when my eyes would skim right over the error and I would feel terrible when I finally did find the error (minutes or hours later). Troubleshooting Kubernetes is a prime example of when robots are better than humans! 
 
