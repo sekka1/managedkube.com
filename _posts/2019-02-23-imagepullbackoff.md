@@ -5,7 +5,13 @@ categories: kubernetes k8sbot troubleshooting imagepullbackoff
 keywords: kubernetes k8sbot troubleshooting imagepullbackoff
 ---
 
-# The Problem
+* TOC
+{:toc}
+
+# Introduction: troubleshooting the Kubernetes error, imagepullbackoff
+
+I am writing a series of blog posts about troubleshooting Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It's like trying to find the end of one string in a tangled ball of strings. In this post, I am going to walk you through troubleshooting the state, imagepullbackoff.
+
 You got your deployment, statefulset, or somehow turned on a pod on the Kubernetes
 cluster and it is in a `imagepullbackoff` state.  What can you do now and how do you troubleshoot
 it to see what the problem is?
@@ -16,15 +22,7 @@ NAME                                                   READY   STATUS           
 invalid-container-5896955f9f-cg9jg                     1/2     ImagePullBackOff   0          21h
 ```
 
-# Troubleshooting
-There can be various reasons on why it is in a `imagepullbackoff` state.  Lets go through some
-of them and determine what the error messages are telling you:
-
-- <A href="#invalid-container-image">Invalid container image</A>
-- <A href="#invalid-container-image-tag">Invalid container image tag</A>
-- <A href="#unable-to-pull-a-private-image">Unable to pull a private image</A>
-
-With any of these errors, the first thing to do is to `describe` the pod:
+There can be various reasons on why it is in a `imagepullbackoff` state.  First, let's figure out what error message you have and what it's telling you with `describe`.
 
 ```bash
 $ kubectl -n dev-k8sbot-test-pods invalid-container-5896955f9f-cg9jg
@@ -33,7 +31,7 @@ $ kubectl -n dev-k8sbot-test-pods invalid-container-5896955f9f-cg9jg
 This will give you additional information.  The describe output can be long but look
 at the `Events` section first.
 
-## Invalid container image
+## Troubleshooting: Invalid container image
 
 ```bash
 $ kubectl -n dev-k8sbot-test-pods invalid-container-5896955f9f-cg9jg
@@ -84,7 +82,8 @@ correct name.  If you do, then you should make sure that this container registry
 image does not require authentication.  As a test you can try to pull the same imae from yor laptop
 to see if it works locally for you.
 
-## Invalid container image tag
+## Troubleshooting: Invalid container image tag
+
 Another variation to this is if the container tag does not exist:
 
 ```bash
@@ -151,7 +150,7 @@ We are able to successfully pull this image.
 This will help us determine what are the valid tags.  Or if your registry has a web
 GUI, you can go to that also to see what the valid tags are.
 
-## Unable to pull a private image
+## Troubleshooting: Unable to pull a private image
 As we mentioned above for the `invalid image` name, a private image that you don't
 have access to will return the same error messages.
 
@@ -193,12 +192,18 @@ spec:
 
 More information: https://kubernetes.io/docs/concepts/containers/images/#referring-to-an-imagepullsecrets-on-a-pod
 
-# k8sbot
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
+# Using k8sBot to troubleshoot imagepullbackoff
 
-For the easy way, `k8sBot` can help you trace through these issues faster and directly in Slack.
+I created k8sBot because of countless hours spent fixing Kubernetes configuration issues. It was frustrating to spend time looking at multiple Kubernetes resources to figure out what was wrong. There were many times when my eyes would skim right over the error and I would feel terrible when I finally did find the error (minutes or hours later). Troubleshooting Kubernetes is a prime example of when robots are better than humans! 
 
-The following describe how you would use @k8sbot in Slack for more information about this pod to get a recommendation on what could be wrong and how
-to fix it.
+`k8sBot` can help you trace through this issue faster and directly in Slack.
+
+The following describe how you would use @k8sbot in Slack for more information about this pod to get a recommendation on what could be wrong and how to fix it. 
 
 ![k8sbot workflow - imagepullbackoff pod](/assets/blog/images/workflow/k8sbot-imagepullbackoff.png)
+
+k8sbot provides troubleshooting recommendations based on current information
+from your cluster.  It offers relevant recommendations on how to fix your issue based on what's happening
+in your cluster, right now.
+
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshooting Slackbot or sign up for a free trial <a href="https://managedkube.com/start-free-trial">here</a>

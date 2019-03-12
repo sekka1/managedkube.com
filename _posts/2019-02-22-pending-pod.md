@@ -5,7 +5,11 @@ categories: kubernetes k8sbot troubleshooting pending pod
 keywords: kubernetes k8sbot troubleshooting pending pod
 ---
 
-# The Problem
+* TOC
+{:toc}
+
+# Introduction: troubleshooting pending pods
+
 You got your deployment, statefulset, or somehow turned on a pod on the Kubernetes
 cluster and it is in a `pending` state.  What can you do now and how do you troubleshoot
 it to see what the problem is?
@@ -15,15 +19,11 @@ $ kubectl get pods
 NAME                                                   READY   STATUS             RESTARTS   AGE
 echoserver-657f6fb8f5-wmgj5        0/1     Pending            0          1d
 ```
-# Troubleshooting
-There can be various reason on why it is in a `pending` state.  Lets go through them and how to
-determine what the error messages are telling you:
 
-- <a href="#not-enough-cpu">Not enough CPU</a>
-- <a href="#not-enough-memory">Not enough Memory</a>
-- <a href="#not-enough-cpu-and-memory">Not enought CPU and Memory</a>
+There can be various reasons why your pod is in a `pending` state.  We'll go through them one-by-one and how to
+determine what the error messages are telling you. 
 
-With any of these errors, the first thing to do is to `describe` the pod:
+With any of these errors, step one is to `describe` the pod:
 
 ```bash
 $ kubectl describe pod echoserver-657f6fb8f5-wmgj5
@@ -32,7 +32,7 @@ $ kubectl describe pod echoserver-657f6fb8f5-wmgj5
 This will give you additional information.  The describe output can be long but look
 at the `Events` section first.
 
-## Not enough CPU
+## Troubleshooting Reason #1: Not enough CPU
 
 ```bash
 kubectl describe pod echoserver-657f6fb8f5-wmgj5
@@ -124,7 +124,7 @@ be able to schedule it out.  We would have to request (per our calculation above
 CPU.
 
 
-## Not enough Memory
+## Troubleshooting Reason #2: Not enough memory
 
 ```bash
 Events:
@@ -179,7 +179,7 @@ We did request a lot of memory for this example; 64GB.  Same thing as the CPU, n
 of our nodes has this much memory.  We either lower the memory request or change
 the instance type to have sufficient memory.
 
-## Not enough CPU and Memory
+## Troubleshooting Reason #3: Not enough CPU and memory
 
 ```bash
 Events:
@@ -195,9 +195,14 @@ the CPU and memory.  You can alternatively just look at one (CPU or memory), fix
 problem and then look at what Kubernetes is telling you at that point and continue from there.
 
 
-# k8sbot
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
+# Using k8sBot to troubleshoot pending pods
 
-For the easy way, `k8sBot` can help you trace through these issues faster and directly in Slack.
+I created k8sBot because I have spent too many hours figuring out and fixing configuration issues and errors in Kubernetes. I was frustrated with having to look at multiple Kubernetes resources and having to pick out the one meaningful error in a sea of text, just like in "Where's Waldo?" There were many times when my eyes would skim right over the error and not notice that something was wrong. This is a prime example of when robots are better than humans!
+
+@k8sbot can help you instantly troubleshoot pending pods in an instant, directly in Slack:
 
 ![k8sbot workflow - pending pod](/assets/blog/images/workflow/Workflow-mobile-pending-pod.png)
+
+@k8sbot provides troubleshooting recommendations based on current information from your cluster.  It offers relevant recommendations on how to fix your issue based on what's happening in your cluster, right now. 
+
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshooting Slackbot or sign up for a free trial <a href="https://managedkube.com/start-free-trial">here</a>
