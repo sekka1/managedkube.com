@@ -1,9 +1,8 @@
 ---
-layout: post
+layout: press
 title: k8sbot Privacy Policy
-categories: k8sbot Privacy Policy
-keywords: k8sbot Privacy Policy
 permalink: /privacy-policy
+
 ---
 
 # Privacy Policy
