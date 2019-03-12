@@ -1,0 +1,25 @@
+<div class="light-blue-bg get-in-touch-today">
+	<div class="section">
+	  <h1 class="header center blue form-header">Support Page</h1>
+		<form class="contact-form" action="https://formspree.io/christie@managedkube.com" method="POST">
+		    <input type="text" class="names" name="first_name" placeholder="First Name*" required>
+		    <input type="text" class="names" name="last_name" placeholder="Last Name*" required>
+		    <input type="text" name="company_name" placeholder="Company">
+		    <input type="email" name="_replyto" placeholder="Email Address *" required>
+		    <textarea name="message" placeholder="Please fill out the details here and we will get back to you as soon as possible."></textarea>
+		    <input type="text" name="_gotcha" style="display:none" />
+		     <input type='hidden' name='_next' value='/contact-thank-you' />
+		    <button class="send-email" type="submit">Submit</button>
+		</form>
+
+<!--
+		<div class="contact_social-media">
+			{%- include social.html -%}
+		</div> -->
+	</div>
+</div>
+
+<script>
+    var contactform =  document.getElementById('formaction');
+    contactform.setAttribute('action', '//formspree.io/' + 'christie' + '@' + 'managedkube' + '.' + 'com');
+</script>
