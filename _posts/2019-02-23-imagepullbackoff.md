@@ -207,3 +207,9 @@ from your cluster.  It offers relevant recommendations on how to fix your issue 
 in your cluster, right now.
 
 <A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshooting Slackbot or sign up for a free trial <a href="https://managedkube.com/start-free-trial">here</a>
+
+# More troubleshooting blog posts
+
+* <A HREF="https://managedkube.com/kubernetes/k8sbot/troubleshooting/pending/pod/2019/02/22/pending-pod.html">Kubernetes Troubleshooting Walkthrough - Pending pods</a>
+* <A HREF="https://managedkube.com/kubernetes/pod/failure/crashloopbackoff/k8sbot/troubleshooting/2019/02/12/pod-failure-crashloopbackoff.html">Kubernetes Troubleshooting Walkthrough - Pod Failure CrashLoopBackOff</a>
+* <A HREF="https://managedkube.com/kubernetes/trace/ingress/service/port/not/matching/pod/k8sbot/2019/02/13/trace-ingress.html">Kubernetes Troubleshooting Walkthrough - Tracing through an ingress</a>
