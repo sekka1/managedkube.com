@@ -206,3 +206,9 @@ I created k8sBot because I have spent too many hours figuring out and fixing con
 @k8sbot provides troubleshooting recommendations based on current information from your cluster.  It offers relevant recommendations on how to fix your issue based on what's happening in your cluster, right now. 
 
 <A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshooting Slackbot or sign up for a free trial <a href="https://managedkube.com/start-free-trial">here</a>
+
+# More troubleshooting blog posts
+
+* <A HREF="https://managedkube.com/kubernetes/trace/ingress/service/port/not/matching/pod/k8sbot/2019/02/13/trace-ingress.html">Kubernetes Troubleshooting Walkthrough - Tracing through an ingress</a>
+* <A HREF="https://managedkube.com/kubernetes/pod/failure/crashloopbackoff/k8sbot/troubleshooting/2019/02/12/pod-failure-crashloopbackoff.html">Kubernetes Troubleshooting Walkthrough - Pod Failure CrashLoopBackOff</a>
+* <A HREF="https://managedkube.com/kubernetes/k8sbot/troubleshooting/imagepullbackoff/2019/02/23/imagepullbackoff.html">Kubernetes Troubleshooting Walkthrough - imagepullbackoff</a>
