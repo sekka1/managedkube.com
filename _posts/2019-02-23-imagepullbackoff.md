@@ -17,7 +17,7 @@ cluster and it is in a `imagepullbackoff` state.  What can you do now and how do
 it to see what the problem is?
 
 ```bash
-$ kubectl -n dev-k8sbot-test-pods get pods
+$ kubectl get pods
 NAME                                                   READY   STATUS             RESTARTS   AGE
 invalid-container-5896955f9f-cg9jg                     1/2     ImagePullBackOff   0          21h
 ```
@@ -25,7 +25,7 @@ invalid-container-5896955f9f-cg9jg                     1/2     ImagePullBackOff 
 There can be various reasons on why it is in a `imagepullbackoff` state.  First, let's figure out what error message you have and what it's telling you with `describe`.
 
 ```bash
-$ kubectl -n dev-k8sbot-test-pods invalid-container-5896955f9f-cg9jg
+$ kubectl describe pod invalid-container-5896955f9f-cg9jg
 ```
 
 This will give you additional information.  The describe output can be long but look
@@ -34,7 +34,7 @@ at the `Events` section first.
 ## Troubleshooting: Invalid container image
 
 ```bash
-$ kubectl -n dev-k8sbot-test-pods invalid-container-5896955f9f-cg9jg
+$ kubectl describe pod invalid-container-5896955f9f-cg9jg
 ...
 ...
 Containers:
@@ -87,7 +87,7 @@ to see if it works locally for you.
 Another variation to this is if the container tag does not exist:
 
 ```bash
-$ kubectl -n dev-k8sbot-test-pods invalid-container-5896955f9f-cg9jg
+$ kubectl describe pod invalid-container-5896955f9f-cg9jg
 ...
 ...
 Containers:
@@ -194,11 +194,11 @@ More information: https://kubernetes.io/docs/concepts/containers/images/#referri
 
 # Using k8sBot to troubleshoot imagepullbackoff
 
-I created k8sBot because of countless hours spent fixing Kubernetes configuration issues. It was frustrating to spend time looking at multiple Kubernetes resources to figure out what was wrong. There were many times when my eyes would skim right over the error and I would feel terrible when I finally did find the error (minutes or hours later). Troubleshooting Kubernetes is a prime example of when robots are better than humans! 
+I created k8sBot because of countless hours spent fixing Kubernetes configuration issues. It was frustrating to spend time looking at multiple Kubernetes resources to figure out what was wrong. There were many times when my eyes would skim right over the error and I would feel terrible when I finally did find the error (minutes or hours later). Troubleshooting Kubernetes is a prime example of when robots are better than humans!
 
 `k8sBot` can help you trace through this issue faster and directly in Slack.
 
-The following describe how you would use @k8sbot in Slack for more information about this pod to get a recommendation on what could be wrong and how to fix it. 
+The following describe how you would use @k8sbot in Slack for more information about this pod to get a recommendation on what could be wrong and how to fix it.
 
 ![k8sbot workflow - imagepullbackoff pod](/assets/blog/images/workflow/k8sbot-imagepullbackoff.png)
 
