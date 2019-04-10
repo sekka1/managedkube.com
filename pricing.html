@@ -1,0 +1,77 @@
+---
+layout: default
+title: k8sbot Pricing
+permalink: /pricing
+---
+
+<div class="install-on-gke page">
+	<div class="banner">
+	  <div class="section">
+	    <div class="banner-text center">
+	      <h1 class="banner-heading">k8sBot Pricing</h1>
+	      <p class="banner-subheading">$9/user/month
+		    </p>
+	    </div>
+	  </div>
+	</div>
+
+		<!-- k8sBot Benefits -->
+	<div class="blue-bg benefits">
+		<div class="section">
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-plan_ErY3y2FoRvWg5k"
+  role="link"
+>
+  Checkout
+</button>
+
+<div id="error-message"></div>
+
+<script>
+  var stripe = Stripe('pk_live_HbV3PhwL9FJHPxqG3kbe4SAu', {
+    betas: ['checkout_beta_4']
+  });
+
+  var checkoutButton = document.getElementById('checkout-button-plan_ErY3y2FoRvWg5k');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{plan: 'plan_ErY3y2FoRvWg5k', quantity: 1}],
+
+      // Note that it is not guaranteed your customers will be redirected to this
+      // URL *100%* of the time, it's possible that they could e.g. close the
+      // tab between form submission and the redirect.
+      successUrl: 'https://managedkube.com/success',
+      cancelUrl: 'https://managedkube.com/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+</script>
+
+		</div>
+	</div>
+
+</div>
+
+<script>
+	$(".button").click(function() {
+	    var offset = 20; //Offset of 20px
+
+	    $('html, body').animate({
+	        scrollTop: $("#cost-form").offset().top + offset
+	    }, 600);
+	});
+</script>
