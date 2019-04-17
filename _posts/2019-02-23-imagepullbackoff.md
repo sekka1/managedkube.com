@@ -10,7 +10,7 @@ keywords: kubernetes k8sbot troubleshooting imagepullbackoff
 
 # Introduction: troubleshooting the Kubernetes error, imagepullbackoff
 
-I am writing a series of blog posts about troubleshooting Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It's like trying to find the end of one string in a tangled ball of strings. In this post, I am going to walk you through troubleshooting the state, imagepullbackoff.
+I am writing a series of blog posts about troubleshooting Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting what went wrong requires many levels of information gathering. It's like trying to find the other end of a string in a tangled ball of strings. In this post, I am going to walk you through troubleshooting the state, imagepullbackoff.
 
 You got your deployment, statefulset, or somehow turned on a pod on the Kubernetes
 cluster and it is in a `imagepullbackoff` state.  What can you do now and how do you troubleshoot
@@ -194,17 +194,17 @@ More information: https://kubernetes.io/docs/concepts/containers/images/#referri
 
 # Using k8sBot to troubleshoot imagepullbackoff
 
-I created k8sBot because of countless hours spent fixing Kubernetes configuration issues. It was frustrating to spend time looking at multiple Kubernetes resources to figure out what was wrong. There were many times when my eyes would skim right over the error and I would feel terrible when I finally did find the error (minutes or hours later). Troubleshooting Kubernetes is a prime example of when robots are better than humans!
+I created k8sBot because I've spent countless hours fixing Kubernetes configuration issues. It was frustrating to spend time looking at multiple Kubernetes resources to figure out what was wrong. There were many times when my eyes would skim right over the error and I would feel terrible when I finally did find the error (minutes or hours later). Troubleshooting Kubernetes is a prime example of when robots are better than humans!
 
-`k8sBot` can help you trace through this issue faster and directly in Slack.
+k8sBot can help you trace through this issue faster and directly in Slack so the whole team knows what's going on.
 
-The following describe how you would use @k8sbot in Slack for more information about this pod to get a recommendation on what could be wrong and how to fix it.
+We've created a point-and-click interface that allows anyone, including software developers or novice DevOps folks, to easily retrieve meaningful Kubernetes information. 
+
+The following describes how you would use @k8sbot in Slack for more information about this pod to get a recommendation on what could be wrong and how to fix it.
 
 ![k8sbot workflow - imagepullbackoff pod](/assets/blog/images/workflow/k8sbot-imagepullbackoff.png)
 
-k8sbot provides troubleshooting recommendations based on current information
-from your cluster.  It offers relevant recommendations on how to fix your issue based on what's happening
-in your cluster, right now.
+k8sbot provides troubleshooting recommendations based on information from your cluster's Kubernetes API.  It offers relevant recommendations on how to fix your issue based on what's happening in your cluster, right now.
 
 <A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshooting Slackbot or sign up for a free trial <a href="https://managedkube.com/start-free-trial">here</a>
 
