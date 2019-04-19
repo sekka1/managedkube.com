@@ -1,0 +1,116 @@
+---
+namespace: dev-k8sbot
+
+replicas: 1
+
+deploymentStrategy: RollingUpdate
+
+image:
+  repository: garland/k8sbot-gcp-install
+  tag: "1.0"
+  #pullPolicy: IfNotPresent
+  pullPolicy: Always
+
+# env:
+# - name: GOOGLE_CLOUD_PROJECT
+#   value: k8sbot
+# - name: GOOGLE_APPLICATION_CREDENTIALS
+#   value: /var/run/secret/cloud.google.com/service-account.json
+
+ports:
+- name: http
+  containerPort: 80
+  protocol: TCP
+
+resources:
+ limits:
+   cpu: 1000m
+   memory: 1024Mi
+ requests:
+   cpu: 50m
+   memory: 64Mi
+
+readinessProbe: {}
+ # failureThreshold: 3
+ # httpGet:
+ #   path: /metrics
+ #   port: 9101
+ #   scheme: HTTP
+ # initialDelaySeconds: 5
+ # periodSeconds: 5
+ # successThreshold: 1
+ # timeoutSeconds: 5
+
+livenessProbe: {}
+ # failureThreshold: 3
+ # httpGet:
+ #   path: /metrics
+ #   port: 9101
+ #   scheme: HTTP
+ # initialDelaySeconds: 5
+ # periodSeconds: 10
+ # successThreshold: 1
+ # timeoutSeconds: 5
+
+# volumeMounts:
+# - mountPath: /var/run/secret/cloud.google.com
+#   name: service-account
+#
+# volumes:
+# - name: service-account
+#   secret:
+#     defaultMode: 420
+#     secretName: k8sbot-server-pubsub-service-account
+
+# imagePullSecrets:
+# - name: registry-secret
+
+## Node labels for pod assignment
+## ref: https://kubernetes.io/docs/user-guide/node-selection/
+#
+nodeSelector: {}
+
+## Tolerations for pod assignment
+## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+##
+tolerations: []
+
+## Affinity for pod assignment
+## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
+##
+affinity: {}
+
+restartPolicy: Always
+
+servicePorts:
+- name: http
+  port: 80
+  protocol: TCP
+  targetPort: 80
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: kong-k8sbot
+    #kubernetes.io/tls-acme: "false"
+    rate-limiting.plugin.konghq.com: rate-limiting
+  labels: {}
+  host: api.xxx-evn--xxx.managedkube.com
+  tls: []
+#  - secretName: chart-example-tls
+#    hosts:
+#      - chart-example.local
+  paths:
+  - path: /
+    backend:
+      serviceName: gcp-install-nginx
+      servicePort: 80
+#  - path: /api
+#    backend:
+#      serviceName: foo2
+#      servicePort: 8082
+
+# The service account value.  This is the GCP service account json file base64 encoded
+# Output of:
+# $ cat serviceAccount.json | base64 -w0
+# serviceAccount: xxxx
