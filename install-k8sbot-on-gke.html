@@ -1,0 +1,83 @@
+---
+layout: default
+title: Install k8sBot on GKE
+permalink: /install-k8sBot-on-gke
+---
+
+<div class="install-on-gke page"> 
+	<div class="banner">
+	  <div class="section">
+	    <div class="banner-text center">
+	      <h1 class="banner-heading">Install ManagedKube's k8sBot from GKE’s Marketplace</h1>
+	      <p class="banner-subheading">
+	        Installing ManagedKube's k8sBot on GKE is as easy as one click - see below for installation instructions.<br>Plus, get up to $500 in GCP credits when you use <span><a target="_blank" href="https://goo.gl/MyqEJ9" class="white">our link</a></span>
+	      </p>
+	      <a class="install-btn google-cloud-button" href="https://console.cloud.google.com/marketplace/details/managedkube/k8sbot">
+			<img src="/assets/images/platform.png">
+	      </a>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- steps -->
+	<div class="white-bg steps">
+	 	<div class="section">
+	 		<div class="step odd-step first-step one">
+				<h1 class="white blue-circle">1</h1> 
+				<p>Search for and click on ‘k8sBot’ in the GKE marketplace or follow <a href="https://console.cloud.google.com/marketplace/details/managedkube/k8sbot">this link</a></p>
+			    <img src="/assets/images/install1.png">
+			</div>
+			<div class="step even-step two">
+				<h1 class="white blue-circle">2</h1> 
+				<p>Click ‘Configure’ on the ManagedKube application page</p>
+			    <img src="/assets/images/install2.png">
+			</div>
+			<div class="step odd-step three">
+				<h1 class="white blue-circle">3</h1> 
+				<p>Pick the cluster you’d like to install ManagedKube on and click ‘Deploy. Wait for deployment</p>
+			    <img src="/assets/images/install3.png">
+			</div>
+			<div class="step even-step four">
+				<h1 class="white blue-circle">4</h1> 
+				<p>Click on Managed-Kube External IP. If you see an External IP of 10.x.x.x, refresh in a few minutes as the external load balancer is being created.</p>
+			    <img src="/assets/images/install4.png">
+			</div>
+			<div class="step odd-step first-step five">
+				<h1 class="white blue-circle">5</h1> 
+				<p>Log-in to Grafana using your username and password from the application page in step #4.</p>
+			    <img src="/assets/images/install5.png">
+			</div>
+			<div class="step even-step six">
+				<h1 class="white blue-circle">6</h1> 
+				<p>Click Home in the upper left hand corner</p>
+			    <img src="/assets/images/install6.png">
+			</div>
+			<div class="step odd-step seven">
+				<h1 class="white blue-circle">7</h1> 
+				<p>Click on ‘ManagedKube Kubernetes Cost Attribution’ dashboard</p>
+			    <img src="/assets/images/install7.png">
+			</div>
+			<div class="step even-step eight">
+				<h1 class="white blue-circle">8</h1> 
+				<p>You’re done! This dashboard will populate over time as ManagedKube collects information on your Kubernetes cluster. </p>
+			    <img src="/assets/images/install8.png">
+			</div>
+
+		</div>
+	</div>
+
+	<!-- <div class="white-bg get-in-touch-today" id="contact-form">
+		<div class="section"> -->
+		  	{%- include contact_form.html -%} 
+		<!-- </div>
+	</div> -->
+</div>
+
+<script>
+	$(".button").click(function() {
+	    var offset = 20; //Offset of 20px
+	    $('html, body').animate({
+	        scrollTop: $("#cost-form").offset().top + offset
+	    }, 600);
+	});
+</script>
