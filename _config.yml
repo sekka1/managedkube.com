@@ -2,7 +2,7 @@ title: ManagedKube
 author: ManagedKube
 email: garlandk@managedkube.com
 description: > # this means to ignore newlines until "twitter_username:"
-  Kubernetes Troubleshooting Chatbot.  k8sBot is a next-gen virtual assistant that will help you troubleshoot your applications running on k8s clusters.
+  k8sBot makes Kubernetes easier to use. A Slack app that provides Kubectl-like information with a point-and-click user interface.
 url: https://managedkube.com
 logo: /assets/logo/M_1000.jpg
 
