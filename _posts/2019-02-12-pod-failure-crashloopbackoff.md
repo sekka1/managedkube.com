@@ -253,11 +253,11 @@ I created k8sBot because I have spent too many hours figuring out and fixing con
 
 @k8sbot can help you instantly troubleshoot `CrashLoopBackOff` with our easy point-and-click user interface:
 
-![k8sbot workflow - crashloopbackoff pod](/assets/blog/images/crashloopbackoff.gif)
+![k8sbot workflow - crashloopbackoff pod](/assets/blog/images/CrashLoopBackOff.gif)
 
 Now, anyone can get meaningful Kubernetes information with @k8sbot. It's just one click to retrieve pod status, get pod logs, and get troubleshooting recommendations based on real-time information from your cluster's Kubernetes API. 
 
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a free trial <a href="https://managedkube.com/free-trial-signup">here</a>
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a free trial <a href="https://managedkube.com/free-trial-signup">here</a>.
 
 # More troubleshooting blog posts
 
