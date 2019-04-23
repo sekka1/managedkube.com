@@ -196,17 +196,13 @@ More information: https://kubernetes.io/docs/concepts/containers/images/#referri
 
 I created k8sBot because I've spent countless hours fixing Kubernetes configuration issues. It was frustrating to spend time looking at multiple Kubernetes resources to figure out what was wrong. There were many times when my eyes would skim right over the error and I would feel terrible when I finally did find the error (minutes or hours later). Troubleshooting Kubernetes is a prime example of when robots are better than humans!
 
-k8sBot can help you trace through this issue faster and directly in Slack so the whole team knows what's going on.
+k8sBot can help you troubleshoot `ImagePullBackOff` with our easy point-and-click user interface directly in Slack so the whole team knows what's going on:
 
-We've created a point-and-click interface that allows anyone, including software developers or novice DevOps folks, to easily retrieve meaningful Kubernetes information. 
+![k8sbot workflow - imagepullbackoff pod](/assets/blog/images/ImagePullBackOff.gif)
 
-The following describes how you would use @k8sbot in Slack for more information about this pod to get a recommendation on what could be wrong and how to fix it.
+Now, anyone can get meaningful Kubernetes information with @k8sbot. It's just one click to retrieve pod status, get pod logs, and get troubleshooting recommendations based on real-time information from your cluster's Kubernetes API. 
 
-![k8sbot workflow - imagepullbackoff pod](/assets/blog/images/workflow/k8sbot-imagepullbackoff.png)
-
-k8sbot provides troubleshooting recommendations based on information from your cluster's Kubernetes API.  It offers relevant recommendations on how to fix your issue based on what's happening in your cluster, right now.
-
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshooting Slackbot or sign up for a free trial <a href="https://managedkube.com/start-free-trial">here</a>
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a free trial <a href="https://managedkube.com/free-trial-signup">here</a>.
 
 # More troubleshooting blog posts
 
