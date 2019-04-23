@@ -201,7 +201,7 @@ I created k8sBot because I have spent too many hours figuring out and fixing con
 
 k8sBot can help you troubleshoot pending pods with just a few clicks, directly in Slack so the whole team knows what's going on:
 
-![k8sbot workflow - pending pod](/assets/blog/images/PendingPod.gif)
+![k8sbot workflow - pending pod](/assets/blog/images/PendingPods.gif)
 
 Now, anyone can get meaningful Kubernetes information with @k8sbot. It's just one click to retrieve pod status, get pod logs, and get troubleshooting recommendations based on real-time information from your cluster's Kubernetes API. 
 
