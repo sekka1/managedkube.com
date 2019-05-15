@@ -1,0 +1,219 @@
+---
+layout: default
+title: DevOps Infrastructure
+permalink: /devops-infrastructure
+bannerheading: The Devil is in the Details
+bannersubheading: We offer a highly scalable, resilient, and secure infrastructure running with Docker on Kubernetes and a CI/CD system to help you deploy everything in an automated way.  Our set-up, paired with a tightly integrated monitoring, logging, and alerting system, will give you visibility into every facet of the application and infrastructure.
+
+---
+
+
+<div class="home page"> 
+    <div class="banner">
+      <div class="section">
+        <div class="banner-text center">
+          <h1 class="banner-heading">ManagedKube</h1>
+          <p class="banner-subheading">
+            Hi! We’re DevOps experts (mostly Docker/Kubernetes) with decades of experience helping small and medium-sized businesses run their infrastructure, so they can focus on their application.
+          </p>
+        </div>
+      </div>
+    </div>
+  {{ content }}
+
+<!-- Why is Docker/Kuberenetes so great? -->
+  <div class="white-bg why-is-so-great">
+    <div class="section">
+      <h1 class="header center blue">Why is Docker/Kuberenetes so great?</h1>
+        <div class="p-div_wrapper p-div_wrapper-top">
+          <div class="p-div">
+            <div class="p-div_img-wrapper">
+              <img src="/assets/images/cicd.png">
+            </div>
+            <p class="text black center">
+              Continuous Integration/Continuous Deployment (CI/CD) combined with Docker and Kubernetes will ensure you always have successful code releases and deployments.
+            </p>
+          </div>
+          <hr class="display-on-mobile">
+          <div class="p-div">
+            <div class="p-div_img-wrapper">
+              <img src="/assets/images/docker.png">
+            </div>
+            <p class="text black center">
+              Guarantee that your code runs exactly the same, no matter where you deploy it.
+              Build containers that are standardized across a developer’s laptop, staging, QA, and in a production environment.
+            </p>
+          </div>    
+          <hr class="display-on-mobile">
+        </div>
+        <div class="p-div_wrapper p-div_wrapper-bottom">  
+          <div class="p-div">
+            <div class="p-div_img-wrapper">
+              <img src="/assets/images/kubernetes.png">
+            </div>
+            <p class="text black center">
+              With Kubernetes, you can seamlessly manage your containers.
+            </p>
+          </div>  
+          <hr class="display-on-mobile">   
+          <div class="p-div">
+            <div class="p-div_img-wrapper">
+              <img src="/assets/images/opensource.png">
+            </div>
+            <p class="text black center">
+              This open source platform can manage everything from your application to auxiliary services your application uses, such as MongoDB, Kafka, and Redis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How can we help you? -->
+  <div class="blue-bg how-can-we-help-you">
+    <div class="section">
+      <h1 class="header center white">How can we help you?</h1>
+      <div class="box-wrapper">
+        <a href="/kubernetes-cost-attribution">
+          <div class="white-bg box">
+            <div class="box_img-wrapper">
+              <svg width="144px" height="162px" viewBox="0 0 144 162" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+                  <desc>Created with Sketch.</desc>
+                  <defs></defs>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Desktop-HD-Copy" transform="translate(-1067.000000, -2239.000000)">
+                          <g id="Group-13" transform="translate(1067.000000, 2239.000000)">
+                              <g id="Group-12" transform="translate(29.285229, 71.520737)" fill-rule="nonzero" stroke="#4A4A4A">
+                                  <rect id="Rectangle-4-Copy" stroke-width="3" x="37.5902256" y="28.276619" width="20.2840165" height="58.7026437"></rect>
+                                  <rect id="Rectangle-4-Copy-2" stroke-width="3" x="63.2026437" y="19.5451128" width="20.2840165" height="66.8520495"></rect>
+                                  <rect id="Rectangle-4-Copy-3" stroke-width="3" x="88.8150618" y="1.5" width="20.2840165" height="84.8971623"></rect>
+                                  <path d="M0,87.460587 L111.472229,87.460587" id="Line-2" stroke-width="5" fill="#4A4A4A" stroke-linecap="square"></path>
+                              </g>
+                              <g id="Group-11" fill="#4A4A4A">
+                                  <path d="M45.7000907,57.9936442 C46.8517476,56.7329314 48.7881082,56.6624479 50.025073,57.8362151 C51.2620379,59.0099822 51.3311936,60.9835182 50.1795367,62.2442311 L30.2999093,84.0063558 C29.1482524,85.2670686 27.2118918,85.3375521 25.974927,84.1637849 C24.7379621,82.9900178 24.6688064,81.0164818 25.8204633,79.7557689 C32.2164636,72.7541007 37.0134637,67.5028496 40.2114639,64.0020155 C41.4311587,62.6668218 43.260701,60.6640314 45.7000907,57.9936442 Z" id="Line-2-Copy-2" fill-rule="nonzero"></path>
+                                  <path d="M39.1731697,61 L48,69.3336152 L8.82683034,112 L0,103.666385 C12.6034356,89.9390547 22.0560122,79.6435571 28.35773,72.779892 C30.7611611,70.1621382 34.3663076,66.2355076 39.1731697,61 Z" id="Line-2-Copy-3" fill-rule="nonzero"></path>
+                                  <path d="M75.8510638,42.4237645 C75.8510638,41.2740917 75.528372,40.3592743 74.8829787,39.679285 C74.2375854,38.9992956 73.1418517,38.3718921 71.5957447,37.7970557 C70.0496377,37.2222193 68.7163177,36.6508966 67.5957447,36.0830705 C66.4751717,35.5152443 65.5141884,34.8633055 64.712766,34.1272345 C63.9113435,33.3911635 63.2872363,32.5254168 62.8404255,31.5299685 C62.3936148,30.5345201 62.1702128,29.3498141 62.1702128,27.9758149 C62.1702128,25.6063674 62.9361626,23.6645712 64.4680851,22.150368 C66.0000077,20.6361649 68.0354483,19.752893 70.5744681,19.5005258 L70.5744681,15 L73.9787234,15 L73.9787234,19.5636172 C76.4893743,19.9141272 78.4538936,20.9481162 79.8723404,22.6656151 C81.2907872,24.3831141 82,26.6088191 82,29.3427971 L75.8510638,29.3427971 C75.8510638,27.6603491 75.5000035,26.4020371 74.7978723,25.5678233 C74.0957412,24.7336096 73.1560343,24.3165089 71.9787234,24.3165089 C70.815597,24.3165089 69.9148968,24.6424783 69.2765957,25.2944269 C68.6382947,25.9463755 68.3191489,26.8471727 68.3191489,27.9968454 C68.3191489,29.0623958 68.6312026,29.9176273 69.2553191,30.5625657 C69.8794357,31.2075041 71.0389986,31.866453 72.7340426,32.5394322 C74.4290865,33.2124114 75.8226896,33.8468249 76.9148936,34.4426919 C78.0070977,35.0385589 78.9290743,35.711528 79.6808511,36.4616193 C80.4326279,37.2117107 81.0070902,38.0669423 81.4042553,39.0273396 C81.8014204,39.987737 82,41.1058471 82,42.3817035 C82,44.7651714 81.2482345,46.6999575 79.7446809,48.1861199 C78.2411272,49.6722822 76.170226,50.5485441 73.5319149,50.8149317 L73.5319149,55 L70.1489362,55 L70.1489362,50.8359621 C67.2411202,50.5275134 64.9893697,49.5075446 63.393617,47.7760252 C61.7978644,46.0445059 61,43.7416898 61,40.8675079 L67.1489362,40.8675079 C67.1489362,42.5359354 67.5496414,43.8152777 68.3510638,44.7055731 C69.1524863,45.5958685 70.304957,46.0410095 71.8085106,46.0410095 C73.0567438,46.0410095 74.0425496,45.7150401 74.7659574,45.0630915 C75.4893653,44.4111429 75.8510638,43.531376 75.8510638,42.4237645 Z" id="$"></path>
+                                  <path d="M72,70 C52.6700338,70 37,54.3299662 37,35 C37,15.6700338 52.6700338,0 72,0 C91.3299662,0 107,15.6700338 107,35 C107,54.3299662 91.3299662,70 72,70 Z M72,64 C88.0162577,64 101,51.0162577 101,35 C101,18.9837423 88.0162577,6 72,6 C55.9837423,6 43,18.9837423 43,35 C43,51.0162577 55.9837423,64 72,64 Z" id="Oval-3" fill-rule="nonzero"></path>
+                              </g>
+                          </g>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <p class="text center black">I want a Kubernetes cost attribution tool.</p>
+          </div>
+        </a>
+        <a href="/managed-kube">
+          <div class="white-bg box">
+            <div class="box_img-wrapper">
+              <svg width="66px" height="72px" viewBox="0 0 66 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+                  <desc>Created with Sketch.</desc>
+                  <defs></defs>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="option1" transform="translate(30.500000, 35.000000) rotate(-19.000000) translate(-30.500000, -35.000000) translate(-7.000000, 7.000000)" stroke="#4A4A4A" stroke-width="3">
+                          <path d="M12.8698392,47.1559042 L15.3638893,51.2285646 C16.1071022,52.4421946 15.7257539,54.0285292 14.5121239,54.7717422 C14.5010595,54.7785178 14.4899442,54.7852099 14.4787788,54.7918176 C13.2248384,55.5339089 11.6081212,55.1446092 10.829425,53.9130663 L8.33229148,49.9637381 L4.58261492,52.2840374 C3.20204694,53.1383327 1.39333417,52.7511151 0.4835223,51.4064848 C0.466659541,51.381563 0.450197631,51.3563722 0.434142921,51.3309224 C-0.395008502,50.0165538 -0.00166226549,48.2788875 1.31270633,47.449736 L37.935565,24.3467074 C37.44147,22.6507262 37.1764551,20.8564562 37.1764551,19 C37.1764551,8.50658975 45.6435441,0 56.0882276,0 C66.5329111,0 75,8.50658975 75,19 C75,29.4934102 66.5329111,38 56.0882276,38 C49.7104117,38 44.0699746,34.8281775 40.6444621,29.9689714 L22.5760287,41.1497154 L24.5848082,44.5040725 C25.7138588,46.3894157 25.1105192,48.8325293 23.2336026,49.9755334 L20.5959144,51.5818318 C18.7392814,52.7124835 16.319533,52.1533935 15.1470895,50.3228648 L13.0480407,47.0456331 L12.8698392,47.1559042 Z" id="Combined-Shape"></path>
+                          <circle id="Oval-9" cx="60.5" cy="15.5" r="5.5"></circle>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <p class="text center black">I want a turnkey infrastructure SaaS solution.</p>
+          </div>
+        </a>
+        <a href="/devops-consulting">
+          <div class="white-bg box">
+            <div class="box_img-wrapper">
+              <svg width="88px" height="78px" viewBox="0 0 88 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+                  <desc>Created with Sketch.</desc>
+                  <defs></defs>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="option2" transform="translate(3.000000, 1.000000)" stroke="#4A4A4A" stroke-width="3">
+                          <path d="M11.5,42.5 L30.5,42.5 L30.5,36.8037062 C30.5,35.0101995 31.8557387,33.5069184 33.6397179,33.3222989 L48.8596311,31.7472282 C49.7381543,31.2212923 50.112068,30.5697876 50.112068,29.6543437 C50.112068,28.7509514 49.7445078,28.0702782 48.8968267,27.5 L15,27.5 C13.0670034,27.5 11.5,29.0670034 11.5,31 L11.5,42.5 Z" id="Rectangle-6"></path>
+                          <path d="M39.5,14.5 L67.5,14.5" id="Line-7" stroke-linecap="square"></path>
+                          <path d="M39.5,19.5 L53.5,19.5" id="Line-7" stroke-linecap="square"></path>
+                          <ellipse id="Oval-7" cx="22.5" cy="15.5" rx="6.5" ry="7.5"></ellipse>
+                          <g id="Group-5" transform="translate(0.000000, 49.000000)">
+                              <ellipse id="Oval" cx="10.5" cy="6" rx="5.5" ry="6"></ellipse>
+                              <path d="M-0.893237307,16.5252201 C1.01362204,15.1117612 4.90284297,14.5 11,14.5 C17.097157,14.5 20.986378,15.1117612 22.8932373,16.5252201 L23.5,16.9749828 L23.5,26.5 L-1.5,26.5 L-1.5,16.9749828 L-0.893237307,16.5252201 Z" id="Rectangle"></path>
+                          </g>
+                          <g id="Group-5" transform="translate(30.000000, 49.000000)">
+                              <ellipse id="Oval" cx="10.5" cy="6" rx="5.5" ry="6"></ellipse>
+                              <path d="M-0.893237307,16.5252201 C1.01362204,15.1117612 4.90284297,14.5 11,14.5 C17.097157,14.5 20.986378,15.1117612 22.8932373,16.5252201 L23.5,16.9749828 L23.5,26.5 L-1.5,26.5 L-1.5,16.9749828 L-0.893237307,16.5252201 Z" id="Rectangle"></path>
+                          </g>
+                          <g id="Group-5" transform="translate(60.000000, 49.000000)">
+                              <ellipse id="Oval" cx="10.5" cy="6" rx="5.5" ry="6"></ellipse>
+                              <path d="M-0.893237307,16.5252201 C1.01362204,15.1117612 4.90284297,14.5 11,14.5 C17.097157,14.5 20.986378,15.1117612 22.8932373,16.5252201 L23.5,16.9749828 L23.5,26.5 L-1.5,26.5 L-1.5,16.9749828 L-0.893237307,16.5252201 Z" id="Rectangle"></path>
+                          </g>
+                          <polyline id="Line-6" stroke-linecap="square" points="5.5 42.5 5.5 0.5 75.7486278 0.5 75.7486278 42.5 37.045316 42.5"></polyline>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <p class="text center black">I want a DevOps consultant to advise my in-house team on best practices.</p>
+          </div>
+        </a>
+        <a href="/devops-consulting">
+          <div class="white-bg box">
+            <div class="box_img-wrapper">
+              <svg width="83px" height="79px" viewBox="0 0 83 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+                  <desc>Created with Sketch.</desc>
+                  <defs></defs>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="option4" transform="translate(3.000000, 2.000000)" stroke="#4A4A4A">
+                          <path d="M54.7853193,36.9420239 C53.5249618,38.7881544 51.4040017,40 49,40 C45.1340068,40 42,36.8659932 42,33 C42,32.7279214 42.0155227,32.4594684 42.0457307,32.1954782 C37.7174507,28.8112575 35,23.928695 35,18.5 C35,8.28273213 44.6258779,0 56.5,0 C68.3741221,0 78,8.28273213 78,18.5 C78,28.7172679 68.3741221,37 56.5,37 C55.9228458,37 55.3510031,36.9804316 54.7853193,36.9420239 Z" id="Combined-Shape" stroke-width="3"></path>
+                          <ellipse id="Oval" stroke-width="3" cx="17.5" cy="42.5" rx="9.5" ry="10.5"></ellipse>
+                          <path d="M-0.940819133,59.9077503 C1.96570841,57.5670994 8.21006834,56.5 18,56.5 C27.7899317,56.5 34.0342916,57.5670994 36.9408191,59.9077503 L37.5,60.3580633 L37.5,75.5 L-1.5,75.5 L-1.5,60.3580633 L-0.940819133,59.9077503 Z" id="Rectangle" stroke-width="3"></path>
+                          <circle id="Oval-2" stroke-width="3" cx="37" cy="44" r="4"></circle>
+                          <path d="M60,21.326396 L60,23 L54,23 L54,21.326396 C51.5935806,20.1852426 50,17.7441533 50,15 C50,11.1340068 53.1340068,8 57,8 C60.8659932,8 64,11.1340068 64,15 C64,17.7441533 62.4064194,20.1852426 60,21.326396 Z" id="Combined-Shape" stroke-width="2"></path>
+                          <path d="M53.5,24.5 L60.5,24.5" id="Line" stroke-linecap="square"></path>
+                          <path d="M54,26 L60,26" id="Line" stroke-linecap="square"></path>
+                          <path d="M54,27.5 L60,27.5" id="Line" stroke-linecap="square"></path>
+                          <path d="M55.5,29 L58.5,29" id="Line-2" stroke-linecap="square"></path>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <p class="text center black">I want a DevOps consultant to help me build my own infrastructure.</p>
+          </div>
+        </a>
+       
+      </div>
+    </div>
+  </div>
+
+ <!-- How can we help you? -->
+  <div class="light-blue-bg featured-clients">
+    <div class="section">
+      <h1 class="header center blue">Featured Clients</h1>
+      <div class="client-list">
+        <div class="client-list_img-wrapper">
+          <a href="https://lucidworks.com" target="_blank">
+            <img src="/assets/images/lucidworks.png">
+          </a>
+        </div>
+        <div class="client-list_img-wrapper">
+          <a href="http://www.apteligent.com" target="_blank">  
+            <img src="/assets/images/apteligent.png">
+          </a>
+        </div>
+        <div class="client-list_img-wrapper">
+          <a href="http://tillster.com" target="_blank">
+            <img src="/assets/images/tillster.png">
+          </a>
+        </div>
+        <div class="client-list_img-wrapper">
+          <a href="http://www.wercker.com" target="_blank">
+            <img src="/assets/images/owercker.png">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{%- include contact_form.html -%}
+</div>
