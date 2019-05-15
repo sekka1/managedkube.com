@@ -7,7 +7,7 @@ permalink: /press-release-ManagedKube-k8sBot-GCP
 
 ## ManagedKube Launches Tool to Provide Easy Point-and-Click Interface for Kubernetes in Slack on the Google Cloud Platform (GCP) Marketplace
 
-**San Francisco, CA. May 16, 2019** – ManagedKube, a DevOps tool company, today announced its availability on Google Cloud Platform Marketplace (GCP Marketplace), providing customers with an app that provides a point-and-click user interface for Kubernetes in Slack.
+**San Francisco, CA. May 16, 2019** – ManagedKube, a DevOps tool company, today announced its availability on Google Cloud Platform Marketplace (GCP Marketplace), providing customers with k8sBot, an app that provides a point-and-click user interface for Kubernetes in Slack.
 
 GCP Marketplace lets users quickly deploy functional software packages that run on Google Cloud Platform. GCP Marketplace allows customers to easily start up a familiar software package with services like Compute Engine or Cloud Storage, with no manual configuration required.
 
