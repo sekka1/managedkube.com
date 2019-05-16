@@ -199,13 +199,13 @@ problem and then look at what Kubernetes is telling you at that point and contin
 
 I created k8sBot because I have spent too many hours figuring out and fixing configuration issues and errors in Kubernetes. I was frustrated with having to look at multiple Kubernetes resources and having to pick out the one meaningful error in a sea of text, just like in "Where's Waldo?" There were many times when my eyes would skim right over the error and not notice that something was wrong. This is a prime example of when robots are better than humans!
 
-@k8sbot can help you instantly troubleshoot pending pods in an instant, directly in Slack:
+k8sBot can help you troubleshoot pending pods with just a few clicks, directly in Slack so the whole team knows what's going on:
 
-![k8sbot workflow - pending pod](/assets/blog/images/workflow/Workflow-mobile-pending-pod.png)
+![k8sbot workflow - pending pod](/assets/blog/images/PendingPods.gif)
 
-@k8sbot provides troubleshooting recommendations based on current information from your cluster.  It offers relevant recommendations on how to fix your issue based on what's happening in your cluster, right now. 
+Now, anyone can get meaningful Kubernetes information with @k8sbot. It's just one click to retrieve pod status, get pod logs, and get troubleshooting recommendations based on real-time information from your cluster's Kubernetes API. 
 
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshooting Slackbot or sign up for a free trial <a href="https://managedkube.com/start-free-trial">here</a>
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a free trial <a href="https://managedkube.com/free-trial-signup">here</a>.
 
 # More troubleshooting blog posts
 
