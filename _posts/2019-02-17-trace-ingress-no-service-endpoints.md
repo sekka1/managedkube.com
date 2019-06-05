@@ -46,4 +46,4 @@ in your cluster, right now.
 
 ![trace ingress](/assets/blog/images/trace-ingress-no-endpoints-2.png)
 
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a Kubernetes troubleshoot Slackbot.
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a <A HREF="https://managedkube.com/free-k8sbot-trial-signup">free 30 day trial</a>
