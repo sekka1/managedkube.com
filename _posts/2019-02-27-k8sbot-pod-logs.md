@@ -14,4 +14,4 @@ the pod and post it to Slack.
 
 ![k8sbot logs](/assets/blog/images/workflow/k8sbot-pod-logs.png)
 
-Interested in giving k8sBot a try? Sign-up <A HREF="https://managedkube.com/start-free-trial">here</a>
+Interested in giving k8sBot a try? <A HREF="https://managedkube.com/">Learn more</a> or <A HREF="https://managedkube.com/free-k8sbot-trial-signup">start a free 30 day trial</a>
