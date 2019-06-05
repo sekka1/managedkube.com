@@ -219,7 +219,7 @@ for you to easily read and look through.
 
 Now, anyone can get meaningful Kubernetes information with @k8sbot. It's just one click to retrieve pod status, get pod logs, and get troubleshooting recommendations based on real-time information from your cluster's Kubernetes API. 
 
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a free trial <a href="https://managedkube.com/free-trial-signup">here</a>.
+<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a <A HREF="https://managedkube.com/free-k8sbot-trial-signup">free 30 day trial</a>
 
 # More troubleshooting blog posts
 
