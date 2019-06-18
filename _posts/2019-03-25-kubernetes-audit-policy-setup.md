@@ -15,8 +15,6 @@ If you are troubleshooting the Kubernetes masters, you might not have `kubectl`
 access.  This means you will have to ssh into the Kubernetes master's nodes.  Yup,
 back to Linux!!  I'll run you through what you should be looking for.
 
-<<<<<Send kops a PR to fix this>>>>>>
-
 Here is the link to the doc: https://github.com/kubernetes/kops/blob/master/docs/cluster_spec.md#audit-logging
 
 Copying this section into my cluster config:
@@ -117,7 +115,7 @@ Same problem!! Yay!
 
 No solved answer =(
 
-However, one person did say he fixed it by chaning this:
+However, one person did say he fixed it by changing this:
 
 ```
 apiVersion: audit.k8s.io/v1
