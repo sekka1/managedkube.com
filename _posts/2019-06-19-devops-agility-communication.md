@@ -65,7 +65,7 @@ Expressing everything in Git (code and config) is a powerful way of describing w
 
 Ideally, each side’s activities should be 100% automated so it is repeatable and will always behave in the same way.  You should be able to build the application from source with a script that is documented on how to perform that activity.  On the infrastructure side, everything should also be automated on how to deploy everything out including creating the databases, queues, S3 buckets, and whatever else the application needs.  
 
-# Conclusion: 
+# Conclusion: Great Communication Means a More Agile Team
 
 Increasing DevOps Agility means making foundational changes to your organization. This means changing norms, creating repeatable behaviors, and making sure that every team member is on board to this vision. Good communication means that everyone can march quickly along the same path, together, and avoid frustrating and time-losing misunderstandings. Communication happens in a lot of different ways and you’ll need to make sure that you follow good communication principles in all of these cases:
    * Place: virtually, in person, through the phone or video chat
