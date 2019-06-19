@@ -8,7 +8,7 @@ keywords: kubernetes devops agility communication developers
 * TOC
 {:toc}
 
-# Introduction
+# Introduction: Increasing DevOps Agility through Great Communication
 
 Technology companies are working to incorporate agile DevOps principles so we can release and get-to-market faster. I’m writing a blog series about how organizations can accomplish this based on my experiences consulting with many types of companies (different industries, sizes, and points along their cloud journey). 
 
@@ -22,24 +22,27 @@ Releasing faster means developers and DevOps folks have to get on the same page 
 You may be thinking, ‘obviously, I know all this’, when you read this section header - but it is 100% worth explaining. The communication tools that we use at work are only as effective as our workplace communication norms. If someone talks about a problem they should take offline with one other person at a scrum or someone is asking in-depth questions in Slack, everyone on the team suffers. Here are the norms that I suggest (which could be different from your company, depending on team size and makeup). 
 
 1. Using Slack
-   Do:
+   
+   **Do:**
    * Use threading to streamline channel conversations
    * Use Direct Messages instead of a channel wherever possible - ask yourself the question, “does everyone else needs to hear this?”
    * Be specific.  Try to avoid ambiguous words such as: it, him/her, they, that.
 
 2. Scrums
-⋅⋅⋅Do: 	Have these daily for 15 minutes
-⋅⋅⋅*Use for quick updates and questions
-⋅⋅⋅*Identify who needs to work together to solve a problem and set-up time outside the scrum, even if it’s right afterwards, to discuss
-⋅⋅⋅Don’t:
-⋅⋅⋅*Use this forum as time for two or three people to hash out a problem together while the whole team watches
+
+   **Do:** 	
+   * Have these daily for 15 minutes
+   * Use for quick updates and questions
+   * Identify who needs to work together to solve a problem and set-up time outside the scrum, even if it’s right afterwards, to discuss
+   **Don’t:**
+   * Use this forum as time for two or three people to hash out a problem together while the whole team watches
 
 3. Emails
-⋅⋅⋅Do:
-⋅⋅⋅*If your company prefers to communicate via emails, then use email
-⋅⋅⋅*Use for external communication
-⋅⋅⋅Don’t:
-⋅⋅⋅*If internal conversations at your company mostly happens in Slack, don’t start an email with a group of people on email.  They might not be as responsive if they don’t check their emails often and it breaks the conversation into two mediums
+   **Do:**
+   * If your company prefers to communicate via emails, then use email
+   * Use for external communication
+   **Don’t:**
+   * If internal conversations at your company mostly happens in Slack, don’t start an email with a group of people on email.  They might not be as responsive if they don’t check their emails often and it breaks the conversation into two mediums
 
 ## Strategy 2: Document, document, document
 
@@ -62,12 +65,12 @@ Expressing everything in Git (code and config) is a powerful way of describing w
 
 Ideally, each side’s activities should be 100% automated so it is repeatable and will always behave in the same way.  You should be able to build the application from source with a script that is documented on how to perform that activity.  On the infrastructure side, everything should also be automated on how to deploy everything out including creating the databases, queues, S3 buckets, and whatever else the application needs.  
 
-# Conclusion
+# Conclusion: 
 
 Increasing DevOps Agility means making foundational changes to your organization. This means changing norms, creating repeatable behaviors, and making sure that every team member is on board to this vision. Good communication means that everyone can march quickly along the same path, together, and avoid frustrating and time-losing misunderstandings. Communication happens in a lot of different ways and you’ll need to make sure that you follow good communication principles in all of these cases:
-⋅⋅⋅*Place: virtually, in person, through the phone or video chat
-⋅⋅⋅*Timing: in real-time, asynchronously, forever captured in documentation
-⋅⋅⋅*Method: spoken words, written words, through code and config
+   * Place: virtually, in person, through the phone or video chat
+   * Timing: in real-time, asynchronously, forever captured in documentation
+   * Method: spoken words, written words, through code and config
 
 So, remember - establish good communication norms, document, and express everything in Git!
 
