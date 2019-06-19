@@ -18,14 +18,14 @@ When you read this blog post, you’ll probably think, ‘I already knew that! I
 
 Releasing faster means developers and DevOps folks have to get on the same page faster than ever before. In this blog post, I will discuss how to make that happen with three strategic rules.
 
-# Strategy 1: Establish good team communication norms. In other words, use existing communication tools well.
+## Strategy 1: Establish good team communication norms. In other words, use existing communication tools well.
 You may be thinking, ‘obviously, I know all this’, when you read this section header - but it is 100% worth explaining. The communication tools that we use at work are only as effective as our workplace communication norms. If someone talks about a problem they should take offline with one other person at a scrum or someone is asking in-depth questions in Slack, everyone on the team suffers. Here are the norms that I suggest (which could be different from your company, depending on team size and makeup). 
 
 1. Using Slack
-⋅⋅⋅Do:
-⋅⋅⋅*Use threading to streamline channel conversations
-⋅⋅⋅*Use Direct Messages instead of a channel wherever possible - ask yourself the question, “does everyone else needs to hear this?”
-⋅⋅⋅*Be specific.  Try to avoid ambiguous words such as: it, him/her, they, that.
+   Do:
+   * Use threading to streamline channel conversations
+   * Use Direct Messages instead of a channel wherever possible - ask yourself the question, “does everyone else needs to hear this?”
+   * Be specific.  Try to avoid ambiguous words such as: it, him/her, they, that.
 
 2. Scrums
 ⋅⋅⋅Do: 	Have these daily for 15 minutes
@@ -41,7 +41,7 @@ You may be thinking, ‘obviously, I know all this’, when you read this sectio
 ⋅⋅⋅Don’t:
 ⋅⋅⋅*If internal conversations at your company mostly happens in Slack, don’t start an email with a group of people on email.  They might not be as responsive if they don’t check their emails often and it breaks the conversation into two mediums
 
-# Strategy 2: Document, document, document
+## Strategy 2: Document, document, document
 
 Seriously - do it! Documentation does require an upfront investment in time, but I promise that this will pay off in the long run. You may think, this project is so simple and doesn’t need documentation. Don’t fall into that trap - projects often become more complicated and even your simple project may not look the same as your teammate’s simple project.  It often looks simple at the time of creation.  Think about 6 months later, are you going to remember the details?  What if someone else has to pick up where you left off?  Are they going to understand the decisions that were made to up to this point?
 
@@ -57,7 +57,7 @@ Be creative and pause for a moment to think if a diagram would make it easier to
 
 Lastly, writing documentation doesn’t mean anything if it disappears into the ether. Have a central location where all the documentation is saved and make sure that it’s organized well so you can find it again!
 
-# Strategy 3: Express everything in Git (and automate wherever possible!)
+## Strategy 3: Express everything in Git (and automate wherever possible!)
 Expressing everything in Git (code and config) is a powerful way of describing what needs to be done without ambiguity - think of it as documentation in immutable code.  For example, the application developer probably knows how to build the application and run the application locally but doesn’t have a lot of information on how the application will be deployed out to the production environment.  Conversely, the DevOps person most likely knows how the application will or should be deployed out to the production environment but doesn’t know how the application is built.  The challenge is for the developer and DevOps team members to quickly exchange this information while preserving the integrity of the information.
 
 Ideally, each side’s activities should be 100% automated so it is repeatable and will always behave in the same way.  You should be able to build the application from source with a script that is documented on how to perform that activity.  On the infrastructure side, everything should also be automated on how to deploy everything out including creating the databases, queues, S3 buckets, and whatever else the application needs.  
