@@ -55,7 +55,7 @@ Remember that documentation doesn’t have to be only words - use diagrams in yo
 
 If you are building a pipeline, it is nice to write up documentation but typically you would create a flow diagram to graph the necessary information. This allows you to see the starting points, the various branches where a document would have a hard time tracking all the various paths the graph can go. I have also found that a flow diagram is well suited to describing a CI/CD pipeline because it makes it very easy to understand and to turn the diagram into code.  As a developer, I don’t have to interpret the meaning of someone’s words.  I can look at a flow diagram and clearly understand the inputs, actions, and outputs at each step.
 
-![flow diagram example](/assets/blog/images/flow-diagram.png)
+![flow diagram example](/assets/blog/images/Flow-diagram.png)
 
 Lastly, writing documentation doesn’t mean anything if it disappears into the ether. Have a central location where all the documentation is saved and make sure that it’s organized well so you can find it again!
 
