@@ -75,9 +75,9 @@ So, remember - establish good communication norms, document, and express everyth
 
 # Increasing DevOps Agility with ManagedKube's k8sBot
 
-I created my product, k8sBot, to facilitate communication about Kubernetes information. It's a Slack app that provides your Kubernetes cluster's information with an easy point-and-click user interface. With one click, you can retrieve pod status, get pod logs, and get troubleshooting recommendations.
+I created my product, k8sBot, to facilitate better communication about Kubernetes. It's a Slack app that provides your Kubernetes cluster's information with an easy point-and-click user interface. With one click, you can retrieve pod status, get pod logs, and get troubleshooting recommendations.
 
-Anyone, regardless of kubectl access or k8s knowledge, can get meaningful Kubernetes information with our easy point-and-click interface
+Anyone, regardless of kubectl access or k8s knowledge, can get meaningful Kubernetes information with our easy point-and-click interface:
 ![k8sbot workflow - imagepullbackoff pod](/assets/images/k8sbot-database-example.png)
 
 <A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a <A HREF="https://managedkube.com/free-k8sbot-trial-signup">free 30 day trial</a>
