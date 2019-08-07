@@ -5,13 +5,6 @@ categories: Why Kubernetes-ops
 keywords: Why Kubernetes-ops
 ---
 
-I am a big fan of using [kops](https://github.com/kubernetes/kops) for deploying
-
-
-
-==========
-
-
 We are a big fan of Kubernetes, no matter how you bring up the cluster.  Be it on a GKE, EKS, or a Kops cluster.  For the last 3 years or so, on AWS we have been using an open source tool called Kops to bring up and maintain our Kubernetes cluster.  Initially, AWS didn’t offer a Kubernetes service and when they did come out with one, we felt the Kubernetes life cycle management was still way better with Kops.  Enough with our cluster opinions.  We’ll have enough opinions on the packages we are about to describe to you =)
 
 This initial blog will focus on bringing up an entire cluster and managing the life cycle of a Kubernetes cluster on AWS with a complete set of code/config on Github.
