@@ -47,7 +47,7 @@ The next thing to figure out is why?
 
 Looking at the service monitor definition:
 
-```
+```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
@@ -71,7 +71,7 @@ spec:
 
 The important part is:
 
-```
+```yaml
 namespaceSelector:
   any: true
 ```
@@ -82,7 +82,7 @@ that matched the labels.  This was causing the each service to be scraped twice.
 The `Service Monitor` lives in the namespace of the service.  The change and the fix
 was to make it only select from the namespace that it lived in:
 
-```
+```yaml
 namespaceSelector:
   matchName:
   - managedkube-api
