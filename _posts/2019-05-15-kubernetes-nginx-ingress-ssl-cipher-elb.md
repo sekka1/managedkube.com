@@ -17,7 +17,7 @@ Internet<-->(HTTPS offload here with AWS ACM Certs)ELB<--->(HTTPS - self signed)
 ```
 
 Config that produces this topology:
-```
+```yaml
 controller:
   ## Name of the ingress class to route through this controller
   ##
@@ -84,7 +84,7 @@ $ curl -v https://a70749687774511e9ad000aefbb298f7-1467484959.us-east-1.elb.amaz
 ```
 
 To fix this, you need to tell nginx to use some additional ciphers:
-```
+```yaml
 controller:
   ## Name of the ingress class to route through this controller
   ##

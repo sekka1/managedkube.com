@@ -81,7 +81,7 @@ Yikes...I don't think we want to remove entires.
 
 So we updated the config to include those:
 
-```
+```yaml
 docker:
   bridgeIP: 172.26.0.0/16
   logDriver: json-file

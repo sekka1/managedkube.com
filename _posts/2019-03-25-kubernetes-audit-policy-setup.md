@@ -19,7 +19,7 @@ Here is the link to the doc: https://github.com/kubernetes/kops/blob/master/docs
 
 Copying this section into my cluster config:
 
-```
+```yaml
 spec:
   kubeAPIServer:
     auditLogPath: /var/log/kube-apiserver-audit.log
@@ -31,7 +31,7 @@ spec:
 
 Following the direction to load this in via the `fileAsset` directive:
 
-```
+```yaml
 spec:
   fileAssets:
   # https://github.com/kubernetes/kops/blob/master/docs/cluster_spec.md#audit-logging
