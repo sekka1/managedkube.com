@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Terraform/Terragrunt conversion to the new 0.12 firmat
+title: Terraform/Terragrunt conversion to the new 0.12 format
 categories: terraform terragrunt 0.12 convert cerversion
 keywords: terraform terragrunt 0.12 convert cerversion
 ---
