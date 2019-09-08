@@ -14,15 +14,15 @@ First off, there are a bunch of good resources and articles you probably should
 read before trying to do the conversion.  Just to get up to speed on what all
 the changes are all about.
 
-Changes to Terraform:  https://www.hashicorp.com/blog/announcing-terraform-0-12
+Changes to Terraform:  [https://www.hashicorp.com/blog/announcing-terraform-0-12](https://www.hashicorp.com/blog/announcing-terraform-0-12)
 
-Terraform upgrading guide: https://www.terraform.io/upgrade-guides/0-12.html
+Terraform upgrading guide: [https://www.terraform.io/upgrade-guides/0-12.html](https://www.terraform.io/upgrade-guides/0-12.html)
 
 
 
 With Terraform incorporating some of what Terragrunt is doing in the latest version,
 is there still a need for Terragrunt?  The short answer is yes.  Read up on this
-blog to see why you still want to use Terragrunt:  https://blog.gruntwork.io/terragrunt-how-to-keep-your-terraform-code-dry-and-maintainable-f61ae06959d8
+blog to see why you still want to use Terragrunt:  [https://blog.gruntwork.io/terragrunt-how-to-keep-your-terraform-code-dry-and-maintainable-f61ae06959d8](https://blog.gruntwork.io/terragrunt-how-to-keep-your-terraform-code-dry-and-maintainable-f61ae06959d8)
 
 The good news is that this conversion is usually not that bad.  The latest Terragrunt
 binary gives us an auto conversion tool to use `0.12upgrade`.
@@ -33,17 +33,14 @@ We'll walk you through this process with a full example.
 First, you need to download the newest version of Terraform and Terragrunt
 
 Downloads:
-```
-https://www.terraform.io/downloads.html
-
-https://github.com/gruntwork-io/terragrunt/releases
-```
+* [https://www.terraform.io/downloads.html](https://www.terraform.io/downloads.html)
+* [https://github.com/gruntwork-io/terragrunt/releases](https://github.com/gruntwork-io/terragrunt/releases)
 
 ## Initialize the module
 In our example we have an AWS VPC module and `terraform.tfvars` file to use it with
 some Terragrunt settings.
 
-Here is the original VPC module: https://github.com/ManagedKube/kubernetes-ops/tree/001253e2ae081e0f1005bed42d3c612ef3d4fd01/tf-modules/aws/vpc
+Here is the original VPC module: [https://github.com/ManagedKube/kubernetes-ops/tree/001253e2ae081e0f1005bed42d3c612ef3d4fd01/tf-modules/aws/vpc](https://github.com/ManagedKube/kubernetes-ops/tree/001253e2ae081e0f1005bed42d3c612ef3d4fd01/tf-modules/aws/vpc)
 
 Looking at these files, the major thing you will notice inside these files are
 statements with items such as `"${var.region}"`.  This is a tell tail sign
@@ -421,7 +418,7 @@ That is it for our module.  Next we'll update our Terragrunt usage of this modul
 With this change and if you have read the Terragrunt's blog above, there are some
 breaking changes to the Terragrunt usage as well.  So, we'll have to update a few files.
 
-Here is the original Terrgrunt file to use the Terraform 0.11.x module: https://github.com/ManagedKube/kubernetes-ops/blob/98b2701023981e4adfb593a699f09f06823e7627/tf-environments/dev/aws/vpc/terraform.tfvars
+Here is the original Terrgrunt file to use the Terraform 0.11.x module: [https://github.com/ManagedKube/kubernetes-ops/blob/98b2701023981e4adfb593a699f09f06823e7627/tf-environments/dev/aws/vpc/terraform.tfvars](https://github.com/ManagedKube/kubernetes-ops/blob/98b2701023981e4adfb593a699f09f06823e7627/tf-environments/dev/aws/vpc/terraform.tfvars)
 
 We first have to rename the `terraforms.tfvars` file name to `terragrunt.hcl`.  It
 turns out that Terragrunt has been taking advantage of a "feature/bug" in Terraform
@@ -478,7 +475,7 @@ For the same reason above we have to rename this file also.  If you are going to
 in a mix Terraform version (0.11 and 0.12) for a bit you can leave the `terraform.tfvars`
 file here and just add a new `terragrunt.hcl` file.
 
-For example:  https://github.com/ManagedKube/kubernetes-ops/tree/98b2701023981e4adfb593a699f09f06823e7627/tf-environments/dev
+For example: [https://github.com/ManagedKube/kubernetes-ops/tree/98b2701023981e4adfb593a699f09f06823e7627/tf-environments/dev](https://github.com/ManagedKube/kubernetes-ops/tree/98b2701023981e4adfb593a699f09f06823e7627/tf-environments/dev)
 
 Again, there are slight changes to the file format.  Compare the two and make the
 appropriate adjustments.
@@ -495,4 +492,4 @@ continue as normal and create your resources.  In this case, it is an AWS VPC.
 
 Here is the full Github Pull Request for the changes described above:
 
-https://github.com/ManagedKube/kubernetes-ops/pull/28
+[https://github.com/ManagedKube/kubernetes-ops/pull/28](https://github.com/ManagedKube/kubernetes-ops/pull/28)
