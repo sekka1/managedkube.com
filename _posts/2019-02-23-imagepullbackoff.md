@@ -204,7 +204,7 @@ Now, anyone can get meaningful Kubernetes information with @k8sbot. It's just on
 
 <A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a <A HREF="https://managedkube.com/free-k8sbot-trial-signup">free 30 day trial</a>
 
-{%- include blurb-consulting.html -%}
+{%- include blurb-consulting.md -%}
 
 # More troubleshooting blog posts
 
