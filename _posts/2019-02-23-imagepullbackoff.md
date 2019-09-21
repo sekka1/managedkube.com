@@ -190,7 +190,7 @@ spec:
     - name: registry-secret
 ```
 
-More information: https://kubernetes.io/docs/concepts/containers/images/#referring-to-an-imagepullsecrets-on-a-pod
+More information: <a href="https://kubernetes.io/docs/concepts/containers/images/#referring-to-an-imagepullsecrets-on-a-pod">https://kubernetes.io/docs/concepts/containers/images/#referring-to-an-imagepullsecrets-on-a-pod</a>
 
 # Using k8sBot to troubleshoot imagepullbackoff
 
