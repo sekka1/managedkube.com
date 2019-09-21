@@ -192,18 +192,6 @@ spec:
 
 More information: <a href="https://kubernetes.io/docs/concepts/containers/images/#referring-to-an-imagepullsecrets-on-a-pod">https://kubernetes.io/docs/concepts/containers/images/#referring-to-an-imagepullsecrets-on-a-pod</a>
 
-# Using k8sBot to troubleshoot imagepullbackoff
-
-I created k8sBot because I've spent countless hours fixing Kubernetes configuration issues. It was frustrating to spend time looking at multiple Kubernetes resources to figure out what was wrong. There were many times when my eyes would skim right over the error and I would feel terrible when I finally did find the error (minutes or hours later). Troubleshooting Kubernetes is a prime example of when robots are better than humans!
-
-k8sBot can help you troubleshoot `ImagePullBackOff` with our easy point-and-click user interface directly in Slack so the whole team knows what's going on:
-
-![k8sbot workflow - imagepullbackoff pod](/assets/blog/images/ImagePullBackOff.gif)
-
-Now, anyone can get meaningful Kubernetes information with @k8sbot. It's just one click to retrieve pod status, get pod logs, and get troubleshooting recommendations based on real-time information from your cluster's Kubernetes API.
-
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a <A HREF="https://managedkube.com/free-k8sbot-trial-signup">free 30 day trial</a>
-
 {%- include blurb-consulting.md -%}
 
 # More troubleshooting blog posts
