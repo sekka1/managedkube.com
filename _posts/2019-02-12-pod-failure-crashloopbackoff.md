@@ -247,17 +247,7 @@ the `Liveness` probe failed.  This gives us an indication that we should look at
 
 In summary, the error `CrashLoopBackOff` can be tricky if we don't know where to look but with a few commands and looking at the correct places, we can pull out the nugget of information we need to tell us why Kubernetes is declaring the error and doing what it is doing.  Then the next part is on us to test a few things to make sure everything is correct with our configuration and/or our application.
 
-# Using k8sBot to troubleshoot CrashLoopBackOff
-
-I created k8sBot because I have spent too many hours figuring out and fixing configuration issues and errors in Kubernetes. I was frustrated with having to look at multiple Kubernetes resources and having to pick out the one meaningful error in a sea of text, just like in "Where's Waldo?" There were many times when my eyes would skim right over the error and not notice that something was wrong. This is a prime example of when robots are better than humans!
-
-@k8sbot can help you instantly troubleshoot `CrashLoopBackOff` with our easy point-and-click user interface:
-
-![k8sbot workflow - crashloopbackoff pod](/assets/blog/images/CrashLoopBackOff.gif)
-
-Now, anyone can get meaningful Kubernetes information with @k8sbot. It's just one click to retrieve pod status, get pod logs, and get troubleshooting recommendations based on real-time information from your cluster's Kubernetes API. 
-
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a free trial <a href="https://managedkube.com/free-trial-signup">here</a>.
+{%- include blurb-consulting.md -%}
 
 # More troubleshooting blog posts
 

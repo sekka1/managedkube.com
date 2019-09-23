@@ -10,29 +10,29 @@ keywords: kubernetes devops agility communication developers
 
 # Introduction: Increasing DevOps Agility through Great Communication
 
-Technology companies are working to incorporate agile DevOps principles so we can release and get-to-market faster. I’m writing a blog series about how organizations can accomplish this based on my experiences consulting with many types of companies (different industries, sizes, and points along their cloud journey). 
+Technology companies are working to incorporate agile DevOps principles so we can release and get-to-market faster. I’m writing a blog series about how organizations can accomplish this based on my experiences consulting with many types of companies (different industries, sizes, and points along their cloud journey).
 
-This first post is going to focus on good communication, which is absolutely critical for an agile organization. Releasing faster means developers and DevOps folks have to get on the same page faster than ever before. No, communication isn't some fancy tool, and yes, it is imperative to get the basics right in a fast-moving organization. We’ve all seen the spin, wasted time, and confusion that happens with bad communication - tasks take twice as long as they should have. Your team is moving fast and want to get things done faster, but this backfires badly when each team member has a different vision of what they need to do, assumptions aren’t aligned, or when the technical details of how things work just don’t line up. How do you ensure that doesn’t happen on your teams? Developers and DevOps groups must communicate well to understand what the other side expects and needs to deliver an application. Without this mutual understanding, it’s impossible to deliver an application, period. 
+This first post is going to focus on good communication, which is absolutely critical for an agile organization. Releasing faster means developers and DevOps folks have to get on the same page faster than ever before. No, communication isn't some fancy tool, and yes, it is imperative to get the basics right in a fast-moving organization. We’ve all seen the spin, wasted time, and confusion that happens with bad communication - tasks take twice as long as they should have. Your team is moving fast and want to get things done faster, but this backfires badly when each team member has a different vision of what they need to do, assumptions aren’t aligned, or when the technical details of how things work just don’t line up. How do you ensure that doesn’t happen on your teams? Developers and DevOps groups must communicate well to understand what the other side expects and needs to deliver an application. Without this mutual understanding, it’s impossible to deliver an application, period.
 
 When you read this blog post, you’ll probably think, ‘I already knew that! I’m not learning anything new.’ Knowing how something should be done and consistently doing so are two different things, though. I see problems from poor communication arise all the time as people feel rushed for time or think that a project is not ‘worth’ the effort of good communication. So, it’s up to you to embody these communication principles 100% of the time, set a good example for the rest of your team, and gently correct your teammates when you see them straying from the principles (and ask that they do the same for you). Think of this blog post as a friendly reminder of good communication principles!
 
 ## Strategy 1: Establish good team communication norms. In other words, use existing communication tools well.
-You may be thinking, ‘obviously, I know all this’, but it is 100% worth exploring. The communication tools that we use at work are only as effective as our workplace communication norms. If someone talks about a problem they should take offline with one other person at a scrum or someone is asking complicated ambiguous questions in Slack, everyone on the team suffers. Here are the norms that I suggest (which could be different from your company, depending on team size and makeup): 
+You may be thinking, ‘obviously, I know all this’, but it is 100% worth exploring. The communication tools that we use at work are only as effective as our workplace communication norms. If someone talks about a problem they should take offline with one other person at a scrum or someone is asking complicated ambiguous questions in Slack, everyone on the team suffers. Here are the norms that I suggest (which could be different from your company, depending on team size and makeup):
 
 1. Using Slack
-   
+
    **Do:**
    * Be specific.  Try to avoid ambiguous words such as: it, him/her, they, that.
    * Use threading to streamline channel conversations
    * Use Direct Messages instead of a channel wherever possible - ask yourself the question, “does everyone else needs to hear this?”
-   
+
 2. Scrums
 
    **Do:** 	
    * Have these daily for 15 minutes
    * Use for quick updates and questions
    * Identify who needs to work together to solve a problem and set-up time outside the scrum, even if it’s right afterwards, to discuss
-  
+
    **Don’t:**
    * Use this forum as time for two or three people to hash out a problem together while the whole team watches
 
@@ -41,7 +41,7 @@ You may be thinking, ‘obviously, I know all this’, but it is 100% worth expl
    **Do:**
    * If your company prefers to communicate via emails, then use email
    * Use for external communication
-   
+
    **Don’t:**
    * If internal conversations at your company mostly happens in Slack, don’t start an email with a group of people on email.  They might not be as responsive if they don’t check their emails often and it breaks the conversation into two mediums
 
@@ -81,3 +81,5 @@ Anyone, regardless of kubectl access or k8s knowledge, can get meaningful Kubern
 ![k8sbot workflow - imagepullbackoff pod](/assets/images/k8sbot-database-example.png)
 
 <A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a <A HREF="https://managedkube.com/free-k8sbot-trial-signup">free 30 day trial</a>
+
+{%- include blurb-consulting.md -%}

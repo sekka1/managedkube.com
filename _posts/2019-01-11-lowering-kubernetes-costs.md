@@ -164,7 +164,7 @@ spec:
         memory: "512Mi"
         cpu: "500m"
 ```
-1028Mi is equivalent to 1GB; 500m is equivalent to 0.5 CPU core 
+1028Mi is equivalent to 1GB; 500m is equivalent to 0.5 CPU core
 
 By setting the “requests” you ensure that this item will be guaranteed that low limit threshold that it has asked for.  Kubernetes will not schedule (run) this unit unless the instance has at least this much free capacity.
 
@@ -206,3 +206,5 @@ You can use all of the tools both independently and together to dramatically low
 1. Understand your cloud spend today and identify the biggest drivers of costs
 2. Determine which of the available tools described above are most helpful to driving down your costs
 3. Don't forget to address the tradeoffs of the above tools so your clusters are stable
+
+{%- include blurb-consulting.md -%}

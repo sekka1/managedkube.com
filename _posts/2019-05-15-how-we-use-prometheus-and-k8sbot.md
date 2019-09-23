@@ -39,3 +39,5 @@ https://success.docker.com/article/docker-hub-user-notification
 So I did.  However, this has some downstream effects that were not known to me
 at the time, like this one.  The final fix was to update the password used to pull
 these images and we are back!
+
+{%- include blurb-consulting.md -%}

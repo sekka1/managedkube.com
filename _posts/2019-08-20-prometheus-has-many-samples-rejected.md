@@ -89,3 +89,5 @@ namespaceSelector:
 ```
 
 This fixed the problem and the alarm cleared up.
+
+{%- include blurb-consulting.md -%}

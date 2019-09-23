@@ -112,3 +112,5 @@ Which gave us one change, which is adding the `bridgeIP` param.
 
 I find this awesome!  It is very expressive on what config is changing and it displays
 it to my output in a clear and concise manor.
+
+{%- include blurb-consulting.md -%}

@@ -32,4 +32,4 @@ remove the permission(s) you have removed.
 
 
 
-Interested in giving k8sBot a try? Sign-up <A HREF="https://managedkube.com/start-free-trial">here</a>
+{%- include blurb-consulting.md -%}

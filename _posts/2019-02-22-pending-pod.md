@@ -21,7 +21,7 @@ echoserver-657f6fb8f5-wmgj5        0/1     Pending            0          1d
 ```
 
 There can be various reasons why your pod is in a `pending` state.  We'll go through them one-by-one and how to
-determine what the error messages are telling you. 
+determine what the error messages are telling you.
 
 With any of these errors, step one is to `describe` the pod:
 
@@ -195,17 +195,7 @@ the CPU and memory.  You can alternatively just look at one (CPU or memory), fix
 problem and then look at what Kubernetes is telling you at that point and continue from there.
 
 
-# Using k8sBot to troubleshoot pending pods
-
-I created k8sBot because I have spent too many hours figuring out and fixing configuration issues and errors in Kubernetes. I was frustrated with having to look at multiple Kubernetes resources and having to pick out the one meaningful error in a sea of text, just like in "Where's Waldo?" There were many times when my eyes would skim right over the error and not notice that something was wrong. This is a prime example of when robots are better than humans!
-
-k8sBot can help you troubleshoot pending pods with just a few clicks, directly in Slack so the whole team knows what's going on:
-
-![k8sbot workflow - pending pod](/assets/blog/images/PendingPods.gif)
-
-Now, anyone can get meaningful Kubernetes information with @k8sbot. It's just one click to retrieve pod status, get pod logs, and get troubleshooting recommendations based on real-time information from your cluster's Kubernetes API. 
-
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack, or sign up for a <A HREF="https://managedkube.com/free-k8sbot-trial-signup">free 30 day trial</a>
+{%- include blurb-consulting.md -%}
 
 # More troubleshooting blog posts
 

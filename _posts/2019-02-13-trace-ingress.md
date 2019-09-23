@@ -199,27 +199,7 @@ NAME                                                   READY   STATUS           
 trace-ingress-4-5db9d55849-msrjw                       1/1     Running            0          9h    10.44.73.12   gke-gar-3-pool-1-9781becc-bdb3   <none>
 ```
 
-# Using k8sBot to troubleshoot a Kubernetes ingress
-
-I created k8sBot because of countless hours spent tracing ingress issues. I was frustrated with having to look at multiple Kubernetes resources and having to recognize if a long IP is one number off. There were many times when my eyes would skim right over the error and not notice that something was wrong. This is a prime example of when robots are better than humans!
-
-@k8sbot can help you troubleshoot this:
-
-![get ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/ingress-pod-1.png)
-
-@k8sbot runs inside of your Kubernetes cluster and gives you diagnostic information
-from interacting with the Kubernetes API
-
-![k8sbot](/assets/blog/images/workflow/k8sbot-agent-request.png)
-
-k8sbot traces the ingress, service, and pod out for you.  Then it lays it out in columns
-for you to easily read and look through.
-
-![trace ingress](/assets/blog/images/workflow/trace-ingress-service-port-not-matching-pod-port/ingress-pod-2.png)
-
-Now, anyone can get meaningful Kubernetes information with @k8sbot. It's just one click to retrieve pod status, get pod logs, and get troubleshooting recommendations based on real-time information from your cluster's Kubernetes API. 
-
-<A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a <A HREF="https://managedkube.com/free-k8sbot-trial-signup">free 30 day trial</a>
+{%- include blurb-consulting.md -%}
 
 # More troubleshooting blog posts
 

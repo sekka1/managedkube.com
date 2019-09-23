@@ -163,3 +163,5 @@ ssh into the Master's node and start debugging from there.  I showed you that yo
 should first look at the `kubelet` logs to see if it is telling you anything, then
 from there you might even have to interact with `docker` to get more logs and details
 on what the problem is.
+
+{%- include blurb-consulting.md -%}

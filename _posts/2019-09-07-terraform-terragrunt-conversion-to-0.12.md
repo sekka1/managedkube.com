@@ -493,3 +493,5 @@ continue as normal and create your resources.  In this case, it is an AWS VPC.
 Here is the full Github Pull Request for the changes described above:
 
 [https://github.com/ManagedKube/kubernetes-ops/pull/28](https://github.com/ManagedKube/kubernetes-ops/pull/28)
+
+{%- include blurb-consulting.md -%}
