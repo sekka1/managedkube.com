@@ -204,7 +204,7 @@ From above kubernetes should be using this file to auth:
 
 ```yaml
 ---
-/ # cat /etc/kubernetes/authn.config
+# cat /etc/kubernetes/authn.config
 apiVersion: ""
 clusters:
 - cluster:
