@@ -203,7 +203,6 @@ From above kubernetes should be using this file to auth:
 
 
 ```yaml
----
 # cat /etc/kubernetes/authn.config
 apiVersion: ""
 clusters:
@@ -221,7 +220,6 @@ kind: ""
 users:
 - name: kube-apiserver
   user: {}
----
 ```
 
 Looks like it is using this file to auth since we see "https://127.0.0.1:21362/authenticate" in the
