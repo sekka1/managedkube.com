@@ -63,7 +63,7 @@ Here is a link to all of the options for this file:  https://github.com/kubernet
 
 My aws-iam-authenticator's config map was:
 
-```
+```yaml
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -99,7 +99,7 @@ data:
 
 The kube config should look something like this:
 
-```
+```yaml
 apiVersion: v1
 clusters:
 - cluster:
@@ -142,7 +142,7 @@ The kops docs above link to the aws-iam-authenticator project:
 
 
 Setup your AWS creds either in the aws cli config file or export the keys to your environment:
-```
+```yaml
 export AWS_ACCESS_KEY_ID=""
 export AWS_SECRET_ACCESS_KEY=""
 export AWS_DEFAULT_REGION=us-east-1
@@ -161,7 +161,7 @@ This is a good response.
 
 I was on Kops 1.11 initially and this was not working.  So I looked into the `aws-iam-authenticator` logs after an authentication attempt:
 
-```
+```bash
 aws-iam-authenticator-8t2gb aws-iam-authenticator time="2019-10-31T15:26:08Z" level=info msg="listening on https://127.0.0.1:21362/authenticate"
 aws-iam-authenticator-8t2gb aws-iam-authenticator time="2019-10-31T15:26:08Z" level=info msg="reconfigure your apiserver with `--authentication-token-webhook-config-file=/etc/kubernetes/heptio-authenticator-aws/kubeconfig.yaml` to enable (assuming default hostPath mounts)"
 aws-iam-authenticator-r6mvh aws-iam-authenticator time="2019-10-31T16:42:49Z" level=info msg="http: TLS handshake error from 127.0.0.1:59466: remote error: tls: bad certificate" http=error
@@ -170,7 +170,7 @@ aws-iam-authenticator-r6mvh aws-iam-authenticator time="2019-10-31T16:42:49Z" le
 This does not look good.
 
 kube-apiserver's logs on a failed attempt:
-```
+```bash
 kube-apiserver-ip-10-4-0-25.ec2.internal kube-apiserver E1031 15:32:06.497256       1 webhook.go:90] Failed to make webhook authenticator request: Post https://127.0.0.1:21362/authenticate?timeout=30s: x509: certificate signed by unknown authority
 kube-apiserver-ip-10-4-0-25.ec2.internal kube-apiserver E1031 15:32:06.497290       1 authentication.go:62] Unable to authenticate the request due to an error: [invalid bearer token, [invalid bearer token, Post https://127.0.0.1:21362/authenticate?timeout=30s: x509: certificate signed by unknown authority]]
 ```
@@ -185,7 +185,7 @@ I exec'ed into the pod:
 kubectl -n kube-system exec -it kube-apiserver-ip-172-17-30-194.ec2.internal sh
 ```
 
-```
+```bash
 ps aux | grep authentication-token-webhook-config-file
 mkfifo /tmp/pipe; (tee -a /var/log/kube-apiserver.log < /tmp/pipe & ) ; exec /usr/local/bin/kube-apiserver --allow-privileged=true --anonymous-auth=false --apiserver-count=3 --authentication-token-webhook-config-file=/etc/kubernetes/authn.config --authorization-mode=RBAC --basic-auth-file=/srv/kubernetes/basic_auth.csv --bind-address=0.0.0.0 --client-ca-file=/srv/kubernetes/ca.crt --cloud-provider=aws --enable-admission-plugins=Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,NodeRestriction,ResourceQuota --etcd-cafile=/srv/kubernetes/ca.crt --etcd-certfile=/srv/kubernetes/etcd-client.pem --etcd-keyfile=/srv/kubernetes/etcd-client-key.pem --etcd-servers-overrides=/events#https://127.0.0.1:4002 --etcd-servers=https://127.0.0.1:4001 --insecure-bind-address=127.0.0.1 --insecure-port=8080 --kubelet-preferred-address-types=InternalIP,Hostname,ExternalIP --proxy-client-cert-file=/srv/kubernetes/apiserver-aggregator.cert --proxy-client-key-file=/srv/kubernetes/apiserver-aggregator.key --requestheader-allowed-names=aggregator --requestheader-client-ca-file=/srv/kubernetes/apiserver-aggregator-ca.cert --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --secure-port=443 --service-cluster-ip-range=100.64.0.0/13 --storage-backend=etcd3 --tls-cert-file=/srv/kubernetes/server.cert --tls-private-key-file=/srv/kubernetes/server.key --token-auth-file=/srv/kubernetes/known_tokens.csv --v=2 > /tmp/pipe 2>&1
 ```
@@ -202,7 +202,7 @@ From above kubernetes should be using this file to auth:
 ```
 
 
-```
+```yaml
 ---
 / # cat /etc/kubernetes/authn.config
 apiVersion: ""
@@ -247,7 +247,7 @@ So i upgraded my Kops to 1.13.
 # Kube api logs on a failed attempt
 
 Running the command:
-```
+```bash
 kubectl get nodes -v=7
 I1031 13:22:28.226031    3780 helpers.go:199] server response object: [{
   "metadata": {},
@@ -263,15 +263,15 @@ Gives me back an 401 unauth error (we'll be running this command a lot).
 
 Looking at the kube-apiserver logs:
 
-```
+```bash
 kube-apiserver-ip-10-10-31-69.ec2.internal kube-apiserver E1031 20:17:25.409048       1 webhook.go:106] Failed to make webhook authenticator request: unknown
 kube-apiserver-ip-10-10-31-69.ec2.internal kube-apiserver E1031 20:17:25.409078       1 authentication.go:65] Unable to authenticate the request due to an error: [invalid bearer token, [invalid bearer token, unknown]]
 ```
-Nnot sure if this is good or bad yet
+Not sure if this is good or bad yet
 
 Looking at the `aws-iam-authenticator` logs:
 
-```
+```bash
 aws-iam-authenticator-lzjt6 aws-iam-authenticator time="2019-10-31T20:16:50Z" level=info msg="STS response" accountid=1234567890 arn="arn:aws:iam::1234567890:user/dev-garland" client="127.0.0.1:55534" method=POST path=/authenticate session= userid=AIDAJOZJZRVACX2SX5NPE
 aws-iam-authenticator-lzjt6 aws-iam-authenticator time="2019-10-31T20:16:50Z" level=warning msg="access denied" arn="arn:aws:iam::1234567890:user/dev-garland" client="127.0.0.1:55534" error="ARN is not mapped: arn:aws:iam::1234567890:user/dev-garland" method=POST path=/authenticate
 ```
@@ -293,7 +293,7 @@ Ok so the negative test case works =)
 
 Exporting the correct AWS keys and trying again
 
-```
+```bash
 kubectl get nodes -v=7
 I1031 13:22:28.226031    3780 helpers.go:199] server response object: [{
   "metadata": {},
@@ -308,7 +308,7 @@ F1031 13:22:28.226045    3780 helpers.go:114] error: You must be logged in to th
 Still not working
 
 `aws-iam-authenticator` logs:
-```
+```bash
 aws-iam-authenticator-tpnj8 aws-iam-authenticator time="2019-10-31T20:22:27Z" level=info msg="STS response" accountid=123456789 arn="arn:aws:iam::123456789:user/garland.kan" client="127.0.0.1:35474" method=POST path=/authenticate session= userid=KEIEPOWIEKELEOQIEURIW
 aws-iam-authenticator-tpnj8 aws-iam-authenticator time="2019-10-31T20:22:27Z" level=warning msg="access denied" arn="arn:aws:iam::123456789:user/garland.kan" client="127.0.0.1:35474" error="ARN is not mapped: arn:aws:iam::123456789:user/garland.kan" method=POST path=/authenticate
 ```
@@ -323,7 +323,7 @@ It does complain about the `ARN is not mapped:....`.  Maybe im not mapped correc
 
 I was playing around with the rbac role
 
-```
+```yaml
 # For now we will give everyone cluster-admin perms
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -353,7 +353,7 @@ I was indeed not mapping the user correctly.
 
 Adding this part to the `aws-iam-authenticator`'s configmap and applying it to the cluster:
 
-```
+```yaml
       # each mapUsers entry maps an IAM role to a static username and set of groups
       mapUsers:
       # map user IAM user Alice in 000000000000 to user "alice" in group "system:masters"
@@ -366,7 +366,7 @@ Adding this part to the `aws-iam-authenticator`'s configmap and applying it to t
 
 After this change:
 
-```
+```bash
 kubectl get nodes -v=7                                
 I1031 13:40:15.310585   15203 loader.go:375] Config loaded from file:  clusters/dev-expanse/kubeconfig/kubeconfig
 I1031 13:40:15.317690   15203 round_trippers.go:420] GET https://internal-api-dev-k8s-loc-lhnsou-12334568.us-east-1.elb.amazonaws.com/api/v1/nodes?limit=500
@@ -385,7 +385,7 @@ I am able to get the nodes!!
 Cool...this seems to be working now.
 
 `aws-iam-authenticator` logs are now showing:
-```
+```bash
 aws-iam-authenticator-h58c8 aws-iam-authenticator time="2019-10-31T20:40:16Z" level=info msg="STS response" accountid=123456789 arn="arn:aws:iam::123456789:user/garland.kan" client="127.0.0.1:34008" method=POST path=/authenticate session= userid=KEIEPOWIEKELEOQIEURIW
 aws-iam-authenticator-h58c8 aws-iam-authenticator time="2019-10-31T20:40:16Z" level=info msg="access granted" arn="arn:aws:iam::123456789:user/garland.kan" client="127.0.0.1:34008" groups="[system:masters]" method=POST path=/authenticate uid="aws-iam-authenticator:123456789:KEIEPOWIEKELEOQIEURIW" username=garland.kan
 
@@ -411,7 +411,7 @@ Back to the `aws-iam-authenticator` docs to see what I can do in the configmap
 
 Checking what role I am or my identity
 
-```
+```bash
 aws sts get-caller-identity                             
 {
     "Account": "123456789", 
@@ -422,7 +422,7 @@ aws sts get-caller-identity
 
 The kube config should look something like this:
 
-```
+```yaml
 apiVersion: v1
 clusters:
 - cluster:
@@ -464,7 +464,7 @@ What I really want to do is assume a role and not be me (garland.kan) so that ro
 
 I can do this and add in the role flag:
 
-```
+```bash
 aws-iam-authenticator token -i dev.cluster -r arn:aws:iam::123456789:role/KubernetesAdmin
 {"kind":"ExecCredential","apiVersion":"client.authentication.k8s.io/v1alpha1","spec":{},"status":{"token":"k8s-aws-v1.aHR0cHM6Ly9zdHMuYW1hem9uYXdzLmNvbS8_QWN0aW9uPUdldENhbGxlcklkZW50aXR5JlZxxxxxxx"}}
 ```
@@ -473,7 +473,7 @@ That looks cool and authenticated
 
 Adding the -r flag into my kube config:
 
-```
+```yaml
 apiVersion: v1
 clusters:
 - cluster:
@@ -504,7 +504,7 @@ users:
 
 Testing this out:
 
-```
+```bash
 kubectl get nodes -v=7                                
 I1031 14:09:51.084438     576 loader.go:375] Config loaded from file:  clusters/dev-expanse/kubeconfig/kubeconfig
 I1031 14:09:51.090450     576 round_trippers.go:420] GET https://internal-api-dev-k8s-loc-lhnsou-12334568.us-east-1.elb.amazonaws.com/api/v1/nodes?limit=500
@@ -524,7 +524,7 @@ However, now im curious.  I was half expecting it to fail because does that role
 
 Ah it does.  it was already in my `aws-iam-authenticator`'s configmap and my IAM user has the `role/KubernetesAdmin`
 
-```
+```yaml
       mapRoles:
       # statically map arn:aws:iam::123456789:role/KubernetesAdmin to a cluster admin
       - roleARN: arn:aws:iam::123456789:role/KubernetesAdmin
@@ -535,7 +535,7 @@ Ah it does.  it was already in my `aws-iam-authenticator`'s configmap and my IAM
 
 Lets look at the `aws-iam-authenticator` logs to check what it did:
 
-```
+```bash
 aws-iam-authenticator-2wjhm aws-iam-authenticator time="2019-10-31T21:11:12Z" level=info msg="STS response" accountid=123456789 arn="arn:aws:sts::123456789:assumed-role/KubernetesAdmin/1572556271727784364" client="127.0.0.1:41228" method=POST path=/authenticate session=1572556271727784364 userid=AROAIMK75QQC2FPGWWGWW
 aws-iam-authenticator-2wjhm aws-iam-authenticator time="2019-10-31T21:11:12Z" level=info msg="access granted" arn="arn:aws:iam::123456789:role/KubernetesAdmin" client="127.0.0.1:41228" groups="[system:masters]" method=POST path=/authenticate uid="aws-iam-authenticator:123456789:AROAIMK75QQC2FPGWWGWW" username=kubernetes-admin
 ```
@@ -585,7 +585,7 @@ I dont' have java installed locally...doh
 
 
 Trying the docker route for now:
-```
+```bash
 docker run -v ~/.okta/config.properties:/root/.okta/config.properties -it tomsmithokta/okta-awscli-java
 ```
 	-same here, doesnt work and cant find the binary okta-aws
@@ -599,7 +599,7 @@ Downloaded the go binary from their release page:
 
 The setup:  https://github.com/segmentio/aws-okta#adding-okta-credentials
 
-```
+```bash
 root@fa955d3d1c3d:/# aws-okta add
 Okta organization: example         		<---just the first part of the hostname when you log into Okta in your browser
 
@@ -617,7 +617,7 @@ INFO[0032] Added credentials for user garland.kan
 
 Setup your aws config
 
-```
+```bash
 g44@g44:~$ cat ~/.aws/config 
 [default]
 region = us-east-1
@@ -629,7 +629,7 @@ role_arn = arn:aws:iam::123456789:role/Engineering
 
 Lets try to run the command and auth:
 
-```
+```bash
  ~/Downloads/aws-okta-v0.26.3-linux-amd64 --debug exec okta -- kubectl get nodes
 DEBU[0000] Parsing config file /home/g44/.aws/config    
 DEBU[0000] Using KrItemPerSessionStore                  
@@ -670,7 +670,7 @@ make it simplier by just running `aws s3 ls` commmand.
 
 This works:
 
-```
+```bash
 aws-okta --debug exec okta -- aws s3 ls                 
 DEBU[0000] Parsing config file /home/g44/.aws/config    
 DEBU[0000] Using KrItemPerSessionStore                  
@@ -687,7 +687,7 @@ I think i need to change my kubeconfig?
 * per this dock?  https://github.com/segmentio/aws-okta#exec-for-eks-and-kubernetes
 
 
-```
+```yaml
 cat $KUBECONFIG                                       
 apiVersion: v1
 clusters:
@@ -717,7 +717,7 @@ users:
 
 Something more is happing now
 
-```
+```bash
 aws-okta --debug exec okta -- kubectl get nodes -v=7    
 DEBU[0000] Parsing config file /home/g44/.aws/config    
 DEBU[0000] Using KrItemPerSessionStore                  
@@ -747,7 +747,7 @@ exit status 255
 
 `aws-iam-authenticator` logs:
 
-```
+```bash
 aws-iam-authenticator-2wjhm aws-iam-authenticator time="2019-11-01T03:27:47Z" level=info msg="STS response" accountid=123456789 arn="arn:aws:sts::123456789:assumed-role/Engineering/garland.kan@example.com" client="127.0.0.1:41228" method=POST path=/authenticate session=garland.kan@example.com userid=AROAJDSGQ4VHVGA5MQ53Q
 aws-iam-authenticator-2wjhm aws-iam-authenticator time="2019-11-01T03:27:47Z" level=info msg="access granted" arn="arn:aws:iam::123456789:role/Engineering" client="127.0.0.1:41228" groups="[developer]" method=POST path=/authenticate uid="aws-iam-authenticator:123456789:AROAJDSGQ4VHVGA5MQ53Q" username=kubernetes-admin
 ```
@@ -759,7 +759,7 @@ Maybe we don't have the group "developer" mapped to an RBAC role?
 
 Creating:
 
-```
+```yaml
 # For now we will give everyone cluster-admin perms
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -778,7 +778,7 @@ subjects:
 
 Running:
 
-```
+```bash
 aws-okta --debug exec okta -- kubectl get nodes -v=7    
 DEBU[0000] Parsing config file /home/g44/.aws/config    
 DEBU[0000] Using KrItemPerSessionStore                  
@@ -800,7 +800,7 @@ That is working!!
 
 `aws-iam-authenticator` logs still says the same thing:
 
-```
+```bash
 aws-iam-authenticator-h58c8 aws-iam-authenticator time="2019-11-01T03:32:28Z" level=info msg="STS response" accountid=123456789 arn="arn:aws:sts::123456789:assumed-role/Engineering/garland.kan@example.com" client="127.0.0.1:34008" method=POST path=/authenticate session=garland.kan@example.com userid=AROAJDSGQ4VHVGA5MQ53Q
 aws-iam-authenticator-h58c8 aws-iam-authenticator time="2019-11-01T03:32:28Z" level=info msg="access granted" arn="arn:aws:iam::123456789:role/Engineering" client="127.0.0.1:34008" groups="[developer]" method=POST path=/authenticate uid="aws-iam-authenticator:123456789:AROAJDSGQ4VHVGA5MQ53Q" username=kubernetes-admin
 ```
@@ -810,7 +810,7 @@ No new logs in the kube-apiserver when i make this query.  Thought there would h
 
 Now, im trying to change the role im in to:
 
-```
+```yaml
 cat ~/.aws/config                                       
 [default]
 region = us-east-1
@@ -823,7 +823,7 @@ role_arn = arn:aws:iam::123456789:role/KubernetesAdmin
 
 Got back:
 
-```
+```bash
  aws-okta --debug exec okta -- kubectl get nodes         
 DEBU[0000] Parsing config file /home/g44/.aws/config    
 DEBU[0000] Using KrItemPerSessionStore                  
@@ -842,7 +842,7 @@ ok lets try with:  arn:aws:iam::123456789:role/Administrator
 
 It didnt barf on the arn isnt valid:
 
-```
+```bash
 aws-okta --debug exec okta -- kubectl get nodes         
 DEBU[0000] Parsing config file /home/g44/.aws/config    
 DEBU[0000] Using KrItemPerSessionStore                  
@@ -878,7 +878,7 @@ everthing still works with Okta and it is indeed going through Okta for authenti
 
 Came back to this task the next day.  Trying the calls I had previously working:
 
-```
+```bash
 aws-okta --debug exec okta -- kubectl get nodes                         
 DEBU[0000] Parsing config file /home/g44/.aws/config    
 DEBU[0000] Using KrItemPerSessionStore                  
@@ -900,7 +900,7 @@ Now it doesnt work.
 
 This works though.  which should mean I am authenticating through Okta
 
-```
+```bash
 aws-okta --debug exec okta -- aws s3 ls                                 
 DEBU[0000] Parsing config file /home/g44/.aws/config    
 DEBU[0000] Using KrItemPerSessionStore                  
@@ -917,7 +917,7 @@ Ah...we left off switching the `~/.aws/config` role to the Administor one which 
 
 Changing that back to the Engineering role in the `~/.aws/config`.
 
-```
+```bash
 aws-okta --debug exec okta -- kubectl get nodes                         
 DEBU[0000] Parsing config file /home/g44/.aws/config    
 DEBU[0000] Using KrItemPerSessionStore                  
@@ -941,7 +941,7 @@ Working as expected.  Phew...
 
 Checking to see what AWS keys I have in the shell:
 
-```
+```bash
 env | grep -i aws                                                       
 PWD=/home/g44/Documents/managedkube/kubernetes-ops/clusters/aws/kops
 AWS_ACCESS_KEY_ID=xxxxxxx
@@ -952,7 +952,7 @@ OKTA_AWS_APP_URL=https://example.okta.com/home/amazon_aws/xxxxxx/123
 
 Looks like I do have AWS keys in the shell.  Lets unset those:
 
-```
+```bash
 unset AWS_ACCESS_KEY_ID                                                 
 unset AWS_SECRET_ACCESS_KEY                                             
 env | grep -i aws                                                       
@@ -962,7 +962,7 @@ OKTA_AWS_APP_URL=https://example.okta.com/home/amazon_aws/xxxxxx/123
 
 Lets try the same call to auth and get nodes again:
 
-```
+```bash
 aws-okta --debug exec okta -- kubectl get nodes                         
 DEBU[0000] Parsing config file /home/g44/.aws/config    
 DEBU[0000] Using KrItemPerSessionStore                  
@@ -978,7 +978,7 @@ Still working...interesting that there is less logs and it didnt find the other 
 
 Logs from the aws-iam-authenticator:
 
-```
+```bash
 aws-iam-authenticator-2wjhm aws-iam-authenticator time="2019-11-01T16:14:07Z" level=info msg="STS response" accountid=123456789 arn="arn:aws:sts::123456789:assumed-role/Engineering/garland.kan@example.com" client="127.0.0.1:41228" method=POST path=/authenticate session=garland.kan@example.com userid=AROAJDSGQ4VHVGA5MQ53Q
 aws-iam-authenticator-2wjhm aws-iam-authenticator time="2019-11-01T16:14:07Z" level=info msg="access granted" arn="arn:aws:iam::123456789:role/Engineering" client="127.0.0.1:41228" groups="[developer]" method=POST path=/authenticate uid="aws-iam-authenticator:123456789:AROAJDSGQ4VHVGA5MQ53Q" username=kubernetes-admin
 ```
