@@ -13,7 +13,7 @@ simply forget).
 
 Here is a Doc about it that is a must read:
 
-https://github.com/coreos/prometheus-operator/blob/master/Documentation/user-guides/getting-started.md#related-resources
+[https://github.com/coreos/prometheus-operator/blob/master/Documentation/user-guides/getting-started.md#related-resources](https://github.com/coreos/prometheus-operator/blob/master/Documentation/user-guides/getting-started.md#related-resources)
 
 The following also walks you through a concrete example of the usage and how everything is linked together.
 
