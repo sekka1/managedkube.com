@@ -31,20 +31,20 @@ from: 1.12.10-gke.15   to 1.13.11-gke.5
 Checking the version our cluster and nodes are currently at:
 
 ```yaml
-gcloud container clusters list                  
+$ gcloud container clusters list                  
 NAME         LOCATION     MASTER_VERSION  MASTER_IP      MACHINE_TYPE   NODE_VERSION    NUM_NODES  STATUS
 gcp-staging  us-central1  1.12.10-gke.15  34.70.108.205  n1-standard-2  1.12.10-gke.15  3          RUNNING
 ```
 
 ```yaml
-kubectl get nodes                            
+$ kubectl get nodes                            
 NAME                                      STATUS   ROLES    AGE     VERSION
 gke-gcp-staging-generic-1-0364f8f0-x9sg   Ready    <none>   5m33s   v1.12.10-gke.15
 gke-gcp-staging-generic-1-998bcf48-58c1   Ready    <none>   5m38s   v1.12.10-gke.15
 gke-gcp-staging-generic-1-be76e357-npl2   Ready    <none>   5m38s   v1.12.10-gke.15
                                                   
                                                   
-kubectl version                                   
+$ kubectl version                                   
 Client Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.2", GitCommit:"c97fe5036ef3df2967d086711e6c0c405941e14b", GitTreeState:"clean", BuildDate:"2019-10-15T19:18:23Z", GoVersion:"go1.12.10", Compiler:"gc", Platform:"linux/amd64"}
 Server Version: version.Info{Major:"1", Minor:"12+", GitVersion:"v1.12.10-gke.15", GitCommit:"7b5157a7c600aa8ee6e2b36b56c478e030d5bfe2", GitTreeState:"clean", BuildDate:"2019-10-07T20:39:12Z", GoVersion:"go1.11.13b4", Compiler:"gc", Platform:"linux/amd64"}
 ```
@@ -52,7 +52,8 @@ Server Version: version.Info{Major:"1", Minor:"12+", GitVersion:"v1.12.10-gke.15
 Updating the Terraform:
 
 ```yaml
- terragrunt apply
+$ terragrunt apply
+
 [terragrunt] 2019/11/05 16:40:02 Running command: terraform apply
 data.google_compute_network.main-network: Refreshing state...
 google_compute_subnetwork.public_subnet: Refreshing state... [id=us-central1/gcp-staging-gke-public-subnet]
@@ -312,13 +313,13 @@ google_container_cluster.primary: Still modifying... [id=gcp-staging, 19m10s ela
 After the upgrade:
 
 ```yaml
-gcloud container clusters list                    
+$ gcloud container clusters list                    
 NAME         LOCATION     MASTER_VERSION  MASTER_IP      MACHINE_TYPE   NODE_VERSION      NUM_NODES  STATUS
 gcp-staging  us-central1  1.13.11-gke.5   34.70.108.205  n1-standard-2  1.12.10-gke.15 *  2          RUNNING
 ```
 
 ```yaml
-kubectl get nodes                                 
+$ kubectl get nodes                                 
 NAME                                      STATUS   ROLES    AGE   VERSION
 gke-gcp-staging-generic-1-998bcf48-58c1   Ready    <none>   31m   v1.12.10-gke.15
 gke-gcp-staging-generic-1-be76e357-npl2   Ready    <none>   31m   v1.12.10-gke.15
@@ -335,7 +336,8 @@ Now that our masters are at the later version, we want to make our node pools to
 Make the changes in our Terraform values file and run the update:
 
 ```yaml
-terragrunt apply
+$ terragrunt apply
+
 [terragrunt] 2019/11/05 17:07:48 Running command: terraform apply
 google_container_node_pool.node_nodes: Refreshing state... [id=us-central1/gcp-staging/generic-1]
 
@@ -433,7 +435,7 @@ Looking at the GCP web console at this cluster.  It is still updating the nodes.
 I can also see some nodes are updated via `kubectl` and it is rolling through the nodes still:
 
 ```yaml
-kubectl get nodes                                 
+$ kubectl get nodes                                 
 NAME                                      STATUS                        ROLES    AGE   VERSION
 gke-gcp-staging-generic-1-0364f8f0-7qkj   Ready                         <none>   15m   v1.13.11-gke.5
 gke-gcp-staging-generic-1-998bcf48-58c1   Ready                         <none>   51m   v1.13.11-gke.5
@@ -443,7 +445,7 @@ gke-gcp-staging-generic-1-be76e357-npl2   NotReady,SchedulingDisabled   <none>  
 After it finish rolling the nodes the `gcloud` info is updated:
 
 ```yaml
-gcloud container clusters list                    
+$ gcloud container clusters list                    
 NAME         LOCATION     MASTER_VERSION  MASTER_IP      MACHINE_TYPE   NODE_VERSION   NUM_NODES  STATUS
 gcp-staging  us-central1  1.13.11-gke.5   34.70.108.205  n1-standard-2  1.13.11-gke.5  3          RUNNING
 ```
