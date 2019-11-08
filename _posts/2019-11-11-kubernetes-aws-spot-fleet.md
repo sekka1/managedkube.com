@@ -18,9 +18,7 @@ allows you to request a number of different Spot instance types so that your cha
 of a single type is above your requested bid is lower.  The more instance type you
 select the less of a chance you have that you will get priced out of it.
 
-If you are using Kops to build your Kubernetes cluster on AWS, it supports Spot Fleets and
-this is how to set it up:
-https://github.com/kubernetes/kops/blob/master/docs/instance_groups.md#creating-a-instance-group-of-mixed-instances-types-aws-only
+If you are using Kops to build your Kubernetes cluster on AWS, it supports [Spot Fleets](https://github.com/kubernetes/kops/blob/master/docs/instance_groups.md#creating-a-instance-group-of-mixed-instances-types-aws-only).
 
 This post will go through on how to select a set of instances that makes sense to 
 combine with the Kubernetes [cluster-autoscaler](https://github.com/kubernetes/autoscaler).
@@ -29,8 +27,8 @@ This post will not show you how to bring up a Kubernetes cluster.  If you want t
 to use all of these items, head over to our project [kubernetes-ops](https://github.com/ManagedKube/kubernetes-ops) which
 shows you how to maintain Kubernetes cluster life cycle with a Gitops Workflow.
 
-This is a must read before you go on to understand how the cluster-autoscaler works with
-Spot Fleet: https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/aws#using-autoscalinggroup-mixedinstancespolicy
+This is a must read before you go on to understand how the [cluster-autoscaler works with
+Spot Fleet](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/aws#using-autoscalinggroup-mixedinstancespolicy)
 
 # Lets do some simple math to see if this makes sense.  
 
