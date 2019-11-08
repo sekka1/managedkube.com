@@ -9,9 +9,9 @@ keywords: Updating Terraformed GKE clusters via a GitOps Workflow
 This will show you how to update your GKE cluster through a GitOps workflow and shows you how to update
 the clusters in a safe way.
 
-This is based on managing a GKE cluster via Terraform from this project:  https://github.com/ManagedKube/kubernetes-ops
+This is based on managing a GKE cluster via Terraform from this project: [kubernetes-ops](https://github.com/ManagedKube/kubernetes-ops)
 
-GCP/GKE Upgrading docs: https://cloud.google.com/kubernetes-engine/docs/how-to/upgrading-a-cluster
+[GCP/GKE Upgrading docs](https://cloud.google.com/kubernetes-engine/docs/how-to/upgrading-a-cluster)
 
 # masters on auto upgrade?
 
