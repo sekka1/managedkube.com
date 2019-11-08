@@ -18,25 +18,25 @@ Before you begin, you will need the following:
 ## aws-okta
 Maybe not this if you are not using Okta
 
-https://github.com/segmentio/aws-okta/wiki/Installation
+[https://github.com/segmentio/aws-okta/wiki/Installation](https://github.com/segmentio/aws-okta/wiki/Installation)
 
 ## aws-iam-authenticator
 
-https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html
+[https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
 
 
 ## kubectl
 
 If you don't have it already
 
-https://kubernetes.io/docs/tasks/tools/install-kubectl/
+[https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 # Setting up Kops to use authenticator
 
 Setting up the `aws-iam-authenticator` in Kops is not too bad.  A few config changes and deploy it out.
 
 ## Kops
-Kops doc: https://github.com/kubernetes/kops/blob/master/docs/authentication.md#aws-iam-authenticator
+Kops doc: [https://github.com/kubernetes/kops/blob/master/docs/authentication.md#aws-iam-authenticator](https://github.com/kubernetes/kops/blob/master/docs/authentication.md#aws-iam-authenticator)
 
 This doc outlines a few things:
 * setting the authentication yaml in the cluster definition
@@ -46,7 +46,7 @@ There don't seem to be that many steps from the Kops configuration side.
 
 ## aws-iam-authenticator
 
-The setup: https://github.com/kubernetes-sigs/aws-iam-authenticator#how-do-i-use-it
+The setup: [https://github.com/kubernetes-sigs/aws-iam-authenticator#how-do-i-use-it](https://github.com/kubernetes-sigs/aws-iam-authenticator#how-do-i-use-it)
 
 Check if the aws-iam-authenticator's config map is there:
 ```
@@ -59,7 +59,7 @@ very specific to you.
 The role that is created will be used to create a config file for the `aws-iam-authenticator` to use. This file
 is very important and as you will see below, it ties everything together. 
 
-Here is a link to all of the options for this file:  https://github.com/kubernetes-sigs/aws-iam-authenticator#full-configuration-format
+Here is a link to all of the options for this file:  [https://github.com/kubernetes-sigs/aws-iam-authenticator#full-configuration-format](https://github.com/kubernetes-sigs/aws-iam-authenticator#full-configuration-format)
 
 My aws-iam-authenticator's config map was:
 
@@ -130,7 +130,7 @@ The cluster name after `-i` should match the `clusterID` in the `aws-iam-authent
 
 ### Create the IAM roles
 
-Doc: https://github.com/kubernetes-sigs/aws-iam-authenticator#1-create-an-iam-role
+Doc: [https://github.com/kubernetes-sigs/aws-iam-authenticator#1-create-an-iam-role](https://github.com/kubernetes-sigs/aws-iam-authenticator#1-create-an-iam-role)
 
 
 
@@ -197,7 +197,7 @@ Looks like that setting is there.  Just wanted to check.  Nothing I really can d
 
 From above kubernetes should be using this file to auth:
 
-```
+```yaml
 --authentication-token-webhook-config-file=/etc/kubernetes/authn.config
 ```
 
@@ -236,7 +236,7 @@ This is an older version.  Lets go to a later version of Kops
 Searching around, Kops did update the `aws-iam-authenticator` from 0.3 to 0.4 in later releases.  I think
 it is time to upgrade since 0.3 is pretty old:
 
-Kops updated the authenticator: https://github.com/kubernetes/kops/pull/6803
+Kops updated the authenticator: [https://github.com/kubernetes/kops/pull/6803](https://github.com/kubernetes/kops/pull/6803)
 
 
 So i upgraded my Kops to 1.13.
@@ -345,7 +345,7 @@ Then i thought was it the `aws-iam-authenticator`'s config map that is not mappi
 
 Re-reading the doc on the config map helped me out:
 
-https://github.com/kubernetes-sigs/aws-iam-authenticator#full-configuration-format
+[https://github.com/kubernetes-sigs/aws-iam-authenticator#full-configuration-format](https://github.com/kubernetes-sigs/aws-iam-authenticator#full-configuration-format)
 
 I was indeed not mapping the user correctly.
 
@@ -475,7 +475,7 @@ Adding the -r flag into my kube config:
 apiVersion: v1
 clusters:
 - cluster:
-    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMwekNDQWJ1Z0F3SUJBZ0lNRmRMU1M2MW45YXhWVzlBbE1BMEdDU3FHU0liM0RRRUJDd1VBTUJVeEV6QVIKQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13SGhjTk1Ua3hNREk1TVRrek5EQXlXaGNOTWpreE1ESTRNVGt6TkRBeQpXakFWTVJNd0VRWURWUVFERXdwcmRXSmxjbTVsZEdWek1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBCk1JSUJDZ0tDQVFFQXhrNS9DN3dNZTZocGFDWnIwYXoyNEovNExOZk5TOU1HV0R0d1kwK==
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0preE1ESTRNVGt6TkRBeQpXakFWTVJNd0VRWURWUVFERXdwcmRXSmxjbTVsZEdWek1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBCk1JSUJDZ0tDQVFFQXhrNS9DN3dNZTZocGFDWnIwYXoyNEovNExOZk5TOU1HV0R0d1kwK==
     server: https://internal-api-dev-k8s-loc-lhnsou-12334568.us-east-1.elb.amazonaws.com
   name: dev.us-east-1.k8s.local
 contexts:
@@ -559,8 +559,8 @@ Which has roles you can assume on AWS.  Selecting one of those will log you into
 
 There are two projects that I know of that helps with this:
 
-* Okta developers: https://github.com/oktadeveloper/okta-aws-cli-assume-role
-* segmento.io: https://github.com/segmentio/aws-okta
+* Okta developers: [https://github.com/oktadeveloper/okta-aws-cli-assume-role](https://github.com/oktadeveloper/okta-aws-cli-assume-role)
+* segmento.io: [https://github.com/segmentio/aws-okta](https://github.com/segmentio/aws-okta)
 
 Lets try the more official okta-aws-cli-assume-role first
 
