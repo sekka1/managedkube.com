@@ -36,18 +36,18 @@ All of the values files are in there and the `workdir` is based the root of this
 Workdir: `./kubernetes/helm/cert-manager/cert-manager`
 
 Apply cert-manager CRDs before installing (or it will fail)
-```
+```bash
 kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.11/deploy/manifests/00-crds.yaml
 ```
 
 Install cert-manager
-```
+```bash
 kubectl create ns cert-manager
 helm upgrade cert-manager --install --namespace cert-manager -f values.yaml ./ --dry-run
 ```
 
 
-```
+```bash
 helm list --namespace cert-manager
 ```
 
@@ -55,7 +55,7 @@ Install cert-manager-cluster-issuer
 
 Workdir: `./kubernetes/helm/cert-manager/cert-manager-cluster-issuer`
 
-```
+```bash
 helm upgrade cert-manager-cluster-issuer --install --namespace cert-manager -f values.yaml -f environments/gcp-dev/values.yaml ./ --dry-run
 ```
 
@@ -66,12 +66,12 @@ Workdir: `./kubernetes/helm/cert-manager/cert-manager-cluster-issuer`
 
 
 Template:
-```
+```bash
 helm template cert-manager-cluster-issuer --namespace cert-manager -f values.yaml -f ./environments/gcp-dev/values.yaml ./ 
 ```
 
 
-```
+```bash
 helm upgrade cert-manager-cluster-issuer --install --namespace cert-manager -f values.yaml -f ./environments/gcp-dev/values.yaml ./
 ```
 
@@ -90,20 +90,20 @@ kubectl get Issuers,ClusterIssuers,Certificates,CertificateRequests,Orders,Chall
 ```
 
 Delete CRDs:
-```
+```bash
 kubectl delete -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.11/deploy/manifests/00-crds.yaml
 kubectl delete  APIService v1beta1.webhook.cert-manager.io
 ```
 
 Delete helm chart:
-```
+```bash
 helm --namespace cert-manager delete cert-manager
 ```
 
 # Debugging
 
 Creating the certificate:
-```
+```yaml
 ---
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
@@ -120,7 +120,7 @@ spec:
 
 Checkout out what the status of ths certificate is.
 
-```
+```bash
 kubectl -n my-domain get certificate   
 NAME       READY   SECRET         AGE
 my-domain   True    my-domain-tls   4m20s
@@ -128,7 +128,7 @@ my-domain   True    my-domain-tls   4m20s
 
 Then we can describe it:
 
-```
+```bash
 kubectl -n my-domain describe certificate my-domain                       
 Name:         my-domain
 Namespace:    my-domain
@@ -169,7 +169,7 @@ From the `Events` it tells us that it created a new `CertificateRequest` named `
 
 We can describe that CRD to get the status of the request:
 
-```
+```bash
 kubectl -n my-domain describe CertificateRequest my-domain-3817824489
 Name:         my-domain-3817824489
 Namespace:    my-domain
@@ -223,7 +223,7 @@ I was missing the `kind`:  `kind: ClusterIssuer`
 
 The `Certificate` definition should be:
 
-```
+```yaml
 ---
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
@@ -241,14 +241,14 @@ spec:
 
 Lets apply this again:
 
-```
+```bash
 kubectl -n my-domain apply -f ~/Downloads/certificate.yaml
 certificate.cert-manager.io/my-domain unchanged
 ```
 
 Describing the cert:
 
-```
+```bash
 kubectl -n my-domain describe certificate my-domain         
 Name:         my-domain
 Namespace:    my-domain
@@ -284,8 +284,7 @@ Events:
 
 Describing the `CertificateRequest`
 
-```
-
+```bash
 kubectl -n my-domain describe CertificateRequest my-domain-1647441326
 Name:         my-domain-1647441326
 Namespace:    my-domain
@@ -331,7 +330,7 @@ Events:
 
 We can also look at the cert-manager's logs to see what is happening:
 
-```
+```bash
 kubectl -n cert-manager logs -f cert-manager-67d8bc785c-4w7rf
 I1116 03:46:58.236681       1 controller.go:129] cert-manager/controller/challenges "level"=0 "msg"="syncing item" "key"="my-domain/my-domain-1647441326-1246269154-1548188278" 
 I1116 03:46:58.236752       1 metrics.go:385] cert-manager/metrics "level"=3 "msg"="incrementing controller sync call count"  "controllerName"="challenges"
@@ -357,13 +356,13 @@ There is a lot of different things going on in here.
 
 Cert-manager has access to create DNS records and it looks like it created one and searching for it:
 
-```
+```bash
 I1116 03:46:58.241334       1 wait.go:277] Searching fqdn "_acme-challenge.my-domain.example.com." using seed nameservers
 ```
 
 It is querying it and it looks like it currently can't resolve it and declaring that the DNS has not proprogated yet:
 
-```
+```bash
 I1116 03:46:58.356011       1 wait.go:123] Looking up TXT records for "_acme-challenge.my-domain.example.com."
 E1116 03:46:58.356112       1 sync.go:184] cert-manager/controller/challenges "msg"="propagation check failed" "error"="DNS record for \"my-domain.example.com\" not yet propagated" "dnsName"="my-domain.example.com" "resource_kind"="Challenge"
 ```
@@ -372,7 +371,7 @@ This makes sense, since adding a DNS entry sometime takes a while to proprogate.
 
 Subsequently it can resolve the DNS and the certificate request is approved by Let's Encrypt.
 
-```
+```bash
 I1116 04:00:45.052096       1 sync.go:63] cert-manager/controller/orders "level"=3 "msg"="updated Order resource status successfully" "resource_kind"="Order" "resource_name"="my-domain-1647441326-1246269154" "resource_namespace"="my-domain" 
 I1116 04:00:45.135225       1 sync.go:63] cert-manager/controller/orders "level"=3 "msg"="updated Order resource status successfully" "resource_kind"="Order" "resource_name"="my-domain-1647441326-1246269154" "resource_namespace"="my-domain" 
 I1116 04:00:45.619888       1 event.go:255] Event(v1.ObjectReference{Kind:"Order", Namespace:"my-domain", Name:"my-domain-1647441326-1246269154", UID:"a9415afa-0825-11ea-a9f7-42010a660008", APIVersion:"acme.cert-manager.io/v1alpha2", ResourceVersion:"32862033", FieldPath:""}): type: 'Normal' reason: 'Complete' Order completed successfully
@@ -394,20 +393,20 @@ migrate currently deployed helm releases from Helm v2 to v3.
 
 
 My current helm version:
-```
+```bash
 helm version                             
 Client: &version.Version{SemVer:"v2.12.3", GitCommit:"eecf22f77df5f65c823aacd2dbd30ae6c65f186e", GitTreeState:"clean"}
 Server: &version.Version{SemVer:"v2.12.3", GitCommit:"eecf22f77df5f65c823aacd2dbd30ae6c65f186e", GitTreeState:"clean"}
 ```
 
 My current Helm v2 releases:
-```
+```bash
 helm list                               
 NAME                                            REVISION        UPDATED                         STATUS          CHART                           APP VERSION     NAMESPACE           
 cert-manager                                    1               Sat Nov 16 07:18:06 2019        DEPLOYED        cert-manager-v0.11.0            v0.11.0         cert-manager       
 ```
 
-```
+```bash
 ~/Downloads/helm-v3.0.0-linux-amd64/linux-amd64/helm 2to3 convert --delete-v2-releases cert-manager --dry-run
 
 2019/11/16 07:24:07 NOTE: This is in dry-run mode, the following actions will not be executed.
@@ -422,7 +421,7 @@ cert-manager                                    1               Sat Nov 16 07:18
 
 The dry run output looks reasonable.  Lets run it for reals this time with the `--dry-run` flag:
 
-```
+```bash
 ~/Downloads/helm-v3.0.0-linux-amd64/linux-amd64/helm 2to3 convert --delete-v2-releases cert-manager         
 2019/11/16 07:24:50 Release "cert-manager" will be converted from Helm v2 to Helm v3.
 2019/11/16 07:24:50 [Helm 3] Release "cert-manager" will be created.
@@ -438,7 +437,7 @@ The dry run output looks reasonable.  Lets run it for reals this time with the `
 
 Lets list it:
 
-```
+```bash
 ~/Downloads/helm-v3.0.0-linux-amd64/linux-amd64/helm list --all-namespaces
 NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
 cert-manager    cert-manager    1               2019-11-16 15:18:06.162681463 +0000 UTC deployed        cert-manager-v0.11.0    v0.11.0  
@@ -446,7 +445,7 @@ cert-manager    cert-manager    1               2019-11-16 15:18:06.162681463 +0
 
 Looks like it is in the Helm v3 now.
 
-```
+```bash
 kubectl -n cert-manager get pods -o wide
 NAME                                       READY   STATUS    RESTARTS   AGE     IP            NODE                                  NOMINATED NODE   READINESS GATES
 cert-manager-756d9f56d6-7f7dm              1/1     Running   0          7m57s   10.103.5.56   gke-gcp-dev-generic-1-16723766-xcs5   <none>           <none>
@@ -457,7 +456,7 @@ The `cert-manager` pods are all still there with no changes
 
 Running a deploy with Helm v3 to test it out:
 
-```
+```bash
 ~/Downloads/helm-v3.0.0-linux-amd64/linux-amd64/helm upgrade cert-manager --install --namespace cert-manager -f values.yaml ./         
 load.go:112: Warning: Dependencies are handled in Chart.yaml since apiVersion "v2". We recommend migrating dependencies to Chart.yaml.
 Error: UPGRADE FAILED: cannot patch "cert-manager-cainjector" with kind Deployment: Deployment.apps "cert-manager-cainjector" is invalid: spec.selector: Invalid value: v1.LabelSelector{MatchLabels:map[string]string{"app":"cainjector", "app.kubernetes.io/instance":"cert-manager", "app.kubernetes.io/managed-by":"Helm", "app.kubernetes.io/name":"cainjector"}, MatchExpressions:[]v1.LabelSelectorRequirement(nil)}: field is immutable && cannot patch "cert-manager" with kind Deployment: Deployment.apps "cert-manager" is invalid: spec.selector: Invalid value: v1.LabelSelector{MatchLabels:map[string]string{"app":"cert-manager", "app.kubernetes.io/instance":"cert-manager", "app.kubernetes.io/managed-by":"Helm", "app.kubernetes.io/name":"cert-manager"}, MatchExpressions:[]v1.LabelSelectorRequirement(nil)}: field is immutable
