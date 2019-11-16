@@ -100,19 +100,6 @@ Delete helm chart:
 helm --namespace cert-manager delete cert-manager
 ```
 
-
-
-# Try to get a cert via dns01
-
-next todo....
-
-
-~/Downlowds/certificate.yaml
-
--doesnt it need the gcp service account secrets?
-
-
-
 # Debugging
 
 Creating the certificate:
