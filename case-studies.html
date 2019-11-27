@@ -11,13 +11,227 @@ permalink: /case-studies
            <!-- <h1 class="header center blue">Why DevOps Services?</h1> -->
            <h1 class="header center blue">Case Studies</h1>
 
-            <br/><br/>
+            <!--<br/><br/>
             <a href="/assets/pdf/ManagedKube-Case-Studies.pdf" download><div class="button"><span>Download PDF of Case Studies<span></div></a>
-        
+			-->
        </div>
    </div>
 
-                   <!-- Contact Form -->
+
+   <div class="white-bg what-we-do">
+		<div class="section">
+
+			<h1 class="header center blue"><img src="/assets/images/lucidworks.png" title="lucidworks" alt="lucidworks logo"></h1>
+			
+
+			<p class="text left blue">
+				<b>The Company:</b> LucidWorks is the maintainer of the popular open source software Solr. They traditionally have sold a packaged enterprise solution of the Solr software.
+			</p><br/>
+
+			<p class="text left blue">
+				<b>The Problem:</b> LucidWorks’ customers were increasingly asking for a hosted (SaaS) solution of the software
+because Solr is not easy to operate and scale. Their internal team had AWS experience from using instances
+for development purposes but did not have experience running and operating a production SaaS solution.
+			</p><br/>
+
+			<p class="text left blue">
+				<b>Our Solution:</b> ManagedKube helped LucidWorks build a SaaS solution on the cloud in less than 8 months
+start-to-finish with a Docker/Kubernetes system in 2017 (just 18 months after Kubernetes was launches)
+			</p><br/>
+
+			<p class="text left blue">
+				<b>Our Approach:</b> We collaboratively worked with LucidWorks’ management and development teams to map out
+the problem, establish what success would look like, and to ultimately build the best solution to achieve that
+end result. We answered key questions about how to build the infrastructure, such as:
+				<ul class="text left blue">
+					<li>Do we go with a configuration management tool such as Chef, Puppet, or Ansible?</li>
+					<li>Do we use Cloudformation or Terraform to build the infrastructure?</li>
+					<li>What OS should we use?</li>
+					<li>What does the development life cycle look like?</li>
+				</ul>
+
+			</p><br/>
+
+			<p class="text left blue">
+				The most critical question that we helped LucidWorks tackle was, should Lucidworks build an infrastructure
+model with a configuration management base or Kubernetes? In 2017, there were still a lot of folks who
+believed that using configuration management to create programmatic infrastructure as code was the best
+solution. However, we firmly believed that containers and Kubernetes are a better way of creating and
+managing infrastructure (which the passage of time has proved out) and were able to guide Lucidworks to
+building a highly scalable infrastructure on AWS.
+			</p><br/>
+			
+		</div>
+	</div>
+
+
+
+
+
+
+	
+
+
+	<div class="light-blue-bg what-we-do">
+		<div class="section">
+
+			<h1 class="header center blue"><img src="/assets/images/guardanthealth.png" title="guardanthealth" alt="guardanthealth logo"></h1>
+			
+
+			<p class="text left blue">
+				<b>The Company:</b> GuardantHealth is a public biotech company that develops blood tests for early detection in
+				high-risk populations and recurrence monitoring in cancer survivors.
+			</p><br/>
+
+			<p class="text left blue">
+				<b>The Problem:</b> GuardantHealth’s compute operations were entirely on-premise when ManagedKube started
+				working with them in 2016. They wanted to explore what moving to the cloud would mean for them, especially
+				considering HIPAA privacy requirements. ManagedKube worked with them to move their genome sequencing
+				pipeline to run in the cloud as a prototype for the rest of their compute.
+			</p><br/>
+
+			<p class="text left blue">
+				<b>Our Solution:</b> 
+			</p><br/>
+
+			<p class="text left blue">
+				<b>1)</b> We designed the process and led the implementation team to copy local genome sequencing data to
+					AWS via AWS Snowball and over the internet (700TB of total data moved at 2TB/day), taking great
+					care to make these data transfers secure and reliable.
+			</p><br/>
+
+			<p class="text left blue">
+				<b>2)</b> We designed and built infrastructure with:
+
+				<ul class="text left blue">
+					<li>Multi-region data at rest design with rules to age data out to lower tiered storage to make
+						holding this amount of data cost effective</li>
+					<li>Automation constructs on how specific data can be retrieved and loaded into an AWS compute
+							environment to re-run the data pipeline on it</li>
+					<li>A Kubernetes platform for running web type workloads for development and production
+						environments on AWS.</li>
+					<li>Full monitoring, logging, and visibility packages</li>
+					<li>A fully automated CI/CD pipeline to build and test the software, containerize it, perform
+						integration tests, and a deployment sequence into: dev, qa, staging, and production.</li>
+				</ul>
+			</p><br/>
+
+			<p class="text left blue">
+				<b>Our Approach:</b> The ManagedKube team worked with GuardantHealth to understand how the genome sequencing pipeline
+				worked end-to-end, what steps were involved, and how to validate a successful run. With this knowledge, we
+				created a pipeline that would run in AWS. We showed various configurations of the pipeline running on
+				bigger/smaller machines and even Spot Instances.
+
+			</p><br/>
+
+			
+		</div>
+	</div>	
+
+
+
+
+
+
+
+
+
+
+
+	<div class="white-bg what-we-do">
+		<div class="section">
+
+			<h1 class="header center blue"><img src="/assets/images/tillster.png" title="tillster" alt="tillster logo"/></h1>
+			
+
+			<p class="text left blue">
+				<b>The Company:</b>  Tillster creates online and mobile ordering systems for companies such as Kentucky Fried
+				Chicken and Jollibee. They are responsible for these companies’ back end infrastructure, which often
+				interfaced with local stores to get their menu and pricing. These systems also processed credit cards which
+				means they are subject to PCI level 2 compliance.
+			</p><br/>
+
+			<p class="text left blue">
+				<b>The Problem:</b> Tillster needed help transforming their development workflow and systems. Deployment of new
+				code was time consuming, involved many people, and was typically performed at off hours, which the team
+				disliked. Plus, their infrastructure was hard to maintain.
+			</p><br/>
+
+			<p class="text left blue">
+				<b>Our Solution:</b> ManagedKube shifted a lot of their tenants over to the new containerized system and paved the
+				way for shifting the rest of their tenants over to the new system. We are happy to say that the Tillster team has
+				fully taken over operating and maintenance of the system that we built with them.
+			</p><br/>
+
+			<p class="text left blue">
+				<b>Our Approach:</b> ManagedKube talked to all of the stakeholders (management, program managers, and
+				developers) at Tillster to understand everyone’s pain points. We took this information and created a plan for
+				how to move forward with a next generation development workflow and containerized platform. After
+				discussion and revisions with the Tillster team, we led the implementation of this plan. We slotted fully into their
+				Agile sprint cycles, attending scrum meetings like full-time employees, to implement and deploy the new
+				solution.<br/><br/>
+				The most critical question that we helped Tillster answer is, how should they migrate their current application to
+				a container running on Kubernetes? Should they start from an empty container and build it back from the
+				ground up or should they work from the current Chef builds?<br/><br/>
+				We recommended that they take an entirely built instance of the application and copy this directly into a
+				container to launch onto Kubernetes. This allowed us to do two things: quickly test how and if their workload
+				would work on Kubernetes and a mostly finished product where we can build an automated build and deploy
+				pipeline. While this was not efficient and not a product you would run in production, it did give us a
+				development workflow where we had a testable object with very defined outputs and a process to start
+				changing this application. With this workflow in place, the team started to pull apart the container and splitting
+				out parts that had natural separations into microservices. They also pulled out the secrets and configurations needed to make the containers portable. Lastly, the team refactored the artifacts built in the container into
+				other pipelines to make the whole process reproducible. This approach allowed multiple people to work on
+				different pieces of the application at the same time without affecting each other. They could then integrate each
+				piece back in when it was completed and tested. As a result of this strategy, we were able to refactor the
+				image we copied into the container image and separate it out into multiple microservices, with everything
+				reproducible via code and in an automated pipeline.<br/><br/>
+
+				A key characteristic of the system we built for Tillster was a CI/CD pipeline that abstracted away most of the
+infrastructure and deployment from their developers. This set-up simplifies the deployment process for
+software developers because they only need to interface with Git and Jenkins. They do not need to interface
+with Kubernetes directly. Their workflow starts with Git, where they make changes to the versions of the
+software they want to build and deploy. Once that change has been committed and pushed into a branch, the
+developer can give that information to Jenkins for building and deploying. Tillster has a complex multistep
+build pipeline, sourcing artifacts from various places and building multiple containers for a deployment.
+Jenkins automates this complexity with one build config that the developer has full control of. Once the
+artifacts such as the containers are built and tested, the developer has options in the Jenkins GUI to deploy
+this set of artifacts to an environment (Kubernetes cluster). From there, Jenkins will run automated tests
+against that environment to ensure it is working as expected.
+			</p><br/>
+
+
+		</div>
+	</div>
+
+
+
+
+
+
+	   	<!-- Why ManagedKube -->
+		   <div class="white-bg what-we-do">
+			<div class="section">
+   
+			   <!-- <h1 class="header center blue">Why DevOps Services?</h1> -->
+			   <h1 class="header center blue">Why ManagedKube?</h1>
+   
+			   <p class="text center blue">
+					We offer our deep expertise in putting open source pieces together to build your infrastructure. As freelance consultants, we can quickly and economically build your infrastructure because we’ve done it countless times before. While you focus on your application, we will take care of everything infrastructure related.
+				</p>
+				<br/>
+
+				<br/><br/>
+		   <a href="/our-difference"><div class="button"><span>Learn About Our Difference<span></div>
+
+		   </div>
+	   </div>
+
+
+
+
+
+
+    <!-- Contact Form -->
 	<div class="white-bg get-in-touch-today home-form" id="cost-form">
 		<div class="section">
 		  <!-- <h1 class="header center blue">Find out more or start free trial</h1> -->
