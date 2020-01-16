@@ -4,6 +4,8 @@ title: Using the AWS CLI - find and terminate an EC2 Instance
 categories: aws cli ec2
 keywords: aws cli ec2
 ---
+{%- include twitter-button-blank.html -%}
+
 ![Delete]({{ "/assets/blog/images/delete-button.jpg" | absolute_url }})
 
 Sometimes you need to delete an EC2 instance but dont want to go into the AWS

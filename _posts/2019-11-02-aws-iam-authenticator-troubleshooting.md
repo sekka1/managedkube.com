@@ -4,6 +4,7 @@ title: AWS IAM Authenticator Troubleshooting
 categories: AWS IAM Authenticator Troubleshooting
 keywords: AWS IAM Authenticator Troubleshooting okta
 ---
+{%- include twitter-button-blank.html -%}
 
 I was setting up the `aws-iam-authenticator` to work with a kops cluster the other day and ran into all 
 kinds of issues.  Thought it would be nice to document out what I did to troubleshoot it.  

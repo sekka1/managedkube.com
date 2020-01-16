@@ -4,6 +4,7 @@ title: Kubernetes Troubleshooting a Deployment
 categories: Kubernetes troubleshooting
 keywords: Kubernetes troubleshooting
 ---
+{%- include twitter-button-blank.html -%}
 
 I have launched my deployment but when i list the pods, I don't see a pod for
 that deployment.  How would I troubleshoot this and what would I look for.

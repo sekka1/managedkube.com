@@ -6,6 +6,7 @@ keywords: Kubernetes ingress flows
 author: Garland Kan
 
 ---
+{%- include twitter-button-blank.html -%}
 
 Kubernetes is a great platform to run your application on, and it handles a lot of the heavy lifting on wiring up your application together.
 

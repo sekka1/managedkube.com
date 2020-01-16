@@ -4,6 +4,7 @@ title: How to use Prometheus and k8sBot
 categories: GKE Prometheus k8sBot
 keywords: GKE Prometheus k8sBot
 ---
+{%- include twitter-button-blank.html -%}
 
 This is us eating our own dog food.  How else are we going to find these use
 cases =)

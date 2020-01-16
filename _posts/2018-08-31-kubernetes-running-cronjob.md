@@ -4,6 +4,7 @@ title: Kubernetes Cron Jobs
 categories: kubernetes cron job
 keywords: kubernetes cron job
 ---
+{%- include twitter-button-blank.html -%}
 
 Sometime you just have to run a cronjob that does something and sometime you have
 to run a cronjob that restarts a service.  Yeah, unfortunately this is a thing.
