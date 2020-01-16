@@ -114,6 +114,8 @@ With a range like that and we are using a `/24` CIDR block that would give us a 
 So it looks like our subnet is too small.  It will not be able to assign out any more IP blocks out to new nodes.
 
 
+## Share this article:
 
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="How to troubleshoot out of quota and IP scaling issues on a #GKE cluster: https://managedkube.com/gcp/scaling/and/quota/issues/troubleshooting/2020/01/15/gcp-scaling-quota.html" data-via="managedkube" data-hashtags="#GCP #GKE #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
