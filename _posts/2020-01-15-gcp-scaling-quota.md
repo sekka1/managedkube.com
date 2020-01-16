@@ -16,7 +16,7 @@ Tweet</a>
 Small clusters usually runs fine and the problems usually happens when you start to scale up.  Here are some issues you can encounter and how to solve them.
 
 - [Maxed out your quotas](#maxed-out-your-quotas)
-- [Out of IP addresses](#out-of-ip-addresses-1)
+- [Out of IP addresses](#out-of-ip-addresses)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
