@@ -5,7 +5,7 @@ categories: GCP Scaling and Quota Issues Troubleshooting
 keywords: GCP Scaling and Quota Issues Troubleshooting
 ---
 
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="How to troubleshoot out of quota and IP scaling issues on a #GKE cluster" data-via="managedkube" data-hashtags="#GCP #GKE #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="" data-via="managedkube" data-hashtags="#troubleshooting #devops #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 # GKE Scaling issues
 
@@ -116,6 +116,6 @@ So it looks like our subnet is too small.  It will not be able to assign out any
 
 ## Share this article:
 
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="How to troubleshoot out of quota and IP scaling issues on a #GKE cluster" data-via="managedkube" data-hashtags="#GCP #GKE #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="" data-via="managedkube" data-hashtags="#troubleshooting #devops #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
