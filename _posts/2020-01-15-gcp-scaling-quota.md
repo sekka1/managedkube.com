@@ -5,6 +5,12 @@ categories: GCP Scaling and Quota Issues Troubleshooting
 keywords: GCP Scaling and Quota Issues Troubleshooting
 ---
 
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="How to troubleshoot out of quota and IP scaling issues on a #GKE cluster: https://managedkube.com/gcp/scaling/and/quota/issues/troubleshooting/2020/01/15/gcp-scaling-quota.html" data-via="managedkube" data-hashtags="#GCP #GKE #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Hello%20world">
+Tweet</a>
+
 # GKE Scaling issues
 
 Small clusters usually runs fine and the problems usually happens when you start to scale up.  Here are some issues you can encounter and how to solve them.
