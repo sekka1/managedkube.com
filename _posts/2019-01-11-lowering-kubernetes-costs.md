@@ -6,6 +6,8 @@ keywords: kubernetes cloud costs
 
 ---
 
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="The Definitive Guide to Lowering Cloud Costs of Kubernetes Clusters: https://managedkube.com/kubernetes/cloud/costs/2019/01/11/lowering-kubernetes-costs.html" data-via="managedkube" data-hashtags="#troubleshooting #devops #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 * TOC
 {:toc}
 
@@ -208,3 +210,5 @@ You can use all of the tools both independently and together to dramatically low
 3. Don't forget to address the tradeoffs of the above tools so your clusters are stable
 
 {%- include blurb-consulting.md -%}
+
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="The Definitive Guide to Lowering Cloud Costs of Kubernetes Clusters: https://managedkube.com/kubernetes/cloud/costs/2019/01/11/lowering-kubernetes-costs.html" data-via="managedkube" data-hashtags="#troubleshooting #devops #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
