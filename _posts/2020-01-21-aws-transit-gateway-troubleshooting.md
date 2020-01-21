@@ -121,18 +121,17 @@ What we want to note here is that the destination route for this side we want to
 # Conclusion
 Yes, this is tedious.  I wish it wasn't so.  You have to maticulously go through the path and make sure that each route table is in place and that the IDs that it is using is the correct one.  There isn't such great visiblity into the networking and this is the only way I found that is effective.  If there is a routing problem, I first make sure everything is in the correct place.  Then expand my troubleshooting efforts out from there.
 
+# Terraform that created this Transit Gateway Network
+The troubleshooting technique above is generic to most Transit Gatway setups no matter how it was created.  If you would like to see how it was created or create the above setup or a similar setup with Terraform, I have published all of the modules and example usage for it here: [https://github.com/ManagedKube/kubernetes-ops/releases/tag/v0.1.14](https://github.com/ManagedKube/kubernetes-ops/releases/tag/v0.1.14).
 
-
-
-
-
-
-
-
-
+You can use this this set of modules to create this exact setup or something similar to it using the various Transit Gateway modules in here.
 
 ## Share this article:
 
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="" data-via="managedkube" data-hashtags="#troubleshooting #devops #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
+Contact me if you have any questions about this or want to chat: g@managedkube.com
+
+
+{%- include social.html -%}
