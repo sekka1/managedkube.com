@@ -37,3 +37,6 @@ You can combine the follow and last x number of lines options
 ``` yaml
 kubectl -f --tail=10 <pod_name>
 ```
+
+<!-- Bog footer share -->
+{%- include blog-footer-share.html -%}

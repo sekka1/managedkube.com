@@ -115,3 +115,6 @@ $ vim ~/Downloads/cert.pem
 $ openssl x509 -enddate -noout -in ~/Downloads/cert.pem
 notAfter=Dec 25 17:08:14 2018 GMT
 ```
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

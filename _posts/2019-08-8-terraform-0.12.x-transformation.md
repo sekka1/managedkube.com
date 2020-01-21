@@ -75,3 +75,6 @@ You might see blocks of comments with TODO in them and these are the items that 
 Examples of a Terraform/Terragrunt conversion: https://github.com/ManagedKube/kubernetes-ops/pull/17
 
 {%- include blurb-consulting.md -%}
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

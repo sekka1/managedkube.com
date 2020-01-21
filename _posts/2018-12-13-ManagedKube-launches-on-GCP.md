@@ -22,3 +22,6 @@ Quickly identify ways to optimize your cloud spend
 - Understand product margins
 - Forecast and plan budgets better
 - Try ManagedKube today: managedkube.com. One-click installation on GKE and command line install on all other cloud providers.
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

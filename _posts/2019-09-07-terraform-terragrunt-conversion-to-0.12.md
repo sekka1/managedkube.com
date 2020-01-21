@@ -496,3 +496,6 @@ Here is the full Github Pull Request for the changes described above:
 [https://github.com/ManagedKube/kubernetes-ops/pull/28](https://github.com/ManagedKube/kubernetes-ops/pull/28)
 
 {%- include blurb-consulting.md -%}
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

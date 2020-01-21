@@ -166,3 +166,6 @@ from there you might even have to interact with `docker` to get more logs and de
 on what the problem is.
 
 {%- include blurb-consulting.md -%}
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

@@ -44,3 +44,6 @@ I would also recommend using some kind of automated way of bringing up a Kuberne
 [kubadm]: https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
 [kube-spray]: https://github.com/kubernetes-incubator/kubespray
 [gke]: https://cloud.google.com/kubernetes-engine/
+
+<!-- Bog footer share -->
+{%- include blog-footer-share.html -%}

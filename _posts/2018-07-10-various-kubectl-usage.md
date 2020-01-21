@@ -79,3 +79,6 @@ kubectl port-forward $(kubectl get pod -o=name -lcomponent=... | awk -F/ '{print
 
 
 Being able to port forward to a service is coming: https://github.com/kubernetes/kubernetes/pull/59809
+
+<!-- Bog footer share -->
+{%- include blog-footer-share.html -%}

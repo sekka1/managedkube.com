@@ -211,4 +211,6 @@ You can use all of the tools both independently and together to dramatically low
 
 {%- include blurb-consulting.md -%}
 
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="" data-via="managedkube" data-hashtags="#troubleshooting #devops #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}
+

@@ -474,14 +474,5 @@ then that would matter because deleting it would mean downtime.
 I also confirmed that installing the `cert-manager` with Helm v3 and upgrading it works as expected.  So I guess
 with all migrations it is not perfect.
 
-
-
-
-
-
-
-
-
-
-
-
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

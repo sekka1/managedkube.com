@@ -195,3 +195,6 @@ The `nslookup` should return us an answer that has our external load balancer’
 
 ## Summary
 This walk through took you through the traffic flow on how traffic from the internet will get to your application (aka pod). Everything shown here is in a working state. It is good to see what to expect in a working state so that you can compare to a nonworking one. I hope the series of commands and what to look for helps you out troubleshooting your Kubernetes application.
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

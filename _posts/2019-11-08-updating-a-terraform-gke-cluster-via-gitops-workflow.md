@@ -456,6 +456,6 @@ gcp-staging  us-central1  1.13.11-gke.5   34.70.108.205  n1-standard-2  1.13.11-
 This gives us a very nice workflow on updating our cluster through a GitOps workflow.  We update the version
 we want in Git and we manually apply this to the cluster.
 
-
-
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}
 

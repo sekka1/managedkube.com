@@ -77,3 +77,6 @@ roleRef:
 ```
 
 This will give the user `bob` the rights to perform the above actions in the namespace `my-namespace`
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

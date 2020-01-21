@@ -189,3 +189,6 @@ PodCIDR:                     100.104.146.0/24
 ```
 
 This all looks good.
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

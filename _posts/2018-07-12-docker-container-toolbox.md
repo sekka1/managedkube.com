@@ -52,3 +52,6 @@ aws s3 sync . s3://mybucket
 [aws-cli]: https://aws.amazon.com/cli/
 [docker]: https://www.docker.com
 [docker-hub]: https://hub.docker.com
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

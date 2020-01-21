@@ -111,8 +111,5 @@ With a range like that and we are using a `/24` CIDR block that would give us a 
 So it looks like our subnet is too small.  It will not be able to assign out any more IP blocks out to new nodes.
 
 
-## Share this article:
-
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="" data-via="managedkube" data-hashtags="#troubleshooting #devops #kubernetes" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

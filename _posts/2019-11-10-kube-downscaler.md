@@ -84,6 +84,5 @@ Fri Nov  8 02:49:28 UTC 2019
 
 Looks like it scaled down and up as I configured it.
 
-
-
-
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

@@ -124,3 +124,6 @@ Events:
   Warning  FailedCreate  76s (x15 over 2m38s)  replicaset-controller  Error creating: pods "cost-attribution-mk-agent-6c78b8757f-" is forbidden: error looking up service account kubernetes-cost-attribution/cost-attribution-kube-state-metric: serviceaccount "cost-attribution-kube-state-metric" not found
 
 ```
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

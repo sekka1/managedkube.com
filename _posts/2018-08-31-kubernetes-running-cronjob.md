@@ -116,3 +116,6 @@ Since we have to change something in the labels to induce a `rolling-update` for
 patch.  These pod names are guaranteeded to be unique.
 
 There we have it.  A simple cron job with limited permissions to perform a task.
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

@@ -55,3 +55,6 @@ kube-dns-autoscaler-69c5cbdcdd-krfn9                             0/1       Pendi
 They were still in pending state which would make sense.
 
 This is showing there are a few level at play here from the instance to kubernetes
+
+<!-- Bog footer share -->
+{%- include blog-footer-share.html -%}

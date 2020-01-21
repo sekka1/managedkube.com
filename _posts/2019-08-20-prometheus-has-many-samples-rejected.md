@@ -92,3 +92,6 @@ namespaceSelector:
 This fixed the problem and the alarm cleared up.
 
 {%- include blurb-consulting.md -%}
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

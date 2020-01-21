@@ -21,3 +21,6 @@ yaml format that describes everything about the cluster (https://github.com/kube
 But now you have more than one of these yaml files and when you update you have to make sure each one is updated.  This leads you to the cluster templating functionality the kops has to help you out:  https://github.com/kubernetes/kops/blob/master/docs/cluster_template.md
 
 Now you can have one source `cluster.yaml` file which has templated out the names, region, etc and you have a `values.yaml` files which values for each cluster you want to make.
+
+<!-- Bog footer share -->
+{%- include blog-footer-share.html -%}

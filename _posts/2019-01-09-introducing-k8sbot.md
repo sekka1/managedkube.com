@@ -66,3 +66,6 @@ I’ve run into this issue countless times. I’m looking at the lines of servic
 We’d love to hear what you think about k8sBot. Would a Kubernetes troubleshooting chatbot be useful to you? What are the problems that you’d like k8sBot to help you solve? Drop us a line at info@managedkube.com or fill out the form below. Thanks a lot!
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKBI65sB6Zq3nZXz9epiGinYG86z2LN00ob3aI57mQQG8GoQ/viewform?embedded=true" width="640" height="1874" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

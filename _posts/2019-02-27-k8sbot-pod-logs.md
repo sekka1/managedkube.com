@@ -18,3 +18,6 @@ the pod and post it to Slack.
 Interested in giving k8sBot a try? <A HREF="https://managedkube.com/">Learn more</a> or <A HREF="https://managedkube.com/free-k8sbot-trial-signup">start a free 30 day trial</a>
 
 {%- include blurb-consulting.md -%}
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

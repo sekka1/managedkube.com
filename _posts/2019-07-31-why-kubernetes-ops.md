@@ -41,3 +41,6 @@ If you wanted a first step Kubernetes tutorial this is not it.  This is meant fo
 Also remember that most demo goes through how to do the initial setup only and does not talk about the entire lifecycle if the software.  Initial setup is probably about 20 percent of the life of the application.  Each component with need to be updated or changed to meet your changing needs over time.  You need a sane way of doing these changes, especially in production.  So this reference implementation also embodies this idea.
 
 Here is the repository on how to get started:  https://github.com/ManagedKube/kubernetes-ops/blob/master/docs/the-easier-way.md
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

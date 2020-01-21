@@ -168,3 +168,6 @@ changes to my cluster.  Changing any of these without being certain what it will
 do exactly can mean major downtime!  I know this is mostly just a diff of some
 configs but it is presented out so well that every time I apply this type of changes
 it makes me smile =).
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

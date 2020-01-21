@@ -115,3 +115,6 @@ I find this awesome!  It is very expressive on what config is changing and it di
 it to my output in a clear and concise manor.
 
 {%- include blurb-consulting.md -%}
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}

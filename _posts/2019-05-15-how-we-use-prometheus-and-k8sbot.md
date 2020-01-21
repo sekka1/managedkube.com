@@ -42,3 +42,6 @@ at the time, like this one.  The final fix was to update the password used to pu
 these images and we are back!
 
 {%- include blurb-consulting.md -%}
+
+<!-- Blog footer share -->
+{%- include blog-footer-share.html -%}
