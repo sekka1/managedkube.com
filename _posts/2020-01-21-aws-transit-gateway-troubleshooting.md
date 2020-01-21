@@ -126,4 +126,5 @@ The troubleshooting technique above is generic to most Transit Gatway setups no 
 
 You can use this this set of modules to create this exact setup or something similar to it using the various Transit Gateway modules in here.
 
+<!-- Bog footer share -->
 {%- include blog-footer-share.html -%}
