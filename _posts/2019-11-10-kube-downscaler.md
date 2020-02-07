@@ -4,7 +4,7 @@ title: Kube-Downscaler
 categories: Kube-Downscaler
 keywords: Kube-Downscale
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 I have been hearing from my clients more and more that I want to save on my cloud cost.  Taking that ask,
 I found this really cool project called [kube-downscaler](https://github.com/hjacobs/kube-downscaler) which
@@ -85,4 +85,4 @@ Fri Nov  8 02:49:28 UTC 2019
 Looks like it scaled down and up as I configured it.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

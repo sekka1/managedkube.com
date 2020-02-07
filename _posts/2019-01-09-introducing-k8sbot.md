@@ -4,7 +4,7 @@ title: Introducing k8sBot
 categories: kubernetes slack bot troubleshooting chatbot k8sbot
 keywords: kubernetes slack bot troubleshooting chatbot k8sbot
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 # A Kubernetes troubleshooting chatbot
 
@@ -68,4 +68,4 @@ We’d love to hear what you think about k8sBot. Would a Kubernetes troubleshoot
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKBI65sB6Zq3nZXz9epiGinYG86z2LN00ob3aI57mQQG8GoQ/viewform?embedded=true" width="640" height="1874" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

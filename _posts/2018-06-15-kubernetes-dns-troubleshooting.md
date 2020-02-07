@@ -6,7 +6,7 @@ keywords: Aws Kubernetes
 author: Garland Kan
 
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 On a new cluster we saw the following logs from an application we launched:
 
@@ -57,4 +57,4 @@ They were still in pending state which would make sense.
 This is showing there are a few level at play here from the instance to kubernetes
 
 <!-- Bog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

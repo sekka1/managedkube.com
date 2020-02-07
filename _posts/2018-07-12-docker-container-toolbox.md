@@ -4,7 +4,7 @@ title: Docker Container Toolbox
 categories: docker aws tools troubleshooting
 keywords: docker aws tools troubleshooting
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 ![Docker Toolbox]({{ "/assets/blog/images/Cover-DockerToolbox.png" | absolute_url }})
 
@@ -54,4 +54,4 @@ aws s3 sync . s3://mybucket
 [docker-hub]: https://hub.docker.com
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

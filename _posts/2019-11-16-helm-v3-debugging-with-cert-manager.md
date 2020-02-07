@@ -4,7 +4,7 @@ title: Helm v3 Debugging with cert-manager
 categories: Helm v3 Debugging with cert-manager
 keywords: Helm v3 Debugging with cert-manager
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 # Helm v2 to v3 migration
 
@@ -475,4 +475,4 @@ I also confirmed that installing the `cert-manager` with Helm v3 and upgrading i
 with all migrations it is not perfect.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

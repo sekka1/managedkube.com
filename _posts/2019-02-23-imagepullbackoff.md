@@ -4,7 +4,7 @@ title: Kubernetes Troubleshooting Walkthrough - imagepullbackoff
 categories: kubernetes k8sbot troubleshooting imagepullbackoff
 keywords: kubernetes k8sbot troubleshooting imagepullbackoff
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 * TOC
 {:toc}
@@ -204,4 +204,4 @@ More information: <a href="https://kubernetes.io/docs/concepts/containers/images
 * <A HREF="https://managedkube.com/kubernetes/trace/ingress/service/port/not/matching/pod/k8sbot/2019/02/13/trace-ingress.html">Kubernetes Troubleshooting Walkthrough - Tracing through an ingress</a>
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

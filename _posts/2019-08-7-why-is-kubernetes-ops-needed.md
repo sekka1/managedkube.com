@@ -4,7 +4,7 @@ title: Why Is Kubernetes-ops Needed?
 categories: Why Is Kubernetes-ops Needed?
 keywords: Why Is Kubernetes-ops Needed?
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 The main reason is so that we can all help each other out.  Why should we all
 have to toil in infrastructure items?
@@ -42,4 +42,4 @@ Come check out `kubernetes-ops`.  This is a full featured repository on how to
 run Kubernetes in production:  https://github.com/ManagedKube/kubernetes-ops
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

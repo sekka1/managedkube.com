@@ -4,7 +4,7 @@ title: KOPS Updating Cluster Is Awesome
 categories: Kubernetes KOPS gitops
 keywords: Kubernetes kops gitops
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Here is yet another reason why I think the `Kops` tool for creating and managing a Kubernetes' cluster
 lifecycle is so great.
@@ -170,4 +170,4 @@ configs but it is presented out so well that every time I apply this type of cha
 it makes me smile =).
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

@@ -4,7 +4,7 @@ title: Kubernetes Troubleshooting Walkthrough - Tracing through an ingress
 categories: kubernetes trace ingress service port not matching pod port k8sbot
 keywords: kubernetes trace ingress service port not matching pod port k8sbot
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 * TOC
 {:toc}
@@ -209,4 +209,4 @@ trace-ingress-4-5db9d55849-msrjw                       1/1     Running          
 * <A HREF="https://managedkube.com/kubernetes/k8sbot/troubleshooting/imagepullbackoff/2019/02/23/imagepullbackoff.html">Kubernetes Troubleshooting Walkthrough - imagepullbackoff</a>
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

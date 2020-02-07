@@ -4,7 +4,7 @@ title: Prometheus has many samples rejected
 categories: kubernetes prometheus
 keywords: kubernetes prometheus
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Got this alert today from Prometheus and had no idea what it meant:
 
@@ -94,4 +94,4 @@ This fixed the problem and the alarm cleared up.
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

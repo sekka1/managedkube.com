@@ -4,7 +4,7 @@ title: Kubernetes Cron Jobs
 categories: kubernetes cron job
 keywords: kubernetes cron job
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Sometime you just have to run a cronjob that does something and sometime you have
 to run a cronjob that restarts a service.  Yeah, unfortunately this is a thing.
@@ -118,4 +118,4 @@ patch.  These pod names are guaranteeded to be unique.
 There we have it.  A simple cron job with limited permissions to perform a task.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

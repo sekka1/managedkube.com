@@ -4,7 +4,7 @@ title: AWS IAM Authenticator Troubleshooting
 categories: AWS IAM Authenticator Troubleshooting
 keywords: AWS IAM Authenticator Troubleshooting okta
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 I was setting up the `aws-iam-authenticator` to work with a kops cluster the other day and ran into all 
 kinds of issues.  Thought it would be nice to document out what I did to troubleshoot it.  
@@ -985,4 +985,4 @@ aws-iam-authenticator-2wjhm aws-iam-authenticator time="2019-11-01T16:14:07Z" le
 Looking good.  This is what I was expecting to see.  The Engineering group gets sent to the kube auth and it mapped me to the `developer` group.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

@@ -4,7 +4,7 @@ title: Kops Kubernetes Audit Policy Setup Debug
 categories: Kops Kubernetes Audit Policy Setup Debug
 keywords: Kops Kubernetes Audit Policy Setup Debug
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Trying to enable Kubernetes audit policy on my Kops cluster but ran into some
 problems during my setup.  Some of this guide is very specific to the problem
@@ -168,4 +168,4 @@ on what the problem is.
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

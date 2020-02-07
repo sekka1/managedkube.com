@@ -4,7 +4,7 @@ title: Using the AWS CLI - find and terminate an EC2 Instance
 categories: aws cli ec2
 keywords: aws cli ec2
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 ![Delete]({{ "/assets/blog/images/delete-button.jpg" | absolute_url }})
 
@@ -39,4 +39,4 @@ aws ec2 terminate-instances --instance-ids i-07a8839d40f993baa
 Replacing it with your instance ID.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

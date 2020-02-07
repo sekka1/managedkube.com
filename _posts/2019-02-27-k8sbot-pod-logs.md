@@ -4,7 +4,7 @@ title: Using k8sBot to get Kubernetes Pod Logs in Slack
 categories: kubernetes k8sBot pod logs
 keywords: kubernetes k8sBot pod logs
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Getting your Kubernetes pod logs into your Slack channel is easy now.  No more cutting and pasting
 from `kubectl` to Slack.  You can directly ask `k8sBot` to fetch the logs for you and
@@ -20,4 +20,4 @@ Interested in giving k8sBot a try? <A HREF="https://managedkube.com/">Learn more
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

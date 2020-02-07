@@ -4,7 +4,7 @@ title: Kubernetes Access External Services
 categories: kubernetes service external
 keywords: kubernetes service external
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 There are often time when you will need to access an external service in Kubernetes
 but still want to use a static name.  
@@ -79,4 +79,4 @@ In your pod, you can check the connectivity.  This will map the hostname `mysql`
 to the IP address `1.1.1.1`.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

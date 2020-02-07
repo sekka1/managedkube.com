@@ -4,7 +4,7 @@ title: Kubernetes using AWS Spot Fleet with Kops
 categories: Kubernetes using AWS Spot Fleet with Kops
 keywords: Kubernetes using AWS Spot Fleet with Kops
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 # AWS Spot Fleet Usaging with Kops and Kubernetes
 
@@ -191,4 +191,4 @@ PodCIDR:                     100.104.146.0/24
 This all looks good.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

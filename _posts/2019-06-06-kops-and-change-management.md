@@ -4,7 +4,7 @@ title: Kops Change Management
 categories: Kops Change Management
 keywords: Kops Change Management
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 I am a big fan of using [kops](https://github.com/kubernetes/kops) for deploying
 a Kubernetes clusters and more importantly maintaining a cluster throughout it's lifecycle.
@@ -117,4 +117,4 @@ it to my output in a clear and concise manor.
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

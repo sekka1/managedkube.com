@@ -4,7 +4,7 @@ title: Updating Terraformed GKE clusters via a GitOps Workflow
 categories: Updating Terraformed GKE clusters via a GitOps Workflow
 keywords: Updating Terraformed GKE clusters via a GitOps Workflow
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 # Updating Terraformed GKE clusters via a GitOps Workflow
 This will show you how to update your GKE cluster through a GitOps workflow and shows you how to update
@@ -457,5 +457,5 @@ This gives us a very nice workflow on updating our cluster through a GitOps work
 we want in Git and we manually apply this to the cluster.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}
 

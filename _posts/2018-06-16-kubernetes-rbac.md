@@ -6,7 +6,7 @@ keywords: Kubernetes Rbac Security
 author: Garland Kan
 
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 I am really liking Kubernetes [RBAC][rbac]. It is “fairly” simple to use and so powerful.
 
@@ -48,4 +48,4 @@ This solved the problem. I love it when the error tells me exactly what it is an
 [rbac]: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 
 <!-- Bog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

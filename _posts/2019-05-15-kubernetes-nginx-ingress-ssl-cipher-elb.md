@@ -4,7 +4,7 @@ title: Kubernetes Nginx Ingress SSL Cipher ELB Hanging
 categories: Kubernetes Nginx Ingress SSL Cipher ELB Hanging
 keywords: Kubernetes Nginx Ingress SSL Cipher ELB Hanging
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Helm chart: https://github.com/helm/charts/tree/master/stable/nginx-ingress
 
@@ -114,4 +114,4 @@ Now when you cURL again through the ELB, the call makes it through to the Nginx.
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

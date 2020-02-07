@@ -6,7 +6,7 @@ keywords: Aws Kubernetes Logs
 author: Garland Kan
 
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 There are a few useful options when getting logs from your Kubernetes pods:
 
@@ -39,4 +39,4 @@ kubectl -f --tail=10 <pod_name>
 ```
 
 <!-- Bog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

@@ -4,7 +4,7 @@ title: Why Kubernetes-ops
 categories: Why Kubernetes-ops
 keywords: Why Kubernetes-ops
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 We are a big fan of Kubernetes, no matter how you bring up the cluster.  Be it on a GKE, EKS, or a Kops cluster.  For the last 3 years or so, on AWS we have been using an open source tool called Kops to bring up and maintain our Kubernetes cluster.  Initially, AWS didn’t offer a Kubernetes service and when they did come out with one, we felt the Kubernetes life cycle management was still way better with Kops.  Enough with our cluster opinions.  We’ll have enough opinions on the packages we are about to describe to you =)
 
@@ -43,4 +43,4 @@ Also remember that most demo goes through how to do the initial setup only and d
 Here is the repository on how to get started:  https://github.com/ManagedKube/kubernetes-ops/blob/master/docs/the-easier-way.md
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

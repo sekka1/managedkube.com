@@ -4,7 +4,7 @@ title: AWS Transit Gateway Troubleshooting
 categories: AWS Transit Gateway Troubleshooting
 keywords: AWS Transit Gateway Troubleshooting
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 
 * TOC
@@ -127,4 +127,4 @@ The troubleshooting technique above is generic to most Transit Gatway setups no 
 You can use this this set of modules to create this exact setup or something similar to it using the various Transit Gateway modules in here.
 
 <!-- Bog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

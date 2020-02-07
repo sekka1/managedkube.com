@@ -4,7 +4,7 @@ title: Prometheus Operator ServiceMonitor Troubleshooting
 categories: Prometheus Operator ServiceMonitor Troubleshooting
 keywords: Prometheus Operator ServiceMonitor Troubleshooting
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 # Debugging Prometheus ServiceMonitors
 
@@ -181,4 +181,4 @@ Labels:            app.kubernetes.io/instance=myapp-gar-api-svc-live
 You should now be able to go to `Status->Targets` in the Prometheus WebGUI and see your targets being scraped.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

@@ -4,7 +4,7 @@ title: Kubernetes Troubleshooting Walkthrough - Trace ingress no service endpoin
 categories: kubernetes Trace ingress no service endpoints k8sbot
 keywords: kubernetes Trace ingress no service endpoints k8sbot
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters.
 
@@ -51,4 +51,4 @@ in your cluster, right now.
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

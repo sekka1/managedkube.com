@@ -4,7 +4,7 @@ title: How to check TLS Cert Expiration Date
 categories: Kubernetes gitops
 keywords: Kubernetes gitops
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 ```yaml
 $ kubectl -n devops get secret
@@ -117,4 +117,4 @@ notAfter=Dec 25 17:08:14 2018 GMT
 ```
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

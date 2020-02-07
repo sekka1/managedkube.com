@@ -6,7 +6,7 @@ keywords: Kubernetes ingress flows
 author: Garland Kan
 
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Kubernetes is a great platform to run your application on, and it handles a lot of the heavy lifting on wiring up your application together.
 
@@ -197,4 +197,4 @@ The `nslookup` should return us an answer that has our external load balancer’
 This walk through took you through the traffic flow on how traffic from the internet will get to your application (aka pod). Everything shown here is in a working state. It is good to see what to expect in a working state so that you can compare to a nonworking one. I hope the series of commands and what to look for helps you out troubleshooting your Kubernetes application.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

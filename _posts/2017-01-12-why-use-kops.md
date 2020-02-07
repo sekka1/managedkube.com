@@ -6,7 +6,7 @@ keywords: Aws Kubernetes Kops
 author: Garland Kan
 
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 ## Why Use Kops to create your Kubernetes cluster
 
@@ -46,4 +46,4 @@ I would also recommend using some kind of automated way of bringing up a Kuberne
 [gke]: https://cloud.google.com/kubernetes-engine/
 
 <!-- Bog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

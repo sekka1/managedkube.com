@@ -4,7 +4,7 @@ title: Kubernetes Troubleshooting Walkthrough - Failing Job
 categories: kubernetes Failing Job k8sbot troubleshooting
 keywords: kubernetes Failing Job k8sbot troubleshooting
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters.
 
@@ -37,4 +37,4 @@ in your cluster, right now.
 <A HREF="https://managedkube.com">Learn more</a> about k8sBot, a point-and-click interface for Kubernetes in Slack or sign up for a <A HREF="https://managedkube.com/free-k8sbot-trial-signup">free 30 day trial</a>
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

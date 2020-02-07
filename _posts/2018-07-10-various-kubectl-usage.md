@@ -4,7 +4,7 @@ title: Various kubectl Usage
 categories: kubernetes kubectl logs
 keywords: kubernetes kubectl logs
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Download the latest `kubectl` version here:  https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
@@ -81,4 +81,4 @@ kubectl port-forward $(kubectl get pod -o=name -lcomponent=... | awk -F/ '{print
 Being able to port forward to a service is coming: https://github.com/kubernetes/kubernetes/pull/59809
 
 <!-- Bog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

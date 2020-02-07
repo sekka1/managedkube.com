@@ -5,7 +5,7 @@ categories: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 keywords: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 ---
 
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 * TOC
 {:toc}
@@ -258,4 +258,4 @@ In summary, the error `CrashLoopBackOff` can be tricky if we don't know where to
 * <A HREF="https://managedkube.com/kubernetes/k8sbot/troubleshooting/imagepullbackoff/2019/02/23/imagepullbackoff.html">Kubernetes Troubleshooting Walkthrough - imagepullbackoff</a>
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

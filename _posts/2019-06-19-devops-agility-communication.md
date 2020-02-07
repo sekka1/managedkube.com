@@ -4,7 +4,7 @@ title: Increasing DevOps Agility - follow these 3 rules to improve communication
 categories: devops agility communication developers
 keywords: kubernetes devops agility communication developers
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 * TOC
 {:toc}
@@ -86,4 +86,4 @@ Anyone, regardless of kubectl access or k8s knowledge, can get meaningful Kubern
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}
