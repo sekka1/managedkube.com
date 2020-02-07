@@ -80,8 +80,10 @@ message can mean multiple things.
 
 As a user you should at this point take a look at the image name and make sure you have the
 correct name.  If you do, then you should make sure that this container registry for this
-image does not require authentication.  As a test you can try to pull the same imae from yor laptop
+image does not require authentication.  As a test you can try to pull the same image from your laptop
 to see if it works locally for you.
+
+If your container is in a private container respository that requires authentication, then you need to add this secret into Kubernetes and add the `imagePullSecrets` reference to it in your deployment.  Continue reading for more information about this.
 
 ## Troubleshooting: Invalid container image tag
 
