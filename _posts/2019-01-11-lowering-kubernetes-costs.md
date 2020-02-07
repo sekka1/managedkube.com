@@ -212,5 +212,5 @@ You can use all of the tools both independently and together to dramatically low
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}
 

@@ -48,4 +48,4 @@ This solved the problem. I love it when the error tells me exactly what it is an
 [rbac]: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 
 <!-- Bog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

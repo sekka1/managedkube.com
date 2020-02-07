@@ -112,4 +112,4 @@ So it looks like our subnet is too small.  It will not be able to assign out any
 
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

@@ -118,4 +118,4 @@ patch.  These pod names are guaranteeded to be unique.
 There we have it.  A simple cron job with limited permissions to perform a task.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

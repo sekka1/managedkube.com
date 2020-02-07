@@ -24,4 +24,4 @@ Quickly identify ways to optimize your cloud spend
 - Try ManagedKube today: managedkube.com. One-click installation on GKE and command line install on all other cloud providers.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

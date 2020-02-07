@@ -23,4 +23,4 @@ But now you have more than one of these yaml files and when you update you have 
 Now you can have one source `cluster.yaml` file which has templated out the names, region, etc and you have a `values.yaml` files which values for each cluster you want to make.
 
 <!-- Bog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

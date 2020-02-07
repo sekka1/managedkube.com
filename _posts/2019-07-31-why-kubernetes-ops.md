@@ -43,4 +43,4 @@ Also remember that most demo goes through how to do the initial setup only and d
 Here is the repository on how to get started:  https://github.com/ManagedKube/kubernetes-ops/blob/master/docs/the-easier-way.md
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

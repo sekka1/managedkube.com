@@ -39,4 +39,4 @@ aws ec2 terminate-instances --instance-ids i-07a8839d40f993baa
 Replacing it with your instance ID.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

@@ -114,4 +114,4 @@ Now when you cURL again through the ELB, the call makes it through to the Nginx.
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

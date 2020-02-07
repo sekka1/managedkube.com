@@ -21,4 +21,4 @@ That’s why we’re so excited to launch ManagedKube, a tool that will help you
 ManagedKube’s dashboard is an easy-to-read detailed cloud bill designed to help you take action. With this visibility, you can more accurately forecast your budget and identify opportunities for optimizing your cloud utilization.
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

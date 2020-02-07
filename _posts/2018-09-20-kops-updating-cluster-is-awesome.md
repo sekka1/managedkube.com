@@ -170,4 +170,4 @@ configs but it is presented out so well that every time I apply this type of cha
 it makes me smile =).
 
 <!-- Blog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}

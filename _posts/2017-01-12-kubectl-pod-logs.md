@@ -39,4 +39,4 @@ kubectl -f --tail=10 <pod_name>
 ```
 
 <!-- Bog footer share -->
-{%- include blog-footer-share.html -%}
+{%- include share-bar.html -%}
