@@ -4,7 +4,13 @@ title: "Kubectl Pod logs"
 categories: Aws Kubernetes Logs
 keywords: Aws Kubernetes Logs
 author: Garland Kan
-
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: There are a few useful options when getting logs from your Kubernetes pods
 ---
 {%- include share-bar.html -%}
 
