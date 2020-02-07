@@ -206,5 +206,5 @@ problem and then look at what Kubernetes is telling you at that point and contin
 * <A HREF="https://managedkube.com/kubernetes/k8sbot/troubleshooting/imagepullbackoff/2019/02/23/imagepullbackoff.html">Kubernetes Troubleshooting Walkthrough - imagepullbackoff</a>
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}
 

@@ -42,4 +42,4 @@ Come check out `kubernetes-ops`.  This is a full featured repository on how to
 run Kubernetes in production:  https://github.com/ManagedKube/kubernetes-ops
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}

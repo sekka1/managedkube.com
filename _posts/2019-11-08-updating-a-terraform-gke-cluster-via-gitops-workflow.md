@@ -457,5 +457,5 @@ This gives us a very nice workflow on updating our cluster through a GitOps work
 we want in Git and we manually apply this to the cluster.
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}
 

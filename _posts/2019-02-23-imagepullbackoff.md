@@ -204,4 +204,4 @@ More information: <a href="https://kubernetes.io/docs/concepts/containers/images
 * <A HREF="https://managedkube.com/kubernetes/trace/ingress/service/port/not/matching/pod/k8sbot/2019/02/13/trace-ingress.html">Kubernetes Troubleshooting Walkthrough - Tracing through an ingress</a>
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}

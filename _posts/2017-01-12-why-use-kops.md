@@ -46,4 +46,4 @@ I would also recommend using some kind of automated way of bringing up a Kuberne
 [gke]: https://cloud.google.com/kubernetes-engine/
 
 <!-- Bog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}

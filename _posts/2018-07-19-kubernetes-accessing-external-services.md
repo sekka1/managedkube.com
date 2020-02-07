@@ -79,4 +79,4 @@ In your pod, you can check the connectivity.  This will map the hostname `mysql`
 to the IP address `1.1.1.1`.
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}

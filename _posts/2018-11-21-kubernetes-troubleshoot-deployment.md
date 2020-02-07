@@ -133,4 +133,4 @@ This blog walked you through tracing out your Deployment for a specific case, bu
 
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}

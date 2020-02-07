@@ -117,4 +117,4 @@ it to my output in a clear and concise manor.
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}

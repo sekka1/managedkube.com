@@ -168,4 +168,4 @@ on what the problem is.
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}

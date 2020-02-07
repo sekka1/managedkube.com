@@ -985,4 +985,4 @@ aws-iam-authenticator-2wjhm aws-iam-authenticator time="2019-11-01T16:14:07Z" le
 Looking good.  This is what I was expecting to see.  The Engineering group gets sent to the kube auth and it mapped me to the `developer` group.
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}

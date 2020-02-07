@@ -54,4 +54,4 @@ aws s3 sync . s3://mybucket
 [docker-hub]: https://hub.docker.com
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}

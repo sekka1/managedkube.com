@@ -181,4 +181,4 @@ Labels:            app.kubernetes.io/instance=myapp-gar-api-svc-live
 You should now be able to go to `Status->Targets` in the Prometheus WebGUI and see your targets being scraped.
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}

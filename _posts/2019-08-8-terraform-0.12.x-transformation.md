@@ -77,4 +77,4 @@ Examples of a Terraform/Terragrunt conversion: https://github.com/ManagedKube/ku
 {%- include blurb-consulting.md -%}
 
 <!-- Blog footer share -->
-{%- include share-bar.html -%}
+{%- include blog-footer-share.html -%}
