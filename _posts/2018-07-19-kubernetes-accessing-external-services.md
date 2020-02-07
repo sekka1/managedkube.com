@@ -3,6 +3,13 @@ layout: post
 title: Kubernetes Access External Services
 categories: kubernetes service external
 keywords: kubernetes service external
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: There are often time when you will need to access an external service in Kubernetes but still want to use a static name.  
 ---
 {%- include share-bar.html -%}
 

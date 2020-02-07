@@ -3,6 +3,13 @@ layout: post
 title: Kubernetes RBAC Port Forward
 categories: Kubernetes RBAC Port Forward
 keywords: Kubernetes RBAC Port Forward port-forward
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: The kubectl CLI tool has a really nice feature that lets you port-forward a local port to a remote port into a pod. 
 ---
 {%- include share-bar.html -%}
 

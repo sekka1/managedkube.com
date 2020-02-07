@@ -3,6 +3,13 @@ layout: post
 title: Docker Container Toolbox
 categories: docker aws tools troubleshooting
 keywords: docker aws tools troubleshooting
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: Docker is useful in many different ways. One way that I use containers is to use them like a toolbox. Mostly the toolbox contains just a binary that I need or a few that are useful together.
 ---
 {%- include share-bar.html -%}
 

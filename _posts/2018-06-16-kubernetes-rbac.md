@@ -4,7 +4,13 @@ title: "Kubernetes RBAC - giving permissions for logging and port-forwarding"
 categories: Kubernetes Rbac Security
 keywords: Kubernetes Rbac Security
 author: Garland Kan
-
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: I am really liking Kubernetes RBAC. It is “fairly” simple to use and so powerful.
 ---
 {%- include share-bar.html -%}
 

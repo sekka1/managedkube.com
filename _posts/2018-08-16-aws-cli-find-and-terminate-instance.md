@@ -3,6 +3,13 @@ layout: post
 title: Using the AWS CLI - find and terminate an EC2 Instance
 categories: aws cli ec2
 keywords: aws cli ec2
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: Sometimes you need to delete an EC2 instance but dont want to go into the AWS web console
 ---
 {%- include share-bar.html -%}
 

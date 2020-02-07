@@ -4,6 +4,13 @@ title: "Kubernetes: troubleshooting ingress and services traffic flows"
 categories: Kubernetes ingress flows
 keywords: Kubernetes ingress flows
 author: Garland Kan
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: Kubernetes is a great platform to run your application on, and it handles a lot of the heavy lifting on wiring up your application together.
 
 ---
 {%- include share-bar.html -%}

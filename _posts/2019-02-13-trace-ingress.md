@@ -3,6 +3,13 @@ layout: post
 title: Kubernetes Troubleshooting Walkthrough - Tracing through an ingress
 categories: kubernetes trace ingress service port not matching pod port k8sbot
 keywords: kubernetes trace ingress service port not matching pod port k8sbot
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: A troubleshooting guide to walk you through how to trace an ingress
 ---
 {%- include share-bar.html -%}
 

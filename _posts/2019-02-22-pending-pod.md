@@ -3,6 +3,13 @@ layout: post
 title: Kubernetes Troubleshooting Walkthrough - Pending Pods
 categories: kubernetes k8sbot troubleshooting pending pod
 keywords: kubernetes k8sbot troubleshooting pending pod
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: You got your deployment, statefulset, or somehow turned on a pod on the Kubernetes cluster and it is in a pending state.  What can you do now and how do you troubleshoot it to see what the problem is?
 ---
 
 {%- include share-bar.html -%}

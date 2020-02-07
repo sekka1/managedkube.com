@@ -3,7 +3,13 @@ layout: post
 title: "The Definitive Guide to Lowering Cloud Costs of Kubernetes Clusters"
 categories: kubernetes cloud costs
 keywords: kubernetes cloud costs
-
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: Kubernetes is a great platform to deploy your application on.  It gives you a very nice framework to work in and it takes care of a lot of the low-level infrastructure for you.  This makes it easier for you and developers to deploy applications on top of it.  However, as with all things, there are tradeoffs
 ---
 
 {%- include share-bar.html -%}

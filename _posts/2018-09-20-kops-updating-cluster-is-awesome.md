@@ -3,6 +3,13 @@ layout: post
 title: KOPS Updating Cluster Is Awesome
 categories: Kubernetes KOPS gitops
 keywords: Kubernetes kops gitops
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: Here is yet another reason why I think the `Kops` tool for creating and managing a Kubernetes' cluster lifecycle is so great.
 ---
 {%- include share-bar.html -%}
 

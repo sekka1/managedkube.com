@@ -3,6 +3,13 @@ layout: post
 title: Kops Cluster Templating
 categories: kubernetes kops
 keywords: kubernetes kops
+# https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#customizing-image-output
+# This adds the html metadata "og:image" tags to the page for URL previews
+image:
+  path: "/assets/logo/M_1000.jpg"
+#   height: 100
+#   width: 100
+description: If you havent heard of the tool Kops for create Kubernetes clusters, you should check it out right now!  It is a great tool to create and manage the lifecycle of a Kubernetes cluster.
 ---
 {%- include share-bar.html -%}
 
