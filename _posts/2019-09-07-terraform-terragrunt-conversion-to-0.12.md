@@ -4,7 +4,7 @@ title: Terraform/Terragrunt conversion to the new 0.12 format
 categories: terraform terragrunt 0.12 convert cerversion
 keywords: terraform terragrunt 0.12 convert cerversion
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 The latest Terraform 0.12.x version is out and it has a lot of good stuff but it
 also has breaking changes that needs a conversion to make your current 0.11.x

@@ -6,7 +6,7 @@ keywords: kubernetes cloud costs
 
 ---
 
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 * TOC
 {:toc}

@@ -4,7 +4,7 @@ title: Why Is Kubernetes-ops Needed?
 categories: Why Is Kubernetes-ops Needed?
 keywords: Why Is Kubernetes-ops Needed?
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 The main reason is so that we can all help each other out.  Why should we all
 have to toil in infrastructure items?

@@ -5,7 +5,7 @@ categories: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 keywords: kubernetes pod failure CrashLoopBackOff k8sbot troubleshooting
 ---
 
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 * TOC
 {:toc}

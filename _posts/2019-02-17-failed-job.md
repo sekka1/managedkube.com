@@ -4,7 +4,7 @@ title: Kubernetes Troubleshooting Walkthrough - Failing Job
 categories: kubernetes Failing Job k8sbot troubleshooting
 keywords: kubernetes Failing Job k8sbot troubleshooting
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 This post is part of a Troubleshooting Walkthrough Series. I will talk about how to resolve common errors in Kubernetes clusters.
 

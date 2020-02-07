@@ -4,7 +4,7 @@ title: Slack Oauth Permission Error
 categories: Slack Oauth Permission Error
 keywords: Slack Oauth Permission Error
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 We recently updated the Slack Oauth permissions for our Slack application.  This
 update was to remove the `users:read.email` permissions.  The interesting thing is that

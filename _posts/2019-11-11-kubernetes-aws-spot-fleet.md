@@ -4,7 +4,7 @@ title: Kubernetes using AWS Spot Fleet with Kops
 categories: Kubernetes using AWS Spot Fleet with Kops
 keywords: Kubernetes using AWS Spot Fleet with Kops
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 # AWS Spot Fleet Usaging with Kops and Kubernetes
 

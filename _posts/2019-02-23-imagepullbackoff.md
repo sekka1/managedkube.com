@@ -4,7 +4,7 @@ title: Kubernetes Troubleshooting Walkthrough - imagepullbackoff
 categories: kubernetes k8sbot troubleshooting imagepullbackoff
 keywords: kubernetes k8sbot troubleshooting imagepullbackoff
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 * TOC
 {:toc}

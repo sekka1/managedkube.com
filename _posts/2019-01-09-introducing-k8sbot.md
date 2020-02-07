@@ -4,7 +4,7 @@ title: Introducing k8sBot
 categories: kubernetes slack bot troubleshooting chatbot k8sbot
 keywords: kubernetes slack bot troubleshooting chatbot k8sbot
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 # A Kubernetes troubleshooting chatbot
 

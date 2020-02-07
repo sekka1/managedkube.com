@@ -4,7 +4,7 @@ title: Kubernetes Troubleshooting a Deployment
 categories: Kubernetes troubleshooting
 keywords: Kubernetes troubleshooting
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 A Kubernetes Deployment is actually a higher level resource that uses other Kubernetes resources to create pods.  The reason for this complexity is because the `Deployment` kind adds functionality to lower level resources.  This blog will guide you through looking at your `Deployment` and how to find information about it.  These steps are generic for all `Deployments`.
 

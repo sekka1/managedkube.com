@@ -4,7 +4,7 @@ title: Kops Cluster Templating
 categories: kubernetes kops
 keywords: kubernetes kops
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 If you havent heard of the tool Kops (https://github.com/kubernetes/kops) for create
 Kubernetes clusters, you should check it out right now!  It is a great tool to create

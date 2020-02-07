@@ -4,7 +4,7 @@ title: Using the AWS CLI - find and terminate an EC2 Instance
 categories: aws cli ec2
 keywords: aws cli ec2
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 ![Delete]({{ "/assets/blog/images/delete-button.jpg" | absolute_url }})
 

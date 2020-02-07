@@ -5,7 +5,7 @@ categories: kubernetes k8sbot troubleshooting pending pod
 keywords: kubernetes k8sbot troubleshooting pending pod
 ---
 
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 * TOC
 {:toc}

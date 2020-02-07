@@ -4,7 +4,7 @@ title: Various kubectl Usage
 categories: kubernetes kubectl logs
 keywords: kubernetes kubectl logs
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Download the latest `kubectl` version here:  https://kubernetes.io/docs/tasks/tools/install-kubectl/
 

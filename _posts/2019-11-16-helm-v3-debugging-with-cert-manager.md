@@ -4,7 +4,7 @@ title: Helm v3 Debugging with cert-manager
 categories: Helm v3 Debugging with cert-manager
 keywords: Helm v3 Debugging with cert-manager
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 # Helm v2 to v3 migration
 

@@ -6,7 +6,7 @@ keywords: Aws Kubernetes
 author: Garland Kan
 
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 On a new cluster we saw the following logs from an application we launched:
 

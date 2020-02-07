@@ -4,7 +4,7 @@ title: AWS Transit Gateway Troubleshooting
 categories: AWS Transit Gateway Troubleshooting
 keywords: AWS Transit Gateway Troubleshooting
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 
 * TOC

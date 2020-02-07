@@ -4,7 +4,7 @@ title: Launching ManagedKube, a tool to help you decrease Kubernetes Cloud Costs
 categories: Kubernetes k8s cost monitoring tool Docker cloud
 keywords: Kubernetes costs
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Using Kubernetes? Us too. It’s helped us deploy code that is more flexible, reliable, and efficient. However, the inherent sharing nature of Kubernetes that facilitates these benefits also creates a problem — you have no visibility into how much stuff costs. Once you’re up and running with Kubernetes, the next question I always hear as a DevOps consultant is, “What is this costing me?”
 

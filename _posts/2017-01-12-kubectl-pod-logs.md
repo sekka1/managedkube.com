@@ -6,7 +6,7 @@ keywords: Aws Kubernetes Logs
 author: Garland Kan
 
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 There are a few useful options when getting logs from your Kubernetes pods:
 

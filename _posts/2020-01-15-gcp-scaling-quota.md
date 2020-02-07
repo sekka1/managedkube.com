@@ -4,7 +4,7 @@ title: GCP Scaling and Quota Issues Troubleshooting
 categories: GCP Scaling and Quota Issues Troubleshooting
 keywords: GCP Scaling and Quota Issues Troubleshooting
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 
 * TOC

@@ -4,7 +4,7 @@ title: Terraform 0.12.x Transformation
 categories: Terraform 0.12.x Transformation
 keywords: Terraform 0.12.x Transformation
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 Terraform 0.12.x and future versions will not be compatible with previous versions.  The syntax has changed and the usage of Terragrunt has also changed along with it.
 

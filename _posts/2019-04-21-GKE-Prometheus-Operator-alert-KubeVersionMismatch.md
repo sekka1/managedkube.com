@@ -4,7 +4,7 @@ title: Kubernetes Troubleshooting Walkthrough - GKE Prometheus Operator alert Ku
 categories: GKE Prometheus Operator alert KubeVersionMismatch
 keywords: GKE Prometheus Operator alert KubeVersionMismatch
 ---
-{%- include twitter-button-blank.html -%}
+{%- include share-bar.html -%}
 
 I am writing a series of blog posts about troubleshooting Kubernetes. One of the reasons why Kubernetes is so complex is because troubleshooting requires many levels of information gathering. It’s like trying to find the other end of a string in a tangled string ball.
 
