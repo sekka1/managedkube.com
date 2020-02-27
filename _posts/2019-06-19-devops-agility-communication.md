@@ -87,3 +87,5 @@ Anyone, regardless of kubectl access or k8s knowledge, can get meaningful Kubern
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

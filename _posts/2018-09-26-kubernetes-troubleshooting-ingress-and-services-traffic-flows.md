@@ -205,3 +205,5 @@ This walk through took you through the traffic flow on how traffic from the inte
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

@@ -89,3 +89,5 @@ Being able to port forward to a service is coming: https://github.com/kubernetes
 
 <!-- Bog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

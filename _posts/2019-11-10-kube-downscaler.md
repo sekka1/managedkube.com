@@ -86,3 +86,7 @@ Looks like it scaled down and up as I configured it.
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}
+
+{% include blog-cta-1.html %}

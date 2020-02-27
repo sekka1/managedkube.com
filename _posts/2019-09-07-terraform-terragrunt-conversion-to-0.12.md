@@ -499,3 +499,5 @@ Here is the full Github Pull Request for the changes described above:
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

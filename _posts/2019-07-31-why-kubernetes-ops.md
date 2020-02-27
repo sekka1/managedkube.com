@@ -44,3 +44,5 @@ Here is the repository on how to get started:  https://github.com/ManagedKube/ku
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

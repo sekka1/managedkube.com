@@ -64,3 +64,5 @@ This is showing there are a few level at play here from the instance to kubernet
 
 <!-- Bog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

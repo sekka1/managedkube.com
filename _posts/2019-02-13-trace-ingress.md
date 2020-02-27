@@ -217,3 +217,5 @@ trace-ingress-4-5db9d55849-msrjw                       1/1     Running          
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

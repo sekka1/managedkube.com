@@ -45,3 +45,5 @@ these images and we are back!
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

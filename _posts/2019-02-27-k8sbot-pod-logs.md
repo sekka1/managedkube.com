@@ -21,3 +21,5 @@ Interested in giving k8sBot a try? <A HREF="https://managedkube.com/">Learn more
 
 <!-- Blog footer share -->
 {%- include share-bar.html -%}
+
+{% include blog-cta-1.html %}

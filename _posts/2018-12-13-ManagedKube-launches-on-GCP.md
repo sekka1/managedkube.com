@@ -25,3 +25,5 @@ Quickly identify ways to optimize your cloud spend
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

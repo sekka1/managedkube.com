@@ -476,3 +476,5 @@ with all migrations it is not perfect.
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

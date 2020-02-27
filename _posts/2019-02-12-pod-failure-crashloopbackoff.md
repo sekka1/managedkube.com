@@ -266,3 +266,5 @@ In summary, the error `CrashLoopBackOff` can be tricky if we don't know where to
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

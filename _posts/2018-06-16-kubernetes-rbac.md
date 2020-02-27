@@ -55,3 +55,5 @@ This solved the problem. I love it when the error tells me exactly what it is an
 
 <!-- Bog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

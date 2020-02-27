@@ -130,3 +130,5 @@ You can use this this set of modules to create this exact setup or something sim
 
 <!-- Bog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

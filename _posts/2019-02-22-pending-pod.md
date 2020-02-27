@@ -215,3 +215,5 @@ problem and then look at what Kubernetes is telling you at that point and contin
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
 
+{% include blog-cta-1.html %}
+

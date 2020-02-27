@@ -87,3 +87,5 @@ This will give the user `bob` the rights to perform the above actions in the nam
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

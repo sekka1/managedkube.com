@@ -192,3 +192,7 @@ This all looks good.
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}
+
+{% include blog-cta-1.html %}

@@ -69,3 +69,5 @@ We’d love to hear what you think about k8sBot. Would a Kubernetes troubleshoot
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

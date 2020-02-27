@@ -62,3 +62,5 @@ aws s3 sync . s3://mybucket
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

@@ -53,3 +53,5 @@ I would also recommend using some kind of automated way of bringing up a Kuberne
 
 <!-- Bog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

@@ -46,3 +46,5 @@ kubectl -f --tail=10 <pod_name>
 
 <!-- Bog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

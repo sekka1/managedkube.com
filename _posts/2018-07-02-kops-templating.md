@@ -31,3 +31,5 @@ Now you can have one source `cluster.yaml` file which has templated out the name
 
 <!-- Bog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}

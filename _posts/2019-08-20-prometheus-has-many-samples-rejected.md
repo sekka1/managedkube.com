@@ -95,3 +95,7 @@ This fixed the problem and the alarm cleared up.
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}
+
+{% include blog-cta-1.html %}

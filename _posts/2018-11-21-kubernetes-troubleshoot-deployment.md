@@ -141,3 +141,5 @@ This blog walked you through tracing out your Deployment for a specific case, bu
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
+
+{% include blog-cta-1.html %}
