@@ -210,7 +210,8 @@ More information: <a href="https://kubernetes.io/docs/concepts/containers/images
 * <A HREF="https://managedkube.com/kubernetes/pod/failure/crashloopbackoff/k8sbot/troubleshooting/2019/02/12/pod-failure-crashloopbackoff.html">Kubernetes Troubleshooting Walkthrough - Pod Failure CrashLoopBackOff</a>
 * <A HREF="https://managedkube.com/kubernetes/trace/ingress/service/port/not/matching/pod/k8sbot/2019/02/13/trace-ingress.html">Kubernetes Troubleshooting Walkthrough - Tracing through an ingress</a>
 
+{% include blog-cta-1.html %}
+
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
 
-{% include blog-cta-1.html %}

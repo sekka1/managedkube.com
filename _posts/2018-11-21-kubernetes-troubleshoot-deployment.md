@@ -138,8 +138,8 @@ In this particular case, the Events reports a `FailedCreate`.  The specific reas
 # Conclusion
 This blog walked you through tracing out your Deployment for a specific case, but the steps outlined here are generic to how you would look through your `Deployment` if it was not behaving or creating the pods you expected it to create.
 
+{% include blog-cta-1.html %}
 
 <!-- Blog footer share -->
 {%- include blog-footer-share.html -%}
 
-{% include blog-cta-1.html %}
