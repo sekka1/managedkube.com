@@ -256,7 +256,7 @@ the `Liveness` probe failed.  This gives us an indication that we should look at
 
 In summary, the error `CrashLoopBackOff` can be tricky if we don't know where to look but with a few commands and looking at the correct places, we can pull out the nugget of information we need to tell us why Kubernetes is declaring the error and doing what it is doing.  Then the next part is on us to test a few things to make sure everything is correct with our configuration and/or our application.
 
-{%- include blurb-consulting.md -%}
+<!-- {%- include blurb-consulting.md -%} -->
 
 {% include blog-cta-1.html %}
 

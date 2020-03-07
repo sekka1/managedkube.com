@@ -204,7 +204,7 @@ the CPU and memory.  You can alternatively just look at one (CPU or memory), fix
 problem and then look at what Kubernetes is telling you at that point and continue from there.
 
 
-{%- include blurb-consulting.md -%}
+<!-- {%- include blurb-consulting.md -%} -->
 
 {% include blog-cta-1.html %}
 

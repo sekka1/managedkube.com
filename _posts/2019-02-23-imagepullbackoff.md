@@ -202,7 +202,7 @@ spec:
 
 More information: <a href="https://kubernetes.io/docs/concepts/containers/images/#referring-to-an-imagepullsecrets-on-a-pod">https://kubernetes.io/docs/concepts/containers/images/#referring-to-an-imagepullsecrets-on-a-pod</a>
 
-{%- include blurb-consulting.md -%}
+<!-- {%- include blurb-consulting.md -%} -->
 
 {% include blog-cta-1.html %}
 
