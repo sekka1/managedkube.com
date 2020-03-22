@@ -37,21 +37,28 @@ title: Home
 	<div class="white-bg what-we-do">
 			<div class="section">
    
-			   <!-- <h1 class="header center blue">Why DevOps Services?</h1> -->
-			   <h1 class="header center blue">What is this service?</h1>
+			   <h1 class="header left blue">What is this service?</h1>
    
-			   <p class="text center blue">
-				Common services help you run your application in Kubernetes but are not core to your application.  Open source items such as setting DNS entries, getting HTTPS certificates, monitoring and many more.  Why write these services when the community has created them for us, just like why write our own scheduler when there is Kubernetes.
+			   <p class="text left blue">
+				Common services help you run your application in Kubernetes but are not core to your application.  Open source items such as setting DNS entries, getting HTTPS certificates, monitoring and many more.  There is no to re-invent the wheel when most of the common things you need are already created for us, just like why write our own scheduler when there is Kubernetes.
 				</p>
 				<br/>
 
-				<p class="text center blue">
-					While the community has created these applications, they don’t integrate them into your Kubernetes environment.  That means for each of these applications, you have to add them into your Kubernetes cluster and make sure it works and it works with all of the other common services applications because one service can leverage another service.  Basically “wiring it all up to work together”.
+				<p class="text left blue">
+					While the community has created these applications, they don’t integrate them into your Kubernetes environment for you.  That means for each of these applications, you have to add them into your Kubernetes cluster and make sure it works and it works with all of the other common services applications because one service can leverage another service.  Basically “wiring it all up to work together”.
 				</p>
 				<br/>
 
-				<p class="text center blue">
-					This service provides you an opinionated way of running these services where we keep the “common services” ecosystem up and running correctly with each other and updated.  
+				<p class="text left blue">
+					This service provides you an opinionated way of running these services where we keep the “common services” ecosystem up and running correctly with each other, updated, and a full GitOps workflow with a CI/CD pipeline to deliver these services into any number of Kubernetes clusters.
+				</p>
+
+
+				<br/>
+				<h2 class="header left blue">Get to what matters faster</h2>
+
+				<p class="text left blue">
+					Skip all of the undifferentiated heavy lifting and get to deploying your application faster.
 				</p>
 
 				<img src="assets/images/common-services.png"/>
@@ -59,9 +66,20 @@ title: Home
 				<br/>
 
 				<p class="text left blue">
+					What really matters is the blue part, which is where your application lives.  Everything else exists only to help you to get to that point.  
+				</p>
+				<br/>
+
+				<p class="text left blue">
 					The orange items is the cloud that you are using.  The blue items is your application.  The green items are the common services you will most likely need to provide services to your application. 
 				</p>
-			
+				<br/>
+
+				<p class="text left blue">
+				These common services are like Kubernetes.  You just want it to work and you don't want to have to manage it.  
+				</p>
+
+
 		   </div>
 	   </div>
 
@@ -93,7 +111,7 @@ title: Home
 				<p class="text left white">
 					* “wire all of these applications up together” <br/>
 					* To perform upgrades to one of the pieces and test to make sure it is working with everything <br/>
-					* Keep up with the security updates and secure settings for these applications <br/>
+					* Keep up with security updates and best practices for these applications <br/>
 				</p>
 				<br/>
 
@@ -125,19 +143,36 @@ title: Home
 	
 				<h1 class="header center blue">Testing is the key to having an automated CD pipeline</h1>
 
-				<p class="text left blue">We all know how important testing software is and when releasing software, it should be tested.  This is mostly done manually at first and then automated.  A lot of time, we never get to the automated part because we have other higher priority features to go build instead.  This usually leaves the testing to be manually done which means we can’t automatically deploy out the software because someone has to manually test it first.  Then as you add in more applications, the last one didn’t have any testing, are you going to start writing tests for this one?  Then the question becomes, why this one and not the other one?  This is a downward spiral to no testing at all.</p>
+				<p class="text left blue">We all know how important testing software is and when releasing software, it should be tested.  This is mostly done manually at first and then automated.  A lot of time, we never get to the automated part because we have other higher priority features or tasks to do instead.  This usually leaves the testing to be manually done which means we can’t automatically deploy out the software because someone has to manually test it first.  Then as you add in more applications, the last one didn’t have any testing, are you going to start writing tests for this one?  Then the question becomes, why this one and not the other ones?  This is a downward spiral to no testing at all.
+				</p>
 				<br/>
-				<p class="text left blue">We know how hard it is to write and maintain tests for infrastructure applications.  We normally don’t write tests for these but as infrastructure becomes more like any other application code (infrastructure as code), it gets more important to test each item for the same reason we write unit and integration (e2e) tests for our own core applications.  We want these items to work as expected in our infrastructure.  These are complex applications with a lot of functionalities, without these tests, we can not guarantee there were no regressions or change of behavior.</p>
+
+				<p class="text left blue">We know how hard it is to write and maintain tests for infrastructure applications.  It is plain old tedious work. As infrastructure becomes more like any other application code (infrastructure as code), it gets more important to test each item for the same reason we write unit and integration (e2e) tests for our own core applications.  These are complex applications with a lot of functionalities, without testing, we can not guarantee there were no regressions or change of behavior from what was expected.
+				</p>
 				<br/>
-				<p class="text left blue">Another service this product provides are all of the CI, integration, and e2e tests for all of these applications.  We will maintain these tests as the application changes throughout their lifecycle.</p>
+
+				<p class="text left blue">Another service this product provides are all of the CI, integration, and e2e tests for all of these applications.  We will maintain these tests as the application changes throughout their lifecycle.
+				</p>
+				<br/>
+
+				<p class="text left blue">The following is Weaveworks Flux’s diagram on the GitOps workflow that their open source product provides.  We leverage this tool heavily for the GitOps workflow.
+				</p>
+				<br/>
 	
-				<!-- <br/><br/>
-				<a href="/our-approach"><div class="button"><span>Learn About Our Approach<span></div>
-	 -->
+				<img src="assets/images/flux-cd-diagram.png"/>
+				(Image from <a href="https://github.com/fluxcd/flux">https://github.com/fluxcd/flux</a>)
+				<br/><br/>
+
+				<p class="text left blue">This is a fantastic tool that provides a very good model for deploying in a GitOps fashion but we have found it is missing some pieces such as testing in the workflow.  That makes sense since they are focused on the GitOps workflow mechanism and is not here to provide you with tests that you should be writing.  This service extends that workflow and provides you with pre-written tests that slots into the delivery pipeline to make automatically delivering updates on these applications safe and predictable.
+				</p>
+				<br/>
+
+				<img src="assets/images/delivery-pipeline.png"/>
+
 		   </div>
 	   </div>
 
-	<!-- Clients that we’ve worked with -->
+	<!-- section -->
 	<div class="white-bg clients-weve-worked-with">
 		<div class="section">
 
