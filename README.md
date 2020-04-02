@@ -258,3 +258,11 @@ cd /opt
 
 jekyll serve -H 0.0.0.0
 ```
+
+## Delete the `blog` container
+
+This will delete the blog container and you will have to run the `bundle install` again the next time you start it up:
+
+```
+docker rm blog
+```
