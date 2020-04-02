@@ -239,6 +239,9 @@ The theme is available as open source under the terms of the [MIT License](http:
 
 Running for the first time:
 
+Note: If you are on Windows, you should be running this in a PowerShell and not a `cmd` shell.
+
+
 ```
 docker run --name blog -it -v ${PWD}:/opt --net=host -p 4000:4000 ruby:2.6.1 bash
 
