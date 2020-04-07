@@ -1,5 +1,0 @@
-apiVersion: v1
-appVersion: "1.0"
-description: gcp-install-nginx
-name: gcp-install-nginx
-version: 0.0.1
