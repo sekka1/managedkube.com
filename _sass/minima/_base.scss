@@ -263,3 +263,24 @@ pre {
   }
 }
 
+.cust-head {
+    line-height: 28px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.post-content a.cust-button {
+    background: #214FAC;
+    color: #fff;
+    padding: 20px;
+    font-size: 22px;
+}
+
+.post-content a.cust-button:hover {
+    color: rgba(255,255,255,0.6);
+}
+
+.cust-pad-10 {
+    padding: 30px 10px 5px 10px;
+}
+
