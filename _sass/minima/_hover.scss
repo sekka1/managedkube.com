@@ -197,7 +197,7 @@
   color: #fff;
   padding: 10px;
   font-size: 22px;
-  transition: call .3s ease-in-out;
+  transition: all .3s ease-in-out;
 
 	&:hover {
 	background: #214FAC;
@@ -212,4 +212,33 @@
   to {
     box-shadow: 0 0 0 18px rgba(255, 255, 255, 0);
   }
+}
+
+@media screen and (max-width: 800px) {
+	.hover_wrap, .author__header, .card__text, .post-content a.cta-button {
+		font-size:.8rem;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.author__image {
+		width: 36px;
+	}
+	.card__author,.card__body {
+		padding: 1rem;
+	}
+	.card__head {
+		padding-top: 50%;
+	}
+
+	.card {
+		&__body {
+			opacity: 1;
+			transition: all .5s ease-in-out;
+			transition-delay: .05s;
+		}
+		&.hover &__body {
+		opacity: 0;
+		}
+	}
 }
