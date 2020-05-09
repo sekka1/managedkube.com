@@ -305,7 +305,8 @@
   p { font-weight: 300; }
   .header { font-weight: normal; }
   .section.section-intro { padding-top: 0; }
-  &.mt-12 { margin-top: 12rem; }
+  &.mt-12, .mt-12 { margin-top: 12rem; }
+  .mt-4 { margin-top: 4rem; }
   &.blue-bg { background-color: unset; }
   &.benefits h4 { margin-bottom: .5rem }
   &.benefits .box-wrapper { margin-bottom: unset }
@@ -457,9 +458,8 @@
     }
     .footer-section {
       padding: 1.5rem;
-      .button {
+      .btn {
         margin: unset;
-        width: 100%;
       }
     }
     @media screen and (min-width: 330px) {
@@ -481,3 +481,62 @@
     }
   }
 }
+
+.homepage {
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 0;
+    background-color: #326CE5;
+    height: 48px;
+    font-size: 18px;
+    color: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.02);
+    transition: all 250ms ease;
+    text-decoration: none;
+    width: 25%;
+    min-width: 260px;
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+      background-color: #326ce5e3;
+    }
+    &.btn-wide {
+      width: 100%;
+    }
+    &.btn-center {
+      margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .header-text {
+      &.mt-4 {
+        margin-top: 2rem;
+      }
+    }
+  }
+  .custom-card {
+    display: flex;
+    .number-list {
+      letter-spacing: -.04em;
+    }
+    svg {
+      height: 160px;
+      align-self: center;
+    }
+  }
+  .btn-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    @media screen and (max-width: 583px) {
+      flex-wrap: wrap;
+      a:last-child {
+        margin-top: 1rem;
+      }
+    }
+
+  }
+}
+
