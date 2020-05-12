@@ -302,7 +302,10 @@
 .homepage {
   .fw-normal { font-weight: normal; }
   .fw-light { font-weight: lighter; }
-  p { font-weight: 300; }
+  p {
+    font-weight: 300;
+    line-height: 40px;
+  }
   .header { font-weight: normal; }
   .section.section-intro { padding-top: 0; }
   &.mt-12, .mt-12 { margin-top: 12rem; }
@@ -311,13 +314,19 @@
   &.benefits h4 { margin-bottom: .5rem }
   &.benefits .box-wrapper { margin-bottom: unset }
   &.benefits .box {
+    width: 355px;
     box-shadow: none;
+    h2 {
+      letter-spacing: -0.1rem;
+      margin-bottom: 1rem;
+    }
     .text {
-      font-size: 18px;
-      line-height: 24px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
+      &.center {
+        line-height: 32px;
+      }
     }
     .box_img-wrapper {
       height: unset;
@@ -333,19 +342,34 @@
 
     &:hover {
       .text {
-        color: black;
+        color: $text-color-primary;
       }
     }
   }
+
+}
+
+
+// Production-grade-section
+.homepage {
   ul.number-list {
     margin-top: 1.5rem;
-
     li {
+      line-height: 40px;
       display: flex;
       align-items: flex-start;
       list-style-type:none ;
       font-weight: lighter;
       align-items: center;
+      color: white;
+    }
+  }
+  .numberCircle {
+    background-color: #fff;
+  }
+  .production-grade {
+    h1, p, ul li {
+      color: white;
     }
   }
 }
@@ -353,20 +377,16 @@
 .numberCircle {
   display: inline-flex;
   flex-shrink: 0;
-  font-size: 18px;
-  width: 1.3em;
-  height: 1.3em;
-  box-sizing: initial;
-  background: #fff;
-  border: 0.1em solid rgba(45,21,130,.1);
-  color: #666;
+  font-size: 21px;
+  width: 1.5em;
+  height: 1.5em;
   text-align: center;
   border-radius: 50%;
   box-sizing: content-box;
   justify-content: center;
   align-items: center;
-  margin-right: .6rem;
-  color: #2d1582;
+  margin-right: .8rem;
+  color: $text-color-primary;
   background: rgba(45,21,130,.1);
 }
 
@@ -481,8 +501,17 @@
     }
   }
 }
+// attribution
+.homepage {
+  .attribution {
+    h1 {
+      color: white;
+    }
+  }
+}
 
 .homepage {
+  h1,h2,h3,h4,h5,h6,p { color: $text-color-primary; }
   .btn {
     display: flex;
     justify-content: center;
@@ -519,14 +548,33 @@
   }
   .custom-card {
     display: flex;
+    flex-direction: column;
     .number-list {
       letter-spacing: -.04em;
     }
-    svg {
-      height: 160px;
+    svg.big {
+      height: 220px;
+      width: 220px;
       align-self: center;
+      position: absolute;
+      left: -250px;
+      @media screen and (max-width: 1600px) {
+        display: none;
+      }
+    }
+    svg.small {
+      margin: 0 auto;
+      height: 50px;
+      width: 50px;
+      @media screen and (min-width: 601px) {
+        margin-top: -20px;
+      }
+      @media screen and (min-width: 1599px) {
+        display: none;
+      }
     }
   }
+
   .btn-wrapper {
     display: flex;
     justify-content: space-evenly;
