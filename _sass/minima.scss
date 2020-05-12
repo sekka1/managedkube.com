@@ -28,7 +28,12 @@ $light-blue-bg: #F5F8FE;
 $blue-hover: rgba(50, 108, 229, .8);
 $text-color-hover: rgba(50, 108, 229, .8);
 $text-color-primary: #226BC5;
-$bg-primary: #f6f9fc;
+$bg-light-blue: #f6f9fc;
+
+// icon color
+$icon-light-white: #CCDAF8;
+$icon-white: $white;
+$icon-blue: $text-color-primary;
 
 $table-text-align: left !default;
 
