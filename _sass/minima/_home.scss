@@ -280,27 +280,83 @@
     background-color: #c4f0ff
 }
 
-.section-intro {
-    text-align: center
+
+.position-absolute {
+    position: absolute!important;
 }
 
-.section-intro .common-SectionTitle {
-    margin: 0 0 18px
+/* OVERLAY
+=========================== */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  z-index: 1000;
+}
+.first {
+  background: $text-color-primary;
+}
+.second {
+  background: $text-color-primary;
+  left: 33.3%;
+}
+.third {
+  background: $text-color-primary;
+  left: 66.6%;
 }
 
-@media(min-width: 670px) {
-    .section-intro .common-SectionTitle {
-        margin:25px 0 18px
+.homepage {
+  &.first-section {
+    height: calc(100vh - 80px);
+    overflow: hidden !important;
+    position: relative;
+
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
     }
+    .circle-r {
+      width: 35%;
+      top: 82px;
+      right: 0;
+      z-index: 0;
+      opacity: .05;
+      margin-right: -15rem;
+    }
+    .circle-l {
+      width: 20%;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      margin-left: -5rem;
+      margin-bottom: -15rem;
+    }
+
+  }
 }
 
-.section-intro .common-IntroText {
-    max-width: 800px;
-    margin: 0 auto
+
+// Section intro
+.homepage {
+  .section-intro {
+      text-align: center
+  }
+  .section-intro .common-SectionTitle {
+      margin: 0 0 18px
+  }
+  @media(min-width: 670px) {
+      .section-intro .common-SectionTitle {
+          margin:25px 0 18px
+      }
+  }
+  .section-intro .common-IntroText {
+      max-width: 800px;
+      margin: 0 auto
+  }
 }
 
 // card with icon section / Benefit section
-
 .homepage {
   .fw-normal { font-weight: normal; }
   .fw-light { font-weight: lighter; }

@@ -2,8 +2,24 @@
 layout: default
 title: Home
 permalink: /homepage
+animation: true
 ---
-<div class="homepage white-bg">
+
+<!-- OVERLAY
+=============================== -->
+
+<div class="overlay first"></div>
+<div class="overlay second"></div>
+<div class="overlay third"></div>
+<div class="homepage white-bg first-section">
+  <div class="ornament">
+    <figure class="circle-r position-absolute">
+      <img class="img-fluid" src="{{ "/assets/svg/half-circle-r.svg" | relative_url }}" alt="Half circle image" aria-hidden="true">
+    </figure>
+    <figure class="circle-l position-absolute">
+      <img class="img-fluid" src="{{ "/assets/svg/half-circle-l.svg" | relative_url }}" alt="Half circle image" aria-hidden="true">
+    </figure>
+  </div>
   <div class="section">
     <div class="center">
       <h1 class="header">ManagedKube Installation Service</h1>

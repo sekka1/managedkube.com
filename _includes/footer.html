@@ -7,6 +7,15 @@
 
   </div>
 
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+    integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+  <!-- three js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
+    integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY=" crossorigin="anonymous"></script>
+  <!-- hover-effect js -->
+  <script src="{{"/script/hover-effect.umd.js" | relative_url}}"></script>
+
   <script type="text/javascript">
     console.log("GA button clicks.");
 
@@ -31,6 +40,42 @@
           eventLabel: 'Mailchimp-subscribe-to-newsletter'
         });
     });
+
+    {% if page.animation %}
+
+    TweenMax.to(".first", 1.5, {
+      delay: .5,
+      top: "-100%",
+      ease: Expo.easeInOut
+    });
+
+    TweenMax.to(".second", 1.5, {
+      delay: .7,
+      top: "-100%",
+      ease: Expo.easeInOut
+    });
+
+    TweenMax.to(".third", 1.5, {
+      delay: .9,
+      top: "-100%",
+      ease: Expo.easeInOut
+    });
+
+    TweenMax.from(".ornament .circle-r", 1, {
+      delay: 3,
+      opacity: 0,
+      x: 250,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from(".ornament .circle-l", 1, {
+      delay: 3,
+      opacity: 0,
+      x: -250,
+      ease: Expo.easeInOut
+    })
+
+    {% endif %}
   </script>
 
 </footer>
