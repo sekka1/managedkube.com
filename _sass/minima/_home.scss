@@ -55,8 +55,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-transform: skewY(-8deg);
-    transform: skewY(-8deg)
+    -webkit-transform: skewY(8deg);
+    transform: skewY(8deg)
 }
 
 .common-StripeGrid .backgroundContainer .grid {
@@ -65,7 +65,7 @@
 }
 
 .common-StripeGrid .backgroundContainer {
-  // overflow: hidden;
+  overflow: hidden;
   .background {
     grid-row: 1/-1;
     grid-column: 1/-1;
@@ -232,7 +232,7 @@
     left: 0;
     top: 100%;
     background-color: #fff;
-    transform: skewY(-8deg);
+    transform: skewY(8deg);
     transform-origin: 0 0
 }
 
@@ -282,9 +282,20 @@
 
 
 .position-absolute {
-    position: absolute!important;
+  position: absolute!important;
 }
-
+.position-relative {
+  position: relative;
+}
+.d-none {
+  display: none !important;
+}
+.hide {
+  opacity: 0 !important;
+}
+body .homepage {
+  scroll-behavior: smooth;
+}
 /* OVERLAY
 =========================== */
 .overlay {
@@ -307,32 +318,234 @@
 }
 
 .homepage {
+  .btn-short {
+    display: inline-flex !important;
+    padding: .75rem 1rem;
+    width: unset !important;
+    min-width: unset !important;
+  }
+  .btn-hero {
+    display: block;
+  }
+  .chevron {
+    width: 1.3rem;
+    height: 1.3rem;
+    align-self: flex-end;
+  }
+  .header-text-big {
+    font-size: 3.5rem;
+    font-weight: 600 !important;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section.first-section-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 8rem;
+    justify-content: space-between !important;
+    align-content: space-around;
+    height: unset !important;
+    @media (max-width: 930px) {
+      padding-top: 1rem;
+    }
+  }
+  .section-half {
+    width: 100%;
+    p {
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 925px) {
+      flex: 0 0 50%;
+      align-content: space-around;
+      margin: unset !important;
+    }
+    &.left {
+      margin: 3rem 0;
+    }
+  }
+  .left, .right {
+    padding: 0 1rem;
+  }
   &.first-section {
     height: calc(100vh - 80px);
     overflow: hidden !important;
     position: relative;
+    background: url('/assets/svg/bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    @media screen and (max-width: 600px) {
+      .header-text-big {
+        font-size: 1.8rem;
+      }
+      .section-half.right {
+        display: none;
+      }
+    }
 
     .img-fluid {
       max-width: 100%;
       height: auto;
     }
-    .circle-r {
-      width: 35%;
-      top: 82px;
-      right: 0;
-      z-index: 0;
-      opacity: .05;
-      margin-right: -15rem;
-    }
-    .circle-l {
-      width: 20%;
-      bottom: 0;
-      left: 0;
-      z-index: 0;
-      margin-left: -5rem;
-      margin-bottom: -15rem;
+
+
+    @keyframes floating {
+      0% {
+          -webkit-transform: translate3d(0, 0, 0);
+          -ms-transform: translate3d(0, 0, 0);
+          -moz-transform: translate3d(0, 0, 0);
+          -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0)
+      }
+
+      50% {
+          -webkit-transform: translate3d(0, 1.5vh, 0);
+          -ms-transform: translate3d(0, 1.5vh, 0);
+          -moz-transform: translate3d(0, 1.5vh, 0);
+          -o-transform: translate3d(0, 1.5vh, 0);
+          transform: translate3d(0, 1.5vh, 0)
+      }
+
+      100% {
+          -webkit-transform: translate3d(0, 0, 0);
+          -ms-transform: translate3d(0, 0, 0);
+          -moz-transform: translate3d(0, 0, 0);
+          -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0)
+      }
     }
 
+
+    .bubbles-logo {
+      position: absolute;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.07);
+      border-radius: 100%;
+      background-color: #fff;
+      text-align: center;
+      animation-name: floating;
+      transform-origin: center bottom;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      animation-duration: 7s;
+      animation-fill-mode: both;
+      -webkit-animation-name: floating;
+      -webkit-transform-origin: center bottom;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: ease-in-out;
+      -webkit-animation-duration: 7s;
+      -webkit-animation-fill-mode: both
+    }
+    .bubbles-logo:nth-child(odd) {
+      animation-delay: 2s
+    }
+
+    .bubbles-logo:nth-child(1) {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      bottom: 0px;
+      right: 32px
+    }
+
+    .bubbles-logo:nth-child(1) img {
+      position: relative;
+      left: 0px;
+      top: 3px;
+      width: 70%;
+      height: 70%;
+    }
+
+    .bubbles-logo:nth-child(2) {
+      line-height: .7;
+      bottom: 28%;
+      left: 13%;
+      img {
+        width: 100px;
+        height: 100px;
+        padding: 14px;
+        top: -6px;
+        position: relative;
+      }
+    }
+
+    // azzure grayscale
+    .bubbles-logo:nth-child(3) {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      bottom: 80%;
+      right: 10px;
+      padding: 10px;
+      img {
+        position: relative;
+        top: -14px;
+        filter: grayscale(1);
+      }
+    }
+
+    .bubbles-logo:nth-child(4),.bubbles-logo:nth-child(5),.bubbles-logo:nth-child(6) {
+      width: 60px;
+      height: 60px;
+    }
+
+    .bubbles-logo:nth-child(4) {
+      top: auto;
+      bottom: 10%;
+      left: 35%;
+      padding: 5px;
+      img {
+        position: relative;
+        top: 2px;
+        filter: grayscale(1);
+      }
+    }
+
+    // aws grayscale
+    .bubbles-logo:nth-child(5) {
+      bottom: 85%;
+      left: 32%;
+      padding: 10px;
+      filter: grayscale(1);
+    }
+
+    .bubbles-logo:nth-child(6) {
+      bottom: 40%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      padding: 8px;
+    }
+
+    .bubbles-logo:nth-child(7),.bubbles-logo:nth-child(8),.bubbles-logo:nth-child(9) {
+      top: -26%;
+      left: 55%;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+    }
+
+    .bubbles-logo:nth-child(8) {
+      top: 34%;
+      right: 9%;
+      left: auto
+    }
+
+    .bubbles-logo:nth-child(9) {
+      bottom: -15%;
+      right: 16%;
+      left: auto;
+      top: auto
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        .bubbles {
+          height:261px;
+          margin-bottom: 130px;
+          position: relative;
+          margin-top: 20px
+        }
+    }
   }
 }
 
@@ -411,7 +624,10 @@
         }
       svg {
         width: 80px; height:80px;
-        transition: all .2s ease-in-out;
+        // transition: all .2s ease-in-out;
+        position: relative;
+        top: 35px;
+        opacity: 0;
       }
     }
     svg {

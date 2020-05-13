@@ -11,23 +11,55 @@ animation: true
 <div class="overlay first"></div>
 <div class="overlay second"></div>
 <div class="overlay third"></div>
+
 <div class="homepage white-bg first-section">
   <div class="ornament">
-    <figure class="circle-r position-absolute">
-      <img class="img-fluid" src="{{ "/assets/svg/half-circle-r.svg" | relative_url }}" alt="Half circle image" aria-hidden="true">
-    </figure>
-    <figure class="circle-l position-absolute">
-      <img class="img-fluid" src="{{ "/assets/svg/half-circle-l.svg" | relative_url }}" alt="Half circle image" aria-hidden="true">
-    </figure>
   </div>
-  <div class="section">
-    <div class="center">
-      <h1 class="header">ManagedKube Installation Service</h1>
-      <p class="header-text">We install a fully functioning Kubernetes cluster for you quickly and affordably by leveraging open source projects.</p>
+
+  <div class="section first-section-wrapper">
+    <div class="section-half left">
+      <h1 class="header header-text-big">
+       ManagedKube Installation Service
+      </h1>
+      <p class="header-subtext">We install a fully functioning Kubernetes cluster for you quickly and affordably by leveraging open source projects.</p>
+      <a class="btn-hero scroll" href="#intro">
+        <div class="btn btn-short">
+          <span>Learn more</span>
+          <svg class="chevron">
+            <use xlink:href="{{ '/assets/svg/icon-sprite.svg#chevron' | relative_url }}"></use>
+          </svg>
+        </div>
+      </a>
+    </div>
+    <div class="section-half right position-relative ">
+      <div class="bubbles">
+        <div class="bubbles-logo">
+          <img src="{{ "assets/logo/aws-square.png" | relative_url }}" alt="aws-logo" aria-hidden="true">
+        </div>
+        <div class="bubbles-logo">
+          <img src="{{ "assets/logo/azure-square.png" | relative_url }}" alt="azzure-logo" aria-hidden="true">
+        </div>
+        <div class="bubbles-logo">
+          <img src="{{ "assets/logo/azure-square.png" | relative_url }}" alt="azure-logo" aria-hidden="true">
+        </div>
+        <div class="bubbles-logo">
+          <img src="{{ "assets/logo/aws-square.png" | relative_url }}" alt="aws-logo" aria-hidden="true">
+        </div>
+        <div class="bubbles-logo">
+          <img src="{{ "assets/logo/google-cloud-square.png" | relative_url }}" alt="google-cloud-logo" aria-hidden="true">
+        </div>
+        <div class="bubbles-logo">
+          <img src="{{ "assets/logo/google-cloud-square.png" | relative_url }}" alt="google-cloud-logo" aria-hidden="true">
+        </div>
+      </div>
+
+
     </div>
   </div>
+
 </div>
-<section class="homepage rooted section--padding">
+
+<section id="intro" class="homepage rooted section--padding">
   <div class="section section-intro">
     <h2 class="header">
       ManagedKube Installation Service Allows You to Focus <br>on Your Application (and not your infrastructure)
@@ -62,7 +94,7 @@ animation: true
     <div class="box-wrapper">
       <div class="box box-shadow">
         <div class="box_img-wrapper">
-          <svg class="">
+          <svg class="svg-icon">
             <use xlink:href="{{ '/assets/svg/icon-sprite.svg#fast' | relative_url }}"></use>
           </svg>
         </div>
@@ -72,7 +104,7 @@ animation: true
       <hr class="display-on-mobile">
       <div class="box box-shadow">
         <div class="box_img-wrapper">
-          <svg class="">
+          <svg class="svg-icon">
             <use xlink:href="{{ '/assets/svg/icon-sprite.svg#low-cost' | relative_url }}"></use>
           </svg>
         </div>
@@ -82,7 +114,7 @@ animation: true
       <hr class="display-on-mobile">
       <div class="box box-shadow">
         <div class="box_img-wrapper">
-          <svg class="">
+          <svg class="svg-icon">
             <use xlink:href="{{ '/assets/svg/icon-sprite.svg#secure' | relative_url }}"></use>
           </svg>
         </div>
@@ -322,5 +354,12 @@ $(".button").click(function() {
   $('html, body').animate({
     scrollTop: $("#cost-form").offset().top + offset
   }, 600);
+});
+
+jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    });
 });
 </script>

@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+
+  <symbol id="chevron" viewBox="0 0 24 24">
+    <title>chevron</title>
+    <path d="M10 6L8.59 7.41L13.17 12l-4.58 4.59L10 18l6-6z" fill="white"/>
+  </symbol>
   <symbol id="fast" viewBox="0 0 512 512">
     <title>fast</title>
     <path d="M221.8,139.53a15,15,0,0,0-14-7.25L85.88,141.69a39.62,39.62,0,0,0-30.16,17.75L4.56,236.81A27.42,27.42,0,0,0,23.24,279l98.84,15.31a14.85,14.85,0,0,0,2.3.18A15,15,0,0,0,137,287.59l84.56-132.28A15,15,0,0,0,221.8,139.53Z" fill="#226bc5" />
