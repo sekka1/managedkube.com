@@ -296,7 +296,9 @@
 body .homepage {
   scroll-behavior: smooth;
 }
-
+.not-visible {
+  visibility: hidden;
+}
 .homepage {
   .btn-short {
     display: inline-flex !important;
@@ -398,6 +400,7 @@ body .homepage {
 
 
     .bubbles-logo {
+      visibility: hidden;
       position: absolute;
       box-shadow: 0 5px 30px rgba(0,0,0,0.07);
       border-radius: 100%;
