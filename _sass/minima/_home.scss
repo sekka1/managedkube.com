@@ -392,27 +392,27 @@ body .homepage {
 
     @keyframes floating {
       0% {
-          -webkit-transform: translate3d(0, 0, 0);
-          -ms-transform: translate3d(0, 0, 0);
-          -moz-transform: translate3d(0, 0, 0);
-          -o-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0)
+          -webkit-transform: translate3d(0, 0, 0) rotate(0.001deg);
+          -ms-transform: translate3d(0, 0, 0) rotate(0.001deg);
+          -moz-transform: translate3d(0, 0, 0) rotate(0.001deg);
+          -o-transform: translate3d(0, 0, 0) rotate(0.001deg);
+          transform: translate3d(0, 0, 0)rotate(0.001deg);
       }
 
       50% {
-          -webkit-transform: translate3d(0, 1.5vh, 0);
-          -ms-transform: translate3d(0, 1.5vh, 0);
-          -moz-transform: translate3d(0, 1.5vh, 0);
-          -o-transform: translate3d(0, 1.5vh, 0);
-          transform: translate3d(0, 1.5vh, 0)
+          -webkit-transform: translate3d(0, 1.5vh, 0) rotate(0.001deg);
+          -ms-transform: translate3d(0, 1.5vh, 0) rotate(0.001deg);
+          -moz-transform: translate3d(0, 1.5vh, 0) rotate(0.001deg);
+          -o-transform: translate3d(0, 1.5vh, 0) rotate(0.001deg);
+          transform: translate3d(0, 1.5vh, 0 rotate(0.001deg))
       }
 
       100% {
-          -webkit-transform: translate3d(0, 0, 0);
-          -ms-transform: translate3d(0, 0, 0);
-          -moz-transform: translate3d(0, 0, 0);
-          -o-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0)
+          -webkit-transform: translate3d(0, 0, 0) rotate(0.001deg);
+          -ms-transform: translate3d(0, 0, 0) rotate(0.001deg);
+          -moz-transform: translate3d(0, 0, 0) rotate(0.001deg);
+          -o-transform: translate3d(0, 0, 0) rotate(0.001deg);
+          transform: translate3d(0, 0, 0) rotate(0.001deg);
       }
     }
 
