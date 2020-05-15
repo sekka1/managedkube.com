@@ -27,7 +27,7 @@
 }
 
 .common-StripeGrid {
-    --stripe-height:48px;--content-columns:12;--gutter-columns:4;position: absolute;
+    --stripe-height:30px;--content-columns:12;--gutter-columns:4;position: absolute;
     width: 100%;
     top: 0;
     bottom: 0;
@@ -37,7 +37,8 @@
 
 @media (min-width: 670px) {
     .common-StripeGrid {
-        --stripe-height:64px;
+        --stripe-height:50px;
+        opacity: .75;
     }
 }
 
@@ -55,8 +56,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-transform: skewY(8deg);
-    transform: skewY(8deg)
+    -webkit-transform: skewY(4deg);
+    transform: skewY(4deg)
 }
 
 .common-StripeGrid .backgroundContainer .grid {
@@ -111,25 +112,25 @@
 
 @media(min-width: 420px) {
     .rooted {
-        padding:80px 0 90px
+        padding:50px 0 50px
     }
 }
 
 @media(min-width: 670px) {
     .rooted {
-        padding:80px 0 100px
+        padding:50px 0 50px
     }
 }
 
 @media(min-width: 880px) {
     .rooted {
-        padding:80px 0 120px
+        padding:50px 0 50px
     }
 }
 
 @media(min-width: 1040px) {
     .rooted {
-        padding:80px 0 160px
+        padding:80px 0 60px
     }
 }
 
@@ -191,51 +192,6 @@
     margin: 0
 }
 
-.rooted-increment {
-    position: relative;
-    flex-shrink: 0;
-    padding: 30px;
-    margin-top: 50px
-}
-
-@media(min-width: 670px) {
-    .rooted-increment {
-        padding:40px;
-        margin-top: 0
-    }
-}
-
-.rooted-increment .cover {
-    position: relative;
-    height: 200px;
-    background-color: #fa9a91;
-    background-image: url(/assets/compiled/js/../img/increment-callout-v2.jpg);
-    background-size: 120%;
-    background-position: top;
-    margin: -30px -30px 25px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    overflow: hidden
-}
-
-@media(min-width: 670px) {
-    .rooted-increment .cover {
-        margin:-40px -40px 25px
-    }
-}
-
-.rooted-increment .cover:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 200px;
-    left: 0;
-    top: 100%;
-    background-color: #fff;
-    transform: skewY(8deg);
-    transform-origin: 0 0
-}
-
 .rooted-increment h2 {
     margin: 0 0 20px;
     color: #32325d
@@ -263,19 +219,19 @@
 }
 
 .rooted .common-StripeGrid .stripeContainer .stripe:nth-child(3) {
-    grid-column: right-gutter-start/span 3;
+    grid-column: span 3/-2;
     grid-row: -4;
     background-color: #6772e5
 }
 
 .rooted .common-StripeGrid .stripeContainer .stripe:nth-child(4) {
-    grid-column: span 6/viewport-end;
+    grid-column: span 5/viewport-end;
     grid-row: -3;
     background-color: #87bbfd
 }
 
 .rooted .common-StripeGrid .stripeContainer .stripe:nth-child(5) {
-    grid-column: span 3/-5;
+    grid-column: span 2/-5;
     grid-row: -2;
     background-color: #c4f0ff
 }
@@ -349,13 +305,16 @@ body .homepage {
     padding: 0 1rem;
   }
   &.first-section {
-    height: calc(100vh - 80px);
+    // height: calc(100vh - 80px);
     overflow: hidden !important;
     position: relative;
     background: url('/assets/svg/bg.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+    @media screen and (min-width: 1024px) {
+      padding: 1rem 0 3rem 0;
+    }
 
     @media screen and (max-width: 600px) {
       .header-text-big {
@@ -370,7 +329,6 @@ body .homepage {
       max-width: 100%;
       height: auto;
     }
-
 
     @keyframes floating {
       0% {
@@ -536,7 +494,9 @@ body .homepage {
 // Section intro
 .homepage {
   .section-intro {
-      text-align: center
+      text-align: center;
+      padding-top: 0;
+      padding-bottom: 3.5rem;
   }
   .section-intro .common-SectionTitle {
       margin: 0 0 18px
@@ -568,8 +528,7 @@ body .homepage {
       margin-bottom: 30px;
     }
   }
-  .section.section-intro { padding-top: 0; }
-  &.mt-12, .mt-12 { margin-top: 12rem; }
+  &.mt-12, .mt-intro { margin-top: 1.5rem; }
   .mt-4 { margin-top: 4rem; }
   &.blue-bg { background-color: unset; }
 
