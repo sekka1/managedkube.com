@@ -7,6 +7,13 @@
 
   </div>
 
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+    integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+  <!-- three js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
+    integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY=" crossorigin="anonymous"></script>
+
   <script type="text/javascript">
     console.log("GA button clicks.");
 
@@ -31,6 +38,72 @@
           eventLabel: 'Mailchimp-subscribe-to-newsletter'
         });
     });
+
+    {% if page.animation %}
+
+    // Section One Text
+    TweenMax.from(".header-text-big", 1.5, {
+      autoAlpha: 0,
+      delay: 1,
+      // opacity: 0,
+      x: "-100%",
+      ease: Expo.easeInOut
+    });
+
+    TweenMax.from(".header-subtext", 1.5, {
+      autoAlpha: 0,
+      delay: 1.2,
+      // opacity: 0,
+      x: "-100%",
+      ease: Expo.easeInOut
+    });
+
+    TweenMax.from(".btn-hero", 1.5, {
+      autoAlpha: 0,
+      delay: 1.3,
+      // opacity: 0,
+      x: "-100%",
+      ease: Expo.easeInOut
+    });
+
+
+    TweenMax.from(".bubbles-logo", 1, {
+      autoAlpha: 0,
+      delay: 1.45,
+      // opacity: 0,
+      bottom: "-200",
+      ease: Expo.easeInOut
+    });
+
+    // Scroll Reveal
+    const icons = document.querySelectorAll('.svg-icon');
+
+    const config = {
+      threshold: 0.5
+    };
+
+    const tl = new TimelineMax()
+
+    let observer = new IntersectionObserver(function(entries, self) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          let overlap = '-=0.3';
+
+          if (!tl.isActive()) {
+            overlap = '+=0';
+          }
+
+          tl.to(entry.target, 0.5, { autoAlpha: 1, rotation:0.01, y:-35, ease: Expo.easeInOut }, overlap);
+          self.unobserve(entry.target);
+        }
+      });
+    }, config);
+
+    icons.forEach(icon => {
+      observer.observe(icon);
+    });
+
+    {% endif %}
   </script>
 
 </footer>
