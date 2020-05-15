@@ -3,243 +3,355 @@ layout: default
 title: Home
 ---
 
-<div class="kubernetes-cost-attribution page">
-	<div class="banner">
-	  <div class="section">
-	    <div class="banner-text center">
-	      <h1 class="banner-heading">Kubernetes Common Services</h1>
-	      <p class="banner-subheading">
-			We operationalize these services for your cluster so you don’t have to.
-		  </p>
-
-	     <div class="banner-container">
-	      	<div class="application" style="padding: 20px;">
-	      		<img src="/assets/images/logo/NGINX-logo-rgb-large.png">
-	      	</div>
-	      	<div class="application">
-	      		<img src="/assets/images/logo/prometheus-grafana.png">
-	      	</div>
-	      	<div class="application" style="padding: 20px;">
-	      		<img src="/assets/images/logo/external-dns-stack-220x234.png">
-	      	</div>
+<div class="homepage white-bg first-section">
+	<div class="ornament">
+	</div>
+  
+	<div class="section first-section-wrapper">
+	  <div class="section-half left">
+		<h1 class="header header-text-big not-visible">
+		 ManagedKube Installation Service
+		</h1>
+		<p class="header-subtext not-visible">We install a fully functioning Kubernetes cluster for you quickly and affordably by leveraging open source projects.</p>
+		<a class="btn-hero scroll not-visible" href="#intro">
+		  <div class="btn btn-short">
+			<span>Learn more</span>
+			<svg class="chevron">
+			  <use xlink:href="{{ '/assets/svg/icon-sprite.svg#chevron' | relative_url }}"></use>
+			</svg>
 		  </div>
-		  <p class="banner-subheading">
-			And many more
-		  </p>
-
-	   <!-- <br><a href="/free-k8sbot-trial-signup"><div class="button"><span>Start Free Trial<span></div></a>
-		    <h6><font color="white">no credit card required</h6></font>-->
-	    </div>
+		</a>
+	  </div>
+	  <div class="section-half right position-relative ">
+		<div class="bubbles">
+		  <div class="bubbles-logo">
+			<img src="{{ "assets/logo/aws-square.png" | relative_url }}" alt="aws-logo" aria-hidden="true">
+		  </div>
+		  <div class="bubbles-logo">
+			<img src="{{ "assets/logo/azure-square.png" | relative_url }}" alt="azzure-logo" aria-hidden="true">
+		  </div>
+		  <div class="bubbles-logo">
+			<img src="{{ "assets/logo/azure-square.png" | relative_url }}" alt="azure-logo" aria-hidden="true">
+		  </div>
+		  <div class="bubbles-logo">
+			<img src="{{ "assets/logo/aws-square.png" | relative_url }}" alt="aws-logo" aria-hidden="true">
+		  </div>
+		  <div class="bubbles-logo">
+			<img src="{{ "assets/logo/google-cloud-square.png" | relative_url }}" alt="google-cloud-logo" aria-hidden="true">
+		  </div>
+		  <div class="bubbles-logo">
+			<img src="{{ "assets/logo/google-cloud-square.png" | relative_url }}" alt="google-cloud-logo" aria-hidden="true">
+		  </div>
+		</div>
+  
+  
 	  </div>
 	</div>
-
-
-	<!-- Section -->
-	<div class="white-bg what-we-do">
-			<div class="section">
-   
-			   <h1 class="header left blue">What is this service?</h1>
-   
-			   <p class="text left blue">
-				Common services help you run your application in Kubernetes but are not core to your application.  Open source items such as setting DNS entries, getting HTTPS certificates, monitoring and many more.  There is no to re-invent the wheel when most of the common things you need are already created for us, just like why write our own scheduler when there is Kubernetes.
-				</p>
-				<br/>
-
-				<p class="text left blue">
-					While the community has created these applications, they don’t integrate them into your Kubernetes environment for you.  That means for each of these applications, you have to add them into your Kubernetes cluster and make sure it works and it works with all of the other common services applications because one service can leverage another service.  Basically “wiring it all up to work together”.
-				</p>
-				<br/>
-
-				<p class="text left blue">
-					This service provides you an opinionated way of running these services where we keep the “common services” ecosystem up and running correctly with each other, updated, and a full GitOps workflow with a CI/CD pipeline to deliver these services into any number of Kubernetes clusters.
-				</p>
-
-
-				<br/>
-				<h2 class="header left blue">Get to what matters faster</h2>
-
-				<p class="text left blue">
-					Skip all of the undifferentiated heavy lifting and get to deploying your application faster.
-				</p>
-
-				<img src="assets/images/common-services.png"/>
-				<br/>
-				<br/>
-
-				<p class="text left blue">
-					What really matters is the blue part, which is where your application lives.  Everything else exists only to help you to get to that point.  
-				</p>
-				<br/>
-
-				<p class="text left blue">
-				These common services are like Kubernetes.  You just want it to work and you don't want to have to manage it.  
-				</p>
-
-
-		   </div>
-	   </div>
-
-	   
-	   <!-- Section -->
-	  <div class="blue-bg benefits">
-			<div class="section">
-   
-				<h1 class="header left white">Why would I use Kubernetes Common Services?</h1>
-   
-				<h2 class="left white">Can’t I do this myself?</h2>
-				<p class="text left white">
-					Absolutely!
-				</p>
-
-				<h2 class="left white">Isn’t all of this open source?</h2>
-				<p class="text left white">
-					Yup, it’s 100% open source.
-				</p>
-
-				<br/>
-
-				<p class="text left white">
-					Kubernetes Common Services offers the same benefit that GKE, EKS, AKS, or any other managed Kubernetes service offers.  These items are also undifferentiated heavy lifting that you are doing to bring your application to the market.
-				</p>
-
-				<br/>
-				<h2 class="left white">It takes time to:</h2>
-				<p class="text left white">
-					* “wire all of these applications up together” <br/>
-					* To perform upgrades to one of the pieces and test to make sure it is working with everything <br/>
-					* Keep up with security updates and best practices for these applications <br/>
-				</p>
-				<br/>
-
-				<p class="text left white">
-					Why focus your time on these items when you can instead refocus your time and resources towards other parts of your application?
-				</p>
-				
-
-		   </div>
-	   </div>
-
-  	<!-- Section -->
-	  <div class="light-blue-bg the-stack">
-		<div class="section">
-
-			<h1 class="header center blue">There is no magic to this service</h1>
-
-			<p class="text left blue">
-				There is absolutely no magic to this service.  What this service provides is the mundane work of maintaining the integration between all of these services and your Kubernetes cluster, writing a lot of unit tests and integrations tests, and being part of the community of these applications to ensure they work well individually and together.
-			</p>	
-
-	   </div>
-   </div>
-   
-
-  	<!-- Section -->
-	  <div class="white-bg the-stack">
-			<div class="section">
-	
-				<h1 class="header center blue">Testing is the key to having an automated CD pipeline</h1>
-
-				<p class="text left blue">We all know how important testing software is and when releasing software, it should be tested.  This is mostly done manually at first and then automated.  A lot of time, we never get to the automated part because we have other higher priority features or tasks to do instead.  This usually leaves the testing to be manually done which means we can’t automatically deploy out the software because someone has to manually test it first.  Then as you add in more applications, the last one didn’t have any testing, are you going to start writing tests for this one?  Then the question becomes, why this one and not the other ones?  This is a downward spiral to no testing at all.
-				</p>
-				<br/>
-
-				<p class="text left blue">We know how hard it is to write and maintain tests for infrastructure applications.  It is plain old tedious work. As infrastructure becomes more like any other application code (infrastructure as code), it gets more important to test each item for the same reason we write unit and integration (e2e) tests for our own core applications.  These are complex applications with a lot of functionalities, without testing, we can not guarantee there were no regressions or change of behavior from what was expected.
-				</p>
-				<br/>
-
-				<p class="text left blue">Another service this product provides are all of the CI, integration, and e2e tests for all of these applications.  We will maintain these tests as the application changes throughout their lifecycle.
-				</p>
-				<br/>
-
-				<p class="text left blue">The following is Weaveworks Flux’s diagram on the GitOps workflow that their open source product provides.  We leverage this tool heavily for the GitOps workflow.
-				</p>
-				<br/>
-	
-				<img src="assets/images/flux-cd-diagram.png"/>
-				(Image from <a href="https://github.com/fluxcd/flux">https://github.com/fluxcd/flux</a>)
-				<br/><br/>
-
-				<p class="text left blue">This is a fantastic tool that provides a very good model for deploying in a GitOps fashion but we have found it is missing some pieces such as testing in the workflow.  That makes sense since they are focused on the GitOps workflow mechanism and is not here to provide you with tests that you should be writing.  This service extends that workflow and provides you with pre-written tests that slots into the delivery pipeline to make automatically delivering updates on these applications safe and predictable.
-				</p>
-				<br/>
-
-				<img src="assets/images/delivery-pipeline.png"/>
-
-		   </div>
-	   </div>
-
-	<!-- section -->
-	<div class="blue-bg clients-weve-worked-with">
-		<div class="section">
-
-		   <h1 class="header center white">Works on</h1>
-
-		   <div class="bulk-clients-list-wrapper">
-
-			   <div class="bulk-clients-list">
-				   <a class="client_logo" href="" target="_blank">
-					   <img src="/assets/images/logo/eks.jpeg" title="lucidworks" alt="eks logo">
-				   </a>
-				   <a class="client_logo" href="" target="_blank">
-					   <img src="/assets/images/logo/gke.png" title="gawkbox" alt="gke logo">
-				   </a>
-				   <a class="client_logo" href="" target="_blank">
-					   <img src="/assets/images/logo/aks.png" title="persistiq" alt="aks logo">
-				   </a>
-				   <a class="client_logo" href="" target="_blank">
-					<img src="/assets/images/logo/kops.png" title="persistiq" alt="kops logo">
-				</a>
-
-			   </div>
-
-		   </div>
-	   </div>
-   </div>
-   
-
-
-	<!-- Google sheet form submit: https://github.com/jamiewilson/form-to-google-sheets -->
-	<div class="white-bg get-in-touch-today">
-		<div class="section">
-		<h1 class="header center blue form-header">Contact us for more information:</h1>
-			<form class="contact-form" name="submit-to-google-sheet">
-				<input type="text" class="names" name="first_name" placeholder="First Name*" required>
-				<input type="text" class="names" name="last_name" placeholder="Last Name*" required>
-				<input type="text" name="company_name" placeholder="Company">
-				<input type="email" name="email" placeholder="Email Address *" required>
-				<textarea name="message" placeholder="How can we help?"></textarea>
-				<button class="send-email" type="submit">Submit</button>
-			</form>
-
-		</div>
+  
+  </div>
+  
+  <section id="intro" class="homepage rooted section--padding">
+	<div class="section section-intro">
+	  <h2 class="header">
+		ManagedKube Installation Service Allows You to Focus <br>on Your Application (and not your infrastructure)
+	  </h2>
+	  <p>
+		Kubernetes is hard! You need a lot of components (eg, VPC, Kubernetes API, applications) working together to create a fully functioning Kubernetes environment. With ManagedKube Installation Service, we'll instantiate everything you need to run a successful Kubernetes cloud infrasturcture that you can rely on.
+	  </p>
 	</div>
-
-	<script>
-		const scriptURL = 'https://script.google.com/macros/s/AKfycbyaBJm5n2jzjNzRihV0R5rn0UY00vO_uf6himaLDOnunXEjgEw/exec'
-		const form = document.forms['submit-to-google-sheet']
-	
-		form.addEventListener('submit', e => {
-		e.preventDefault()
-		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-			.then((response) => {
-			console.log('Success!', response)
-			window.open('/thank-you-form', '_self');
-			return response.json();
-			})
-			.catch(error => console.error('Error!', error.message))
-		})
-
-	</script>
-
-
-</div>
-
-<script>
-	$(".button").click(function() {
-	    var offset = 20; //Offset of 20px
-
-	    $('html, body').animate({
-	        scrollTop: $("#cost-form").offset().top + offset
-	    }, 600);
-	});
-</script>
+	<div class="common-StripeGrid anchorBottom">
+	  <!-- Background -->
+	  <div class="backgroundContainer">
+		<div class="grid">
+		  <div class="background"></div>
+		</div>
+	  </div>
+	  <!-- Stripes -->
+	  <div class="stripeContainer">
+		<div class="grid">
+		  <div class="stripe"></div>
+		  <div class="stripe"></div>
+		  <div class="stripe"></div>
+		  <div class="stripe"></div>
+		  <div class="stripe"></div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  <!-- ManageKube Benefits -->
+  <div class="homepage blue-bg benefits mt-intro">
+	<div class="section">
+	  <h1 class="header center">ManageKube Installation Service Benefits</h1>
+	  <div class="box-wrapper">
+		<div class="box box-shadow">
+		  <div class="box_img-wrapper">
+			<svg class="svg-icon">
+			  <use xlink:href="{{ '/assets/svg/icon-sprite.svg#fast' | relative_url }}"></use>
+			</svg>
+		  </div>
+		  <h2 class="fw-normal center">Benefit #1: Faster</h2>
+		  <p class="text center">With our expertise, you'll have a working Kubernetes environment in three days.</p>
+		</div>
+		<hr class="display-on-mobile">
+		<div class="box box-shadow">
+		  <div class="box_img-wrapper">
+			<svg class="svg-icon">
+			  <use xlink:href="{{ '/assets/svg/icon-sprite.svg#low-cost' | relative_url }}"></use>
+			</svg>
+		  </div>
+		  <h2 class="fw-normal center">Benefit #2: Lower cost </h2>
+		  <p class="text center">It's cheaper to buy vs. build when there is already a solution for your exact problem.</p>
+		</div>
+		<hr class="display-on-mobile">
+		<div class="box box-shadow">
+		  <div class="box_img-wrapper">
+			<svg class="svg-icon">
+			  <use xlink:href="{{ '/assets/svg/icon-sprite.svg#secure' | relative_url }}"></use>
+			</svg>
+		  </div>
+		  <h2 class="fw-normal center">Benefit #3: Secure</h2>
+		  <p class="text center">Secure and reliable from being battle-tested in many companies.
+		  </p>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <div class="homepage kubernetes-cost-attribution page">
+	<!-- Production Grade ManageKube? -->
+	<div class="blue-bg production-grade">
+	  <div class="section">
+		<h1 class="header center">We've spent 4 years creating and refining<br>a production-grade Kubernetes infrastructure.</h1>
+		<p class="">
+		  As Kubernetes consultants working with more than two dozen clients, we have built this stack many times. Our expertise in leveraging open source components means that you don't need to hire a DevOps resource to set-up and maintain your Kubernetes clusters.</p>
+		<br>
+		<p>If you want to run your application on a new Kubernetes cluster, ManagedKube Installation Service provides:</p>
+		<ul class="number-list">
+		  <li><span class="numberCircle">1</span>Carefully selected the components that work well together</li>
+		  <li><span class="numberCircle">2</span>Architected the stack with all of these components</li>
+		  <li><span class="numberCircle">3</span>Wired the components together</li>
+		  <li><span class="numberCircle">4</span>Built the cluster with security in mind</li>
+		</ul>
+	  </div>
+	</div>
+	<!-- example section -->
+	<div class="white-bg comparison">
+	  <div class="section">
+		<h1 class="header center">The Stack: ManagedKube's Installation Service Provides Everything But Your Application</h1>
+		<div class="compare">
+		  <div class="compare_image-wrapper">
+			<img src="{{ "/assets/images/managedkube-diagram.png" | relative_url }}" alt="k8sbot example retrieve kubernetes information point and click">
+		  </div>
+		  <div class="compare_image-wrapper-mobile">
+			<img src="/assets/images/managedkube-diagram.png">
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- Clients that we’ve worked with -->
+	<div class="section border-top">
+	  <h1 class="header center">Works In</h1>
+	  <div class="client-list">
+		<div class="client-list_img-wrapper" style="margin: 0 auto;">
+		  <a href="https://cloud.google.com/" target="_blank">
+			<img class="limit-size" src="{{ "/assets/images/google-cloud.png" | relative_url }}">
+		  </a>
+		</div>
+		<div class="client-list_img-wrapper" style="margin: 0 auto;">
+		  <a href="https://aws.amazon.com/" target="_blank">
+			<img src="{{ "/assets/images/aws-logo.png" | relative_url }}">
+		  </a>
+		</div>
+		<div class="client-list_img-wrapper" style="margin: 0 auto;">
+		  <a href="https://azure.microsoft.com/" target="_blank">
+			<img src="{{ "/assets/images/azure-logo.png" | relative_url }}">
+		  </a>
+		</div>
+	  </div>
+	</div>
+	<div class="section border-top">
+	  <h1 class="header center">Who Is Using This</h1>
+	  <div class="client-list">
+		<div class="client-list_img-wrapper" style="margin: 0 auto;">
+		  <a href="https://www.parsable.com/" target="_blank">
+			<img src="/assets/images/parsable.jpg">
+		  </a>
+		</div>
+		<div class="client-list_img-wrapper" style="margin: 0 auto;">
+		  <a href="https://powerupaudio.com/" target="_blank">
+			<img src="/assets/images/power-up.png">
+		  </a>
+		</div>
+		<div class="client-list_img-wrapper" style="margin: 0 auto;">
+		  <a href="https://karunalabs.com/" target="_blank">
+			<img src="/assets/images/karuna.png">
+		  </a>
+		</div>
+		<div class="client-list_img-wrapper" style="margin: 0 auto;">
+		  <a href="https://www.healthtap.com/" target="_blank">
+			<img src="/assets/images/health-tap.png">
+		  </a>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
+  <!-- Pricing -->
+  <div class="homepage bg-primary">
+	  <div class="section pricing">
+	  <h1 class="header center">Pricing</h1>
+	<div class="price-card-wrapper">
+	  <div class="price-card">
+		<div class="header-section center">
+		  <h2 class="fw-normal">Development</h2>
+		</div>
+		<div class="body-section">
+		  <ul>
+			<li class="price-body-text"><p class="list-text">One fully working Kubernetes cluster in a cloud of your choice</p></li>
+			<li class="price-body-text"><p class="list-text">All code used pushed into your Git repository</p></li>
+			<li class="price-body-text"><p class="list-text">Email and Chat Support</p></li>
+		  </ul>
+		</div>
+		<div class="price-section">
+		  <p class="center">
+			<strong class="price-value">
+			<span>$</span>999
+			</strong>
+		  </p>
+		</div>
+		<div class="footer-section">
+		  <a href="/free-k8sbot-trial-signup">
+			<div class="btn btn-wide">
+			  <span>Buy Now</span>
+			</div>
+		  </a>
+		</div>
+	  </div>
+	  <div class="price-card blue-highlight">
+		<div class="header-section center">
+		  <h2 class="fw-normal">Production</h2>
+		</div>
+		<div class="body-section">
+		  <ul>
+			<li class="price-body-text"><p class="list-text">Three fully working Kubernetes clusters in a cloud of your choice (dev, test, production)</p></li>
+			<li class="price-body-text"><p class="list-text">All code used pushed into your Git repository</p></li>
+			<li class="price-body-text"><p class="list-text">Phone, Email and Chat Support</p></li>
+		  </ul>
+		</div>
+		<div class="price-section">
+		  <p class="center">
+			<strong class="price-value">
+			<span>$</span>2499
+			</strong>
+		  </p>
+		</div>
+		<div class="footer-section">
+		  <a href="/free-k8sbot-trial-signup">
+			<div class="btn btn-wide btn-highlight">
+			  <span>Buy Now</span>
+			</div>
+		  </a>
+		</div>
+	  </div>
+	  <div class="price-card">
+		<div class="header-section center">
+		  <h2 class="fw-normal">Enterprise</h2>
+		</div>
+		<div class="body-section">
+		  <ul>
+			<li class="price-body-text"><p class="list-text">Audit your current infrastructure and develop your infrastructure strategy</p></li>
+			<li class="price-body-text"><p class="list-text">Fully customized Kubernetes clusters</p></li>
+			<li class="price-body-text"><p class="list-text">Phone, Email and Chat Support</p></li>
+		  </ul>
+		</div>
+		<div class="price-section">
+		  <p class="center">
+			<strong class="price-value">
+			Contact us
+			</strong>
+		  </p>
+		</div>
+		<div class="footer-section">
+		  <a href="/free-k8sbot-trial-signup">
+			<div class="btn btn-wide">
+			  <span>Let's Talk</span>
+			</div>
+		  </a>
+		</div>
+	  </div>
+	</div>
+	  </div>
+  </div>
+  <!-- Use Open Source -->
+  <div class="homepage white-bg">
+	<div class="section">
+	  <div class="center">
+		<h1 class="header">Not ready for the Installation Service? Use our Open Source Project for free</h1>
+		<a href="/free-k8sbot-trial-signup">
+			<div class="btn btn-center">
+				<span>ManagedKube's GitHub</span>
+			</div>
+		</a>
+		<p class="header-text mt-4">The Installation Service is for you if you want 1:1 help to get started faster.</p>
+	  </div>
+	</div>
+  </div>
+  <!-- How ManagedKube works -->
+  <div class="homepage">
+	  <div class="blue-bg attribution">
+		<div class="section">
+		  <h1 class="header center">How ManagedKube Installation Service Works</h1>
+			  <div class="custom-card">
+				  <svg class="big">
+					<use xlink:href="{{ '/assets/svg/icon-sprite.svg#task' | relative_url }}"></use>
+				  </svg>
+		  <svg class="small">
+			<use xlink:href="{{ '/assets/svg/icon-sprite.svg#task' | relative_url }}"></use>
+		  </svg>
+				  <ul class="number-list">
+					<li><span class="numberCircle">1</span>Give us access to a Git repository where you would like all of the code to be pushed to.</li>
+					<li><span class="numberCircle">2</span>Give us access to the cloud that you want your Kubernetes cluster to be instantiated in.</li>
+					<li><span class="numberCircle">3</span>We'll take it from here. First, we will push all of the code to your repository and instantiate the Kubernetes cluster.</li>
+					<li><span class="numberCircle">4</span>Then, we'll schedule a 60 minute Zoom session to walk through what we did and answer any questions</li>
+					<li><span class="numberCircle">5</span>And, we won't leave on an island. We will provide support for the next 7 days via Zoom or Slack.</li>
+				  </ul>
+			  </div>
+		</div>
+	  </div>
+  </div>
+  <!-- Technical Details -->
+  <div class="homepage white-bg">
+	<div class="section">
+	  <div class="center">
+		<h1 class="header">Want more technical details? Check out our open source projects</h1>
+			  <div class="btn-wrapper">
+				  <a href="/free-k8sbot-trial-signup">
+					  <div class="btn btn-center">
+						  <span>kubernetes-ops</span>
+					  </div>
+				  </a>
+				  <a href="/free-k8sbot-trial-signup">
+					  <div class="btn btn-center">
+						  <span>kubernetes-common-services</span>
+					  </div>
+				  </a>
+			  </div>
+	  </div>
+	</div>
+  </div>
+  <script>
+  $(".button").click(function() {
+	var offset = 20; //Offset of 20px
+  
+	$('html, body').animate({
+	  scrollTop: $("#cost-form").offset().top + offset
+	}, 600);
+  });
+  
+  jQuery(document).ready(function($) {
+	  $(".scroll").click(function(event){
+		  event.preventDefault();
+		  $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+	  });
+  });
+  </script>
+  

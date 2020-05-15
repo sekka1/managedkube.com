@@ -1,0 +1,245 @@
+---
+layout: default
+title: Home
+---
+
+<div class="kubernetes-cost-attribution page">
+	<div class="banner">
+	  <div class="section">
+	    <div class="banner-text center">
+	      <h1 class="banner-heading">Kubernetes Common Services</h1>
+	      <p class="banner-subheading">
+			We operationalize these services for your cluster so you don’t have to.
+		  </p>
+
+	     <div class="banner-container">
+	      	<div class="application" style="padding: 20px;">
+	      		<img src="/assets/images/logo/NGINX-logo-rgb-large.png">
+	      	</div>
+	      	<div class="application">
+	      		<img src="/assets/images/logo/prometheus-grafana.png">
+	      	</div>
+	      	<div class="application" style="padding: 20px;">
+	      		<img src="/assets/images/logo/external-dns-stack-220x234.png">
+	      	</div>
+		  </div>
+		  <p class="banner-subheading">
+			And many more
+		  </p>
+
+	   <!-- <br><a href="/free-k8sbot-trial-signup"><div class="button"><span>Start Free Trial<span></div></a>
+		    <h6><font color="white">no credit card required</h6></font>-->
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Section -->
+	<div class="white-bg what-we-do">
+			<div class="section">
+   
+			   <h1 class="header left blue">What is this service?</h1>
+   
+			   <p class="text left blue">
+				Common services help you run your application in Kubernetes but are not core to your application.  Open source items such as setting DNS entries, getting HTTPS certificates, monitoring and many more.  There is no to re-invent the wheel when most of the common things you need are already created for us, just like why write our own scheduler when there is Kubernetes.
+				</p>
+				<br/>
+
+				<p class="text left blue">
+					While the community has created these applications, they don’t integrate them into your Kubernetes environment for you.  That means for each of these applications, you have to add them into your Kubernetes cluster and make sure it works and it works with all of the other common services applications because one service can leverage another service.  Basically “wiring it all up to work together”.
+				</p>
+				<br/>
+
+				<p class="text left blue">
+					This service provides you an opinionated way of running these services where we keep the “common services” ecosystem up and running correctly with each other, updated, and a full GitOps workflow with a CI/CD pipeline to deliver these services into any number of Kubernetes clusters.
+				</p>
+
+
+				<br/>
+				<h2 class="header left blue">Get to what matters faster</h2>
+
+				<p class="text left blue">
+					Skip all of the undifferentiated heavy lifting and get to deploying your application faster.
+				</p>
+
+				<img src="assets/images/common-services.png"/>
+				<br/>
+				<br/>
+
+				<p class="text left blue">
+					What really matters is the blue part, which is where your application lives.  Everything else exists only to help you to get to that point.  
+				</p>
+				<br/>
+
+				<p class="text left blue">
+				These common services are like Kubernetes.  You just want it to work and you don't want to have to manage it.  
+				</p>
+
+
+		   </div>
+	   </div>
+
+	   
+	   <!-- Section -->
+	  <div class="blue-bg benefits">
+			<div class="section">
+   
+				<h1 class="header left white">Why would I use Kubernetes Common Services?</h1>
+   
+				<h2 class="left white">Can’t I do this myself?</h2>
+				<p class="text left white">
+					Absolutely!
+				</p>
+
+				<h2 class="left white">Isn’t all of this open source?</h2>
+				<p class="text left white">
+					Yup, it’s 100% open source.
+				</p>
+
+				<br/>
+
+				<p class="text left white">
+					Kubernetes Common Services offers the same benefit that GKE, EKS, AKS, or any other managed Kubernetes service offers.  These items are also undifferentiated heavy lifting that you are doing to bring your application to the market.
+				</p>
+
+				<br/>
+				<h2 class="left white">It takes time to:</h2>
+				<p class="text left white">
+					* “wire all of these applications up together” <br/>
+					* To perform upgrades to one of the pieces and test to make sure it is working with everything <br/>
+					* Keep up with security updates and best practices for these applications <br/>
+				</p>
+				<br/>
+
+				<p class="text left white">
+					Why focus your time on these items when you can instead refocus your time and resources towards other parts of your application?
+				</p>
+				
+
+		   </div>
+	   </div>
+
+  	<!-- Section -->
+	  <div class="light-blue-bg the-stack">
+		<div class="section">
+
+			<h1 class="header center blue">There is no magic to this service</h1>
+
+			<p class="text left blue">
+				There is absolutely no magic to this service.  What this service provides is the mundane work of maintaining the integration between all of these services and your Kubernetes cluster, writing a lot of unit tests and integrations tests, and being part of the community of these applications to ensure they work well individually and together.
+			</p>	
+
+	   </div>
+   </div>
+   
+
+  	<!-- Section -->
+	  <div class="white-bg the-stack">
+			<div class="section">
+	
+				<h1 class="header center blue">Testing is the key to having an automated CD pipeline</h1>
+
+				<p class="text left blue">We all know how important testing software is and when releasing software, it should be tested.  This is mostly done manually at first and then automated.  A lot of time, we never get to the automated part because we have other higher priority features or tasks to do instead.  This usually leaves the testing to be manually done which means we can’t automatically deploy out the software because someone has to manually test it first.  Then as you add in more applications, the last one didn’t have any testing, are you going to start writing tests for this one?  Then the question becomes, why this one and not the other ones?  This is a downward spiral to no testing at all.
+				</p>
+				<br/>
+
+				<p class="text left blue">We know how hard it is to write and maintain tests for infrastructure applications.  It is plain old tedious work. As infrastructure becomes more like any other application code (infrastructure as code), it gets more important to test each item for the same reason we write unit and integration (e2e) tests for our own core applications.  These are complex applications with a lot of functionalities, without testing, we can not guarantee there were no regressions or change of behavior from what was expected.
+				</p>
+				<br/>
+
+				<p class="text left blue">Another service this product provides are all of the CI, integration, and e2e tests for all of these applications.  We will maintain these tests as the application changes throughout their lifecycle.
+				</p>
+				<br/>
+
+				<p class="text left blue">The following is Weaveworks Flux’s diagram on the GitOps workflow that their open source product provides.  We leverage this tool heavily for the GitOps workflow.
+				</p>
+				<br/>
+	
+				<img src="assets/images/flux-cd-diagram.png"/>
+				(Image from <a href="https://github.com/fluxcd/flux">https://github.com/fluxcd/flux</a>)
+				<br/><br/>
+
+				<p class="text left blue">This is a fantastic tool that provides a very good model for deploying in a GitOps fashion but we have found it is missing some pieces such as testing in the workflow.  That makes sense since they are focused on the GitOps workflow mechanism and is not here to provide you with tests that you should be writing.  This service extends that workflow and provides you with pre-written tests that slots into the delivery pipeline to make automatically delivering updates on these applications safe and predictable.
+				</p>
+				<br/>
+
+				<img src="assets/images/delivery-pipeline.png"/>
+
+		   </div>
+	   </div>
+
+	<!-- section -->
+	<div class="blue-bg clients-weve-worked-with">
+		<div class="section">
+
+		   <h1 class="header center white">Works on</h1>
+
+		   <div class="bulk-clients-list-wrapper">
+
+			   <div class="bulk-clients-list">
+				   <a class="client_logo" href="" target="_blank">
+					   <img src="/assets/images/logo/eks.jpeg" title="lucidworks" alt="eks logo">
+				   </a>
+				   <a class="client_logo" href="" target="_blank">
+					   <img src="/assets/images/logo/gke.png" title="gawkbox" alt="gke logo">
+				   </a>
+				   <a class="client_logo" href="" target="_blank">
+					   <img src="/assets/images/logo/aks.png" title="persistiq" alt="aks logo">
+				   </a>
+				   <a class="client_logo" href="" target="_blank">
+					<img src="/assets/images/logo/kops.png" title="persistiq" alt="kops logo">
+				</a>
+
+			   </div>
+
+		   </div>
+	   </div>
+   </div>
+   
+
+
+	<!-- Google sheet form submit: https://github.com/jamiewilson/form-to-google-sheets -->
+	<div class="white-bg get-in-touch-today">
+		<div class="section">
+		<h1 class="header center blue form-header">Contact us for more information:</h1>
+			<form class="contact-form" name="submit-to-google-sheet">
+				<input type="text" class="names" name="first_name" placeholder="First Name*" required>
+				<input type="text" class="names" name="last_name" placeholder="Last Name*" required>
+				<input type="text" name="company_name" placeholder="Company">
+				<input type="email" name="email" placeholder="Email Address *" required>
+				<textarea name="message" placeholder="How can we help?"></textarea>
+				<button class="send-email" type="submit">Submit</button>
+			</form>
+
+		</div>
+	</div>
+
+	<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbyaBJm5n2jzjNzRihV0R5rn0UY00vO_uf6himaLDOnunXEjgEw/exec'
+		const form = document.forms['submit-to-google-sheet']
+	
+		form.addEventListener('submit', e => {
+		e.preventDefault()
+		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then((response) => {
+			console.log('Success!', response)
+			window.open('/thank-you-form', '_self');
+			return response.json();
+			})
+			.catch(error => console.error('Error!', error.message))
+		})
+
+	</script>
+
+
+</div>
+
+<script>
+	$(".button").click(function() {
+	    var offset = 20; //Offset of 20px
+
+	    $('html, body').animate({
+	        scrollTop: $("#cost-form").offset().top + offset
+	    }, 600);
+	});
+</script>
