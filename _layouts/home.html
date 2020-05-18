@@ -6,7 +6,7 @@ title: Home
 <div class="homepage white-bg first-section">
 	<div class="ornament">
 	</div>
-  
+
 	<div class="section first-section-wrapper">
 	  <div class="section-half left">
 		<h1 class="header header-text-big not-visible">
@@ -43,13 +43,13 @@ title: Home
 			<img src="{{ "assets/logo/google-cloud-square.png" | relative_url }}" alt="google-cloud-logo" aria-hidden="true">
 		  </div>
 		</div>
-  
-  
+
+
 	  </div>
 	</div>
-  
+
   </div>
-  
+
   <section id="intro" class="homepage rooted section--padding">
 	<div class="section section-intro">
 	  <h2 class="header">
@@ -194,7 +194,7 @@ title: Home
 	  </div>
 	</div>
   </div>
-  
+
   <!-- Pricing -->
   <div class="homepage bg-primary">
 	  <div class="section pricing">
@@ -219,7 +219,7 @@ title: Home
 		  </p>
 		</div>
 		<div class="footer-section">
-		  <a href="/free-k8sbot-trial-signup">
+		  <a href="{% link buy-now.html %}">
 			<div class="btn btn-wide">
 			  <span>Buy Now</span>
 			</div>
@@ -245,7 +245,7 @@ title: Home
 		  </p>
 		</div>
 		<div class="footer-section">
-		  <a href="/free-k8sbot-trial-signup">
+		  <a href="{% link buy-now.html %}">
 			<div class="btn btn-wide btn-highlight">
 			  <span>Buy Now</span>
 			</div>
@@ -271,7 +271,7 @@ title: Home
 		  </p>
 		</div>
 		<div class="footer-section">
-		  <a href="/free-k8sbot-trial-signup">
+		  <a href="{% link buy-now.html %}">
 			<div class="btn btn-wide">
 			  <span>Let's Talk</span>
 			</div>
@@ -283,18 +283,26 @@ title: Home
   </div>
   <!-- Use Open Source -->
   <div class="homepage white-bg">
-	<div class="section">
-	  <div class="center">
-		<h1 class="header">Not ready for the Installation Service? Use our Open Source Project for free</h1>
-		<a href="/free-k8sbot-trial-signup">
-			<div class="btn btn-center">
-				<span>ManagedKube's GitHub</span>
-			</div>
-		</a>
-		<p class="header-text mt-4">The Installation Service is for you if you want 1:1 help to get started faster.</p>
-	  </div>
-	</div>
+		<div class="section">
+		  <div class="center">
+			<h1 class="header">Not ready for the Installation Service? Use our Open Source Project for free</h1>
+			  <div class="btn-wrapper">
+				  <a href="https://github.com/ManagedKube/kubernetes-ops">
+					  <div class="btn btn-center">
+						  <span>kubernetes-ops</span>
+					  </div>
+				  </a>
+				  <a href="https://github.com/ManagedKube/kubernetes-common-services">
+					  <div class="btn btn-center">
+						  <span>kubernetes-common-services</span>
+					  </div>
+				  </a>
+			  </div>
+			<p class="header-text mt-4">The Installation Service is for you if you want 1:1 help to get started faster.</p>
+		  </div>
+		</div>
   </div>
+
   <!-- How ManagedKube works -->
   <div class="homepage">
 	  <div class="blue-bg attribution">
@@ -318,35 +326,16 @@ title: Home
 		</div>
 	  </div>
   </div>
-  <!-- Technical Details -->
-  <div class="homepage white-bg">
-	<div class="section">
-	  <div class="center">
-		<h1 class="header">Want more technical details? Check out our open source projects</h1>
-			  <div class="btn-wrapper">
-				  <a href="/free-k8sbot-trial-signup">
-					  <div class="btn btn-center">
-						  <span>kubernetes-ops</span>
-					  </div>
-				  </a>
-				  <a href="/free-k8sbot-trial-signup">
-					  <div class="btn btn-center">
-						  <span>kubernetes-common-services</span>
-					  </div>
-				  </a>
-			  </div>
-	  </div>
-	</div>
-  </div>
+
   <script>
   $(".button").click(function() {
 	var offset = 20; //Offset of 20px
-  
+
 	$('html, body').animate({
 	  scrollTop: $("#cost-form").offset().top + offset
 	}, 600);
   });
-  
+
   jQuery(document).ready(function($) {
 	  $(".scroll").click(function(event){
 		  event.preventDefault();
@@ -354,4 +343,3 @@ title: Home
 	  });
   });
   </script>
-  
