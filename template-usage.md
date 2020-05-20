@@ -18,7 +18,7 @@ if page.animation
  javascript code to set hero section, and benefit icons visibility to visible.
 endif
 ```
-this line ({% if page.animation %} ) is checking if there is "animation: true" frontmatter in the page, like so:
+this line ({ % if page.animation % } ) is checking if there is "animation: true" frontmatter in the page, like so:
 ```
 ---
 layout: home
