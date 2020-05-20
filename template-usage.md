@@ -14,9 +14,9 @@ This specific code is only needed for this particular page & I don't want them i
 that use _includes./footer.html. So I create a conditional
 
 ```
-{% if page.animation %}
+{ % if page.animation % }
  javascript code to set hero section, and benefit icons visibility to visible.
-{% endif %}
+{ % endif % }
 ```
 this line ({% if page.animation %} ) is checking if there is "animation: true" frontmatter in the page, like so:
 ```
