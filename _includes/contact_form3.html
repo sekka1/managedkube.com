@@ -1,0 +1,29 @@
+<!-- Google sheet form submit: https://github.com/jamiewilson/form-to-google-sheets -->
+<div class="light-blue-bg get-in-touch-today">
+	<div class="section">
+	  <h1 class="header center blue form-header">To start the process let's setup a quick 30 minutes Zoom.  Please fill out the following with a few time slot we can talk and we'll send you a meeting invite.</h1>
+		<form class="contact-form" name="submit-to-google-sheet">
+		    <input type="text" class="names" name="first_name" placeholder="First Name*" required>
+		    <input type="text" class="names" name="last_name" placeholder="Last Name*" required>
+		    <input type="text" name="company_name" placeholder="Company">
+		    <input type="email" name="email" placeholder="Email Address *" required>
+		    <textarea name="message" placeholder="How can we help?"></textarea>
+		    <button class="send-email" type="submit">Submit</button>
+		</form>
+
+	</div>
+</div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyaBJm5n2jzjNzRihV0R5rn0UY00vO_uf6himaLDOnunXEjgEw/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+      alert("sent")
+    })
+
+  </script>
