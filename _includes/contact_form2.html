@@ -21,9 +21,12 @@
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
+        .then((response) => {
+          console.log('Success!', response)
+          window.open('/thank-you-form', '_self');
+          return response.json();
+        })
         .catch(error => console.error('Error!', error.message))
-      alert("sent")
     })
 
   </script>
