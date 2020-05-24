@@ -1,199 +1,206 @@
 <footer class="site-footer h-card">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
-
   <div class="wrapper">
-
     <p class="footer-heading">© 2018-2019 ManagedKube</p>
-
   </div>
-
   {% if page.animation %}
   <!-- gsap -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
-    integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
   <!-- three js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
-    integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js" integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY=" crossorigin="anonymous"></script>
   <script src="{{ "/script/scripts.js" | relative_url }}"></script>
   {% endif %}
-
   {% if page.tab-slider %}
   <script src="{{ "/script/tabby.polyfills.min.js" | relative_url }}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
   {% endif %}
-
   <script type="text/javascript">
-    console.log("GA button clicks.");
+  console.log("GA button clicks.");
 
-    $('button').click(function() {
-        console.log("clicked: generic button");
+  $('button').click(function() {
+    console.log("clicked: generic button");
 
-        ga('send', {
-          hitType: 'event',
-          eventCategory: 'buttonClick',
-          eventAction: 'Generic-Button-Click',
-          eventLabel: 'Generic-Button-Click'
-        });
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'buttonClick',
+      eventAction: 'Generic-Button-Click',
+      eventLabel: 'Generic-Button-Click'
     });
+  });
 
-    $('button.bannerContent__subscribeButton').click(function() {
-        console.log("MailChimp Subscribe button click");
+  $('button.bannerContent__subscribeButton').click(function() {
+    console.log("MailChimp Subscribe button click");
 
-        ga('send', {
-          hitType: 'event',
-          eventCategory: 'buttonClick',
-          eventAction: 'Mailchimp-subscribe-to-newsletter',
-          eventLabel: 'Mailchimp-subscribe-to-newsletter'
-        });
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'buttonClick',
+      eventAction: 'Mailchimp-subscribe-to-newsletter',
+      eventLabel: 'Mailchimp-subscribe-to-newsletter'
     });
+  });
 
-    {% if page.animation %}
+  {% if page.animation %}
 
-    // Section One Text
-    TweenMax.from(".header-text-big", 1.5, {
-      autoAlpha: 0,
-      delay: 1,
-      // opacity: 0,
-      x: "-100%",
-      ease: Expo.easeInOut
-    });
+  // Section One Text
+  TweenMax.from(".header-text-big", 1.5, {
+    autoAlpha: 0,
+    delay: 1,
+    // opacity: 0,
+    x: "-100%",
+    ease: Expo.easeInOut
+  });
 
-    TweenMax.from(".header-subtext", 1.5, {
-      autoAlpha: 0,
-      delay: 1.2,
-      // opacity: 0,
-      x: "-100%",
-      ease: Expo.easeInOut
-    });
+  TweenMax.from(".header-subtext", 1.5, {
+    autoAlpha: 0,
+    delay: 1.2,
+    // opacity: 0,
+    x: "-100%",
+    ease: Expo.easeInOut
+  });
 
-    TweenMax.from(".btn-hero", 1.5, {
-      autoAlpha: 0,
-      delay: 1.3,
-      // opacity: 0,
-      x: "-100%",
-      ease: Expo.easeInOut
-    });
+  TweenMax.from(".btn-hero", 1.5, {
+    autoAlpha: 0,
+    delay: 1.3,
+    // opacity: 0,
+    x: "-100%",
+    ease: Expo.easeInOut
+  });
 
 
-    TweenMax.from(".bubbles-logo", 1, {
-      autoAlpha: 0,
-      delay: 1.45,
-      // opacity: 0,
-      bottom: "-200",
-      ease: Expo.easeInOut
-    });
+  TweenMax.from(".bubbles-logo", 1, {
+    autoAlpha: 0,
+    delay: 1.45,
+    // opacity: 0,
+    bottom: "-200",
+    ease: Expo.easeInOut
+  });
 
-    // Scroll Reveal
-    const icons = document.querySelectorAll('.svg-icon');
+  // Scroll Reveal
+  const icons = document.querySelectorAll('.svg-icon');
 
-    const config = {
-      threshold: 0.5
-    };
+  const config = {
+    threshold: 0.5
+  };
 
-    const tl = new TimelineMax()
+  const tl = new TimelineMax()
 
-    let observer = new IntersectionObserver(function(entries, self) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          let overlap = '-=0.3';
+  let observer = new IntersectionObserver(function(entries, self) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        let overlap = '-=0.3';
 
-          if (!tl.isActive()) {
-            overlap = '+=0';
-          }
-
-          tl.to(entry.target, 0.5, { autoAlpha: 1, rotation:0.01, y:-35, ease: Expo.easeInOut }, overlap);
-          self.unobserve(entry.target);
+        if (!tl.isActive()) {
+          overlap = '+=0';
         }
-      });
-    }, config);
 
-    icons.forEach(icon => {
-      observer.observe(icon);
+        tl.to(entry.target, 0.5, { autoAlpha: 1, rotation: 0.01, y: -35, ease: Expo.easeInOut }, overlap);
+        self.unobserve(entry.target);
+      }
+    });
+  }, config);
+
+  icons.forEach(icon => {
+    observer.observe(icon);
+  });
+
+  {% endif %}
+
+  {% if page.tab-slider %}
+  // Tab
+  var tabs = new Tabby('[data-tabs]', {
+    default: '[data-tabby-default]'
+  });
+
+  // Slider (Slick.js)
+  $(document).ready(function() {
+    $('.healthcare').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      arrows: true,
+      dots: true,
+      centerMode: true,
+      variableWidth: true,
+      pauseOnHover: false,
+      responsive: [{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4
+        }
+      }, {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 3,
+          arrows: false
+        }
+      }]
     });
 
-    {% endif %}
+    $('.saas').slick({
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      arrows: true,
+      dots: true,
+      centerMode: true,
+      variableWidth: true,
+      pauseOnHover: false,
+      responsive: [{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1
+        }
+      }, {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 1,
+          arrows: false
+        }
+      }]
+    });
 
-    {% if page.tab-slider %}
-    // Tab
-    var tabs = new Tabby('[data-tabs]');
-
-    // Slider (Slick.js)
-    $(document).ready(function() {
-      $('.healthcare').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        arrows: true,
-        dots: true,
-        centerMode: true,
-        variableWidth: true,
-        pauseOnHover: false,
-        responsive: [{
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 4
-          }
-        }, {
-          breakpoint: 520,
-          settings: {
-            slidesToShow: 3,
-            arrows: false
-          }
-        }]
-      });
-
-      $('.saas').slick({
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        arrows: true,
-        dots: true,
-        centerMode: true,
-        variableWidth: true,
-        pauseOnHover: false,
-        responsive: [{
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1
-          }
-        }, {
-          breakpoint: 520,
-          settings: {
-            slidesToShow: 1,
-            arrows: false
-          }
-        }]
-      });
-
-      $('.data').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        arrows: true,
-        dots: true,
-        centerMode: true,
-        variableWidth: true,
-        pauseOnHover: false
-      });
-
-      $('.payment').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        arrows: true,
-        dots: true,
-        centerMode: true,
-        variableWidth: true,
-        pauseOnHover: false,
-      });
+    $('.data').slick({
+      autoplay: true,
+      arrows: true,
+      dots: true,
+      // slidesToShow: 1,
+      // slidesToScroll: 2,
+      // autoplaySpeed: 1500,
+      // centerMode: true,
+      // variableWidth: true,
+      // pauseOnHover: false
 
     });
 
-    {% endif %}
+    $('.payment').slick({
+      autoplay: true,
+      arrows: true,
+      dots: true,
+      // slidesToShow: 1,
+      // slidesToScroll: 1,
+      // autoplaySpeed: 1500,
+      // centerMode: true,
+      // variableWidth: true,
+      // pauseOnHover: false,
+    });
+
+    document.addEventListener('tabby', function (event) {
+        var tab = event.target.hash;
+
+        if (tab.includes('payment')) {
+          $('.payment').slick('setPosition').slick();
+          }
+          else if (tab.includes('data')) {
+          $('.data').slick('setPosition').slick();
+          }
+
+        }, false);
+
+  });
+
+
+  {% endif %}
   </script>
-
 </footer>

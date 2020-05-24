@@ -1044,8 +1044,10 @@ justify-content: space-between;
     justify-content: center;
     display: flex;
     outline: none;
-
     img:focus { outline: none; }
+    &.single-slide {
+      padding: 0 10%;
+    }
   }
 }
 
