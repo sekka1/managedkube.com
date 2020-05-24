@@ -1047,6 +1047,15 @@ justify-content: space-between;
     img:focus { outline: none; }
     &.single-slide {
       padding: 0 10%;
+      @media screen and (max-width: 1080px) {
+        padding: 0 8%;
+      }
+    }
+    &.single-slide2 {
+      padding: 0 9%;
+      @media screen and (max-width: 1080px) {
+        padding: 0 7%;
+      }
     }
   }
 }
