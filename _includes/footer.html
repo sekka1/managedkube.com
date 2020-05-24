@@ -7,12 +7,20 @@
 
   </div>
 
+  {% if page.animation %}
   <!-- gsap -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
     integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
   <!-- three js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
     integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY=" crossorigin="anonymous"></script>
+  <script src="{{ "/script/scripts.js" | relative_url }}"></script>
+  {% endif %}
+
+  {% if page.tab-slider %}
+  <script src="{{ "/script/tabby.polyfills.min.js" | relative_url }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+  {% endif %}
 
   <script type="text/javascript">
     console.log("GA button clicks.");
@@ -101,6 +109,88 @@
 
     icons.forEach(icon => {
       observer.observe(icon);
+    });
+
+    {% endif %}
+
+    {% if page.tab-slider %}
+    // Tab
+    var tabs = new Tabby('[data-tabs]');
+
+    // Slider (Slick.js)
+    $(document).ready(function() {
+      $('.healthcare').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: true,
+        dots: true,
+        centerMode: true,
+        variableWidth: true,
+        pauseOnHover: false,
+        responsive: [{
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 4
+          }
+        }, {
+          breakpoint: 520,
+          settings: {
+            slidesToShow: 3,
+            arrows: false
+          }
+        }]
+      });
+
+      $('.saas').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: true,
+        dots: true,
+        centerMode: true,
+        variableWidth: true,
+        pauseOnHover: false,
+        responsive: [{
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1
+          }
+        }, {
+          breakpoint: 520,
+          settings: {
+            slidesToShow: 1,
+            arrows: false
+          }
+        }]
+      });
+
+      $('.data').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: true,
+        dots: true,
+        centerMode: true,
+        variableWidth: true,
+        pauseOnHover: false
+      });
+
+      $('.payment').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: true,
+        dots: true,
+        centerMode: true,
+        variableWidth: true,
+        pauseOnHover: false,
+      });
+
     });
 
     {% endif %}
