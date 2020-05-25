@@ -190,10 +190,10 @@
         var tab = event.target.hash;
 
         if (tab.includes('payment')) {
-          $('.payment').slick('setPosition').slick();
+          $('.payment').slick("refresh");
           }
           else if (tab.includes('data')) {
-          $('.data').slick('setPosition').slick();
+          $('.data').slick("refresh");
           }
 
         }, false);
