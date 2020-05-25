@@ -7,4 +7,5 @@
 #
 layout: home
 animation: true
+tab-slider: true
 ---
