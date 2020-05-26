@@ -29,13 +29,17 @@ The test was running a `helm install` with a set of values that did not configur
 ### The details
 For those of you that want to check out the details and maybe setup a Chart testing pipeline of your own.  Here are the low level deets.
 
-If you want to create a Chart testing pipeline, I would highly recommend you to read: [how-to-host-your-helm-chart-repository-on-github](https://jamiemagee.co.uk/blog/how-to-host-your-helm-chart-repository-on-github/).  This was tremendously helpful for me to get started.
-
 This is the test that was failing for me that found out when trying to `helm install` a `Service` without a port fails: [https://github.com/ManagedKube/helm-charts/runs/704148470?check_suite_focus=true](https://github.com/ManagedKube/helm-charts/runs/704148470?check_suite_focus=true)
 
 After some debugging (a few hours worth), I eventually figured out the problem and added these items:
+* Here is the PR with the changes and as you can see the list of commits was me trying to figure out why this test was failing: [https://github.com/ManagedKube/helm-charts/pull/2](https://github.com/ManagedKube/helm-charts/pull/2)
 * I added this to check to make sure the `Deployment` defined some ports before out putting the `Service` resource: [https://github.com/ManagedKube/helm-charts/pull/2/commits/bc39fd816aab4db7a70524f7de505c0245e9b37b#diff-eee7292c81fdd890fb4ab55a4ef8063dR1-R10](https://github.com/ManagedKube/helm-charts/pull/2/commits/bc39fd816aab4db7a70524f7de505c0245e9b37b#diff-eee7292c81fdd890fb4ab55a4ef8063dR1-R10)
 * Here are some additional tests I added in to make sure it would work if one container had ports while the other did not in a `Pod`: [https://github.com/ManagedKube/helm-charts/pull/2/commits/bc39fd816aab4db7a70524f7de505c0245e9b37b#diff-21f1299efcb46dca2385f1ebb6746aebR1-R19](https://github.com/ManagedKube/helm-charts/pull/2/commits/bc39fd816aab4db7a70524f7de505c0245e9b37b#diff-21f1299efcb46dca2385f1ebb6746aebR1-R19)
+
+## How can I setup my own Chart testing pipeline?
+In my opinion, the hardest part about testing is the getting started part.  You need to find the correct framework/harness and then create the pipelines and tools.  This is a lot of up front work and a high barrier to entry.  Luckily, there are already people out there doing this and has created some very good setups to help you test your Chart.  If you want to create a Chart testing pipeline, I would highly recommend you to read: [how-to-host-your-helm-chart-repository-on-github](https://jamiemagee.co.uk/blog/how-to-host-your-helm-chart-repository-on-github/).  This was tremendously helpful for me to get started.
+
+You might have to spend some time to learn how it works but once that is done, you can add in additional tests in minutes like how I did above.  
 
 ## Conclusion
 There was a lot of tech talk here but the over all moral of the story is that testing is a good thing.  It helps catches errors that you didn't manually test for.  This also helps you to create more robust tests.  After the test failed and diagnosing the problem, there were actually a few tests that I added to cover a few more variation on how this can break depending on how the user will use this Chart.  This leads to a more stable Helm Chart that can save the downstream users of this time.  Imagine if 1 or 5 teams used this and each one of them runs into this problem.  It could be at a minimum hours saved and at a maximum it could even save you from production down time.
