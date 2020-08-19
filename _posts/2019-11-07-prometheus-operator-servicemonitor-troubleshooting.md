@@ -86,7 +86,7 @@ Spec:
   Service Monitor Namespace Selector:
   Service Monitor Selector:
     Match Labels:
-      Release:  prometheus-operator                         <---- We are interested in this
+      Release:  prometheus-operator   <---- We are interested in this
   Storage:
     Volume Claim Template:
       Selector:
@@ -122,7 +122,7 @@ Labels:       app.kubernetes.io/instance=myapp-gar-api-svc-live
               app.kubernetes.io/name=myapp-api-svc-live
               app.selector=myapp-api-svc-live
               helm.sh/chart=master-service-1-0.1.3
-              release=prometheus-operator			<------- It has the label
+              release=prometheus-operator		<---- It has the label
 Annotations:  <none>
 API Version:  monitoring.coreos.com/v1
 Kind:         ServiceMonitor
@@ -136,7 +136,7 @@ Spec:
   Endpoints:
     Interval:  30s
     Path:      /foo
-    Port:      prometheus
+    Port:      prometheus    <---This has to be the name of the port on the service
     Scheme:    http
   Namespace Selector:
     Match Name:
@@ -150,6 +150,25 @@ Events:              <none>
 When this Prometheus (because you can have multiple instances of Prometheus running) sees a `ServiceMonitor`
 with this label, it will add it into the list of `ServiceMonitor`s it monitors.
 
+Another note and a gotcha is that the `spec.endpoints[].port` field.  This `MUST` be the name of the port for the service and cannot be the port number or it won't work.
+
+Example of the service:
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  labels:
+    app.selector:  myapp-api-v1.1.1
+spec:
+  selector:
+    app: my-pod
+  ports:
+    - name: prometheus
+      port: 9106
+      targetPort: 9106
+```
 
 ## ServiceMonitor Configuration
 
