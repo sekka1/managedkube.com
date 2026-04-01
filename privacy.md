@@ -15,7 +15,23 @@ We use your Personal Information only for providing and improving the Site. By u
 
 ## Information Collection And Use
 
-While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to your name ("Personal Information").
+While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to your name, email address, and mobile phone number ("Personal Information").
+
+### Mobile Phone Number and SMS Data
+
+When you opt in to receive SMS messages from ManagedKube for two-factor authentication and account security notifications, we collect your mobile phone number. This information is used exclusively for the following purposes:
+
+- Delivering two-factor authentication codes to verify your identity
+- Sending account security notifications and alerts
+- Providing requested SMS-based services
+
+**We explicitly guarantee that your mobile phone number and SMS opt-in data will never be:**
+
+- Shared with third parties for marketing or promotional purposes
+- Sold to third parties or lead generators
+- Used for any purpose other than delivering the SMS services you requested
+
+Your mobile information is stored securely using industry-standard encryption and is protected with the same level of security as all other personal information we collect.
 
 ## Log Data
 
