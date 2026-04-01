@@ -1,0 +1,42 @@
+<div class="sms-optin-form-wrapper">
+  <form class="sms-optin-form" action="https://formspree.io/garlandk@managedkube.com" method="POST">
+    <input type="hidden" name="_subject" value="SMS Opt-In Form Submission" />
+    <input type="hidden" name="_next" value="/contact-thank-you" />
+    <input type="text" name="_gotcha" style="display:none" />
+
+    <div class="sms-optin-field">
+      <label class="sms-optin-label" for="sms_full_name">Full Name</label>
+      <input class="sms-optin-input" type="text" id="sms_full_name" name="full_name" placeholder="Type your full name">
+    </div>
+
+    <div class="sms-optin-field">
+      <label class="sms-optin-label" for="sms_email">Email<span style="color:#326CE5;">*</span></label>
+      <input class="sms-optin-input" type="email" id="sms_email" name="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="sms-optin-field">
+      <label class="sms-optin-label" for="sms_phone">Phone Number</label>
+      <input class="sms-optin-input" type="tel" id="sms_phone" name="phone_number" placeholder="Enter your phone number here">
+    </div>
+
+    <div class="sms-optin-checkbox-row">
+      <input class="sms-optin-checkbox" type="checkbox" id="sms_marketing_consent" name="marketing_consent" value="yes">
+      <label class="sms-optin-checkbox-label" for="sms_marketing_consent">
+        I consent to receive marketing text messages from ManagedKube at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
+      </label>
+    </div>
+
+    <div class="sms-optin-checkbox-row">
+      <input class="sms-optin-checkbox" type="checkbox" id="sms_nonmarketing_consent" name="nonmarketing_consent" value="yes">
+      <label class="sms-optin-checkbox-label" for="sms_nonmarketing_consent">
+        I consent to receive non-marketing text messages from ManagedKube about my order updates, appointment reminders etc. Message &amp; data rates may apply.
+      </label>
+    </div>
+
+    <p class="sms-optin-links">
+      <a href="{{ '/sms-terms' | relative_url }}">Terms of Service</a> &amp; <a href="{{ '/privacy-policy' | relative_url }}">Privacy Policy</a>
+    </p>
+
+    <button class="sms-optin-submit" type="submit">Submit</button>
+  </form>
+</div>
