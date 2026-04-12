@@ -15,26 +15,20 @@
     </div>
 
     <div class="sms-optin-field">
-      <label class="sms-optin-label" for="sms_phone">Phone Number</label>
+      <label class="sms-optin-label" for="sms_phone">Phone Number (optional)</label>
       <input class="sms-optin-input" type="tel" id="sms_phone" name="phone_number" placeholder="Enter your phone number here">
     </div>
 
     <div class="sms-optin-checkbox-row">
-      <input class="sms-optin-checkbox" type="checkbox" id="sms_marketing_consent" name="marketing_consent" value="yes" required>
-      <label class="sms-optin-checkbox-label" for="sms_marketing_consent">
-        I consent to receive marketing text messages from ManagedKube at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
+      <!-- Checkbox is unchecked by default. SMS consent is optional and is NOT required to use our services or create an account. -->
+      <input class="sms-optin-checkbox" type="checkbox" id="sms_consent" name="sms_consent" value="yes">
+      <label class="sms-optin-checkbox-label" for="sms_consent">
+        (Optional) I consent to receive recurring automated text messages (SMS) from ManagedKube at the phone number provided, including two-factor authentication codes, account security notifications, and service updates. Up to 10 messages per month. Message and data rates may apply. Reply STOP to unsubscribe at any time. Reply HELP for help. Consent is not a condition of purchasing any goods or services.
       </label>
     </div>
 
-    <div class="sms-optin-checkbox-row">
-      <input class="sms-optin-checkbox" type="checkbox" id="sms_nonmarketing_consent" name="nonmarketing_consent" value="yes">
-      <label class="sms-optin-checkbox-label" for="sms_nonmarketing_consent">
-        I consent to receive non-marketing text messages from ManagedKube about my order updates, appointment reminders etc. Message &amp; data rates may apply.
-      </label>
-    </div>
-
-    <p class="sms-optin-links">
-      <a href="{{ '/sms-terms' | relative_url }}">Terms of Service</a> &amp; <a href="{{ '/privacy-policy' | relative_url }}">Privacy Policy</a>
+    <p class="sms-optin-notice" style="font-size:0.85em; color:#555; margin-top:0.5rem;">
+      SMS consent is <strong>optional</strong> and is not required to submit this form, create an account, or purchase services. Mobile information will never be shared with or sold to third parties or lead generators. For more details, see our <a href="{{ '/sms-terms' | relative_url }}">SMS Terms of Service</a> and <a href="{{ '/privacy-policy' | relative_url }}">Privacy Policy</a>.
     </p>
 
     <button class="sms-optin-submit" type="submit">Submit</button>

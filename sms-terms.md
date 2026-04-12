@@ -6,21 +6,42 @@ permalink: /sms-terms
 
 # Text Messaging Terms of Service
 
-Last updated: April 1, 2026
+Last updated: April 12, 2026
 
 ## Program Description
 
 ManagedKube offers SMS messaging services for two-factor authentication (2FA) and account security notifications. By opting in to receive text messages from ManagedKube, you will receive automated SMS messages for authentication purposes and important security alerts related to your account.
 
+## Required Disclosures Summary
+
+The following disclosures are provided in compliance with CTIA guidelines and A2P 10DLC carrier requirements:
+
+| Disclosure | Detail |
+|---|---|
+| **Program name** | ManagedKube SMS Alerts |
+| **Message types** | Two-factor authentication codes, account security notifications, account verification |
+| **Message frequency** | Up to 10 messages per month; frequency varies by account activity |
+| **Rates** | Message and data rates may apply |
+| **Opt-out** | Reply STOP to unsubscribe at any time |
+| **Help** | Reply HELP for help |
+| **Consent** | Optional — not required for account creation or service purchase |
+| **Third-party sharing** | Mobile information is never sold or shared with third parties |
+
+The opt-in form showing these disclosures and the optional, unchecked-by-default consent checkbox is publicly viewable at: [https://managedkube.com](https://managedkube.com)
+
 ## Opt-In Process
 
-Customers provide opt-in specifically when enrolling into our website at managedkube.com. The opt-in process is self-service and occurs during:
+Customers may voluntarily opt in to receive SMS messages from ManagedKube. **SMS consent is completely optional and is never required to create an account, purchase services, or use the ManagedKube platform.** Users may complete all primary actions (account creation, purchasing, contacting support, etc.) without providing SMS consent.
 
-- Account creation when you provide your mobile phone number
-- Account settings when you enable SMS capabilities for two-factor authentication
-- Any time you explicitly request SMS notifications for account security
+Opt-in is collected via a clearly labeled, **unchecked by default** checkbox on our website at managedkube.com. The checkbox appears in standalone opt-in forms and is never bundled with acceptance of Terms of Service, Privacy Policy, or any other mandatory agreement.
 
-By providing your mobile phone number and checking the opt-in box, you expressly consent to receive recurring automated text messages (SMS) from ManagedKube. **Consent to receive SMS messages is not a condition of purchasing any goods or services from ManagedKube.**
+You may opt in through any of the following methods:
+
+- **Web form**: Check the optional SMS consent checkbox on the opt-in form at [managedkube.com](https://managedkube.com). The checkbox is unchecked by default, and you may submit the form without checking it.
+- **Account settings**: Enable SMS capabilities for two-factor authentication in your account settings after account creation.
+- **Explicit request**: Any time you explicitly and separately request SMS notifications for account security.
+
+By checking the SMS consent checkbox and submitting the form, you expressly consent to receive recurring automated text messages (SMS) from ManagedKube. **Your consent to receive SMS messages is entirely voluntary and is not a condition of purchasing any goods or services from ManagedKube, nor is it required to create an account or use any feature of our service.**
 
 ## Message Frequency
 
