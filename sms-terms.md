@@ -6,11 +6,11 @@ permalink: /sms-terms
 
 # Text Messaging Terms of Service
 
-Last updated: April 12, 2026
+Last updated: April 14, 2026
 
 ## Program Description
 
-ManagedKube offers SMS messaging services for two-factor authentication (2FA) and account security notifications. By opting in to receive text messages from ManagedKube, you will receive automated SMS messages for authentication purposes and important security alerts related to your account.
+ManagedKube offers SMS messaging services as an AI assistant that provides personalized recommendations, flight information, service updates, two-factor authentication (2FA), and account security notifications. By opting in to receive text messages from ManagedKube, you will receive automated SMS messages from our AI assistant along with authentication codes and important security alerts related to your account. Messages may contain URL links, telephone numbers, emojis, and other rich content to enhance your experience.
 
 ## Required Disclosures Summary
 
@@ -19,39 +19,42 @@ The following disclosures are provided in compliance with CTIA guidelines and A2
 | Disclosure | Detail |
 |---|---|
 | **Program name** | ManagedKube SMS Alerts |
-| **Message types** | Two-factor authentication codes, account security notifications, account verification |
-| **Message frequency** | Up to 10 messages per month; frequency varies by account activity |
+| **Message types** | AI assistant recommendations, flight information, service updates, two-factor authentication codes, account security notifications, account verification. Messages may contain URL links, telephone numbers, emojis, and other content. |
+| **Message frequency** | Frequency varies by account activity and assistant interactions |
 | **Rates** | Message and data rates may apply |
 | **Opt-out** | Reply STOP to unsubscribe at any time |
 | **Help** | Reply HELP for help |
-| **Consent** | Optional — not required for account creation or service purchase |
+| **Consent** | Required to use SMS services — not required for account creation or service purchase |
 | **Third-party sharing** | Mobile information is never sold or shared with third parties |
 
-The opt-in form showing these disclosures and the optional, unchecked-by-default consent checkbox is publicly viewable at: [https://managedkube.com](https://managedkube.com)
+The opt-in form showing these disclosures and the required consent checkbox is publicly viewable at: [https://managedkube.com](https://managedkube.com)
 
 ## Opt-In Process
 
-Customers may voluntarily opt in to receive SMS messages from ManagedKube. **SMS consent is completely optional and is never required to create an account, purchase services, or use the ManagedKube platform.** Users may complete all primary actions (account creation, purchasing, contacting support, etc.) without providing SMS consent.
+Customers may opt in to receive SMS messages from ManagedKube. **SMS consent is required to use SMS services but is not required to create an account, purchase services, or use other features of the ManagedKube platform.** Users may complete all primary actions (account creation, purchasing, contacting support, etc.) without providing SMS consent.
 
-Opt-in is collected via a clearly labeled, **unchecked by default** checkbox on our website at managedkube.com. The checkbox appears in standalone opt-in forms and is never bundled with acceptance of Terms of Service, Privacy Policy, or any other mandatory agreement.
+Opt-in is collected via a clearly labeled, **required** checkbox on our website at managedkube.com for those who wish to use SMS services. The checkbox appears in standalone opt-in forms and is never bundled with acceptance of Terms of Service, Privacy Policy, or any other mandatory agreement.
 
 You may opt in through any of the following methods:
 
-- **Web form**: Check the optional SMS consent checkbox on the opt-in form at [managedkube.com](https://managedkube.com). The checkbox is unchecked by default, and you may submit the form without checking it.
+- **Web form**: Check the required SMS consent checkbox on the opt-in form at [managedkube.com](https://managedkube.com) to use SMS services.
 - **Account settings**: Enable SMS capabilities for two-factor authentication in your account settings after account creation.
 - **Explicit request**: Any time you explicitly and separately request SMS notifications for account security.
 
-By checking the SMS consent checkbox and submitting the form, you expressly consent to receive recurring automated text messages (SMS) from ManagedKube. **Your consent to receive SMS messages is entirely voluntary and is not a condition of purchasing any goods or services from ManagedKube, nor is it required to create an account or use any feature of our service.**
+By checking the SMS consent checkbox and submitting the form, you expressly consent to receive recurring automated text messages (SMS) from ManagedKube, including messages from our AI assistant with recommendations, flight information, service updates, authentication codes, and security notifications. Messages may contain URL links, telephone numbers, emojis, and other content. **Your consent to receive SMS messages is required to use SMS services but is not a condition of purchasing any goods or services from ManagedKube, nor is it required to create an account or use other features of our service.**
 
 ## Message Frequency
 
-Message frequency varies depending on your account activity and authentication attempts. You may receive recurring messages for:
+Message frequency varies depending on your account activity, assistant interactions, and authentication attempts. You may receive recurring messages for:
 
+- AI assistant recommendations and responses
+- Flight information and travel updates
+- Service updates and notifications
 - Two-factor authentication when you log in
 - Security notifications about your account
 - Account verification during setup
 
-Typical users receive 1-10 messages per month, but frequency may be higher based on your login activity and security settings.
+Message frequency will vary based on your usage and interactions with our AI assistant, login activity, and security settings.
 
 ## Message and Data Rates
 

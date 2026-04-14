@@ -20,15 +20,15 @@
     </div>
 
     <div class="sms-optin-checkbox-row">
-      <!-- Checkbox is unchecked by default. SMS consent is optional and is NOT required to use our services or create an account. -->
-      <input class="sms-optin-checkbox" type="checkbox" id="sms_consent" name="sms_consent" value="yes">
+      <!-- Checkbox is required. SMS consent is required to use our services. -->
+      <input class="sms-optin-checkbox" type="checkbox" id="sms_consent" name="sms_consent" value="yes" required>
       <label class="sms-optin-checkbox-label" for="sms_consent">
-        (Optional) I consent to receive recurring automated text messages (SMS) from ManagedKube at the phone number provided, including two-factor authentication codes, account security notifications, and service updates. Up to 10 messages per month. Message and data rates may apply. Reply STOP to unsubscribe at any time. Reply HELP for help. Consent is not a condition of purchasing any goods or services.
+        I consent to receive recurring automated text messages (SMS) from ManagedKube at the phone number provided, including messages from our AI assistant with recommendations, flight information, service updates, two-factor authentication codes, and account security notifications. Messages may contain URL links, telephone numbers, emojis, and other content. Message and data rates may apply. Reply STOP to unsubscribe at any time. Reply HELP for help. Consent is not a condition of purchasing any goods or services.
       </label>
     </div>
 
     <p class="sms-optin-notice" style="font-size:0.85em; color:#555; margin-top:0.5rem;">
-      SMS consent is <strong>optional</strong> and is not required to submit this form, create an account, or purchase services. Mobile information will never be shared with or sold to third parties or lead generators. For more details, see our <a href="{{ '/sms-terms' | relative_url }}">SMS Terms of Service</a> and <a href="{{ '/privacy-policy' | relative_url }}">Privacy Policy</a>.
+      Mobile information will never be shared with or sold to third parties or lead generators. For more details, see our <a href="{{ '/sms-terms' | relative_url }}">SMS Terms of Service</a> and <a href="{{ '/privacy-policy' | relative_url }}">Privacy Policy</a>.
     </p>
 
     <button class="sms-optin-submit" type="submit">Submit</button>
